@@ -38,7 +38,7 @@
 ## 二之二、图像 → 字段（Vision 全链路，6 张 fixture）
 
 命令：`xcodebuild test -only-testing:CamCardReplicaTests/VisionOCRTests`
-（`TestData` 里的 6 张代表性名片：2 张英文、2 张中文、1 张竖版、2 张手机斜拍变体）
+（`TestData` 里的 9 张代表性名片：2 张英文、2 张中文、1 张竖版、2 张手机斜拍、2 张边缘遮挡）
 
 | 图片 | OCR 行数 | 姓名 | 公司 | 电话 | 结果 |
 |---|---|---|---|---|---|
@@ -54,6 +54,22 @@
 - 边界检测：满幅渲染图（名片铺满整张图）**合法地检测不到矩形**，此时走"整图"降级路径
   （`CardDetectorTests.testFullBleedRenderFallsBackToWholeImage`）；带背景的拍摄图可以检出。
 - 结论：整条链路在"干净渲染 + 轻度斜拍"上可用；重度拍摄（反光、遮挡）未覆盖。
+
+### 边缘遮挡（`occluded` / `occluded-photo`）
+
+| 样本 | 遮挡方式 | 结果 |
+|---|---|---|
+| `zh-01-occluded.png` | 手指压左下角（覆盖卡片面积 2.6%，全部在页边距内） | 姓名/公司/三个电话/邮箱/网址 **全对** |
+| `en-02-occluded.png` | 手指压右下角 | 姓名/公司/两个电话/邮箱 **全对** |
+| `bi-14-photo-occluded.jpg` | 桌上名片 + 手指压右上角（照片空间） | **边界仍被检出**；姓名/公司/电话/邮箱/网址全对 |
+| `CardDetectorTests.testDetectsCardWithOneCornerOccluded` | 同上 | `VisionCardDetector` 在轮廓被切断时仍返回有效四边形 |
+
+设计约束（要写清楚，否则评测会被误读）：**遮挡物只允许落在页边距，不允许压住文字**。
+理由有两个：
+
+1. 压住文字的话 Ground Truth 就不成立了——"那张图上看不见的字"不能被要求识别出来；
+2. 作业要测的是"名片边缘被部分遮挡"，考的是**轮廓被破坏时还能不能检出并裁正**，
+   而不是"缺字的图能不能脑补"（那正是第八节禁止的）。
 
 ### 这里抓到过一个真实 bug
 

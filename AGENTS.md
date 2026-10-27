@@ -55,7 +55,7 @@ Tests/Unit        纯逻辑单测（解析器、仓库、导出…）
 Tests/Integration 语料评测（ParserBenchmarkTests + VisionOCRTests 全链路）
 UITests           T01–T20 的 XCUITest
 Scripts/          合成名片生成、评测、构建脚本
-TestData/         50 张名片 + ground_truth.json（**唯一测试语料**）
+TestData/         50 张名片 / 76 张图 + ground_truth.json（**唯一测试语料**）
 docs/             spec / api / architecture / testing / guides / reports
 ```
 
@@ -121,7 +121,7 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 
 ## 10. 当前状态（每次大改后更新）
 
-- [x] 语料 50 张 + Ground Truth
+- [x] 语料 50 张 / 76 张图（含 10 张遮挡 + 4 张照片遮挡）+ Ground Truth，生成可复现
 - [x] 模型 / 持久化 / 解析器 / Vision 服务 / 导出
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.1 / iOS 27.0 模拟器 `iPhone 18 Pro`）

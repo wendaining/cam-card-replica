@@ -16,11 +16,18 @@
 
 ## 语料（TestData/）
 
-- 50 张合成名片 + 12 张"照片变体"（透视、阴影、杂乱背景、轻微模糊）。
+- 50 张合成名片，共 **76 张图**：
+  - 50 张干净渲染（`flat`，OCR/解析的评测主体）；
+  - 12 张"照片变体"（`photo`：透视、阴影、杂乱背景、轻微模糊）；
+  - **10 张边缘遮挡**（`occluded`：手指压住一角，只为打断轮廓，不遮文字）；
+  - **4 张照片 + 遮挡**（`occluded-photo`：桌上名片 + 手指压角，专测边界检测）。
 - 语言：中文 15 / 英文 15 / 中英双语 20。
 - 版式：左对齐、居中、两栏、竖版、极简；深浅主题；有无 Logo；有无标签行。
 - Ground Truth 字段：8 个业务字段 + `expected_absent`（**用于幻觉率**）+ `present_text`（用于 OCR 召回）。
-- 生成：`python3 Scripts/generate_test_cards.py --clean`，seed=20261027，可复现。
+- 生成：`python3 Scripts/generate_test_cards.py --clean`，seed=20261027。
+- **可复现性**：脚本曾用 Python 的 `hash()` 做纸纹种子，而 `hash()` 每个进程都加盐，
+  导致每次重跑所有 PNG 都变。已改为 `sha256(card id)`，连续两次 `--clean` 的
+  `shasum` 完全一致（72→76 个文件逐一比对过）。
 
 ## 判定标准
 

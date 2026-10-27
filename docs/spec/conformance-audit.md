@@ -70,7 +70,7 @@
 | 深色背景 | ✅ | 深色纸面 + 深色桌面 |
 | 浅色背景 | ✅ | `ivory` / `white` / `paper` |
 | 带阴影 | ✅ | photo 变体有投影 + 雾面 |
-| **边缘部分遮挡** | ❌ | 语料里没有遮挡样本（需要合成手指/物体压在角上） |
+| **边缘部分遮挡** | ✅ | 10 张 `occluded`（手指压角、只覆盖页边距）+ 4 张 `occluded-photo`（桌上名片 + 手指）；`CardDetectorTests.testDetectsCardWithOneCornerOccluded` 验证轮廓被切断仍可检出 |
 | 复杂桌面 | ✅ | 木纹/深色/蓝灰随机背景与杂乱纹理 |
 
 ## 七.4 OCR 文字识别
