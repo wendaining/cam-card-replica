@@ -27,11 +27,11 @@ bench: ## 跑 Ground Truth 准确率评测（解析器 + Vision 全链路）
 	$(XCODEBUILD) test -only-testing:CamCardReplicaTests/ParserBenchmarkTests -only-testing:CamCardReplicaTests/VisionOCRTests 2>&1 | tee TestResults/bench.log
 
 lint: ## 静态检查
-	swiftformat --lint Sources Tests UITests
+	swiftformat --lint .
 	swiftlint --quiet
 
 format: ## 自动格式化
-	swiftformat Sources Tests UITests
+	swiftformat .
 
 verify: lint build test ## 提交前必跑
 
