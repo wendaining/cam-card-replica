@@ -37,8 +37,10 @@ targets:
         CFBundleDisplayName: CamCard Replica
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
-        UILaunchScreen:
-          UIColorName: ""
+        # An empty dictionary is a valid launch screen. Leaving a *broken*
+        # colour name here makes iOS treat the app as legacy and render it into
+        # a letterboxed window (which is exactly what happened before).
+        UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
         UISupportedInterfaceOrientations:
