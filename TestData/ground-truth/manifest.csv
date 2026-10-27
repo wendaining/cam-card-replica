@@ -1,36 +1,46 @@
 id,file,kind,lang,layout,theme,logo,name,company,missing
 zh-01,zh-01.png,flat,zh,classic,ivory,none,朱宏明,同济大学,
+zh-01,zh-01-occluded.png,occluded,zh,classic,ivory,none,朱宏明,同济大学,
 zh-01,zh-01-photo.jpg,photo,zh,classic,ivory,none,朱宏明,同济大学,
+zh-01,zh-01-photo-occluded.jpg,occluded-photo,zh,classic,ivory,none,朱宏明,同济大学,
 zh-02,zh-02.png,flat,zh,centered,white,block,李静,华远科技股份有限公司,
 zh-03,zh-03.png,flat,zh,two-column,navy,circle,王建国,东方物流集团,address
 zh-04,zh-04.png,flat,zh,vertical,charcoal,monogram,陈雨欣,明德咨询有限公司,website
 zh-05,zh-05.png,flat,zh,minimal,mint,none,张伟,长安精密制造有限公司,department
+zh-05,zh-05-occluded.png,occluded,zh,minimal,mint,none,张伟,长安精密制造有限公司,department
 zh-05,zh-05-photo.jpg,photo,zh,minimal,mint,none,张伟,长安精密制造有限公司,department
+zh-05,zh-05-photo-occluded.jpg,occluded-photo,zh,minimal,mint,none,张伟,长安精密制造有限公司,department
 zh-06,zh-06.png,flat,zh,classic,blueprint,block,刘晓峰,海通律师事务所,address
 zh-07,zh-07.png,flat,zh,centered,ivory,circle,赵敏,康宁医疗器械有限公司,
 zh-08,zh-08.png,flat,zh,two-column,white,monogram,孙立,北方电力设计院,website
 zh-09,zh-09.png,flat,zh,vertical,navy,none,周婷,青禾文化传媒,"department,address"
+zh-09,zh-09-occluded.png,occluded,zh,vertical,navy,none,周婷,青禾文化传媒,"department,address"
 zh-09,zh-09-photo.jpg,photo,zh,vertical,navy,none,周婷,青禾文化传媒,"department,address"
+zh-09,zh-09-photo-occluded.jpg,occluded-photo,zh,vertical,navy,none,周婷,青禾文化传媒,"department,address"
 zh-10,zh-10.png,flat,zh,minimal,charcoal,block,吴强,南山置业发展有限公司,
 zh-11,zh-11.png,flat,zh,classic,mint,circle,郑丽华,星河银行,
 zh-12,zh-12.png,flat,zh,centered,blueprint,monogram,何俊,云图数据科技有限公司,"website,address"
+zh-12,zh-12-occluded.png,occluded,zh,centered,blueprint,monogram,何俊,云图数据科技有限公司,"website,address"
 zh-13,zh-13.png,flat,zh,two-column,ivory,none,马晓东,远航国际贸易有限公司,
 zh-13,zh-13-photo.jpg,photo,zh,two-column,ivory,none,马晓东,远航国际贸易有限公司,
 zh-14,zh-14.png,flat,zh,vertical,white,block,林芳,华夏中医药研究院,
 zh-15,zh-15.png,flat,zh,minimal,navy,circle,高鹏,蓝天航空服务有限公司,"department,address"
 en-01,en-01.png,flat,en,classic,navy,none,David Chen,ABC Technologies,
 en-02,en-02.png,flat,en,centered,charcoal,circle,Emily Zhang,Northwind Analytics,website
+en-02,en-02-occluded.png,occluded,en,centered,charcoal,circle,Emily Zhang,Northwind Analytics,website
 en-03,en-03.png,flat,en,two-column,mint,block,Michael O'Brian,Bright Harbor Logistics,
 en-03,en-03-photo.jpg,photo,en,two-column,mint,block,Michael O'Brian,Bright Harbor Logistics,
 en-04,en-04.png,flat,en,minimal,blueprint,none,Sarah Kim,Lumen Health Systems,address
 en-05,en-05.png,flat,en,classic,ivory,none,Robert Fischer,Kestrel Robotics GmbH,website
 en-06,en-06.png,flat,en,classic,white,circle,Laura Mendosa,Sierra Legal Partners,
+en-06,en-06-occluded.png,occluded,en,classic,white,circle,Laura Mendosa,Sierra Legal Partners,
 en-07,en-07.png,flat,en,centered,navy,block,Thomas Weber,Rhine Valley Chemicals,
 en-08,en-08.png,flat,en,two-column,charcoal,none,Grace Lin,Atlas Capital Group,"website,address"
 en-08,en-08-photo.jpg,photo,en,two-column,charcoal,none,Grace Lin,Atlas Capital Group,"website,address"
 en-09,en-09.png,flat,en,minimal,mint,none,James Okafor,Vertex Construction Ltd.,
 en-10,en-10.png,flat,en,classic,blueprint,circle,Anna Petrova,Aurora Design Studio,
 en-11,en-11.png,flat,en,classic,ivory,block,Kevin Wu,Pacific Freight Co.,website
+en-11,en-11-occluded.png,occluded,en,classic,ivory,block,Kevin Wu,Pacific Freight Co.,website
 en-12,en-12.png,flat,en,centered,white,none,Rachel Adler,Meridian Education Group,address
 en-13,en-13.png,flat,en,two-column,navy,none,Daniel Ito,Skyline Semiconductors,
 en-13,en-13-photo.jpg,photo,en,two-column,navy,none,Daniel Ito,Skyline Semiconductors,
@@ -40,12 +50,14 @@ bi-01,bi-01.png,flat,bilingual,classic,mint,block,朱宏明 Zhu Hongming,同济�
 bi-02,bi-02.png,flat,bilingual,centered,blueprint,monogram,李静 Li Jing,华远科技 Huayuan Tech,
 bi-02,bi-02-photo.jpg,photo,bilingual,centered,blueprint,monogram,李静 Li Jing,华远科技 Huayuan Tech,
 bi-03,bi-03.png,flat,bilingual,two-column,ivory,circle,David Chen 陈大卫,ABC Technologies 艾博西科技,address
+bi-03,bi-03-occluded.png,occluded,bilingual,two-column,ivory,circle,David Chen 陈大卫,ABC Technologies 艾博西科技,address
 bi-04,bi-04.png,flat,bilingual,vertical,white,none,王建国 Wang Jianguo,东方物流 Orient Logistics,website
 bi-05,bi-05.png,flat,bilingual,classic,navy,block,Emily Zhang 张艾米,Northwind Analytics 北风数据,department
 bi-06,bi-06.png,flat,bilingual,centered,charcoal,monogram,陈雨欣 Chen Yuxin,Mingde Consulting 明德咨询,department
 bi-06,bi-06-photo.jpg,photo,bilingual,centered,charcoal,monogram,陈雨欣 Chen Yuxin,Mingde Consulting 明德咨询,department
 bi-07,bi-07.png,flat,bilingual,two-column,mint,circle,Thomas Weber 托马斯,Rhine Valley 莱茵化工,"department,website,address"
 bi-08,bi-08.png,flat,bilingual,vertical,blueprint,none,赵敏 Zhao Min,Conning Medical 康宁医疗,department
+bi-08,bi-08-occluded.png,occluded,bilingual,vertical,blueprint,none,赵敏 Zhao Min,Conning Medical 康宁医疗,department
 bi-09,bi-09.png,flat,bilingual,classic,ivory,block,Grace Lin 林格蕾,Atlas Capital 阿特拉斯资本,department
 bi-10,bi-10.png,flat,bilingual,centered,white,monogram,孙立 Sun Li,北方电力 North Power Design,"department,website"
 bi-10,bi-10-photo.jpg,photo,bilingual,centered,white,monogram,孙立 Sun Li,北方电力 North Power Design,"department,website"
@@ -53,7 +65,9 @@ bi-11,bi-11.png,flat,bilingual,two-column,navy,circle,朱宏明 Zhu Hongming,同
 bi-12,bi-12.png,flat,bilingual,vertical,charcoal,none,李静 Li Jing,华远科技 Huayuan Tech,
 bi-13,bi-13.png,flat,bilingual,classic,mint,block,David Chen 陈大卫,ABC Technologies 艾博西科技,website
 bi-14,bi-14.png,flat,bilingual,centered,blueprint,monogram,王建国 Wang Jianguo,东方物流 Orient Logistics,
+bi-14,bi-14-occluded.png,occluded,bilingual,centered,blueprint,monogram,王建国 Wang Jianguo,东方物流 Orient Logistics,
 bi-14,bi-14-photo.jpg,photo,bilingual,centered,blueprint,monogram,王建国 Wang Jianguo,东方物流 Orient Logistics,
+bi-14,bi-14-photo-occluded.jpg,occluded-photo,bilingual,centered,blueprint,monogram,王建国 Wang Jianguo,东方物流 Orient Logistics,
 bi-15,bi-15.png,flat,bilingual,two-column,ivory,circle,Emily Zhang 张艾米,Northwind Analytics 北风数据,"department,address"
 bi-16,bi-16.png,flat,bilingual,vertical,white,none,陈雨欣 Chen Yuxin,Mingde Consulting 明德咨询,"department,website"
 bi-17,bi-17.png,flat,bilingual,classic,navy,block,Thomas Weber 托马斯,Rhine Valley 莱茵化工,department

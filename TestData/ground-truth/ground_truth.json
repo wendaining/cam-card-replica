@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-27T06:43:23+00:00",
+  "generated_at": "2026-10-27T14:21:30+00:00",
   "generator": "Scripts/generate_test_cards.py",
   "seed": 20261027,
   "canvas": {
@@ -14,7 +14,7 @@
     ]
   },
   "card_count": 50,
-  "image_count": 62,
+  "image_count": 76,
   "cards": [
     {
       "id": "zh-01",
@@ -25,6 +25,61 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "朱宏明",
+        "company": "同济大学",
+        "jobTitle": "教授",
+        "department": "计算机科学与技术学院",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          },
+          {
+            "kind": "fax",
+            "number": "021-6000 1235"
+          }
+        ],
+        "emails": [
+          "contact01@example.com"
+        ],
+        "website": "www.example01.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "朱宏明",
+        "同济大学",
+        "教授",
+        "计算机科学与技术学院",
+        "+86 138 0000 1234",
+        "021-6000 1234",
+        "021-6000 1235",
+        "contact01@example.com",
+        "www.example01.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "zh-01",
+      "file": "zh-01-occluded.png",
+      "kind": "occluded",
+      "lang": "zh",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中文名片，双电话",
       "fields": {
         "name": "朱宏明",
@@ -74,6 +129,61 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "朱宏明",
+        "company": "同济大学",
+        "jobTitle": "教授",
+        "department": "计算机科学与技术学院",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          },
+          {
+            "kind": "fax",
+            "number": "021-6000 1235"
+          }
+        ],
+        "emails": [
+          "contact01@example.com"
+        ],
+        "website": "www.example01.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "朱宏明",
+        "同济大学",
+        "教授",
+        "计算机科学与技术学院",
+        "+86 138 0000 1234",
+        "021-6000 1234",
+        "021-6000 1235",
+        "contact01@example.com",
+        "www.example01.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "zh-01",
+      "file": "zh-01-photo-occluded.jpg",
+      "kind": "occluded-photo",
+      "lang": "zh",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "occlusion": {
+        "corner": "top-right",
+        "angle": 1.1,
+        "space": "photo"
+      },
       "notes": "中文名片，双电话",
       "fields": {
         "name": "朱宏明",
@@ -123,6 +233,7 @@
       "theme": "white",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片",
       "fields": {
         "name": "李静",
@@ -162,6 +273,7 @@
       "theme": "navy",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
       "notes": "中文名片",
       "fields": {
         "name": "王建国",
@@ -202,6 +314,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，双电话，缺网站",
       "fields": {
         "name": "陈雨欣",
@@ -247,6 +360,52 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
+      "notes": "中文名片",
+      "fields": {
+        "name": "张伟",
+        "company": "长安精密制造有限公司",
+        "jobTitle": "总经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          }
+        ],
+        "emails": [
+          "contact05@example.com"
+        ],
+        "website": "www.example05.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "张伟",
+        "长安精密制造有限公司",
+        "总经理",
+        "+86 186 0000 7788",
+        "contact05@example.com",
+        "www.example05.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "zh-05",
+      "file": "zh-05-occluded.png",
+      "kind": "occluded",
+      "lang": "zh",
+      "layout": "minimal",
+      "theme": "mint",
+      "logo": "none",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中文名片",
       "fields": {
         "name": "张伟",
@@ -287,6 +446,52 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
+      "notes": "中文名片",
+      "fields": {
+        "name": "张伟",
+        "company": "长安精密制造有限公司",
+        "jobTitle": "总经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          }
+        ],
+        "emails": [
+          "contact05@example.com"
+        ],
+        "website": "www.example05.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "张伟",
+        "长安精密制造有限公司",
+        "总经理",
+        "+86 186 0000 7788",
+        "contact05@example.com",
+        "www.example05.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "zh-05",
+      "file": "zh-05-photo-occluded.jpg",
+      "kind": "occluded-photo",
+      "lang": "zh",
+      "layout": "minimal",
+      "theme": "mint",
+      "logo": "none",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-right",
+        "angle": 18.0,
+        "space": "photo"
+      },
       "notes": "中文名片",
       "fields": {
         "name": "张伟",
@@ -327,6 +532,7 @@
       "theme": "blueprint",
       "logo": "block",
       "labels": false,
+      "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
         "name": "刘晓峰",
@@ -372,6 +578,7 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
         "name": "赵敏",
@@ -416,6 +623,7 @@
       "theme": "white",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，缺网站",
       "fields": {
         "name": "孙立",
@@ -456,6 +664,52 @@
       "theme": "navy",
       "logo": "none",
       "labels": false,
+      "occlusion": null,
+      "notes": "中文名片",
+      "fields": {
+        "name": "周婷",
+        "company": "青禾文化传媒",
+        "jobTitle": "创意总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          }
+        ],
+        "emails": [
+          "contact09@example.com"
+        ],
+        "website": "www.example09.com",
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "address"
+      ],
+      "present_text": [
+        "周婷",
+        "青禾文化传媒",
+        "创意总监",
+        "+86 138 0000 1234",
+        "contact09@example.com",
+        "www.example09.com"
+      ]
+    },
+    {
+      "id": "zh-09",
+      "file": "zh-09-occluded.png",
+      "kind": "occluded",
+      "lang": "zh",
+      "layout": "vertical",
+      "theme": "navy",
+      "logo": "none",
+      "labels": false,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中文名片",
       "fields": {
         "name": "周婷",
@@ -496,6 +750,52 @@
       "theme": "navy",
       "logo": "none",
       "labels": false,
+      "occlusion": null,
+      "notes": "中文名片",
+      "fields": {
+        "name": "周婷",
+        "company": "青禾文化传媒",
+        "jobTitle": "创意总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          }
+        ],
+        "emails": [
+          "contact09@example.com"
+        ],
+        "website": "www.example09.com",
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "address"
+      ],
+      "present_text": [
+        "周婷",
+        "青禾文化传媒",
+        "创意总监",
+        "+86 138 0000 1234",
+        "contact09@example.com",
+        "www.example09.com"
+      ]
+    },
+    {
+      "id": "zh-09",
+      "file": "zh-09-photo-occluded.jpg",
+      "kind": "occluded-photo",
+      "lang": "zh",
+      "layout": "vertical",
+      "theme": "navy",
+      "logo": "none",
+      "labels": false,
+      "occlusion": {
+        "corner": "bottom-right",
+        "angle": 6.2,
+        "space": "photo"
+      },
       "notes": "中文名片",
       "fields": {
         "name": "周婷",
@@ -536,6 +836,7 @@
       "theme": "charcoal",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
         "name": "吴强",
@@ -580,6 +881,7 @@
       "theme": "mint",
       "logo": "circle",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
         "name": "郑丽华",
@@ -624,6 +926,52 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": false,
+      "occlusion": null,
+      "notes": "中文名片，缺网站",
+      "fields": {
+        "name": "何俊",
+        "company": "云图数据科技有限公司",
+        "jobTitle": "算法工程师",
+        "department": "数据平台",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 150 0000 3344"
+          }
+        ],
+        "emails": [
+          "contact12@example.com"
+        ],
+        "website": null,
+        "address": null
+      },
+      "expected_absent": [
+        "website",
+        "address"
+      ],
+      "present_text": [
+        "何俊",
+        "云图数据科技有限公司",
+        "算法工程师",
+        "数据平台",
+        "+86 150 0000 3344",
+        "contact12@example.com"
+      ]
+    },
+    {
+      "id": "zh-12",
+      "file": "zh-12-occluded.png",
+      "kind": "occluded",
+      "lang": "zh",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": false,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中文名片，缺网站",
       "fields": {
         "name": "何俊",
@@ -664,6 +1012,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
         "name": "马晓东",
@@ -708,6 +1057,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
         "name": "马晓东",
@@ -752,6 +1102,7 @@
       "theme": "white",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中文名片",
       "fields": {
         "name": "林芳",
@@ -791,6 +1142,7 @@
       "theme": "navy",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
       "notes": "中文名片",
       "fields": {
         "name": "高鹏",
@@ -831,6 +1183,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
         "name": "David Chen",
@@ -877,6 +1230,57 @@
       "theme": "charcoal",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Emily Zhang",
+        "company": "Northwind Analytics",
+        "jobTitle": "Senior Data Scientist",
+        "department": "AI Lab",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 212 000 5678"
+          },
+          {
+            "kind": "fax",
+            "number": "+44 20 0000 7001"
+          }
+        ],
+        "emails": [
+          "emily.zhang@example.org"
+        ],
+        "website": null,
+        "address": "12 King William Street, London EC4N 7BJ"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "Emily Zhang",
+        "Northwind Analytics",
+        "Senior Data Scientist",
+        "AI Lab",
+        "+1 212 000 5678",
+        "+44 20 0000 7001",
+        "emily.zhang@example.org",
+        "12 King William Street, London EC4N 7BJ"
+      ]
+    },
+    {
+      "id": "en-02",
+      "file": "en-02-occluded.png",
+      "kind": "occluded",
+      "lang": "en",
+      "layout": "centered",
+      "theme": "charcoal",
+      "logo": "circle",
+      "labels": false,
+      "occlusion": {
+        "corner": "bottom-right",
+        "scale": 1.0,
+        "coverage": 0.025
+      },
       "notes": "英文名片",
       "fields": {
         "name": "Emily Zhang",
@@ -922,6 +1326,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Michael O'Brian",
@@ -966,6 +1371,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Michael O'Brian",
@@ -1010,6 +1416,7 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Sarah Kim",
@@ -1050,6 +1457,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Robert Fischer",
@@ -1095,6 +1503,56 @@
       "theme": "white",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Laura Mendosa",
+        "company": "Sierra Legal Partners",
+        "jobTitle": "Partner",
+        "department": "Intellectual Property",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+65 0000 2345"
+          },
+          {
+            "kind": "fax",
+            "number": "+49 30 0000 6001"
+          }
+        ],
+        "emails": [
+          "laura.mendosa@example.org"
+        ],
+        "website": "www.sierra.example",
+        "address": "12 King William Street, London EC4N 7BJ"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Laura Mendosa",
+        "Sierra Legal Partners",
+        "Partner",
+        "Intellectual Property",
+        "+65 0000 2345",
+        "+49 30 0000 6001",
+        "laura.mendosa@example.org",
+        "www.sierra.example",
+        "12 King William Street, London EC4N 7BJ"
+      ]
+    },
+    {
+      "id": "en-06",
+      "file": "en-06-occluded.png",
+      "kind": "occluded",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "white",
+      "logo": "circle",
+      "labels": false,
+      "occlusion": {
+        "corner": "bottom-right",
+        "scale": 1.0,
+        "coverage": 0.025
+      },
       "notes": "英文名片",
       "fields": {
         "name": "Laura Mendosa",
@@ -1139,6 +1597,7 @@
       "theme": "navy",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
         "name": "Thomas Weber",
@@ -1185,6 +1644,7 @@
       "theme": "charcoal",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Grace Lin",
@@ -1225,6 +1685,7 @@
       "theme": "charcoal",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Grace Lin",
@@ -1265,6 +1726,7 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "James Okafor",
@@ -1309,6 +1771,7 @@
       "theme": "blueprint",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Anna Petrova",
@@ -1353,6 +1816,57 @@
       "theme": "ivory",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Kevin Wu",
+        "company": "Pacific Freight Co.",
+        "jobTitle": "Operations Manager",
+        "department": "Ocean Freight",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+81 3 0000 7890"
+          },
+          {
+            "kind": "office",
+            "number": "+49 30 0000 6000"
+          }
+        ],
+        "emails": [
+          "kevin.wu@example.org"
+        ],
+        "website": null,
+        "address": "Friedrichstrasse 88, 10117 Berlin, Germany"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "Kevin Wu",
+        "Pacific Freight Co.",
+        "Operations Manager",
+        "Ocean Freight",
+        "+81 3 0000 7890",
+        "+49 30 0000 6000",
+        "kevin.wu@example.org",
+        "Friedrichstrasse 88, 10117 Berlin, Germany"
+      ]
+    },
+    {
+      "id": "en-11",
+      "file": "en-11-occluded.png",
+      "kind": "occluded",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "block",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "英文名片",
       "fields": {
         "name": "Kevin Wu",
@@ -1398,6 +1912,7 @@
       "theme": "white",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Rachel Adler",
@@ -1438,6 +1953,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
         "name": "Daniel Ito",
@@ -1484,6 +2000,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
         "name": "Daniel Ito",
@@ -1530,6 +2047,7 @@
       "theme": "charcoal",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Olivia Brown",
@@ -1575,6 +2093,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "英文名片",
       "fields": {
         "name": "Hassan Al-Rashid",
@@ -1619,6 +2138,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "朱宏明 Zhu Hongming",
@@ -1664,6 +2184,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "李静 Li Jing",
@@ -1708,6 +2229,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "李静 Li Jing",
@@ -1752,6 +2274,57 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": true,
+      "occlusion": null,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "David Chen 陈大卫",
+        "company": "ABC Technologies 艾博西科技",
+        "jobTitle": "Director 总监",
+        "department": "Platform 平台部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 137 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "028-4000 7890"
+          }
+        ],
+        "emails": [
+          "biz03@example.com"
+        ],
+        "website": "www.example03.com",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "David Chen 陈大卫",
+        "ABC Technologies 艾博西科技",
+        "Director 总监",
+        "Platform 平台部",
+        "+86 137 0000 9012",
+        "028-4000 7890",
+        "biz03@example.com",
+        "www.example03.com"
+      ]
+    },
+    {
+      "id": "bi-03",
+      "file": "bi-03-occluded.png",
+      "kind": "occluded",
+      "lang": "bilingual",
+      "layout": "two-column",
+      "theme": "ivory",
+      "logo": "circle",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中英双语名片",
       "fields": {
         "name": "David Chen 陈大卫",
@@ -1797,6 +2370,7 @@
       "theme": "white",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "王建国 Wang Jianguo",
@@ -1839,6 +2413,7 @@
       "theme": "navy",
       "logo": "block",
       "labels": false,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "Emily Zhang 张艾米",
@@ -1884,6 +2459,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "陈雨欣 Chen Yuxin",
@@ -1924,6 +2500,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "陈雨欣 Chen Yuxin",
@@ -1964,6 +2541,7 @@
       "theme": "mint",
       "logo": "circle",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "Thomas Weber 托马斯",
@@ -2014,6 +2592,52 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "赵敏 Zhao Min",
+        "company": "Conning Medical 康宁医疗",
+        "jobTitle": "Marketing Manager 市场经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 159 0000 6677"
+          }
+        ],
+        "emails": [
+          "biz08@example.com"
+        ],
+        "website": "www.example08.com",
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "赵敏 Zhao Min",
+        "Conning Medical 康宁医疗",
+        "Marketing Manager 市场经理",
+        "+86 159 0000 6677",
+        "biz08@example.com",
+        "www.example08.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "bi-08",
+      "file": "bi-08-occluded.png",
+      "kind": "occluded",
+      "lang": "bilingual",
+      "layout": "vertical",
+      "theme": "blueprint",
+      "logo": "none",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-right",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中英双语名片",
       "fields": {
         "name": "赵敏 Zhao Min",
@@ -2054,6 +2678,7 @@
       "theme": "ivory",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "Grace Lin 林格蕾",
@@ -2099,6 +2724,7 @@
       "theme": "white",
       "logo": "monogram",
       "labels": false,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "孙立 Sun Li",
@@ -2139,6 +2765,7 @@
       "theme": "white",
       "logo": "monogram",
       "labels": false,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "孙立 Sun Li",
@@ -2179,6 +2806,7 @@
       "theme": "navy",
       "logo": "circle",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "朱宏明 Zhu Hongming",
@@ -2226,6 +2854,7 @@
       "theme": "charcoal",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "李静 Li Jing",
@@ -2270,6 +2899,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "David Chen 陈大卫",
@@ -2315,6 +2945,51 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "王建国 Wang Jianguo",
+        "company": "东方物流 Orient Logistics",
+        "jobTitle": "副总经理 VP",
+        "department": "Operations 运营",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "biz14@example.com"
+        ],
+        "website": "www.example14.com",
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "王建国 Wang Jianguo",
+        "东方物流 Orient Logistics",
+        "副总经理 VP",
+        "Operations 运营",
+        "+86 188 0000 2211",
+        "biz14@example.com",
+        "www.example14.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "bi-14",
+      "file": "bi-14-occluded.png",
+      "kind": "occluded",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": true,
+      "occlusion": {
+        "corner": "bottom-left",
+        "scale": 1.0,
+        "coverage": 0.026
+      },
       "notes": "中英双语名片",
       "fields": {
         "name": "王建国 Wang Jianguo",
@@ -2354,6 +3029,51 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "王建国 Wang Jianguo",
+        "company": "东方物流 Orient Logistics",
+        "jobTitle": "副总经理 VP",
+        "department": "Operations 运营",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "biz14@example.com"
+        ],
+        "website": "www.example14.com",
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "王建国 Wang Jianguo",
+        "东方物流 Orient Logistics",
+        "副总经理 VP",
+        "Operations 运营",
+        "+86 188 0000 2211",
+        "biz14@example.com",
+        "www.example14.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "bi-14",
+      "file": "bi-14-photo-occluded.jpg",
+      "kind": "occluded-photo",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": true,
+      "occlusion": {
+        "corner": "top-right",
+        "angle": -27.9,
+        "space": "photo"
+      },
       "notes": "中英双语名片",
       "fields": {
         "name": "王建国 Wang Jianguo",
@@ -2393,6 +3113,7 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": false,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "Emily Zhang 张艾米",
@@ -2438,6 +3159,7 @@
       "theme": "white",
       "logo": "none",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "陈雨欣 Chen Yuxin",
@@ -2478,6 +3200,7 @@
       "theme": "navy",
       "logo": "block",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "Thomas Weber 托马斯",
@@ -2528,6 +3251,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "赵敏 Zhao Min",
@@ -2570,6 +3294,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "赵敏 Zhao Min",
@@ -2612,6 +3337,7 @@
       "theme": "mint",
       "logo": "circle",
       "labels": true,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "Grace Lin 林格蕾",
@@ -2657,6 +3383,7 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": false,
+      "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
         "name": "孙立 Sun Li",

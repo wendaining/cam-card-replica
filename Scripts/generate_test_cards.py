@@ -140,6 +140,7 @@ class CardSpec:
     logo: str = "none"  # none | block | circle | monogram
     photo_variant: bool = False
     labels: bool = True
+    occlusion: bool = False
     notes: str = ""
 
     @property
@@ -206,6 +207,12 @@ def draw_logo(draw: ImageDraw.ImageDraw, style: str, box: tuple[int, int, int, i
 
 
 def render_card(spec: CardSpec, rng: random.Random) -> Image.Image:
+    """Backwards-compatible wrapper: callers that do not need the text box."""
+    image, _ = render_card_with_meta(spec, rng)
+    return image
+
+
+def render_card_with_meta(spec: CardSpec, rng: random.Random) -> tuple[Image.Image, tuple[int, int, int, int] | None]:
     paper, ink, muted, accent = (hex2rgb(c) for c in THEMES[spec.theme])
     vertical = spec.layout == "vertical"
     W, H = (VERT_W, VERT_H) if vertical else (CARD_W, CARD_H)
@@ -214,7 +221,10 @@ def render_card(spec: CardSpec, rng: random.Random) -> Image.Image:
 
     # paper texture: very light noise, keeps OCR honest but not hostile
     arr = np.array(img).astype(np.int16)
-    noise = np.random.default_rng(hash(spec.cid) % 2**32).integers(-3, 4, arr.shape[:2])[:, :, None]
+    # `hash()` is salted per process, which silently made every regeneration
+    # differ. A digest keeps the paper grain identical across runs and machines.
+    grain_seed = int(hashlib.sha256(spec.cid.encode()).hexdigest()[:8], 16)
+    noise = np.random.default_rng(grain_seed).integers(-3, 4, arr.shape[:2])[:, :, None]
     arr = np.clip(arr + noise, 0, 255).astype(np.uint8)
     img = Image.fromarray(arr)
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -313,7 +323,97 @@ def render_card(spec: CardSpec, rng: random.Random) -> Image.Image:
             shifted.paste(layer, (0, dy))
             layer = shifted
     img = Image.alpha_composite(img.convert("RGBA"), layer).convert("RGB")
-    return img
+    return img, (bbox if bbox else None)
+
+
+# ---------------------------------------------------------------- occlusion
+
+
+SKIN = (232, 190, 160)
+SKIN_SHADOW = (198, 152, 122)
+NAIL = (242, 214, 196)
+
+
+def make_finger(width: int, height: int, rng: random.Random) -> Image.Image:
+    """A finger-like capsule with a soft edge and a nail highlight."""
+    w, h = max(width, 24), max(height, 24)
+    finger = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(finger)
+    radius = min(w, h) // 2
+    draw.rounded_rectangle((0, 0, w - 1, h - 1), radius=radius, fill=SKIN + (255,))
+    # shading along one edge so it reads as a 3D object, not a sticker
+    draw.rounded_rectangle((0, 0, w - 1, h // 3), radius=radius, fill=SKIN_SHADOW + (70,))
+    nail_w, nail_h = int(w * 0.44), int(h * 0.34)
+    nx = (w - nail_w) // 2
+    ny = int(h * 0.16)
+    draw.ellipse((nx, ny, nx + nail_w, ny + nail_h), fill=NAIL + (220,))
+    return finger.filter(ImageFilter.GaussianBlur(1.6))
+
+
+def overlaps(a: tuple[int, int, int, int], b: tuple[int, int, int, int]) -> bool:
+    return not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1])
+
+
+def apply_occlusion(
+    card: Image.Image,
+    text_bbox: tuple[int, int, int, int] | None,
+    rng: random.Random,
+) -> tuple[Image.Image, dict] | None:
+    """Cover one corner with a finger hanging over the card edge.
+
+    The occluder is only allowed over the card's margin: covering printed text
+    would make the Ground Truth wrong, and "the text is hidden" is a different
+    test than "the card outline is interrupted".
+    """
+    W, H = card.size
+    if text_bbox is None:
+        return None
+    out = card.convert("RGBA")
+    corners = ["top-right", "bottom-right", "bottom-left", "top-left"]
+    rng.shuffle(corners)
+
+    for corner in corners:
+        for scale in (1.0, 0.8, 0.62):
+            fw = int(W * 0.30 * scale)
+            fh = int(H * 0.26 * scale)
+            # most of the finger sits outside the card, like a thumb holding it
+            if corner.endswith("right"):
+                x0 = W - int(fw * 0.55)
+            else:
+                x0 = -int(fw * 0.45)
+            if corner.startswith("bottom"):
+                y0 = H - int(fh * 0.60)
+            else:
+                y0 = -int(fh * 0.40)
+
+            rect = (x0, y0, x0 + fw, y0 + fh)
+            if overlaps(rect, text_bbox):
+                continue
+
+            finger = make_finger(fw, fh, rng)
+            if corner.startswith("top"):
+                finger = finger.transpose(Image.FLIP_TOP_BOTTOM)
+
+            shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            ImageDraw.Draw(shadow).rounded_rectangle(
+                (x0 + 10, y0 + 16, x0 + fw + 10, y0 + fh + 16),
+                radius=min(fw, fh) // 2,
+                fill=(0, 0, 0, 90),
+            )
+            out = Image.alpha_composite(out, shadow.filter(ImageFilter.GaussianBlur(12)))
+            out.alpha_composite(finger, dest=(x0, y0))
+
+            visible = (
+                max(0, min(rect[2], W) - max(rect[0], 0))
+                * max(0, min(rect[3], H) - max(rect[1], 0))
+            )
+            coverage = visible / float(W * H)
+            return out.convert("RGB"), {
+                "corner": corner,
+                "scale": round(scale, 2),
+                "coverage": round(coverage, 3),
+            }
+    return None
 
 
 # ---------------------------------------------------------------- photo variant
@@ -359,7 +459,9 @@ def make_background(w: int, h: int, rng: random.Random, kind: str) -> Image.Imag
     return base
 
 
-def render_photo(spec: CardSpec, card: Image.Image, rng: random.Random) -> Image.Image:
+def render_photo(
+    spec: CardSpec, card: Image.Image, rng: random.Random
+) -> tuple[Image.Image, list[tuple[float, float]]]:
     """Simulate a handheld phone shot: perspective, shadow, clutter, exposure."""
     pw, ph = 2000, 1500
     # upscale the flat render so the card stays legible after the warp
@@ -419,7 +521,47 @@ def render_photo(spec: CardSpec, card: Image.Image, rng: random.Random) -> Image
     arr = np.array(out).astype(np.int16)
     arr = np.clip(arr + np.random.default_rng(rng.randint(0, 9999)).normal(0, 3.2, arr.shape), 0, 255).astype(np.uint8)
     out = Image.fromarray(arr)
-    return out.resize((int(pw * 0.62), int(ph * 0.62)), Image.LANCZOS)
+    return out, quad
+
+
+def apply_photo_occlusion(
+    photo: Image.Image,
+    quad: list[tuple[float, float]],
+    rng: random.Random,
+) -> tuple[Image.Image, dict]:
+    """A finger pressing on one corner of the card, in photo space.
+
+    This is the case that actually stresses `VisionCardDetector`: the card's
+    outline is interrupted, so the rectangle has one corner missing.
+    """
+    W, H = photo.size
+    corner_index = rng.choice([1, 2])  # top-right or bottom-right of the card
+    corner = quad[corner_index]
+    # size the finger relative to the card, not to the photo
+    card_width = max(abs(quad[1][0] - quad[0][0]), abs(quad[2][0] - quad[3][0]), 1)
+    fw = int(card_width * 0.22)
+    fh = int(fw * 1.35)
+
+    finger = make_finger(fw, fh, rng)
+    angle = rng.uniform(-35, 35)
+    finger = finger.rotate(angle, expand=True, resample=Image.BICUBIC)
+    # anchor so roughly 30% of the finger overlaps the card's corner
+    x0 = int(corner[0] - fw * 0.55)
+    y0 = int(corner[1] - fh * 0.35)
+
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rounded_rectangle(
+        (x0 + 14, y0 + 18, x0 + finger.width + 14, y0 + finger.height + 18),
+        radius=min(finger.width, finger.height) // 2,
+        fill=(0, 0, 0, 110),
+    )
+    out = Image.alpha_composite(photo.convert("RGBA"), shadow.filter(ImageFilter.GaussianBlur(18)))
+    out.alpha_composite(finger, dest=(x0, y0))
+    return out.convert("RGB"), {
+        "corner": "top-right" if corner_index == 1 else "bottom-right",
+        "angle": round(angle, 1),
+        "space": "photo",
+    }
 
 
 # ---------------------------------------------------------------- corpus
@@ -464,10 +606,13 @@ def build_corpus() -> list[CardSpec]:
     rng = random.Random(20261027)
     specs: list[CardSpec] = []
 
+    OCCLUDED = {"zh-01", "zh-05", "zh-09", "zh-12", "en-02", "en-06", "en-11", "bi-03", "bi-08", "bi-14"}
+
     def add(cid, lang, layout, theme, fields, logo="none", photo=False, notes="", labels=True):
         specs.append(CardSpec(
             cid=cid, lang=lang, layout=layout, theme=theme, fields=fields,
             logo=logo, photo_variant=photo, labels=labels, notes=notes,
+            occlusion=cid in OCCLUDED,
         ))
 
     # ---- Chinese cards (15)
@@ -553,7 +698,12 @@ def build_corpus() -> list[CardSpec]:
     return specs
 
 
-def ground_truth_entry(spec: CardSpec, file: str, kind: str) -> dict:
+def ground_truth_entry(
+    spec: CardSpec,
+    file: str,
+    kind: str,
+    occlusion: dict | None = None,
+) -> dict:
     f = spec.fields
     present = [f["name"]]
     for key in ("company", "jobTitle", "department"):
@@ -580,6 +730,7 @@ def ground_truth_entry(spec: CardSpec, file: str, kind: str) -> dict:
         "theme": spec.theme,
         "logo": spec.logo,
         "labels": spec.labels,
+        "occlusion": occlusion,
         "notes": spec.notes,
         "fields": {
             "name": f["name"],
@@ -616,15 +767,29 @@ def main() -> int:
     entries = []
     for spec in specs:
         rng = random.Random(int(hashlib.sha256(spec.cid.encode()).hexdigest()[:8], 16))
-        card = render_card(spec, rng)
+        card, text_bbox = render_card_with_meta(spec, rng)
         card.save(CARDS_DIR / spec.filename, optimize=True)
         entries.append(ground_truth_entry(spec, spec.filename, "flat"))
 
+        if spec.occlusion:
+            occluded = apply_occlusion(card, text_bbox, rng)
+            if occluded is not None:
+                occluded_image, occlusion_meta = occluded
+                ofile = f"{spec.cid}-occluded.png"
+                occluded_image.save(CARDS_DIR / ofile, optimize=True)
+                entries.append(ground_truth_entry(spec, ofile, "occluded", occlusion_meta))
+
         if spec.photo_variant:
-            photo = render_photo(spec, card, rng)
+            photo, photo_quad = render_photo(spec, card, rng)
             pfile = f"{spec.cid}-photo.jpg"
             photo.save(CARDS_DIR / pfile, quality=92, optimize=True, progressive=True)
             entries.append(ground_truth_entry(spec, pfile, "photo"))
+
+            if spec.occlusion:
+                occluded_photo, photo_meta = apply_photo_occlusion(photo, photo_quad, rng)
+                ofile = f"{spec.cid}-photo-occluded.jpg"
+                occluded_photo.save(CARDS_DIR / ofile, quality=92, optimize=True, progressive=True)
+                entries.append(ground_truth_entry(spec, ofile, "occluded-photo", photo_meta))
 
     gt = {
         "version": 1,
