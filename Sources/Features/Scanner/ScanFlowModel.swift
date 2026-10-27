@@ -40,12 +40,15 @@ final class ScanFlowModel {
 
     /// Entry point from the camera or the photo picker.
     func handle(image: CGImage, orientation: CGImagePropertyOrientation = .up) {
-        capturedImage = image
+        // Bake the orientation in first: everything downstream (detection,
+        // perspective correction, OCR) then shares one coordinate space.
+        let upright = ImageCoding.applyingOrientation(image, orientation)
+        capturedImage = upright
         errorMessage = nil
         stage = .crop
         let started = CFAbsoluteTimeGetCurrent()
         do {
-            quad = try services.detector.detectCard(in: image, orientation: orientation) ?? .fullFrame
+            quad = try services.detector.detectCard(in: upright, orientation: .up) ?? .fullFrame
         } catch {
             quad = .fullFrame
         }

@@ -1,4 +1,5 @@
 import CoreGraphics
+import CoreImage
 import Foundation
 import ImageIO
 import UniformTypeIdentifiers
@@ -31,6 +32,23 @@ enum ImageCoding {
               let orientation = CGImagePropertyOrientation(rawValue: raw)
         else { return .up }
         return orientation
+    }
+
+    /// Bakes the EXIF orientation into the pixels.
+    ///
+    /// Vision can take an orientation parameter, but Core Image cannot, so a
+    /// rotated photo would be corrected with corners measured in a different
+    /// space and come out skewed. Normalizing once at ingress removes the whole
+    /// class of bugs (spec 7.3 "方向校正").
+    static func applyingOrientation(
+        _ image: CGImage,
+        _ orientation: CGImagePropertyOrientation
+    ) -> CGImage {
+        guard orientation != .up else { return image }
+        let source = CIImage(cgImage: image).oriented(forExifOrientation: Int32(orientation.rawValue))
+        let context = CIContext(options: [.useSoftwareRenderer: false])
+        guard let output = context.createCGImage(source, from: source.extent) else { return image }
+        return output
     }
 
     /// Downscales so the longest edge is at most `maxDimension`; OCR quality is
