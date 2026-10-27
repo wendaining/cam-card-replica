@@ -44,17 +44,21 @@ final class ScreenshotTests: XCTestCase {
 
         app.buttons["scan-button"].tap()
         app.buttons["fixture-capture"].tap()
+        XCTAssertTrue(app.descendants(matching: .any)["preview-view"].waitForExistence(timeout: 10))
+        save("03-preview")
+
+        app.buttons["preview-use"].tap()
         XCTAssertTrue(app.descendants(matching: .any)["crop-view"].waitForExistence(timeout: 10))
-        save("03-crop")
+        save("04-crop")
 
         app.buttons["crop-confirm"].tap()
         XCTAssertTrue(app.descendants(matching: .any)["review-view"].waitForExistence(timeout: 30))
-        save("04-review")
+        save("05-review")
 
         app.buttons["review-save"].tap()
         XCTAssertTrue(app.staticTexts["朱宏明"].waitForExistence(timeout: 10))
         app.staticTexts["朱宏明"].firstMatch.tap()
         XCTAssertTrue(app.descendants(matching: .any)["detail-view"].waitForExistence(timeout: 10))
-        save("05-detail")
+        save("06-detail")
     }
 }

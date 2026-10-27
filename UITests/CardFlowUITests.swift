@@ -74,6 +74,8 @@ final class CardFlowUITests: XCTestCase {
         app.buttons["scan-button"].tap()
         XCTAssertTrue(element("scanner-view").waitForExistence(timeout: 5))
         app.buttons["fixture-capture"].tap()
+        XCTAssertTrue(element("preview-view").waitForExistence(timeout: 5))
+        app.buttons["preview-use"].tap()
         XCTAssertTrue(element("crop-view").waitForExistence(timeout: 5))
         app.buttons["crop-confirm"].tap()
         XCTAssertTrue(element("review-view").waitForExistence(timeout: 30))
@@ -110,13 +112,28 @@ final class CardFlowUITests: XCTestCase {
         launch()
         app.buttons["scan-button"].tap()
         app.buttons["fixture-capture"].tap()
+        XCTAssertTrue(element("preview-view").waitForExistence(timeout: 5))
+        app.buttons["preview-use"].tap()
         XCTAssertTrue(element("crop-view").waitForExistence(timeout: 5))
+    }
+
+    /// The preview step must let the user throw the photo away and shoot again.
+    func testT04b_previewCanBeRetaken() {
+        launch()
+        app.buttons["scan-button"].tap()
+        app.buttons["fixture-capture"].tap()
+        XCTAssertTrue(element("preview-view").waitForExistence(timeout: 5))
+        app.buttons["preview-retake"].tap()
+        XCTAssertTrue(element("scanner-view").waitForExistence(timeout: 5))
     }
 
     func testT06_cropCanBeRetaken() {
         launch()
         app.buttons["scan-button"].tap()
         app.buttons["fixture-capture"].tap()
+        XCTAssertTrue(element("preview-view").waitForExistence(timeout: 5))
+        app.buttons["preview-use"].tap()
+        XCTAssertTrue(element("crop-view").waitForExistence(timeout: 5))
         app.buttons["crop-retake"].tap()
         XCTAssertTrue(element("scanner-view").waitForExistence(timeout: 5))
     }
