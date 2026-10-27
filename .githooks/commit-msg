@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Conventional Commits gate. See docs/guides/conventional-commits.md.
+set -euo pipefail
+
+message_file="$1"
+# Ignore comment lines and the body; only the subject is validated.
+subject="$(grep -v '^#' "$message_file" | sed '/^[[:space:]]*$/d' | head -n 1)"
+
+pattern='^(feat|fix|refactor|test|docs|build|ci|chore|perf|style|revert)(\([a-z0-9._/-]+\))?!?: .{3,}'
+
+if ! printf '%s' "$subject" | grep -Eq "$pattern"; then
+  cat >&2 <<MSG
+✗ 提交信息不符合 Conventional Commits 规范。
+
+  当前: $subject
+
+  要求: <type>(<scope>): <subject>
+  type: feat|fix|refactor|test|docs|build|ci|chore|perf|style|revert
+  示例: fix(parser): classify fax before mobile pattern
+
+  详见 docs/guides/conventional-commits.md
+MSG
+  exit 1
+fi
+
+if [ "${#subject}" -gt 72 ]; then
+  echo "✗ 标题超过 72 字符（当前 ${#subject}）。" >&2
+  exit 1
+fi
+
+if ! grep -Eq '^(Refs|Spec): ' "$message_file"; then
+  echo "!" "提示: 建议在正文加 'Refs: T08' 或 'Spec: docs/spec/product-spec.md#7.5'" >&2
+fi

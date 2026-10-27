@@ -1,0 +1,7 @@
+--swiftversion 5.10
+--indent 4
+--maxwidth 120
+--wraptype beforefirst
+--stripunusedargs closure-only
+--disable hoistPatternLet,redundantSelf,wrapMultilineStatementBraces
+--exclude build,DerivedData,.build
