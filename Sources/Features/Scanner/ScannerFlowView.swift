@@ -14,6 +14,8 @@ struct ScannerFlowView: View {
                     switch model.stage {
                     case .capture:
                         ScannerView(model: model)
+                    case .preview:
+                        PreviewView(model: model)
                     case .crop:
                         CropView(model: model)
                     case .processing:

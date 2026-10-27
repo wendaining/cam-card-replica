@@ -12,6 +12,8 @@ import Observation
 final class ScanFlowModel {
     enum Stage: Equatable {
         case capture
+        /// "Is this shot usable?" — the explicit preview step before cropping.
+        case preview
         case crop
         case processing
         case review
@@ -45,14 +47,21 @@ final class ScanFlowModel {
         let upright = ImageCoding.applyingOrientation(image, orientation)
         capturedImage = upright
         errorMessage = nil
-        stage = .crop
+        quad = .fullFrame
+        stage = .preview
+    }
+
+    /// Accepts the shot: run boundary detection, then show the crop screen.
+    func confirmPreview() {
+        guard let image = capturedImage else { return }
         let started = CFAbsoluteTimeGetCurrent()
         do {
-            quad = try services.detector.detectCard(in: upright, orientation: .up) ?? .fullFrame
+            quad = try services.detector.detectCard(in: image, orientation: .up) ?? .fullFrame
         } catch {
             quad = .fullFrame
         }
         timings["detect"] = CFAbsoluteTimeGetCurrent() - started
+        stage = .crop
     }
 
     /// Deterministic path used by UI tests and simulator runs without a camera.
