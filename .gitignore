@@ -30,3 +30,6 @@ Scripts/__pycache__/
 .env
 .env.local
 *.local.xcconfig
+
+# Generated from project.yml by `make bootstrap`
+Config/Info.plist
