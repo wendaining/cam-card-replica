@@ -55,6 +55,16 @@ final class CardDetectorTests: XCTestCase {
         XCTAssertLessThan(quad?.area ?? 1, 1.0, "the detected card must be smaller than the photo")
     }
 
+    /// T06 with a broken outline: a finger covers one corner of the card.
+    /// Detection must still locate the card, otherwise the pipeline falls back
+    /// to the whole photo and the user has to drag all four corners by hand.
+    func testDetectsCardWithOneCornerOccluded() throws {
+        let image = try fixtureImage("bi-14-photo-occluded.jpg")
+        let quad = try VisionCardDetector().detectCard(in: image, orientation: .up)
+        XCTAssertNotNil(quad, "an interrupted outline should still be detected")
+        XCTAssertGreaterThan(quad?.area ?? 0, 0.1)
+    }
+
     /// A full-bleed render has no background edges: detection legitimately fails
     /// and the caller falls back to the whole frame (spec 7.3.1).
     func testFullBleedRenderFallsBackToWholeImage() throws {

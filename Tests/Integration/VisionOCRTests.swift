@@ -85,7 +85,10 @@ final class VisionOCRTests: XCTestCase {
         ) else { return [] }
         let json = try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any]
         let cards = json?["cards"] as? [[String: Any]] ?? []
-        let base = fixtureName.replacingOccurrences(of: "-photo", with: "")
+        let base = fixtureName
+            .replacingOccurrences(of: "-photo", with: "")
+            .replacingOccurrences(of: "-occluded", with: "")
+            .replacingOccurrences(of: "-photo-", with: "-")
         guard let card = cards.first(where: { ($0["id"] as? String) == base }) else { return [] }
         let present = card["present_text"] as? [String] ?? []
         return present.map { $0.replacingOccurrences(of: " ", with: "") }
