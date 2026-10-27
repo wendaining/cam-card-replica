@@ -87,15 +87,25 @@ final class ParserBenchmarkTests: XCTestCase {
 
         var correct: [String: Int] = [:]
         var total: [String: Int] = [:]
+        // Slice the same checks by language and by "does the card label its
+        // contact rows", which is where the parser actually loses accuracy.
+        var sliceCorrect: [String: Int] = [:]
+        var sliceTotal: [String: Int] = [:]
         var failures: [String] = []
 
-        func record(_ field: String, ok: Bool, detail: String) {
+        func record(_ field: String, ok: Bool, detail: String, slices: [String]) {
             total[field, default: 0] += 1
             if ok { correct[field, default: 0] += 1 } else { failures.append(detail) }
+            for slice in slices {
+                let key = "\(slice)|\(field)"
+                sliceTotal[key, default: 0] += 1
+                if ok { sliceCorrect[key, default: 0] += 1 }
+            }
         }
 
         for card in groundTruth.cards where card.kind == "flat" {
             let parsed = parser.parse(syntheticOCR(for: card))
+            let slices = ["lang=\(card.lang)", "labels=\(card.labels ?? true ? "yes" : "no")"]
 
             func matches(_ lhs: String?, _ rhs: String?) -> Bool {
                 let a = lhs?.trimmingCharacters(in: .whitespaces).lowercased() ?? ""
@@ -103,26 +113,26 @@ final class ParserBenchmarkTests: XCTestCase {
                 return a == b
             }
 
-            record("name", ok: matches(parsed.name?.value, card.fields.name), detail: "\(card.id) name")
-            record("company", ok: matches(parsed.company?.value, card.fields.company), detail: "\(card.id) company")
-            record("jobTitle", ok: matches(parsed.jobTitle?.value, card.fields.jobTitle), detail: "\(card.id) title")
-            record("email", ok: matches(parsed.emails.first?.value, card.fields.emails.first), detail: "\(card.id) email")
-            record("website", ok: matches(parsed.website?.value, card.fields.website), detail: "\(card.id) website")
-            record("address", ok: matches(parsed.address?.value, card.fields.address), detail: "\(card.id) address")
+            record("name", ok: matches(parsed.name?.value, card.fields.name), detail: "\(card.id) name", slices: slices)
+            record("company", ok: matches(parsed.company?.value, card.fields.company), detail: "\(card.id) company", slices: slices)
+            record("jobTitle", ok: matches(parsed.jobTitle?.value, card.fields.jobTitle), detail: "\(card.id) title", slices: slices)
+            record("email", ok: matches(parsed.emails.first?.value, card.fields.emails.first), detail: "\(card.id) email", slices: slices)
+            record("website", ok: matches(parsed.website?.value, card.fields.website), detail: "\(card.id) website", slices: slices)
+            record("address", ok: matches(parsed.address?.value, card.fields.address), detail: "\(card.id) address", slices: slices)
 
             for kind in ["mobile", "office", "fax"] {
                 let expected = card.fields.phones.first { $0.kind == kind }?.number
                 let actual = parsed.phones.first { $0.kind.rawValue == kind }?.value.value
-                record("phone_\(kind)", ok: matches(actual, expected), detail: "\(card.id) \(kind)")
+                record("phone_\(kind)", ok: matches(actual, expected), detail: "\(card.id) \(kind)", slices: slices)
             }
 
             // T09: a field listed as absent must stay nil.
             for absent in card.expected_absent {
                 switch absent {
                 case "website":
-                    record("no_hallucination", ok: parsed.website == nil, detail: "\(card.id) invented website")
+                    record("no_hallucination", ok: parsed.website == nil, detail: "\(card.id) invented website", slices: slices)
                 case "company":
-                    record("no_hallucination", ok: parsed.company == nil, detail: "\(card.id) invented company")
+                    record("no_hallucination", ok: parsed.company == nil, detail: "\(card.id) invented company", slices: slices)
                 default:
                     break
                 }
@@ -157,5 +167,18 @@ final class ParserBenchmarkTests: XCTestCase {
             )
         }
         print(report.joined(separator: "\n"))
+
+        // Slice report: one row per (dimension bucket, field).
+        var sliceRows = ["slice,field,correct,total,accuracy"]
+        for key in sliceTotal.keys.sorted() {
+            let parts = key.split(separator: "|", maxSplits: 1).map(String.init)
+            guard parts.count == 2 else { continue }
+            let hits = sliceCorrect[key, default: 0]
+            let count = sliceTotal[key, default: 0]
+            let accuracy = count == 0 ? 0 : Double(hits) / Double(count)
+            sliceRows.append(String(format: "%@,%@,%d,%d,%.3f", parts[0], parts[1], hits, count, accuracy))
+        }
+        print("--- slices ---")
+        print(sliceRows.joined(separator: "\n"))
     }
 }
