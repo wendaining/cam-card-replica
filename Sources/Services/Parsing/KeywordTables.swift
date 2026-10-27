@@ -84,13 +84,22 @@ enum KeywordTables {
         "博士", "教授", "先生", "女士", "老师",
     ]
 
-    static let emailRegex = try! NSRegularExpression(
+    /// The two patterns below are compile-time constants validated by
+    /// `KeywordTablesTests`; a `try!` here can only fail if the source itself
+    /// changes into something invalid, which the test turns into a build failure.
+    static let emailRegex = try! NSRegularExpression( // swiftlint:disable:this force_try
+
         pattern: #"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}"#,
         options: []
     )
 
-    static let websiteRegex = try! NSRegularExpression(
-        pattern: #"(?i)\b((?:https?://)?(?:www\.)?[a-z0-9\-]+(?:\.[a-z0-9\-]+)*\.(?:com|cn|net|org|io|co|ai|dev|edu|gov|de|jp|uk|sg|example|test|local)(?:/[^\s]*)?)"#,
+    static let websitePattern =
+        #"(?i)\b((?:https?://)?(?:www\.)?[a-z0-9\-]+(?:\.[a-z0-9\-]+)*\."#
+            + #"(?:com|cn|net|org|io|co|ai|dev|edu|gov|de|jp|uk|sg|example|test|local)"#
+            + #"(?:/[^\s]*)?)"#
+
+    static let websiteRegex = try! NSRegularExpression( // swiftlint:disable:this force_try
+        pattern: websitePattern,
         options: []
     )
 }

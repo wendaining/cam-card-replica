@@ -1,5 +1,5 @@
-import XCTest
 @testable import CamCardReplica
+import XCTest
 
 /// Runs the field parser over the shipped Ground Truth corpus.
 ///
@@ -19,6 +19,7 @@ final class ParserBenchmarkTests: XCTestCase {
             var website: String?
             var address: String?
         }
+
         struct Card: Decodable {
             var id: String
             var file: String
@@ -26,8 +27,14 @@ final class ParserBenchmarkTests: XCTestCase {
             var lang: String
             var labels: Bool?
             var fields: Fields
-            var expected_absent: [String]
+            var expectedAbsent: [String]
+
+            enum CodingKeys: String, CodingKey {
+                case id, file, kind, lang, labels, fields
+                case expectedAbsent = "expected_absent"
+            }
         }
+
         var cards: [Card]
     }
 
@@ -44,9 +51,15 @@ final class ParserBenchmarkTests: XCTestCase {
     /// render: one line per visual row, the name at the largest font size.
     private func syntheticOCR(for card: GroundTruth.Card) -> OCRResult {
         var items: [(String, CGFloat)] = [(card.fields.name, 0.062)]
-        if let company = card.fields.company { items.append((company, 0.042)) }
-        if let title = card.fields.jobTitle { items.append((title, 0.036)) }
-        if let department = card.fields.department, !department.isEmpty { items.append((department, 0.026)) }
+        if let company = card.fields.company {
+            items.append((company, 0.042))
+        }
+        if let title = card.fields.jobTitle {
+            items.append((title, 0.036))
+        }
+        if let department = card.fields.department, !department.isEmpty {
+            items.append((department, 0.026))
+        }
         let labelled = card.labels ?? true
         for phone in card.fields.phones {
             let label = ["mobile": "Mobile", "office": "Tel", "fax": "Fax"][phone.kind] ?? ""
@@ -95,11 +108,17 @@ final class ParserBenchmarkTests: XCTestCase {
 
         func record(_ field: String, ok: Bool, detail: String, slices: [String]) {
             total[field, default: 0] += 1
-            if ok { correct[field, default: 0] += 1 } else { failures.append(detail) }
+            if ok {
+                correct[field, default: 0] += 1
+            } else {
+                failures.append(detail)
+            }
             for slice in slices {
                 let key = "\(slice)|\(field)"
                 sliceTotal[key, default: 0] += 1
-                if ok { sliceCorrect[key, default: 0] += 1 }
+                if ok {
+                    sliceCorrect[key, default: 0] += 1
+                }
             }
         }
 
@@ -114,11 +133,36 @@ final class ParserBenchmarkTests: XCTestCase {
             }
 
             record("name", ok: matches(parsed.name?.value, card.fields.name), detail: "\(card.id) name", slices: slices)
-            record("company", ok: matches(parsed.company?.value, card.fields.company), detail: "\(card.id) company", slices: slices)
-            record("jobTitle", ok: matches(parsed.jobTitle?.value, card.fields.jobTitle), detail: "\(card.id) title", slices: slices)
-            record("email", ok: matches(parsed.emails.first?.value, card.fields.emails.first), detail: "\(card.id) email", slices: slices)
-            record("website", ok: matches(parsed.website?.value, card.fields.website), detail: "\(card.id) website", slices: slices)
-            record("address", ok: matches(parsed.address?.value, card.fields.address), detail: "\(card.id) address", slices: slices)
+            record(
+                "company",
+                ok: matches(parsed.company?.value, card.fields.company),
+                detail: "\(card.id) company",
+                slices: slices
+            )
+            record(
+                "jobTitle",
+                ok: matches(parsed.jobTitle?.value, card.fields.jobTitle),
+                detail: "\(card.id) title",
+                slices: slices
+            )
+            record(
+                "email",
+                ok: matches(parsed.emails.first?.value, card.fields.emails.first),
+                detail: "\(card.id) email",
+                slices: slices
+            )
+            record(
+                "website",
+                ok: matches(parsed.website?.value, card.fields.website),
+                detail: "\(card.id) website",
+                slices: slices
+            )
+            record(
+                "address",
+                ok: matches(parsed.address?.value, card.fields.address),
+                detail: "\(card.id) address",
+                slices: slices
+            )
 
             for kind in ["mobile", "office", "fax"] {
                 let expected = card.fields.phones.first { $0.kind == kind }?.number
@@ -127,12 +171,22 @@ final class ParserBenchmarkTests: XCTestCase {
             }
 
             // T09: a field listed as absent must stay nil.
-            for absent in card.expected_absent {
+            for absent in card.expectedAbsent {
                 switch absent {
                 case "website":
-                    record("no_hallucination", ok: parsed.website == nil, detail: "\(card.id) invented website", slices: slices)
+                    record(
+                        "no_hallucination",
+                        ok: parsed.website == nil,
+                        detail: "\(card.id) invented website",
+                        slices: slices
+                    )
                 case "company":
-                    record("no_hallucination", ok: parsed.company == nil, detail: "\(card.id) invented company", slices: slices)
+                    record(
+                        "no_hallucination",
+                        ok: parsed.company == nil,
+                        detail: "\(card.id) invented company",
+                        slices: slices
+                    )
                 default:
                     break
                 }

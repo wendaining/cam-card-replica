@@ -15,9 +15,15 @@ struct CameraPreview: UIViewRepresentable {
     func updateUIView(_ uiView: PreviewView, context: Context) {}
 
     final class PreviewView: UIView {
-        override static var layerClass: AnyClass { AVCaptureVideoPreviewLayer.self }
+        override static var layerClass: AnyClass {
+            AVCaptureVideoPreviewLayer.self
+        }
+
         var videoPreviewLayer: AVCaptureVideoPreviewLayer {
-            layer as! AVCaptureVideoPreviewLayer
+            guard let preview = layer as? AVCaptureVideoPreviewLayer else {
+                preconditionFailure("PreviewView must be backed by AVCaptureVideoPreviewLayer")
+            }
+            return preview
         }
     }
 }

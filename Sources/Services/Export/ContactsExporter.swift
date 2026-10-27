@@ -26,7 +26,7 @@ struct ContactsExporter: ContactExporting {
         guard granted else { throw ContactExportError.accessDenied }
 
         let saveRequest = CNSaveRequest()
-        saveRequest.add(makeContact(from: card) as! CNMutableContact, toContainerWithIdentifier: nil)
+        saveRequest.add(makeContact(from: card), toContainerWithIdentifier: nil)
         do {
             try store.execute(saveRequest)
         } catch {
@@ -52,7 +52,10 @@ struct ContactsExporter: ContactExporting {
         if let website = card.website {
             let normalized = website.hasPrefix("http") ? website : "https://\(website)"
             if let url = URL(string: normalized) {
-                contact.urlAddresses = [CNLabeledValue(label: CNLabelURLAddressHomePage, value: url.absoluteString as NSString)]
+                contact.urlAddresses = [CNLabeledValue(
+                    label: CNLabelURLAddressHomePage,
+                    value: url.absoluteString as NSString
+                )]
             }
         }
         if let address = card.address {
@@ -80,9 +83,9 @@ struct ContactsExporter: ContactExporting {
 
     private static func label(for kind: PhoneKind) -> String {
         switch kind {
-        case .mobile: return CNLabelPhoneNumberMobile
-        case .office: return CNLabelWork
-        case .fax: return CNLabelPhoneNumberWorkFax
+        case .mobile: CNLabelPhoneNumberMobile
+        case .office: CNLabelWork
+        case .fax: CNLabelPhoneNumberWorkFax
         }
     }
 }
