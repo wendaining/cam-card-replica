@@ -100,7 +100,7 @@ struct HeuristicFieldParser: FieldParsing {
         if let group = pickAddressLines(from: lines) {
             let joined = group.map { TextNormalizer.strippingKnownLabels($0.text) }
                 .joined(separator: " ")
-            let confidence = group.contains(where: { $0.hasPostalCode }) ? 0.9 : 0.84
+            let confidence = group.contains(where: \.hasPostalCode) ? 0.9 : 0.84
             parsed.address = ParsedValue(
                 value: joined,
                 confidence: confidence,
@@ -158,7 +158,7 @@ struct HeuristicFieldParser: FieldParsing {
         // Only a keyword match counts as an organization: the positional
         // fallback below would happily turn "2026 年 10 月" into a company.
         let hasOrganization = matchedOrganizationKeyword
-        if !hasContact && !hasOrganization {
+        if !hasContact, !hasOrganization {
             return ParsedCard(
                 name: nil, company: nil, jobTitle: nil, department: nil,
                 phones: [], emails: [], website: nil, address: nil,
@@ -208,7 +208,13 @@ struct HeuristicFieldParser: FieldParsing {
             // `index` must be the position inside `lines`, not the position in
             // the raw OCR output: empty observations are dropped below, so the
             // two diverge and later `lines[index]` lookups would be wrong.
-            var line = Line(index: lines.count, text: text, height: raw.height, top: raw.boundingBox.minY, minX: raw.boundingBox.minX)
+            var line = Line(
+                index: lines.count,
+                text: text,
+                height: raw.height,
+                top: raw.boundingBox.minY,
+                minX: raw.boundingBox.minX
+            )
             let (label, value) = TextNormalizer.splitLabel(text)
             line.label = label
             line.labelKind = label.flatMap { PhoneClassifier.kind(forLabel: $0) }
@@ -279,11 +285,19 @@ struct HeuristicFieldParser: FieldParsing {
             guard !isStructured(line) else { continue }
             let ratio = line.height / max(medianHeight, 0.001)
             var score = ratio * 2
-            if line.text.contains(where: { String($0).isCJK }) { score += 0.5 }
+            if line.text.contains(where: { String($0).isCJK }) {
+                score += 0.5
+            }
             let words = line.text.split(separator: " ").count
-            if words <= 4 { score += 0.3 }
-            if line.text.count > 28 { score -= 1.0 }
-            if line.text.allSatisfy({ $0.isNumber }) { score -= 2.0 }
+            if words <= 4 {
+                score += 0.3
+            }
+            if line.text.count > 28 {
+                score -= 1.0
+            }
+            if line.text.allSatisfy(\.isNumber) {
+                score -= 2.0
+            }
             scored.append(Scored(index: line.index, score: score))
         }
         return scored.max { lhs, rhs in
@@ -295,13 +309,21 @@ struct HeuristicFieldParser: FieldParsing {
         struct Scored { var index: Int; var score: Double }
         let scored: [Scored] = lines.compactMap { line in
             guard !used.contains(line.index), let title = line.matchedTitle else { return nil }
-            if line.addressScore >= 3 { return nil }
+            if line.addressScore >= 3 {
+                return nil
+            }
             var score = Double(title.count)
             // "Sierra Legal Partners" contains "Partners" but is an organization
             // name, not a job title.
-            if line.hasSuffixCompanyMarker { score -= 12 }
-            if line.matchedCompany != nil { score -= 3 }
-            if line.text.split(separator: " ").count > 4 { score -= 2 }
+            if line.hasSuffixCompanyMarker {
+                score -= 12
+            }
+            if line.matchedCompany != nil {
+                score -= 3
+            }
+            if line.text.split(separator: " ").count > 4 {
+                score -= 2
+            }
             return Scored(index: line.index, score: score)
         }
         return scored.max { lhs, rhs in
@@ -313,7 +335,9 @@ struct HeuristicFieldParser: FieldParsing {
         let candidates = lines.filter { line in
             guard !used.contains(line.index), line.matchedCompany != nil else { return false }
             // An address can contain organization-ish words ("科技园南路").
-            if line.addressScore >= 3 || line.hasPostalCode { return false }
+            if line.addressScore >= 3 || line.hasPostalCode {
+                return false
+            }
             // "Ocean Freight" matches the marker "Freight" but its department
             // match is longer, so it is a department, not the company.
             if let dept = line.matchedDepartment, let company = line.matchedCompany,
@@ -336,7 +360,9 @@ struct HeuristicFieldParser: FieldParsing {
             guard $0.index > nameIndex, $0.index <= nameIndex + 3,
                   !used.contains($0.index), !isStructured($0) else { return false }
             // Never mistake a labelled contact row for an organization.
-            if $0.label != nil { return false }
+            if $0.label != nil {
+                return false
+            }
             return $0.text.count >= 2 && $0.text.count <= 40
         }?.index
     }
@@ -344,7 +370,9 @@ struct HeuristicFieldParser: FieldParsing {
     private func pickDepartmentCandidate(from lines: [Line], excluding used: Set<Int>) -> Int? {
         let candidates = lines.filter { line in
             guard !used.contains(line.index), let dept = line.matchedDepartment else { return false }
-            if line.addressScore >= 3 || line.hasPostalCode { return false }
+            if line.addressScore >= 3 || line.hasPostalCode {
+                return false
+            }
             guard let company = line.matchedCompany else { return true }
             // "学院" lives in both vocabularies; the department match wins when
             // it is at least as specific as the company match.
@@ -359,7 +387,7 @@ struct HeuristicFieldParser: FieldParsing {
         var group = [best]
         // Addresses often wrap onto the next line.
         for line in lines where line.index > best.index && line.index <= best.index + 1 {
-            if line.addressScore >= 2 && !group.contains(where: { $0.index == line.index }) {
+            if line.addressScore >= 2, !group.contains(where: { $0.index == line.index }) {
                 group.append(line)
             }
         }
@@ -375,33 +403,48 @@ struct HeuristicFieldParser: FieldParsing {
                 let lowered = line.text.lowercased()
                 if lowered.hasPrefix("www.") || lowered.hasPrefix("http") {
                     let value = TextNormalizer.strippingKnownLabels(line.text)
-                    if !value.isEmpty { flattened.append((line.index, value)) }
+                    if !value.isEmpty {
+                        flattened.append((line.index, value))
+                    }
                 }
             }
         }
         guard !flattened.isEmpty else { return nil }
         // Prefer an explicit www./http(s) form over a bare domain guess.
-        let preferred = flattened.first { value in
+        return flattened.first { value in
             let lowered = value.1.lowercased()
             return lowered.hasPrefix("www.") || lowered.hasPrefix("http")
         } ?? flattened.first
-        return preferred
     }
 
     // MARK: - Helpers
 
     private func isStructured(_ line: Line) -> Bool {
-        if !line.emails.isEmpty || !line.websites.isEmpty { return true }
-        if !line.phones.isEmpty { return true }
-        if line.matchedTitle != nil || line.matchedCompany != nil || line.matchedDepartment != nil { return true }
-        if line.addressScore >= 2 { return true }
+        if !line.emails.isEmpty || !line.websites.isEmpty {
+            return true
+        }
+        if !line.phones.isEmpty {
+            return true
+        }
+        if line.matchedTitle != nil || line.matchedCompany != nil || line.matchedDepartment != nil {
+            return true
+        }
+        if line.addressScore >= 2 {
+            return true
+        }
         return false
     }
 
     private func nameConfidence(ratio: Double, lineCount: Int) -> Double {
-        if ratio >= 1.25 { return 0.93 }
-        if ratio >= 1.10 { return 0.86 }
-        if ratio >= 0.95 { return 0.72 }
+        if ratio >= 1.25 {
+            return 0.93
+        }
+        if ratio >= 1.10 {
+            return 0.86
+        }
+        if ratio >= 0.95 {
+            return 0.72
+        }
         return lineCount > 2 ? 0.58 : 0.5
     }
 
@@ -473,7 +516,9 @@ struct HeuristicFieldParser: FieldParsing {
         var best: String?
         for keyword in table {
             guard containsKeyword(text, keyword) else { continue }
-            if let current = best, current.count >= keyword.count { continue }
+            if let current = best, current.count >= keyword.count {
+                continue
+            }
             best = keyword
         }
         return best
@@ -490,9 +535,13 @@ struct HeuristicFieldParser: FieldParsing {
         guard !phrase.isEmpty else { return false }
         let words = wordTokens(text)
         guard words.count >= phrase.count else { return false }
-        if phrase.count == 1 { return words.contains(phrase[0]) }
-        for start in 0...(words.count - phrase.count) {
-            if Array(words[start..<start + phrase.count]) == phrase { return true }
+        if phrase.count == 1 {
+            return words.contains(phrase[0])
+        }
+        for start in 0 ... (words.count - phrase.count) {
+            if Array(words[start ..< start + phrase.count]) == phrase {
+                return true
+            }
         }
         return false
     }
@@ -515,12 +564,24 @@ struct HeuristicFieldParser: FieldParsing {
 
     private func dropLowConfidence(_ card: ParsedCard) -> ParsedCard {
         var result = card
-        if let name = result.name, name.confidence < config.minimumConfidence { result.name = nil }
-        if let company = result.company, company.confidence < config.minimumConfidence { result.company = nil }
-        if let title = result.jobTitle, title.confidence < config.minimumConfidence { result.jobTitle = nil }
-        if let dept = result.department, dept.confidence < config.minimumConfidence { result.department = nil }
-        if let website = result.website, website.confidence < config.minimumConfidence { result.website = nil }
-        if let address = result.address, address.confidence < config.minimumConfidence { result.address = nil }
+        if let name = result.name, name.confidence < config.minimumConfidence {
+            result.name = nil
+        }
+        if let company = result.company, company.confidence < config.minimumConfidence {
+            result.company = nil
+        }
+        if let title = result.jobTitle, title.confidence < config.minimumConfidence {
+            result.jobTitle = nil
+        }
+        if let dept = result.department, dept.confidence < config.minimumConfidence {
+            result.department = nil
+        }
+        if let website = result.website, website.confidence < config.minimumConfidence {
+            result.website = nil
+        }
+        if let address = result.address, address.confidence < config.minimumConfidence {
+            result.address = nil
+        }
         result.phones = result.phones.filter { $0.value.confidence >= config.minimumConfidence }
         result.emails = result.emails.filter { $0.confidence >= config.minimumConfidence }
         return result

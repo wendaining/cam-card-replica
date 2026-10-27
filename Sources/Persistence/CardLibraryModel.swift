@@ -23,7 +23,9 @@ final class CardLibraryModel {
 
     // MARK: - Queries
 
-    var isEmpty: Bool { cards.isEmpty }
+    var isEmpty: Bool {
+        cards.isEmpty
+    }
 
     func card(id: UUID) -> BusinessCard? {
         cards.first { $0.id == id }
@@ -68,7 +70,9 @@ final class CardLibraryModel {
         var card = card
         card.updatedAt = now()
         cards.append(card)
-        for tag in card.tags { ensureTag(named: tag) }
+        for tag in card.tags {
+            ensureTag(named: tag)
+        }
         persist()
         return card
     }
@@ -78,14 +82,20 @@ final class CardLibraryModel {
         var updated = card
         updated.updatedAt = now()
         cards[index] = updated
-        for tag in updated.tags { ensureTag(named: tag) }
+        for tag in updated.tags {
+            ensureTag(named: tag)
+        }
         persist()
     }
 
     func delete(_ card: BusinessCard) {
         cards.removeAll { $0.id == card.id }
-        if let id = card.originalImageID { store.deleteImage(id: id) }
-        if let id = card.processedImageID, id != card.originalImageID { store.deleteImage(id: id) }
+        if let id = card.originalImageID {
+            store.deleteImage(id: id)
+        }
+        if let id = card.processedImageID, id != card.originalImageID {
+            store.deleteImage(id: id)
+        }
         persist()
     }
 

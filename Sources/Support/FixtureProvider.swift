@@ -17,8 +17,8 @@ struct FixtureProvider: Sendable {
     static func bundled() -> FixtureProvider? {
         guard let directory = directory(),
               let contents = try? FileManager.default.contentsOfDirectory(
-                at: directory,
-                includingPropertiesForKeys: nil
+                  at: directory,
+                  includingPropertiesForKeys: nil
               ) else { return nil }
         let names = contents
             .filter { ["png", "jpg", "jpeg"].contains($0.pathExtension.lowercased()) }

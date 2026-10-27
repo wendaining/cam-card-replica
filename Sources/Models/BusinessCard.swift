@@ -63,9 +63,17 @@ struct BusinessCard: Codable, Identifiable, Hashable, Sendable {
 
     // MARK: - Derived
 
-    var mobilePhones: [PhoneNumber] { phones.filter { $0.kind == .mobile } }
-    var officePhones: [PhoneNumber] { phones.filter { $0.kind == .office } }
-    var faxNumbers: [PhoneNumber] { phones.filter { $0.kind == .fax } }
+    var mobilePhones: [PhoneNumber] {
+        phones.filter { $0.kind == .mobile }
+    }
+
+    var officePhones: [PhoneNumber] {
+        phones.filter { $0.kind == .office }
+    }
+
+    var faxNumbers: [PhoneNumber] {
+        phones.filter { $0.kind == .fax }
+    }
 
     var sortedPhones: [PhoneNumber] {
         phones.sorted { $0.kind.sortOrder < $1.kind.sortOrder }
@@ -107,7 +115,9 @@ struct BusinessCard: Codable, Identifiable, Hashable, Sendable {
         // Digits-only queries match phones regardless of separators.
         if q.allSatisfy({ $0.isNumber || $0 == "+" }) {
             let needle = q.filter(\.isNumber)
-            if phones.contains(where: { $0.number.filter(\.isNumber).contains(needle) }) { return true }
+            if phones.contains(where: { $0.number.filter(\.isNumber).contains(needle) }) {
+                return true
+            }
         }
         return searchableText.contains(q)
     }
@@ -121,7 +131,7 @@ extension String {
 
     var isCJK: Bool {
         unicodeScalars.contains { scalar in
-            (0x4E00...0x9FFF).contains(scalar.value) || (0x3400...0x4DBF).contains(scalar.value)
+            (0x4E00 ... 0x9FFF).contains(scalar.value) || (0x3400 ... 0x4DBF).contains(scalar.value)
         }
     }
 }

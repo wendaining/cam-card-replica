@@ -114,10 +114,10 @@ enum Corner: CaseIterable {
 
     func point(in quad: Quad) -> CGPoint {
         switch self {
-        case .topLeft: return quad.topLeft
-        case .topRight: return quad.topRight
-        case .bottomRight: return quad.bottomRight
-        case .bottomLeft: return quad.bottomLeft
+        case .topLeft: quad.topLeft
+        case .topRight: quad.topRight
+        case .bottomRight: quad.bottomRight
+        case .bottomLeft: quad.bottomLeft
         }
     }
 }
@@ -136,7 +136,9 @@ extension Quad {
 }
 
 extension CGFloat {
-    var clamped01: CGFloat { Swift.min(Swift.max(self, 0), 1) }
+    var clamped01: CGFloat {
+        Swift.min(Swift.max(self, 0), 1)
+    }
 }
 
 /// Dims everything outside the quad and strokes its outline.
@@ -166,7 +168,9 @@ private struct QuadOverlay: View {
         }
         guard let first = points.first else { return }
         path.move(to: first)
-        for point in points.dropFirst() { path.addLine(to: point) }
+        for point in points.dropFirst() {
+            path.addLine(to: point)
+        }
         path.closeSubpath()
     }
 }

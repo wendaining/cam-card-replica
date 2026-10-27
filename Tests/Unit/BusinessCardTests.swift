@@ -1,5 +1,5 @@
-import XCTest
 @testable import CamCardReplica
+import XCTest
 
 final class BusinessCardTests: XCTestCase {
     private func makeCard() -> BusinessCard {

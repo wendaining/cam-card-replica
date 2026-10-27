@@ -6,8 +6,8 @@ enum ContactExportError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .accessDenied: return "没有通讯录写入权限，请在「设置」中开启。"
-        case .encodingFailed: return "生成 vCard 失败。"
+        case .accessDenied: "没有通讯录写入权限，请在「设置」中开启。"
+        case .encodingFailed: "生成 vCard 失败。"
         }
     }
 }

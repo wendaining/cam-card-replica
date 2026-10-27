@@ -56,6 +56,8 @@ struct TagPickerView: View {
         let name = newTag.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !name.isEmpty else { return }
         services.library.ensureTag(named: name)
-        if !selected.contains(name) { selected.append(name) }
+        if !selected.contains(name) {
+            selected.append(name)
+        }
     }
 }

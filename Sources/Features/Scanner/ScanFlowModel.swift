@@ -149,13 +149,27 @@ final class ScanFlowModel {
 
     nonisolated static func lowConfidenceFields(in parsed: ParsedCard, threshold: Double = 0.78) -> Set<CardField> {
         var fields = Set<CardField>()
-        if let name = parsed.name, name.confidence < threshold { fields.insert(.name) }
-        if let company = parsed.company, company.confidence < threshold { fields.insert(.company) }
-        if let title = parsed.jobTitle, title.confidence < threshold { fields.insert(.jobTitle) }
-        if let dept = parsed.department, dept.confidence < threshold { fields.insert(.department) }
-        if let website = parsed.website, website.confidence < threshold { fields.insert(.website) }
-        if let address = parsed.address, address.confidence < threshold { fields.insert(.address) }
-        if let email = parsed.emails.first, email.confidence < threshold { fields.insert(.email) }
+        if let name = parsed.name, name.confidence < threshold {
+            fields.insert(.name)
+        }
+        if let company = parsed.company, company.confidence < threshold {
+            fields.insert(.company)
+        }
+        if let title = parsed.jobTitle, title.confidence < threshold {
+            fields.insert(.jobTitle)
+        }
+        if let dept = parsed.department, dept.confidence < threshold {
+            fields.insert(.department)
+        }
+        if let website = parsed.website, website.confidence < threshold {
+            fields.insert(.website)
+        }
+        if let address = parsed.address, address.confidence < threshold {
+            fields.insert(.address)
+        }
+        if let email = parsed.emails.first, email.confidence < threshold {
+            fields.insert(.email)
+        }
         for phone in parsed.phones where phone.value.confidence < threshold {
             switch phone.kind {
             case .mobile: fields.insert(.mobile)

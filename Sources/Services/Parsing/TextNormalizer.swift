@@ -25,7 +25,7 @@ enum TextNormalizer {
     /// Splits `"Mobile: +86 138..."` into `("Mobile", "+86 138...")`.
     static func splitLabel(_ line: String) -> (label: String?, value: String) {
         guard let colon = line.firstIndex(of: ":") else { return (nil, line) }
-        let head = String(line[line.startIndex..<colon]).trimmingCharacters(in: .whitespaces)
+        let head = String(line[line.startIndex ..< colon]).trimmingCharacters(in: .whitespaces)
         let tail = String(line[line.index(after: colon)...]).trimmingCharacters(in: .whitespaces)
         guard !head.isEmpty, head.count <= 12 else { return (nil, line) }
         return (head, tail)
@@ -37,7 +37,7 @@ enum TextNormalizer {
         guard let label, !value.isEmpty else { return line }
         let known = PhoneClassifier.mobileLabels + PhoneClassifier.officeLabels
             + PhoneClassifier.faxLabels + ["Email", "E-mail", "邮箱", "邮件", "Web", "Website", "网址",
-                                            "Add", "Address", "地址", "部门", "Dept", "Dept."]
+                                           "Add", "Address", "地址", "部门", "Dept", "Dept."]
         let normalizedLabel = label.lowercased().trimmingCharacters(in: .whitespaces)
         if known.contains(where: { $0.lowercased() == normalizedLabel }) {
             return value
@@ -71,24 +71,28 @@ enum TextNormalizer {
     }
 
     static func isLatinLetter(_ scalar: Unicode.Scalar) -> Bool {
-        (0x41...0x5A).contains(scalar.value) || (0x61...0x7A).contains(scalar.value)
+        (0x41 ... 0x5A).contains(scalar.value) || (0x61 ... 0x7A).contains(scalar.value)
     }
 
     static func isCJK(_ scalar: Unicode.Scalar) -> Bool {
-        (0x4E00...0x9FFF).contains(scalar.value) || (0x3400...0x4DBF).contains(scalar.value)
+        (0x4E00 ... 0x9FFF).contains(scalar.value) || (0x3400 ... 0x4DBF).contains(scalar.value)
     }
 
     /// Character-level similarity ratio used by the benchmark and by tests.
     static func normalizedLevenshtein(_ lhs: String, _ rhs: String) -> Double {
         let a = Array(lhs.lowercased())
         let b = Array(rhs.lowercased())
-        if a.isEmpty && b.isEmpty { return 1 }
-        if a.isEmpty || b.isEmpty { return 0 }
-        var previous = Array(0...b.count)
+        if a.isEmpty && b.isEmpty {
+            return 1
+        }
+        if a.isEmpty || b.isEmpty {
+            return 0
+        }
+        var previous = Array(0 ... b.count)
         var current = [Int](repeating: 0, count: b.count + 1)
-        for i in 1...a.count {
+        for i in 1 ... a.count {
             current[0] = i
-            for j in 1...b.count {
+            for j in 1 ... b.count {
                 let cost = a[i - 1] == b[j - 1] ? 0 : 1
                 current[j] = min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + cost)
             }

@@ -7,9 +7,9 @@ enum CardStoreError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .corruptedLibrary: return "名片数据损坏，无法读取。"
-        case .writeFailed: return "保存失败，请检查存储空间后重试。"
-        case .imageNotFound: return "名片图片不存在。"
+        case .corruptedLibrary: "名片数据损坏，无法读取。"
+        case .writeFailed: "保存失败，请检查存储空间后重试。"
+        case .imageNotFound: "名片图片不存在。"
         }
     }
 }

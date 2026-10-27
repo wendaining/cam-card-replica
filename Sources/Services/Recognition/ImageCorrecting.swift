@@ -12,8 +12,8 @@ enum ImageCorrectionError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .renderFailed: return "图片校正失败，请重新拍摄。"
-        case .invalidQuad: return "未识别到有效的名片区域。"
+        case .renderFailed: "图片校正失败，请重新拍摄。"
+        case .invalidQuad: "未识别到有效的名片区域。"
         }
     }
 }

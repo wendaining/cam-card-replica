@@ -34,7 +34,15 @@ enum A11y {
     static let detailExport = "detail-export"
     static let detailEditSave = "detail-edit-save"
 
-    static func field(_ field: CardField) -> String { "field-\(field.rawValue)" }
-    static func cardRow(_ id: UUID) -> String { "card-row-\(id.uuidString)" }
-    static func tagChip(_ name: String) -> String { "tag-chip-\(name)" }
+    static func field(_ field: CardField) -> String {
+        "field-\(field.rawValue)"
+    }
+
+    static func cardRow(_ id: UUID) -> String {
+        "card-row-\(id.uuidString)"
+    }
+
+    static func tagChip(_ name: String) -> String {
+        "tag-chip-\(name)"
+    }
 }

@@ -17,8 +17,8 @@ final class CameraController {
 
         var errorDescription: String? {
             switch self {
-            case .unavailable: return "相机不可用，请改用相册导入。"
-            case .captureFailed(let reason): return "拍摄失败：\(reason)"
+            case .unavailable: "相机不可用，请改用相册导入。"
+            case .captureFailed(let reason): "拍摄失败：\(reason)"
             }
         }
     }
@@ -63,8 +63,12 @@ final class CameraController {
         }
         session.beginConfiguration()
         session.sessionPreset = .photo
-        if session.canAddInput(input) { session.addInput(input) }
-        if session.canAddOutput(photoOutput) { session.addOutput(photoOutput) }
+        if session.canAddInput(input) {
+            session.addInput(input)
+        }
+        if session.canAddOutput(photoOutput) {
+            session.addOutput(photoOutput)
+        }
         session.commitConfiguration()
         isConfigured = true
     }

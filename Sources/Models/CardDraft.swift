@@ -55,7 +55,9 @@ struct CardDraft: Equatable {
 
     private var rawText: String?
 
-    var storedRawText: String? { rawText }
+    var storedRawText: String? {
+        rawText
+    }
 
     /// Builds the record to persist. `nil` fields stay `nil` — no invention.
     func makeCard(
@@ -115,24 +117,28 @@ enum CardField: String, CaseIterable, Identifiable, Sendable {
     case address
     case notes
 
-    var id: String { rawValue }
+    var id: String {
+        rawValue
+    }
 
     var title: String {
         switch self {
-        case .name: return "姓名"
-        case .company: return "公司"
-        case .jobTitle: return "职位"
-        case .department: return "部门"
-        case .mobile: return "手机"
-        case .office: return "座机"
-        case .fax: return "传真"
-        case .email: return "邮箱"
-        case .website: return "网站"
-        case .address: return "地址"
-        case .notes: return "备注"
+        case .name: "姓名"
+        case .company: "公司"
+        case .jobTitle: "职位"
+        case .department: "部门"
+        case .mobile: "手机"
+        case .office: "座机"
+        case .fax: "传真"
+        case .email: "邮箱"
+        case .website: "网站"
+        case .address: "地址"
+        case .notes: "备注"
         }
     }
 
     /// Fields the assignment lists as required (7.5).
-    static var required: [CardField] { [.name, .company, .jobTitle, .mobile, .office, .email, .website, .address] }
+    static var required: [CardField] {
+        [.name, .company, .jobTitle, .mobile, .office, .email, .website, .address]
+    }
 }

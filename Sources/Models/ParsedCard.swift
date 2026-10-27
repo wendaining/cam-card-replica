@@ -7,12 +7,6 @@ struct ParsedValue: Equatable, Sendable {
     var value: String
     var confidence: Double
     var evidence: String
-
-    init(value: String, confidence: Double, evidence: String) {
-        self.value = value
-        self.confidence = confidence
-        self.evidence = evidence
-    }
 }
 
 struct ParsedPhone: Equatable, Sendable {

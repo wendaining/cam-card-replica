@@ -15,7 +15,9 @@ struct CardDetailView: View {
     @State private var alertMessage: String?
     @State private var showAlert = false
 
-    private var card: BusinessCard? { services.library.card(id: cardID) }
+    private var card: BusinessCard? {
+        services.library.card(id: cardID)
+    }
 
     var body: some View {
         Group {
@@ -53,7 +55,6 @@ struct CardDetailView: View {
 
     // MARK: - Content
 
-    @ViewBuilder
     private func content(for card: BusinessCard) -> some View {
         Form {
             Section {
@@ -162,14 +163,14 @@ struct CardDetailView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(maxHeight: 180)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
-        } else {
-            EmptyView()
         }
     }
 
     private func contactRow(title: String, subtitle: String, systemImage: String, url: URL?) -> some View {
         Button {
-            if let url { UIApplication.shared.open(url) }
+            if let url {
+                UIApplication.shared.open(url)
+            }
         } label: {
             HStack(spacing: 10) {
                 Image(systemName: systemImage).foregroundStyle(.secondary).frame(width: 22)

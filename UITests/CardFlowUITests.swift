@@ -31,8 +31,12 @@ final class CardFlowUITests: XCTestCase {
         app.launchArguments = ["-ui-testing", "YES"]
         app.launchArguments += ["-seed-data", seed ? "YES" : "NO"]
         app.launchArguments += ["-fixture-camera", fixtures ? "YES" : "NO"]
-        if let permission { app.launchArguments += ["-camera-permission", permission] }
-        if let fixtureName { app.launchArguments += ["-fixture-name", fixtureName] }
+        if let permission {
+            app.launchArguments += ["-camera-permission", permission]
+        }
+        if let fixtureName {
+            app.launchArguments += ["-fixture-name", fixtureName]
+        }
         app.launch()
         return app
     }
@@ -46,7 +50,7 @@ final class CardFlowUITests: XCTestCase {
     private func field(_ identifier: String) -> XCUIElement {
         let field = app.textFields[identifier]
         var attempts = 0
-        while !field.exists && attempts < 8 {
+        while !field.exists, attempts < 8 {
             let form = app.descendants(matching: .any)["review-view"]
             if form.exists {
                 form.swipeUp(velocity: .slow)
@@ -165,7 +169,8 @@ final class CardFlowUITests: XCTestCase {
             app.buttons["review-save"].tap()
         }
         XCTAssertTrue(element("card-list").waitForExistence(timeout: 10))
-        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS 'X'")).firstMatch.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts.containing(NSPredicate(format: "label CONTAINS 'X'")).firstMatch
+            .waitForExistence(timeout: 5))
     }
 
     // MARK: - T13 / T14 detail + edit

@@ -40,7 +40,9 @@ struct ScannerFlowView: View {
             }
         }
         .task {
-            if model == nil { model = ScanFlowModel(services: services) }
+            if model == nil {
+                model = ScanFlowModel(services: services)
+            }
         }
     }
 }

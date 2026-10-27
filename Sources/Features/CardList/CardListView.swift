@@ -7,7 +7,10 @@ struct CardListView: View {
     @State private var query = ""
     @State private var selectedTag: String?
 
-    private var allCards: [BusinessCard] { services.library.cards }
+    private var allCards: [BusinessCard] {
+        services.library.cards
+    }
+
     private var visibleCards: [BusinessCard] {
         services.library.cards(matching: query, tag: selectedTag)
     }
@@ -80,7 +83,6 @@ struct CardListView: View {
         }
         .accessibilityIdentifier(A11y.tagFilter)
     }
-
 
     @ViewBuilder
     private var content: some View {

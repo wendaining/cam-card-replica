@@ -32,8 +32,7 @@ final class CoreImageCardCorrector: ImageCorrecting {
         filter.bottomRight = points[2]
         filter.bottomLeft = points[3]
 
-        guard let output = filter.outputImage else { throw ImageCorrectionError.renderFailed }
-        guard let result = context.createCGImage(output, from: output.extent) else {
+        guard let output = filter.outputImage, let result = context.createCGImage(output, from: output.extent) else {
             throw ImageCorrectionError.renderFailed
         }
         return result

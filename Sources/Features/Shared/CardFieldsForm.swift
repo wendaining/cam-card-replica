@@ -10,50 +10,47 @@ struct CardFieldsForm: View {
     var highlighted: Set<CardField> = []
 
     var body: some View {
-        Group {
-            Section {
-                field(.name, text: $draft.name, prompt: "姓名", required: true)
-                field(.company, text: $draft.company, prompt: "公司")
-                field(.jobTitle, text: $draft.jobTitle, prompt: "职位")
-                field(.department, text: $draft.department, prompt: "部门")
-            } header: {
-                Text("基本信息")
-            }
+        Section {
+            field(.name, text: $draft.name, prompt: "姓名", required: true)
+            field(.company, text: $draft.company, prompt: "公司")
+            field(.jobTitle, text: $draft.jobTitle, prompt: "职位")
+            field(.department, text: $draft.department, prompt: "部门")
+        } header: {
+            Text("基本信息")
+        }
 
-            Section {
-                ForEach(PhoneKind.allCases) { kind in
-                    phoneRows(for: kind)
-                }
-                emailRows
-                field(.website, text: $draft.website, prompt: "网站", keyboard: .URL)
-                field(.address, text: $draft.address, prompt: "地址")
-            } header: {
-                Text("联系方式")
-            } footer: {
-                if !highlighted.isEmpty {
-                    Text("带「请确认」的字段识别置信度较低，建议核对后保存。")
-                }
+        Section {
+            ForEach(PhoneKind.allCases) { kind in
+                phoneRows(for: kind)
             }
-
-            if showsTags {
-                Section("标签") {
-                    TagPickerView(selected: $draft.tags)
-                }
+            emailRows
+            field(.website, text: $draft.website, prompt: "网站", keyboard: .URL)
+            field(.address, text: $draft.address, prompt: "地址")
+        } header: {
+            Text("联系方式")
+        } footer: {
+            if !highlighted.isEmpty {
+                Text("带「请确认」的字段识别置信度较低，建议核对后保存。")
             }
+        }
 
-            if showsNotes {
-                Section("备注") {
-                    TextField("添加备注", text: $draft.notes, axis: .vertical)
-                        .lineLimit(2...6)
-                        .accessibilityIdentifier(A11y.field(.notes))
-                }
+        if showsTags {
+            Section("标签") {
+                TagPickerView(selected: $draft.tags)
+            }
+        }
+
+        if showsNotes {
+            Section("备注") {
+                TextField("添加备注", text: $draft.notes, axis: .vertical)
+                    .lineLimit(2 ... 6)
+                    .accessibilityIdentifier(A11y.field(.notes))
             }
         }
     }
 
     // MARK: - Rows
 
-    @ViewBuilder
     private func field(
         _ cardField: CardField,
         text: Binding<String>,
@@ -146,9 +143,9 @@ struct CardFieldsForm: View {
 
     private func cardField(for kind: PhoneKind) -> CardField {
         switch kind {
-        case .mobile: return .mobile
-        case .office: return .office
-        case .fax: return .fax
+        case .mobile: .mobile
+        case .office: .office
+        case .fax: .fax
         }
     }
 }

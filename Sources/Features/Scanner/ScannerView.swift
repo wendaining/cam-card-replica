@@ -11,7 +11,9 @@ struct ScannerView: View {
     @State private var permission: CameraPermissionStatus = .notDetermined
     @State private var isCapturing = false
 
-    private var usesFixtures: Bool { services.fixtures != nil }
+    private var usesFixtures: Bool {
+        services.fixtures != nil
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -30,7 +32,6 @@ struct ScannerView: View {
 
     // MARK: - Preview
 
-    @ViewBuilder
     private var preview: some View {
         ZStack {
             if usesFixtures || !permission.canUseCamera {
@@ -40,8 +41,8 @@ struct ScannerView: View {
                         .font(.system(size: 46, weight: .light))
                         .foregroundStyle(.white.opacity(0.7))
                     Text(permission.canUseCamera
-                         ? "模拟器没有摄像头\n可导入相册或使用测试名片"
-                         : "需要相机权限才能拍摄名片")
+                        ? "模拟器没有摄像头\n可导入相册或使用测试名片"
+                        : "需要相机权限才能拍摄名片")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white.opacity(0.8))
@@ -97,7 +98,9 @@ struct ScannerView: View {
             ZStack {
                 Circle().strokeBorder(Color.white, lineWidth: 4).frame(width: 74, height: 74)
                 Circle().fill(Color.white).frame(width: 60, height: 60)
-                if isCapturing { ProgressView().tint(.black) }
+                if isCapturing {
+                    ProgressView().tint(.black)
+                }
             }
         }
         .disabled(isCapturing || (!permission.canUseCamera && !usesFixtures))
@@ -117,22 +120,21 @@ struct ScannerView: View {
         .accessibilityLabel("从相册导入")
     }
 
+    @ViewBuilder
     private var fixtureButton: some View {
-        Group {
-            if usesFixtures {
-                Button {
-                    model.captureFixture()
-                } label: {
-                    Image(systemName: "testtube.2")
-                        .font(.title2)
-                        .foregroundStyle(.white)
-                        .frame(width: 48, height: 48)
-                }
-                .accessibilityIdentifier("fixture-capture")
-                .accessibilityLabel("使用测试名片")
-            } else {
-                Color.clear.frame(width: 48, height: 48)
+        if usesFixtures {
+            Button {
+                model.captureFixture()
+            } label: {
+                Image(systemName: "testtube.2")
+                    .font(.title2)
+                    .foregroundStyle(.white)
+                    .frame(width: 48, height: 48)
             }
+            .accessibilityIdentifier("fixture-capture")
+            .accessibilityLabel("使用测试名片")
+        } else {
+            Color.clear.frame(width: 48, height: 48)
         }
     }
 
@@ -176,11 +178,15 @@ struct ScannerView: View {
         if permission == .notDetermined {
             permission = await services.permission.requestAccess()
         }
-        if permission.canUseCamera { controller.start() }
+        if permission.canUseCamera {
+            controller.start()
+        }
     }
 
     private func requestPermission() async {
         permission = await services.permission.requestAccess()
-        if permission.canUseCamera { controller.start() }
+        if permission.canUseCamera {
+            controller.start()
+        }
     }
 }

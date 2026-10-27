@@ -11,13 +11,23 @@ final class InMemoryCardStore: CardStore {
         self.images = images
     }
 
-    func load() throws -> CardLibrary { library }
+    func load() throws -> CardLibrary {
+        library
+    }
 
-    func save(_ library: CardLibrary) throws { self.library = library }
+    func save(_ library: CardLibrary) throws {
+        self.library = library
+    }
 
-    func writeImage(_ data: Data, id: String) throws { images[id] = data }
+    func writeImage(_ data: Data, id: String) throws {
+        images[id] = data
+    }
 
-    func readImage(id: String) -> Data? { images[id] }
+    func readImage(id: String) -> Data? {
+        images[id]
+    }
 
-    func deleteImage(id: String) { images.removeValue(forKey: id) }
+    func deleteImage(id: String) {
+        images.removeValue(forKey: id)
+    }
 }

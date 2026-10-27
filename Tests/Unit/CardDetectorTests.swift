@@ -1,5 +1,5 @@
-import XCTest
 @testable import CamCardReplica
+import XCTest
 
 final class CardDetectorTests: XCTestCase {
     func testFullFrameIsPlausible() {
@@ -25,8 +25,8 @@ final class CardDetectorTests: XCTestCase {
             bottomLeft: CGPoint(x: 0.0, y: 1.9)
         ).clamped()
         for point in quad.points {
-            XCTAssertTrue((0...1).contains(point.x))
-            XCTAssertTrue((0...1).contains(point.y))
+            XCTAssertTrue((0 ... 1).contains(point.x))
+            XCTAssertTrue((0 ... 1).contains(point.y))
         }
     }
 

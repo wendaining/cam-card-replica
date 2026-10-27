@@ -1,5 +1,5 @@
-import XCTest
 @testable import CamCardReplica
+import XCTest
 
 @MainActor
 final class CardLibraryModelTests: XCTestCase {
@@ -77,7 +77,7 @@ final class CardLibraryModelTests: XCTestCase {
         XCTAssertEqual(model.card(id: saved.id)?.tags, ["A", "B"])
     }
 
-    func testPersistenceRoundTripThroughFileStore() throws {
+    func testPersistenceRoundTripThroughFileStore() {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: root) }
 

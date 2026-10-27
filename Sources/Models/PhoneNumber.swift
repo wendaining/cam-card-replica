@@ -10,30 +10,32 @@ enum PhoneKind: String, Codable, CaseIterable, Identifiable, Sendable {
     case office
     case fax
 
-    var id: String { rawValue }
+    var id: String {
+        rawValue
+    }
 
     var displayName: String {
         switch self {
-        case .mobile: return "手机"
-        case .office: return "座机"
-        case .fax: return "传真"
+        case .mobile: "手机"
+        case .office: "座机"
+        case .fax: "传真"
         }
     }
 
     var systemImage: String {
         switch self {
-        case .mobile: return "iphone"
-        case .office: return "phone"
-        case .fax: return "printer"
+        case .mobile: "iphone"
+        case .office: "phone"
+        case .fax: "printer"
         }
     }
 
     /// Canonical order used by the detail screen and by the vCard exporter.
     var sortOrder: Int {
         switch self {
-        case .mobile: return 0
-        case .office: return 1
-        case .fax: return 2
+        case .mobile: 0
+        case .office: 1
+        case .fax: 2
         }
     }
 }

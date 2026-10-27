@@ -1,5 +1,5 @@
-import XCTest
 @testable import CamCardReplica
+import XCTest
 
 /// Runs the real Vision pipeline over the bundled fixture cards.
 ///

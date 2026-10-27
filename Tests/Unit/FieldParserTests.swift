@@ -1,5 +1,5 @@
-import XCTest
 @testable import CamCardReplica
+import XCTest
 
 /// Table-driven tests for the field parser. Each case mirrors a scenario in the
 /// assignment's spec so that "rule changed" and "spec changed" are the same diff.

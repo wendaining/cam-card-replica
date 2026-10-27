@@ -7,7 +7,9 @@ enum CameraPermissionStatus: String, Sendable {
     case restricted
     case notDetermined
 
-    var canUseCamera: Bool { self == .authorized }
+    var canUseCamera: Bool {
+        self == .authorized
+    }
 }
 
 /// T03's test seam: the UI tests inject a fixed status instead of trying to
@@ -21,11 +23,11 @@ protocol CameraPermissionProviding: Sendable {
 struct SystemCameraPermission: CameraPermissionProviding {
     func currentStatus() -> CameraPermissionStatus {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized: return .authorized
-        case .denied: return .denied
-        case .restricted: return .restricted
-        case .notDetermined: return .notDetermined
-        @unknown default: return .denied
+        case .authorized: .authorized
+        case .denied: .denied
+        case .restricted: .restricted
+        case .notDetermined: .notDetermined
+        @unknown default: .denied
         }
     }
 
@@ -39,6 +41,11 @@ struct SystemCameraPermission: CameraPermissionProviding {
 struct StubCameraPermission: CameraPermissionProviding {
     let status: CameraPermissionStatus
 
-    func currentStatus() -> CameraPermissionStatus { status }
-    func requestAccess() async -> CameraPermissionStatus { status }
+    func currentStatus() -> CameraPermissionStatus {
+        status
+    }
+
+    func requestAccess() async -> CameraPermissionStatus {
+        status
+    }
 }

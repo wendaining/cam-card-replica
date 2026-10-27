@@ -5,10 +5,8 @@ import Foundation
 struct CardTag: Codable, Hashable, Identifiable, Sendable {
     var name: String
 
-    var id: String { name.lowercased() }
-
-    init(name: String) {
-        self.name = name
+    var id: String {
+        name.lowercased()
     }
 }
 

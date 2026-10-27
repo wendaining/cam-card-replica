@@ -18,9 +18,17 @@ struct OCRTextLine: Identifiable, Hashable, Sendable {
         self.confidence = confidence
     }
 
-    var centerY: CGFloat { boundingBox.midY }
-    var height: CGFloat { boundingBox.height }
-    var minX: CGFloat { boundingBox.minX }
+    var centerY: CGFloat {
+        boundingBox.midY
+    }
+
+    var height: CGFloat {
+        boundingBox.height
+    }
+
+    var minX: CGFloat {
+        boundingBox.minX
+    }
 }
 
 /// Everything the OCR stage produces. Kept verbatim so that the benchmark in

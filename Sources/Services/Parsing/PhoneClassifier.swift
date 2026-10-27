@@ -20,9 +20,15 @@ enum PhoneClassifier {
 
     static func kind(forLabel label: String) -> PhoneKind? {
         let key = label.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: ":：. "))
-        if faxLabels.contains(key) { return .fax }
-        if mobileLabels.contains(key) { return .mobile }
-        if officeLabels.contains(key) { return .office }
+        if faxLabels.contains(key) {
+            return .fax
+        }
+        if mobileLabels.contains(key) {
+            return .mobile
+        }
+        if officeLabels.contains(key) {
+            return .office
+        }
         return nil
     }
 
@@ -51,7 +57,7 @@ enum PhoneClassifier {
                 chunk.removeLast()
             }
             let digits = chunk.filter(\.isNumber)
-            if (7...16).contains(digits.count) {
+            if (7 ... 16).contains(digits.count) {
                 let (kind, confidence) = inferKind(digits: digits, raw: chunk, labelKind: labelKind)
                 results.append(Candidate(
                     value: chunk.trimmingCharacters(in: .whitespaces),
@@ -77,14 +83,14 @@ enum PhoneClassifier {
             && !digits.hasPrefix("86")
         let stripped = digits.hasPrefix("86") && digits.count == 13 ? String(digits.dropFirst(2)) : digits
         if !hasForeignPrefix, stripped.count == 11, stripped.first == "1", let second = stripped.dropFirst().first,
-           ("3"..."9").contains(String(second)) {
+           ("3" ... "9").contains(String(second)) {
             return (.mobile, 0.88)
         }
         // Area-code style landlines and service numbers.
-        if digits.hasPrefix("0") && (10...12).contains(digits.count) {
+        if digits.hasPrefix("0"), (10 ... 12).contains(digits.count) {
             return (.office, 0.82)
         }
-        if (digits.hasPrefix("400") || digits.hasPrefix("800")) && (8...11).contains(digits.count) {
+        if digits.hasPrefix("400") || digits.hasPrefix("800"), (8 ... 11).contains(digits.count) {
             return (.office, 0.78)
         }
         // International formats: without a label the kind is genuinely unknown,

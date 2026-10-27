@@ -15,7 +15,9 @@ struct Quad: Equatable, Sendable {
         bottomLeft: CGPoint(x: 0, y: 1)
     )
 
-    var points: [CGPoint] { [topLeft, topRight, bottomRight, bottomLeft] }
+    var points: [CGPoint] {
+        [topLeft, topRight, bottomRight, bottomLeft]
+    }
 
     /// Shoelace area, used to reject degenerate detections.
     var area: CGFloat {
@@ -29,7 +31,9 @@ struct Quad: Equatable, Sendable {
         return abs(sum) / 2
     }
 
-    var isPlausible: Bool { area > 0.12 && area < 1.01 }
+    var isPlausible: Bool {
+        area > 0.12 && area < 1.01
+    }
 
     /// Clamps every corner back into the unit square.
     func clamped() -> Quad {

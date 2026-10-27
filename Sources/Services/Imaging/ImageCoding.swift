@@ -10,7 +10,11 @@ enum ImageCoding {
         guard let destination = CGImageDestinationCreateWithData(
             data as CFMutableData, UTType.jpeg.identifier as CFString, 1, nil
         ) else { return nil }
-        CGImageDestinationAddImage(destination, image, [kCGImageDestinationLossyCompressionQuality: quality] as CFDictionary)
+        CGImageDestinationAddImage(
+            destination,
+            image,
+            [kCGImageDestinationLossyCompressionQuality: quality] as CFDictionary
+        )
         guard CGImageDestinationFinalize(destination) else { return nil }
         return data as Data
     }
