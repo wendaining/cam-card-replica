@@ -20,6 +20,7 @@ struct CardListView: View {
             }
             content
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Theme.screenBackground)
         .navigationTitle("名片夹")
         .toolbar {
@@ -80,6 +81,7 @@ struct CardListView: View {
         .accessibilityIdentifier(A11y.tagFilter)
     }
 
+
     @ViewBuilder
     private var content: some View {
         if allCards.isEmpty {
@@ -109,6 +111,11 @@ struct CardListView: View {
                 }
             }
             .listStyle(.plain)
+            // Paint the scroll view's own background: the rows are white, and
+            // without this the empty space under the last row showed the screen
+            // background instead, which read as a clipped list.
+            .background(Color(uiColor: .systemBackground))
+            .scrollContentBackground(.hidden)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier(A11y.cardList)
         }
