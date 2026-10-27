@@ -7,6 +7,18 @@
 拍摄/导入 → 名片边界检测 → 透视校正 → OCR → 8 字段结构化 → 人工确认 →
 保存 → 名片夹 → 搜索/标签/备注 → 详情/编辑/删除 → 重启保持 → 导出 vCard/通讯录。
 
+## 1.5 界面截图（iPhone 18 Pro / iOS 27.0，真机模拟器实测）
+
+| 页面 | 截图 |
+|---|---|
+| 空名片夹（T01） | ![空名片夹](screenshots/01-empty.png) |
+| 名片夹列表（搜索 + 标签） | ![名片夹](screenshots/02-list.png) |
+| 边界检测与手动校正（T06） | ![裁剪](screenshots/03-crop.png) |
+| 识别结果确认（T08/T10/T11） | ![确认](screenshots/04-review.png) |
+| 名片详情（T13） | ![详情](screenshots/05-detail.png) |
+
+重新生成：`touch /tmp/capture-screenshots && xcodebuild test -only-testing:CamCardReplicaUITests/ScreenshotTests`
+
 ## 2. 怎么证明它工作
 
 | 证据 | 位置 |
