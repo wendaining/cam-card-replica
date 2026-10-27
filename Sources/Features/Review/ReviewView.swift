@@ -61,6 +61,7 @@ struct ReviewView: View {
         .navigationBarTitleDisplayMode(.inline)
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier(A11y.reviewView)
+        .readableWidth()
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("保存") { save() }

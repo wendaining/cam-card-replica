@@ -64,3 +64,12 @@ struct EmptyStateView: View {
         .accessibilityIdentifier(A11y.emptyState)
     }
 }
+
+extension View {
+    /// Caps the content width on wide screens (iPad) so a form does not stretch
+    /// into 1000pt-wide text fields, while staying full width on a phone.
+    func readableWidth(_ maxWidth: CGFloat = 720) -> some View {
+        frame(maxWidth: maxWidth)
+            .frame(maxWidth: .infinity)
+    }
+}

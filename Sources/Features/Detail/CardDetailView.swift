@@ -150,6 +150,7 @@ struct CardDetailView: View {
         }
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier(A11y.detailView)
+        .readableWidth()
     }
 
     @ViewBuilder

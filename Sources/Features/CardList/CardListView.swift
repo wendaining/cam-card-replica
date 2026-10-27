@@ -116,6 +116,7 @@ struct CardListView: View {
             // background instead, which read as a clipped list.
             .background(Color(uiColor: .systemBackground))
             .scrollContentBackground(.hidden)
+            .readableWidth(880)
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier(A11y.cardList)
         }
