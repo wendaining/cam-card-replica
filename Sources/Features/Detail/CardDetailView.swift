@@ -11,6 +11,7 @@ struct CardDetailView: View {
     @State private var draft = CardDraft()
     @State private var showDeleteConfirmation = false
     @State private var showRawText = false
+    @State private var showImageViewer = false
     @State private var vCardURL: URL?
     @State private var alertMessage: String?
     @State private var showAlert = false
@@ -47,6 +48,11 @@ struct CardDetailView: View {
         }
         .sheet(isPresented: $showRawText) {
             RawTextSheet(text: card?.rawText ?? "", lines: [])
+        }
+        .sheet(isPresented: $showImageViewer) {
+            if let card {
+                CardImageViewer(card: card, library: services.library)
+            }
         }
         .task(id: cardID) {
             prepareVCard()
