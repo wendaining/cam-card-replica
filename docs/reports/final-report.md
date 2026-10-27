@@ -13,9 +13,12 @@
 |---|---|
 | 空名片夹（T01） | ![空名片夹](screenshots/01-empty.png) |
 | 名片夹列表（搜索 + 标签） | ![名片夹](screenshots/02-list.png) |
-| 边界检测与手动校正（T06） | ![裁剪](screenshots/03-crop.png) |
-| 识别结果确认（T08/T10/T11） | ![确认](screenshots/04-review.png) |
-| 名片详情（T13） | ![详情](screenshots/05-detail.png) |
+| 拍摄后确认照片（T04） | ![确认照片](screenshots/03-preview.png) |
+| 边界检测与手动校正（T06） | ![裁剪](screenshots/04-crop.png) |
+| 识别结果确认（T08/T10/T11） | ![确认](screenshots/05-review.png) |
+| 名片详情（T13） | ![详情](screenshots/06-detail.png) |
+
+iPad 版本在 `screenshots/ipad/`，同一套页面、同一套测试。
 
 重新生成：`touch /tmp/capture-screenshots && xcodebuild test -only-testing:CamCardReplicaUITests/ScreenshotTests`
 
