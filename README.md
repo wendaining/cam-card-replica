@@ -11,8 +11,8 @@
 
 | | |
 |---|---|
-| 单元 / 集成测试 | **57 个，全绿**（含 50 张语料的字段准确率评测） |
-| 端到端测试 | **15 个，全绿**，覆盖 T01–T20（iPhone 18 Pro 与 iPad Pro 11 各跑一遍） |
+| 单元 / 集成测试 | **60 个，全绿**（含 50 张语料的字段准确率评测） |
+| 端到端测试 | **15 个场景，全绿**，覆盖 T01–T20（iPhone 18 Pro 与 iPad Pro 11 各跑一遍） |
 | 字段准确率 | name/company/title/email/website/address **100%**，office 98%，fax 90%，**幻觉率 0%** |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
 
@@ -27,7 +27,7 @@ brew install xcodegen          # 一次性，约 10 秒
 git clone <this repo> && cd cam-card-replica
 make bootstrap                 # 由 project.yml 生成 CamCardReplica.xcodeproj
 make build                     # 期望结尾：** BUILD SUCCEEDED **
-make test                      # 期望结尾：Executed 57 tests, with 0 failures
+make test                      # 期望结尾：Executed 60 tests, with 0 failures
 open CamCardReplica.xcodeproj  # 选 iPhone 18 Pro，Cmd+R
 ```
 
@@ -111,7 +111,7 @@ Sources/
   Features/      CardList · Scanner · Crop · Review · Detail · Shared
   DesignSystem/  主题、TagChip、EmptyState、readableWidth
   Support/       A11y 标识、UITest 配置、fixture、Demo 数据
-Tests/           57 个单元/集成测试（含语料准确率评测）
+Tests/           60 个单元/集成测试（含语料准确率评测）
 UITests/         T01–T20 端到端 + 截图用例
 TestData/        50 张合成名片 + Ground Truth（确定性生成，可复现）
 Scripts/         语料生成、验证脚本
