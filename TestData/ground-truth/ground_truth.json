@@ -1,0 +1,2692 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-27T06:43:23+00:00",
+  "generator": "Scripts/generate_test_cards.py",
+  "seed": 20261027,
+  "canvas": {
+    "flat": [
+      1012,
+      638
+    ],
+    "vertical": [
+      638,
+      1012
+    ]
+  },
+  "card_count": 50,
+  "image_count": 62,
+  "cards": [
+    {
+      "id": "zh-01",
+      "file": "zh-01.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "朱宏明",
+        "company": "同济大学",
+        "jobTitle": "教授",
+        "department": "计算机科学与技术学院",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          },
+          {
+            "kind": "fax",
+            "number": "021-6000 1235"
+          }
+        ],
+        "emails": [
+          "contact01@example.com"
+        ],
+        "website": "www.example01.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "朱宏明",
+        "同济大学",
+        "教授",
+        "计算机科学与技术学院",
+        "+86 138 0000 1234",
+        "021-6000 1234",
+        "021-6000 1235",
+        "contact01@example.com",
+        "www.example01.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "zh-01",
+      "file": "zh-01-photo.jpg",
+      "kind": "photo",
+      "lang": "zh",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "朱宏明",
+        "company": "同济大学",
+        "jobTitle": "教授",
+        "department": "计算机科学与技术学院",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          },
+          {
+            "kind": "fax",
+            "number": "021-6000 1235"
+          }
+        ],
+        "emails": [
+          "contact01@example.com"
+        ],
+        "website": "www.example01.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "朱宏明",
+        "同济大学",
+        "教授",
+        "计算机科学与技术学院",
+        "+86 138 0000 1234",
+        "021-6000 1234",
+        "021-6000 1235",
+        "contact01@example.com",
+        "www.example01.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "zh-02",
+      "file": "zh-02.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "centered",
+      "theme": "white",
+      "logo": "block",
+      "labels": true,
+      "notes": "中文名片",
+      "fields": {
+        "name": "李静",
+        "company": "华远科技股份有限公司",
+        "jobTitle": "技术总监",
+        "department": "研发中心",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          }
+        ],
+        "emails": [
+          "contact02@example.com"
+        ],
+        "website": "www.example02.com",
+        "address": "北京市海淀区中关村大街1号 100080"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "李静",
+        "华远科技股份有限公司",
+        "技术总监",
+        "研发中心",
+        "+86 139 0000 5678",
+        "contact02@example.com",
+        "www.example02.com",
+        "北京市海淀区中关村大街1号 100080"
+      ]
+    },
+    {
+      "id": "zh-03",
+      "file": "zh-03.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "two-column",
+      "theme": "navy",
+      "logo": "circle",
+      "labels": false,
+      "notes": "中文名片",
+      "fields": {
+        "name": "王建国",
+        "company": "东方物流集团",
+        "jobTitle": "副总经理",
+        "department": "运营管理部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 137 0000 9012"
+          }
+        ],
+        "emails": [
+          "contact03@example.com"
+        ],
+        "website": "www.example03.com",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "王建国",
+        "东方物流集团",
+        "副总经理",
+        "运营管理部",
+        "+86 137 0000 9012",
+        "contact03@example.com",
+        "www.example03.com"
+      ]
+    },
+    {
+      "id": "zh-04",
+      "file": "zh-04.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "vertical",
+      "theme": "charcoal",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中文名片，双电话，缺网站",
+      "fields": {
+        "name": "陈雨欣",
+        "company": "明德咨询有限公司",
+        "jobTitle": "高级顾问",
+        "department": "战略咨询",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 150 0000 3344"
+          },
+          {
+            "kind": "office",
+            "number": "0571-3000 3456"
+          }
+        ],
+        "emails": [
+          "contact04@example.com"
+        ],
+        "website": null,
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "陈雨欣",
+        "明德咨询有限公司",
+        "高级顾问",
+        "战略咨询",
+        "+86 150 0000 3344",
+        "0571-3000 3456",
+        "contact04@example.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "zh-05",
+      "file": "zh-05.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "minimal",
+      "theme": "mint",
+      "logo": "none",
+      "labels": true,
+      "notes": "中文名片",
+      "fields": {
+        "name": "张伟",
+        "company": "长安精密制造有限公司",
+        "jobTitle": "总经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          }
+        ],
+        "emails": [
+          "contact05@example.com"
+        ],
+        "website": "www.example05.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "张伟",
+        "长安精密制造有限公司",
+        "总经理",
+        "+86 186 0000 7788",
+        "contact05@example.com",
+        "www.example05.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "zh-05",
+      "file": "zh-05-photo.jpg",
+      "kind": "photo",
+      "lang": "zh",
+      "layout": "minimal",
+      "theme": "mint",
+      "logo": "none",
+      "labels": true,
+      "notes": "中文名片",
+      "fields": {
+        "name": "张伟",
+        "company": "长安精密制造有限公司",
+        "jobTitle": "总经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          }
+        ],
+        "emails": [
+          "contact05@example.com"
+        ],
+        "website": "www.example05.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "张伟",
+        "长安精密制造有限公司",
+        "总经理",
+        "+86 186 0000 7788",
+        "contact05@example.com",
+        "www.example05.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "zh-06",
+      "file": "zh-06.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "classic",
+      "theme": "blueprint",
+      "logo": "block",
+      "labels": false,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "刘晓峰",
+        "company": "海通律师事务所",
+        "jobTitle": "合伙人",
+        "department": "知识产权",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          },
+          {
+            "kind": "fax",
+            "number": "0755-2000 9013"
+          }
+        ],
+        "emails": [
+          "contact06@example.com"
+        ],
+        "website": "www.example06.com",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "刘晓峰",
+        "海通律师事务所",
+        "合伙人",
+        "知识产权",
+        "+86 188 0000 2211",
+        "0755-2000 9013",
+        "contact06@example.com",
+        "www.example06.com"
+      ]
+    },
+    {
+      "id": "zh-07",
+      "file": "zh-07.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "centered",
+      "theme": "ivory",
+      "logo": "circle",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "赵敏",
+        "company": "康宁医疗器械有限公司",
+        "jobTitle": "市场经理",
+        "department": "市场部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 133 0000 4455"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          }
+        ],
+        "emails": [
+          "contact07@example.com"
+        ],
+        "website": "www.example07.com",
+        "address": "北京市海淀区中关村大街1号 100080"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "赵敏",
+        "康宁医疗器械有限公司",
+        "市场经理",
+        "市场部",
+        "+86 133 0000 4455",
+        "021-6000 1234",
+        "contact07@example.com",
+        "www.example07.com",
+        "北京市海淀区中关村大街1号 100080"
+      ]
+    },
+    {
+      "id": "zh-08",
+      "file": "zh-08.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "two-column",
+      "theme": "white",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中文名片，缺网站",
+      "fields": {
+        "name": "孙立",
+        "company": "北方电力设计院",
+        "jobTitle": "主任工程师",
+        "department": "输电线路室",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 159 0000 6677"
+          }
+        ],
+        "emails": [
+          "contact08@example.com"
+        ],
+        "website": null,
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "孙立",
+        "北方电力设计院",
+        "主任工程师",
+        "输电线路室",
+        "+86 159 0000 6677",
+        "contact08@example.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "zh-09",
+      "file": "zh-09.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "vertical",
+      "theme": "navy",
+      "logo": "none",
+      "labels": false,
+      "notes": "中文名片",
+      "fields": {
+        "name": "周婷",
+        "company": "青禾文化传媒",
+        "jobTitle": "创意总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          }
+        ],
+        "emails": [
+          "contact09@example.com"
+        ],
+        "website": "www.example09.com",
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "address"
+      ],
+      "present_text": [
+        "周婷",
+        "青禾文化传媒",
+        "创意总监",
+        "+86 138 0000 1234",
+        "contact09@example.com",
+        "www.example09.com"
+      ]
+    },
+    {
+      "id": "zh-09",
+      "file": "zh-09-photo.jpg",
+      "kind": "photo",
+      "lang": "zh",
+      "layout": "vertical",
+      "theme": "navy",
+      "logo": "none",
+      "labels": false,
+      "notes": "中文名片",
+      "fields": {
+        "name": "周婷",
+        "company": "青禾文化传媒",
+        "jobTitle": "创意总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          }
+        ],
+        "emails": [
+          "contact09@example.com"
+        ],
+        "website": "www.example09.com",
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "address"
+      ],
+      "present_text": [
+        "周婷",
+        "青禾文化传媒",
+        "创意总监",
+        "+86 138 0000 1234",
+        "contact09@example.com",
+        "www.example09.com"
+      ]
+    },
+    {
+      "id": "zh-10",
+      "file": "zh-10.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "minimal",
+      "theme": "charcoal",
+      "logo": "block",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "吴强",
+        "company": "南山置业发展有限公司",
+        "jobTitle": "项目经理",
+        "department": "工程部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          },
+          {
+            "kind": "office",
+            "number": "0571-3000 3456"
+          }
+        ],
+        "emails": [
+          "contact10@example.com"
+        ],
+        "website": "www.example10.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "吴强",
+        "南山置业发展有限公司",
+        "项目经理",
+        "工程部",
+        "+86 139 0000 5678",
+        "0571-3000 3456",
+        "contact10@example.com",
+        "www.example10.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "zh-11",
+      "file": "zh-11.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "classic",
+      "theme": "mint",
+      "logo": "circle",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "郑丽华",
+        "company": "星河银行",
+        "jobTitle": "客户经理",
+        "department": "对公业务部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 137 0000 9012"
+          },
+          {
+            "kind": "fax",
+            "number": "010-8000 5679"
+          }
+        ],
+        "emails": [
+          "contact11@example.com"
+        ],
+        "website": "www.example11.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "郑丽华",
+        "星河银行",
+        "客户经理",
+        "对公业务部",
+        "+86 137 0000 9012",
+        "010-8000 5679",
+        "contact11@example.com",
+        "www.example11.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "zh-12",
+      "file": "zh-12.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": false,
+      "notes": "中文名片，缺网站",
+      "fields": {
+        "name": "何俊",
+        "company": "云图数据科技有限公司",
+        "jobTitle": "算法工程师",
+        "department": "数据平台",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 150 0000 3344"
+          }
+        ],
+        "emails": [
+          "contact12@example.com"
+        ],
+        "website": null,
+        "address": null
+      },
+      "expected_absent": [
+        "website",
+        "address"
+      ],
+      "present_text": [
+        "何俊",
+        "云图数据科技有限公司",
+        "算法工程师",
+        "数据平台",
+        "+86 150 0000 3344",
+        "contact12@example.com"
+      ]
+    },
+    {
+      "id": "zh-13",
+      "file": "zh-13.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "two-column",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "马晓东",
+        "company": "远航国际贸易有限公司",
+        "jobTitle": "外贸经理",
+        "department": "进出口部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          }
+        ],
+        "emails": [
+          "contact13@example.com"
+        ],
+        "website": "www.example13.com",
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "马晓东",
+        "远航国际贸易有限公司",
+        "外贸经理",
+        "进出口部",
+        "+86 186 0000 7788",
+        "021-6000 1234",
+        "contact13@example.com",
+        "www.example13.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "zh-13",
+      "file": "zh-13-photo.jpg",
+      "kind": "photo",
+      "lang": "zh",
+      "layout": "two-column",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "notes": "中文名片，双电话",
+      "fields": {
+        "name": "马晓东",
+        "company": "远航国际贸易有限公司",
+        "jobTitle": "外贸经理",
+        "department": "进出口部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          }
+        ],
+        "emails": [
+          "contact13@example.com"
+        ],
+        "website": "www.example13.com",
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "马晓东",
+        "远航国际贸易有限公司",
+        "外贸经理",
+        "进出口部",
+        "+86 186 0000 7788",
+        "021-6000 1234",
+        "contact13@example.com",
+        "www.example13.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "zh-14",
+      "file": "zh-14.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "vertical",
+      "theme": "white",
+      "logo": "block",
+      "labels": true,
+      "notes": "中文名片",
+      "fields": {
+        "name": "林芳",
+        "company": "华夏中医药研究院",
+        "jobTitle": "研究员",
+        "department": "药理研究室",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "contact14@example.com"
+        ],
+        "website": "www.example14.com",
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "林芳",
+        "华夏中医药研究院",
+        "研究员",
+        "药理研究室",
+        "+86 188 0000 2211",
+        "contact14@example.com",
+        "www.example14.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "zh-15",
+      "file": "zh-15.png",
+      "kind": "flat",
+      "lang": "zh",
+      "layout": "minimal",
+      "theme": "navy",
+      "logo": "circle",
+      "labels": false,
+      "notes": "中文名片",
+      "fields": {
+        "name": "高鹏",
+        "company": "蓝天航空服务有限公司",
+        "jobTitle": "运营总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 133 0000 4455"
+          }
+        ],
+        "emails": [
+          "contact15@example.com"
+        ],
+        "website": "www.example15.com",
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "address"
+      ],
+      "present_text": [
+        "高鹏",
+        "蓝天航空服务有限公司",
+        "运营总监",
+        "+86 133 0000 4455",
+        "contact15@example.com",
+        "www.example15.com"
+      ]
+    },
+    {
+      "id": "en-01",
+      "file": "en-01.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "navy",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片，多 Email",
+      "fields": {
+        "name": "David Chen",
+        "company": "ABC Technologies",
+        "jobTitle": "Technical Director",
+        "department": "Platform Engineering",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 415 000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "+1 415 000 8000"
+          }
+        ],
+        "emails": [
+          "david.chen@example.org",
+          "info@example.org"
+        ],
+        "website": "www.abc.example",
+        "address": "500 Market Street, Suite 900, San Francisco, CA 94105"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "David Chen",
+        "ABC Technologies",
+        "Technical Director",
+        "Platform Engineering",
+        "+1 415 000 1234",
+        "+1 415 000 8000",
+        "david.chen@example.org",
+        "info@example.org",
+        "www.abc.example",
+        "500 Market Street, Suite 900, San Francisco, CA 94105"
+      ]
+    },
+    {
+      "id": "en-02",
+      "file": "en-02.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "centered",
+      "theme": "charcoal",
+      "logo": "circle",
+      "labels": false,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Emily Zhang",
+        "company": "Northwind Analytics",
+        "jobTitle": "Senior Data Scientist",
+        "department": "AI Lab",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 212 000 5678"
+          },
+          {
+            "kind": "fax",
+            "number": "+44 20 0000 7001"
+          }
+        ],
+        "emails": [
+          "emily.zhang@example.org"
+        ],
+        "website": null,
+        "address": "12 King William Street, London EC4N 7BJ"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "Emily Zhang",
+        "Northwind Analytics",
+        "Senior Data Scientist",
+        "AI Lab",
+        "+1 212 000 5678",
+        "+44 20 0000 7001",
+        "emily.zhang@example.org",
+        "12 King William Street, London EC4N 7BJ"
+      ]
+    },
+    {
+      "id": "en-03",
+      "file": "en-03.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "two-column",
+      "theme": "mint",
+      "logo": "block",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Michael O'Brian",
+        "company": "Bright Harbor Logistics",
+        "jobTitle": "VP Sales",
+        "department": "Global Accounts",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+44 20 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "+49 30 0000 6000"
+          }
+        ],
+        "emails": [
+          "michael.obrian@example.org"
+        ],
+        "website": "www.bright.example",
+        "address": "Friedrichstrasse 88, 10117 Berlin, Germany"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Michael O'Brian",
+        "Bright Harbor Logistics",
+        "VP Sales",
+        "Global Accounts",
+        "+44 20 0000 9012",
+        "+49 30 0000 6000",
+        "michael.obrian@example.org",
+        "www.bright.example",
+        "Friedrichstrasse 88, 10117 Berlin, Germany"
+      ]
+    },
+    {
+      "id": "en-03",
+      "file": "en-03-photo.jpg",
+      "kind": "photo",
+      "lang": "en",
+      "layout": "two-column",
+      "theme": "mint",
+      "logo": "block",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Michael O'Brian",
+        "company": "Bright Harbor Logistics",
+        "jobTitle": "VP Sales",
+        "department": "Global Accounts",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+44 20 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "+49 30 0000 6000"
+          }
+        ],
+        "emails": [
+          "michael.obrian@example.org"
+        ],
+        "website": "www.bright.example",
+        "address": "Friedrichstrasse 88, 10117 Berlin, Germany"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Michael O'Brian",
+        "Bright Harbor Logistics",
+        "VP Sales",
+        "Global Accounts",
+        "+44 20 0000 9012",
+        "+49 30 0000 6000",
+        "michael.obrian@example.org",
+        "www.bright.example",
+        "Friedrichstrasse 88, 10117 Berlin, Germany"
+      ]
+    },
+    {
+      "id": "en-04",
+      "file": "en-04.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "minimal",
+      "theme": "blueprint",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Sarah Kim",
+        "company": "Lumen Health Systems",
+        "jobTitle": "Product Manager",
+        "department": "Clinical Products",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+49 30 0000 3456"
+          }
+        ],
+        "emails": [
+          "sarah.kim@example.org"
+        ],
+        "website": "www.lumen.example",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "Sarah Kim",
+        "Lumen Health Systems",
+        "Product Manager",
+        "Clinical Products",
+        "+49 30 0000 3456",
+        "sarah.kim@example.org",
+        "www.lumen.example"
+      ]
+    },
+    {
+      "id": "en-05",
+      "file": "en-05.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Robert Fischer",
+        "company": "Kestrel Robotics GmbH",
+        "jobTitle": "Chief Engineer",
+        "department": "Motion Control",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+81 3 0000 7890"
+          },
+          {
+            "kind": "office",
+            "number": "+1 415 000 8000"
+          }
+        ],
+        "emails": [
+          "robert.fischer@example.org"
+        ],
+        "website": null,
+        "address": "500 Market Street, Suite 900, San Francisco, CA 94105"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "Robert Fischer",
+        "Kestrel Robotics GmbH",
+        "Chief Engineer",
+        "Motion Control",
+        "+81 3 0000 7890",
+        "+1 415 000 8000",
+        "robert.fischer@example.org",
+        "500 Market Street, Suite 900, San Francisco, CA 94105"
+      ]
+    },
+    {
+      "id": "en-06",
+      "file": "en-06.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "white",
+      "logo": "circle",
+      "labels": false,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Laura Mendosa",
+        "company": "Sierra Legal Partners",
+        "jobTitle": "Partner",
+        "department": "Intellectual Property",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+65 0000 2345"
+          },
+          {
+            "kind": "fax",
+            "number": "+49 30 0000 6001"
+          }
+        ],
+        "emails": [
+          "laura.mendosa@example.org"
+        ],
+        "website": "www.sierra.example",
+        "address": "12 King William Street, London EC4N 7BJ"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Laura Mendosa",
+        "Sierra Legal Partners",
+        "Partner",
+        "Intellectual Property",
+        "+65 0000 2345",
+        "+49 30 0000 6001",
+        "laura.mendosa@example.org",
+        "www.sierra.example",
+        "12 King William Street, London EC4N 7BJ"
+      ]
+    },
+    {
+      "id": "en-07",
+      "file": "en-07.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "centered",
+      "theme": "navy",
+      "logo": "block",
+      "labels": true,
+      "notes": "英文名片，多 Email",
+      "fields": {
+        "name": "Thomas Weber",
+        "company": "Rhine Valley Chemicals",
+        "jobTitle": "Head of Procurement",
+        "department": "Supply Chain",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 415 000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "+49 30 0000 6000"
+          }
+        ],
+        "emails": [
+          "thomas.weber@example.org",
+          "info@example.org"
+        ],
+        "website": "www.rhine.example",
+        "address": "Friedrichstrasse 88, 10117 Berlin, Germany"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Thomas Weber",
+        "Rhine Valley Chemicals",
+        "Head of Procurement",
+        "Supply Chain",
+        "+1 415 000 1234",
+        "+49 30 0000 6000",
+        "thomas.weber@example.org",
+        "info@example.org",
+        "www.rhine.example",
+        "Friedrichstrasse 88, 10117 Berlin, Germany"
+      ]
+    },
+    {
+      "id": "en-08",
+      "file": "en-08.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "two-column",
+      "theme": "charcoal",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Grace Lin",
+        "company": "Atlas Capital Group",
+        "jobTitle": "Investment Analyst",
+        "department": "Growth Equity",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 212 000 5678"
+          }
+        ],
+        "emails": [
+          "grace.lin@example.org"
+        ],
+        "website": null,
+        "address": null
+      },
+      "expected_absent": [
+        "website",
+        "address"
+      ],
+      "present_text": [
+        "Grace Lin",
+        "Atlas Capital Group",
+        "Investment Analyst",
+        "Growth Equity",
+        "+1 212 000 5678",
+        "grace.lin@example.org"
+      ]
+    },
+    {
+      "id": "en-08",
+      "file": "en-08-photo.jpg",
+      "kind": "photo",
+      "lang": "en",
+      "layout": "two-column",
+      "theme": "charcoal",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Grace Lin",
+        "company": "Atlas Capital Group",
+        "jobTitle": "Investment Analyst",
+        "department": "Growth Equity",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 212 000 5678"
+          }
+        ],
+        "emails": [
+          "grace.lin@example.org"
+        ],
+        "website": null,
+        "address": null
+      },
+      "expected_absent": [
+        "website",
+        "address"
+      ],
+      "present_text": [
+        "Grace Lin",
+        "Atlas Capital Group",
+        "Investment Analyst",
+        "Growth Equity",
+        "+1 212 000 5678",
+        "grace.lin@example.org"
+      ]
+    },
+    {
+      "id": "en-09",
+      "file": "en-09.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "minimal",
+      "theme": "mint",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "James Okafor",
+        "company": "Vertex Construction Ltd.",
+        "jobTitle": "Site Manager",
+        "department": "Project Delivery",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+44 20 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "+1 415 000 8000"
+          }
+        ],
+        "emails": [
+          "james.okafor@example.org"
+        ],
+        "website": "www.vertex.example",
+        "address": "500 Market Street, Suite 900, San Francisco, CA 94105"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "James Okafor",
+        "Vertex Construction Ltd.",
+        "Site Manager",
+        "Project Delivery",
+        "+44 20 0000 9012",
+        "+1 415 000 8000",
+        "james.okafor@example.org",
+        "www.vertex.example",
+        "500 Market Street, Suite 900, San Francisco, CA 94105"
+      ]
+    },
+    {
+      "id": "en-10",
+      "file": "en-10.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "blueprint",
+      "logo": "circle",
+      "labels": false,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Anna Petrova",
+        "company": "Aurora Design Studio",
+        "jobTitle": "Creative Lead",
+        "department": "Brand Design",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+49 30 0000 3456"
+          },
+          {
+            "kind": "fax",
+            "number": "+1 415 000 8001"
+          }
+        ],
+        "emails": [
+          "anna.petrova@example.org"
+        ],
+        "website": "www.aurora.example",
+        "address": "12 King William Street, London EC4N 7BJ"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Anna Petrova",
+        "Aurora Design Studio",
+        "Creative Lead",
+        "Brand Design",
+        "+49 30 0000 3456",
+        "+1 415 000 8001",
+        "anna.petrova@example.org",
+        "www.aurora.example",
+        "12 King William Street, London EC4N 7BJ"
+      ]
+    },
+    {
+      "id": "en-11",
+      "file": "en-11.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "block",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Kevin Wu",
+        "company": "Pacific Freight Co.",
+        "jobTitle": "Operations Manager",
+        "department": "Ocean Freight",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+81 3 0000 7890"
+          },
+          {
+            "kind": "office",
+            "number": "+49 30 0000 6000"
+          }
+        ],
+        "emails": [
+          "kevin.wu@example.org"
+        ],
+        "website": null,
+        "address": "Friedrichstrasse 88, 10117 Berlin, Germany"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "Kevin Wu",
+        "Pacific Freight Co.",
+        "Operations Manager",
+        "Ocean Freight",
+        "+81 3 0000 7890",
+        "+49 30 0000 6000",
+        "kevin.wu@example.org",
+        "Friedrichstrasse 88, 10117 Berlin, Germany"
+      ]
+    },
+    {
+      "id": "en-12",
+      "file": "en-12.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "centered",
+      "theme": "white",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Rachel Adler",
+        "company": "Meridian Education Group",
+        "jobTitle": "Academic Director",
+        "department": "Curriculum",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+65 0000 2345"
+          }
+        ],
+        "emails": [
+          "rachel.adler@example.org"
+        ],
+        "website": "www.meridian.example",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "Rachel Adler",
+        "Meridian Education Group",
+        "Academic Director",
+        "Curriculum",
+        "+65 0000 2345",
+        "rachel.adler@example.org",
+        "www.meridian.example"
+      ]
+    },
+    {
+      "id": "en-13",
+      "file": "en-13.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "two-column",
+      "theme": "navy",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片，多 Email",
+      "fields": {
+        "name": "Daniel Ito",
+        "company": "Skyline Semiconductors",
+        "jobTitle": "Staff Engineer",
+        "department": "Analog Design",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 415 000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "+1 415 000 8000"
+          }
+        ],
+        "emails": [
+          "daniel.ito@example.org",
+          "info@example.org"
+        ],
+        "website": "www.skyline.example",
+        "address": "500 Market Street, Suite 900, San Francisco, CA 94105"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Daniel Ito",
+        "Skyline Semiconductors",
+        "Staff Engineer",
+        "Analog Design",
+        "+1 415 000 1234",
+        "+1 415 000 8000",
+        "daniel.ito@example.org",
+        "info@example.org",
+        "www.skyline.example",
+        "500 Market Street, Suite 900, San Francisco, CA 94105"
+      ]
+    },
+    {
+      "id": "en-13",
+      "file": "en-13-photo.jpg",
+      "kind": "photo",
+      "lang": "en",
+      "layout": "two-column",
+      "theme": "navy",
+      "logo": "none",
+      "labels": true,
+      "notes": "英文名片，多 Email",
+      "fields": {
+        "name": "Daniel Ito",
+        "company": "Skyline Semiconductors",
+        "jobTitle": "Staff Engineer",
+        "department": "Analog Design",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 415 000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "+1 415 000 8000"
+          }
+        ],
+        "emails": [
+          "daniel.ito@example.org",
+          "info@example.org"
+        ],
+        "website": "www.skyline.example",
+        "address": "500 Market Street, Suite 900, San Francisco, CA 94105"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Daniel Ito",
+        "Skyline Semiconductors",
+        "Staff Engineer",
+        "Analog Design",
+        "+1 415 000 1234",
+        "+1 415 000 8000",
+        "daniel.ito@example.org",
+        "info@example.org",
+        "www.skyline.example",
+        "500 Market Street, Suite 900, San Francisco, CA 94105"
+      ]
+    },
+    {
+      "id": "en-14",
+      "file": "en-14.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "minimal",
+      "theme": "charcoal",
+      "logo": "circle",
+      "labels": false,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Olivia Brown",
+        "company": "Cedar & Finch",
+        "jobTitle": "Founder",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+1 212 000 5678"
+          },
+          {
+            "kind": "fax",
+            "number": "+44 20 0000 7001"
+          }
+        ],
+        "emails": [
+          "olivia.brown@example.org"
+        ],
+        "website": null,
+        "address": "12 King William Street, London EC4N 7BJ"
+      },
+      "expected_absent": [
+        "department",
+        "website"
+      ],
+      "present_text": [
+        "Olivia Brown",
+        "Cedar & Finch",
+        "Founder",
+        "+1 212 000 5678",
+        "+44 20 0000 7001",
+        "olivia.brown@example.org",
+        "12 King William Street, London EC4N 7BJ"
+      ]
+    },
+    {
+      "id": "en-15",
+      "file": "en-15.png",
+      "kind": "flat",
+      "lang": "en",
+      "layout": "classic",
+      "theme": "mint",
+      "logo": "block",
+      "labels": true,
+      "notes": "英文名片",
+      "fields": {
+        "name": "Hassan Al-Rashid",
+        "company": "Gulf Horizon Energy",
+        "jobTitle": "Business Development",
+        "department": "Middle East",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+44 20 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "+49 30 0000 6000"
+          }
+        ],
+        "emails": [
+          "hassan.al-rashid@example.org"
+        ],
+        "website": "www.gulf.example",
+        "address": "Friedrichstrasse 88, 10117 Berlin, Germany"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "Hassan Al-Rashid",
+        "Gulf Horizon Energy",
+        "Business Development",
+        "Middle East",
+        "+44 20 0000 9012",
+        "+49 30 0000 6000",
+        "hassan.al-rashid@example.org",
+        "www.gulf.example",
+        "Friedrichstrasse 88, 10117 Berlin, Germany"
+      ]
+    },
+    {
+      "id": "bi-01",
+      "file": "bi-01.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "classic",
+      "theme": "mint",
+      "logo": "block",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "朱宏明 Zhu Hongming",
+        "company": "同济大学 Tongji University",
+        "jobTitle": "教授 Professor",
+        "department": "计算机学院 School of CS",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "0755-2000 9012"
+          }
+        ],
+        "emails": [
+          "biz01@example.com"
+        ],
+        "website": null,
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "朱宏明 Zhu Hongming",
+        "同济大学 Tongji University",
+        "教授 Professor",
+        "计算机学院 School of CS",
+        "+86 138 0000 1234",
+        "0755-2000 9012",
+        "biz01@example.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "bi-02",
+      "file": "bi-02.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "李静 Li Jing",
+        "company": "华远科技 Huayuan Tech",
+        "jobTitle": "技术总监 CTO",
+        "department": "研发中心 R&D Center",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          },
+          {
+            "kind": "fax",
+            "number": "010-8000 5679"
+          }
+        ],
+        "emails": [
+          "biz02@example.com"
+        ],
+        "website": "www.example02.com",
+        "address": "北京市海淀区中关村大街1号 100080"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "李静 Li Jing",
+        "华远科技 Huayuan Tech",
+        "技术总监 CTO",
+        "研发中心 R&D Center",
+        "+86 139 0000 5678",
+        "010-8000 5679",
+        "biz02@example.com",
+        "www.example02.com",
+        "北京市海淀区中关村大街1号 100080"
+      ]
+    },
+    {
+      "id": "bi-02",
+      "file": "bi-02-photo.jpg",
+      "kind": "photo",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "李静 Li Jing",
+        "company": "华远科技 Huayuan Tech",
+        "jobTitle": "技术总监 CTO",
+        "department": "研发中心 R&D Center",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          },
+          {
+            "kind": "fax",
+            "number": "010-8000 5679"
+          }
+        ],
+        "emails": [
+          "biz02@example.com"
+        ],
+        "website": "www.example02.com",
+        "address": "北京市海淀区中关村大街1号 100080"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "李静 Li Jing",
+        "华远科技 Huayuan Tech",
+        "技术总监 CTO",
+        "研发中心 R&D Center",
+        "+86 139 0000 5678",
+        "010-8000 5679",
+        "biz02@example.com",
+        "www.example02.com",
+        "北京市海淀区中关村大街1号 100080"
+      ]
+    },
+    {
+      "id": "bi-03",
+      "file": "bi-03.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "two-column",
+      "theme": "ivory",
+      "logo": "circle",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "David Chen 陈大卫",
+        "company": "ABC Technologies 艾博西科技",
+        "jobTitle": "Director 总监",
+        "department": "Platform 平台部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 137 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "028-4000 7890"
+          }
+        ],
+        "emails": [
+          "biz03@example.com"
+        ],
+        "website": "www.example03.com",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "David Chen 陈大卫",
+        "ABC Technologies 艾博西科技",
+        "Director 总监",
+        "Platform 平台部",
+        "+86 137 0000 9012",
+        "028-4000 7890",
+        "biz03@example.com",
+        "www.example03.com"
+      ]
+    },
+    {
+      "id": "bi-04",
+      "file": "bi-04.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "vertical",
+      "theme": "white",
+      "logo": "none",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "王建国 Wang Jianguo",
+        "company": "东方物流 Orient Logistics",
+        "jobTitle": "副总经理 VP",
+        "department": "Operations 运营",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 150 0000 3344"
+          }
+        ],
+        "emails": [
+          "biz04@example.com",
+          "sales04@example.net"
+        ],
+        "website": null,
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "王建国 Wang Jianguo",
+        "东方物流 Orient Logistics",
+        "副总经理 VP",
+        "Operations 运营",
+        "+86 150 0000 3344",
+        "biz04@example.com",
+        "sales04@example.net",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "bi-05",
+      "file": "bi-05.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "classic",
+      "theme": "navy",
+      "logo": "block",
+      "labels": false,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "Emily Zhang 张艾米",
+        "company": "Northwind Analytics 北风数据",
+        "jobTitle": "Data Scientist 数据科学家",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          }
+        ],
+        "emails": [
+          "biz05@example.com"
+        ],
+        "website": "www.example05.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "Emily Zhang 张艾米",
+        "Northwind Analytics 北风数据",
+        "Data Scientist 数据科学家",
+        "+86 186 0000 7788",
+        "021-6000 1234",
+        "biz05@example.com",
+        "www.example05.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "bi-06",
+      "file": "bi-06.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "charcoal",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "陈雨欣 Chen Yuxin",
+        "company": "Mingde Consulting 明德咨询",
+        "jobTitle": "Senior Consultant 高级顾问",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "biz06@example.com"
+        ],
+        "website": "www.example06.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "陈雨欣 Chen Yuxin",
+        "Mingde Consulting 明德咨询",
+        "Senior Consultant 高级顾问",
+        "+86 188 0000 2211",
+        "biz06@example.com",
+        "www.example06.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "bi-06",
+      "file": "bi-06-photo.jpg",
+      "kind": "photo",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "charcoal",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "陈雨欣 Chen Yuxin",
+        "company": "Mingde Consulting 明德咨询",
+        "jobTitle": "Senior Consultant 高级顾问",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "biz06@example.com"
+        ],
+        "website": "www.example06.com",
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "陈雨欣 Chen Yuxin",
+        "Mingde Consulting 明德咨询",
+        "Senior Consultant 高级顾问",
+        "+86 188 0000 2211",
+        "biz06@example.com",
+        "www.example06.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "bi-07",
+      "file": "bi-07.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "two-column",
+      "theme": "mint",
+      "logo": "circle",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "Thomas Weber 托马斯",
+        "company": "Rhine Valley 莱茵化工",
+        "jobTitle": "Head of Procurement 采购总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 133 0000 4455"
+          },
+          {
+            "kind": "office",
+            "number": "0755-2000 9012"
+          },
+          {
+            "kind": "fax",
+            "number": "021-6000 1235"
+          }
+        ],
+        "emails": [
+          "biz07@example.com"
+        ],
+        "website": null,
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "website",
+        "address"
+      ],
+      "present_text": [
+        "Thomas Weber 托马斯",
+        "Rhine Valley 莱茵化工",
+        "Head of Procurement 采购总监",
+        "+86 133 0000 4455",
+        "0755-2000 9012",
+        "021-6000 1235",
+        "biz07@example.com"
+      ]
+    },
+    {
+      "id": "bi-08",
+      "file": "bi-08.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "vertical",
+      "theme": "blueprint",
+      "logo": "none",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "赵敏 Zhao Min",
+        "company": "Conning Medical 康宁医疗",
+        "jobTitle": "Marketing Manager 市场经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 159 0000 6677"
+          }
+        ],
+        "emails": [
+          "biz08@example.com"
+        ],
+        "website": "www.example08.com",
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "赵敏 Zhao Min",
+        "Conning Medical 康宁医疗",
+        "Marketing Manager 市场经理",
+        "+86 159 0000 6677",
+        "biz08@example.com",
+        "www.example08.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "bi-09",
+      "file": "bi-09.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "classic",
+      "theme": "ivory",
+      "logo": "block",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "Grace Lin 林格蕾",
+        "company": "Atlas Capital 阿特拉斯资本",
+        "jobTitle": "Analyst 分析师",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "028-4000 7890"
+          }
+        ],
+        "emails": [
+          "biz09@example.com"
+        ],
+        "website": "www.example09.com",
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "Grace Lin 林格蕾",
+        "Atlas Capital 阿特拉斯资本",
+        "Analyst 分析师",
+        "+86 138 0000 1234",
+        "028-4000 7890",
+        "biz09@example.com",
+        "www.example09.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "bi-10",
+      "file": "bi-10.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "white",
+      "logo": "monogram",
+      "labels": false,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "孙立 Sun Li",
+        "company": "北方电力 North Power Design",
+        "jobTitle": "主任工程师 Chief Engineer",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          }
+        ],
+        "emails": [
+          "biz10@example.com"
+        ],
+        "website": null,
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department",
+        "website"
+      ],
+      "present_text": [
+        "孙立 Sun Li",
+        "北方电力 North Power Design",
+        "主任工程师 Chief Engineer",
+        "+86 139 0000 5678",
+        "biz10@example.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "bi-10",
+      "file": "bi-10-photo.jpg",
+      "kind": "photo",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "white",
+      "logo": "monogram",
+      "labels": false,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "孙立 Sun Li",
+        "company": "北方电力 North Power Design",
+        "jobTitle": "主任工程师 Chief Engineer",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          }
+        ],
+        "emails": [
+          "biz10@example.com"
+        ],
+        "website": null,
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department",
+        "website"
+      ],
+      "present_text": [
+        "孙立 Sun Li",
+        "北方电力 North Power Design",
+        "主任工程师 Chief Engineer",
+        "+86 139 0000 5678",
+        "biz10@example.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    },
+    {
+      "id": "bi-11",
+      "file": "bi-11.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "two-column",
+      "theme": "navy",
+      "logo": "circle",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "朱宏明 Zhu Hongming",
+        "company": "同济大学 Tongji University",
+        "jobTitle": "教授 Professor",
+        "department": "计算机学院 School of CS",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 137 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          }
+        ],
+        "emails": [
+          "biz11@example.com",
+          "sales11@example.net"
+        ],
+        "website": "www.example11.com",
+        "address": null
+      },
+      "expected_absent": [
+        "address"
+      ],
+      "present_text": [
+        "朱宏明 Zhu Hongming",
+        "同济大学 Tongji University",
+        "教授 Professor",
+        "计算机学院 School of CS",
+        "+86 137 0000 9012",
+        "021-6000 1234",
+        "biz11@example.com",
+        "sales11@example.net",
+        "www.example11.com"
+      ]
+    },
+    {
+      "id": "bi-12",
+      "file": "bi-12.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "vertical",
+      "theme": "charcoal",
+      "logo": "none",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "李静 Li Jing",
+        "company": "华远科技 Huayuan Tech",
+        "jobTitle": "技术总监 CTO",
+        "department": "研发中心 R&D Center",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 150 0000 3344"
+          },
+          {
+            "kind": "fax",
+            "number": "0755-2000 9013"
+          }
+        ],
+        "emails": [
+          "biz12@example.com"
+        ],
+        "website": "www.example12.com",
+        "address": "北京市海淀区中关村大街1号 100080"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "李静 Li Jing",
+        "华远科技 Huayuan Tech",
+        "技术总监 CTO",
+        "研发中心 R&D Center",
+        "+86 150 0000 3344",
+        "0755-2000 9013",
+        "biz12@example.com",
+        "www.example12.com",
+        "北京市海淀区中关村大街1号 100080"
+      ]
+    },
+    {
+      "id": "bi-13",
+      "file": "bi-13.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "classic",
+      "theme": "mint",
+      "logo": "block",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "David Chen 陈大卫",
+        "company": "ABC Technologies 艾博西科技",
+        "jobTitle": "Director 总监",
+        "department": "Platform 平台部",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 186 0000 7788"
+          },
+          {
+            "kind": "office",
+            "number": "0755-2000 9012"
+          }
+        ],
+        "emails": [
+          "biz13@example.com"
+        ],
+        "website": null,
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [
+        "website"
+      ],
+      "present_text": [
+        "David Chen 陈大卫",
+        "ABC Technologies 艾博西科技",
+        "Director 总监",
+        "Platform 平台部",
+        "+86 186 0000 7788",
+        "0755-2000 9012",
+        "biz13@example.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "bi-14",
+      "file": "bi-14.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "王建国 Wang Jianguo",
+        "company": "东方物流 Orient Logistics",
+        "jobTitle": "副总经理 VP",
+        "department": "Operations 运营",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "biz14@example.com"
+        ],
+        "website": "www.example14.com",
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "王建国 Wang Jianguo",
+        "东方物流 Orient Logistics",
+        "副总经理 VP",
+        "Operations 运营",
+        "+86 188 0000 2211",
+        "biz14@example.com",
+        "www.example14.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "bi-14",
+      "file": "bi-14-photo.jpg",
+      "kind": "photo",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "blueprint",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "王建国 Wang Jianguo",
+        "company": "东方物流 Orient Logistics",
+        "jobTitle": "副总经理 VP",
+        "department": "Operations 运营",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 188 0000 2211"
+          }
+        ],
+        "emails": [
+          "biz14@example.com"
+        ],
+        "website": "www.example14.com",
+        "address": "杭州市西湖区文三路90号 310012"
+      },
+      "expected_absent": [],
+      "present_text": [
+        "王建国 Wang Jianguo",
+        "东方物流 Orient Logistics",
+        "副总经理 VP",
+        "Operations 运营",
+        "+86 188 0000 2211",
+        "biz14@example.com",
+        "www.example14.com",
+        "杭州市西湖区文三路90号 310012"
+      ]
+    },
+    {
+      "id": "bi-15",
+      "file": "bi-15.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "two-column",
+      "theme": "ivory",
+      "logo": "circle",
+      "labels": false,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "Emily Zhang 张艾米",
+        "company": "Northwind Analytics 北风数据",
+        "jobTitle": "Data Scientist 数据科学家",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 133 0000 4455"
+          },
+          {
+            "kind": "office",
+            "number": "028-4000 7890"
+          }
+        ],
+        "emails": [
+          "biz15@example.com"
+        ],
+        "website": "www.example15.com",
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "address"
+      ],
+      "present_text": [
+        "Emily Zhang 张艾米",
+        "Northwind Analytics 北风数据",
+        "Data Scientist 数据科学家",
+        "+86 133 0000 4455",
+        "028-4000 7890",
+        "biz15@example.com",
+        "www.example15.com"
+      ]
+    },
+    {
+      "id": "bi-16",
+      "file": "bi-16.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "vertical",
+      "theme": "white",
+      "logo": "none",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "陈雨欣 Chen Yuxin",
+        "company": "Mingde Consulting 明德咨询",
+        "jobTitle": "Senior Consultant 高级顾问",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 159 0000 6677"
+          }
+        ],
+        "emails": [
+          "biz16@example.com"
+        ],
+        "website": null,
+        "address": "上海市杨浦区四平路1239号 200092"
+      },
+      "expected_absent": [
+        "department",
+        "website"
+      ],
+      "present_text": [
+        "陈雨欣 Chen Yuxin",
+        "Mingde Consulting 明德咨询",
+        "Senior Consultant 高级顾问",
+        "+86 159 0000 6677",
+        "biz16@example.com",
+        "上海市杨浦区四平路1239号 200092"
+      ]
+    },
+    {
+      "id": "bi-17",
+      "file": "bi-17.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "classic",
+      "theme": "navy",
+      "logo": "block",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "Thomas Weber 托马斯",
+        "company": "Rhine Valley 莱茵化工",
+        "jobTitle": "Head of Procurement 采购总监",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 138 0000 1234"
+          },
+          {
+            "kind": "office",
+            "number": "021-6000 1234"
+          },
+          {
+            "kind": "fax",
+            "number": "010-8000 5679"
+          }
+        ],
+        "emails": [
+          "biz17@example.com"
+        ],
+        "website": "www.example17.com",
+        "address": "北京市海淀区中关村大街1号 100080"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "Thomas Weber 托马斯",
+        "Rhine Valley 莱茵化工",
+        "Head of Procurement 采购总监",
+        "+86 138 0000 1234",
+        "021-6000 1234",
+        "010-8000 5679",
+        "biz17@example.com",
+        "www.example17.com",
+        "北京市海淀区中关村大街1号 100080"
+      ]
+    },
+    {
+      "id": "bi-18",
+      "file": "bi-18.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "charcoal",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "赵敏 Zhao Min",
+        "company": "Conning Medical 康宁医疗",
+        "jobTitle": "Marketing Manager 市场经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          }
+        ],
+        "emails": [
+          "biz18@example.com",
+          "sales18@example.net"
+        ],
+        "website": "www.example18.com",
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "赵敏 Zhao Min",
+        "Conning Medical 康宁医疗",
+        "Marketing Manager 市场经理",
+        "+86 139 0000 5678",
+        "biz18@example.com",
+        "sales18@example.net",
+        "www.example18.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "bi-18",
+      "file": "bi-18-photo.jpg",
+      "kind": "photo",
+      "lang": "bilingual",
+      "layout": "centered",
+      "theme": "charcoal",
+      "logo": "monogram",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "赵敏 Zhao Min",
+        "company": "Conning Medical 康宁医疗",
+        "jobTitle": "Marketing Manager 市场经理",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 139 0000 5678"
+          }
+        ],
+        "emails": [
+          "biz18@example.com",
+          "sales18@example.net"
+        ],
+        "website": "www.example18.com",
+        "address": "深圳市南山区科技园南路18号 518057"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "赵敏 Zhao Min",
+        "Conning Medical 康宁医疗",
+        "Marketing Manager 市场经理",
+        "+86 139 0000 5678",
+        "biz18@example.com",
+        "sales18@example.net",
+        "www.example18.com",
+        "深圳市南山区科技园南路18号 518057"
+      ]
+    },
+    {
+      "id": "bi-19",
+      "file": "bi-19.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "two-column",
+      "theme": "mint",
+      "logo": "circle",
+      "labels": true,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "Grace Lin 林格蕾",
+        "company": "Atlas Capital 阿特拉斯资本",
+        "jobTitle": "Analyst 分析师",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 137 0000 9012"
+          },
+          {
+            "kind": "office",
+            "number": "0755-2000 9012"
+          }
+        ],
+        "emails": [
+          "biz19@example.com"
+        ],
+        "website": null,
+        "address": null
+      },
+      "expected_absent": [
+        "department",
+        "website",
+        "address"
+      ],
+      "present_text": [
+        "Grace Lin 林格蕾",
+        "Atlas Capital 阿特拉斯资本",
+        "Analyst 分析师",
+        "+86 137 0000 9012",
+        "0755-2000 9012",
+        "biz19@example.com"
+      ]
+    },
+    {
+      "id": "bi-20",
+      "file": "bi-20.png",
+      "kind": "flat",
+      "lang": "bilingual",
+      "layout": "vertical",
+      "theme": "blueprint",
+      "logo": "none",
+      "labels": false,
+      "notes": "中英双语名片",
+      "fields": {
+        "name": "孙立 Sun Li",
+        "company": "北方电力 North Power Design",
+        "jobTitle": "主任工程师 Chief Engineer",
+        "department": "",
+        "phones": [
+          {
+            "kind": "mobile",
+            "number": "+86 150 0000 3344"
+          }
+        ],
+        "emails": [
+          "biz20@example.com"
+        ],
+        "website": "www.example20.com",
+        "address": "成都市高新区天府大道中段1号 610041"
+      },
+      "expected_absent": [
+        "department"
+      ],
+      "present_text": [
+        "孙立 Sun Li",
+        "北方电力 North Power Design",
+        "主任工程师 Chief Engineer",
+        "+86 150 0000 3344",
+        "biz20@example.com",
+        "www.example20.com",
+        "成都市高新区天府大道中段1号 610041"
+      ]
+    }
+  ]
+}
