@@ -21,12 +21,31 @@ struct TagPickerView: View {
                     }
                 }
             }
-            Button {
-                newTag = ""
-                isAdding = true
-            } label: {
-                Label("新建标签", systemImage: "tag")
-                    .font(.footnote)
+            HStack(spacing: 16) {
+                Button {
+                    newTag = ""
+                    isAdding = true
+                } label: {
+                    Label("新建标签", systemImage: "tag")
+                        .font(.footnote)
+                }
+
+                if !knownTags.isEmpty {
+                    Menu {
+                        ForEach(knownTags, id: \.self) { tag in
+                            Button(role: .destructive) {
+                                services.library.deleteTag(named: tag)
+                                selected.removeAll { $0 == tag }
+                            } label: {
+                                Label("删除「\(tag)」", systemImage: "trash")
+                            }
+                        }
+                    } label: {
+                        Label("删除标签", systemImage: "tag.slash")
+                            .font(.footnote)
+                    }
+                    .accessibilityIdentifier("delete-tag-menu")
+                }
             }
             .alert("新建标签", isPresented: $isAdding) {
                 TextField("标签名称", text: $newTag)
