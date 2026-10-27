@@ -52,4 +52,4 @@ make bench       # 只跑语料评测并输出表格
 | 设备 | 系统 | 结果 |
 |---|---|---|
 | iPhone 18 Pro | iOS 27.0 | 57 + 15 全绿 |
-| iPad Pro 11-inch (M5) | iOS 27.0 | 见 `TestResults/ui-tests-ipad.log` |
+| iPad Pro 11-inch (M5) | iOS 27.0 | 15/15 全绿（布局适配已验证） |
