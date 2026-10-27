@@ -123,7 +123,7 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 模型 / 持久化 / 解析器 / Vision 服务 / 导出
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.1 / iOS 27.1 模拟器 `iPhone Duo`）
-- [x] 47 个单元/集成测试 + 15 个 UI 测试全绿（2026-10-27）
+- [x] 57 个单元/集成测试 + 15 个 UI 测试全绿（2026-10-27）
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [ ] T05（真实相册 picker）、T18（真机杀进程）、T19（真机通讯录）手工验收
 - [ ] 与正版 CamCard 的截图对比与差异清单
