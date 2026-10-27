@@ -23,7 +23,7 @@
 
 | 证据 | 位置 |
 |---|---|
-| 60 个单元/集成测试全绿（2026-10-27 实测） | `make test` |
+| 64 个单元/集成测试全绿（2026-10-27 实测） | `make test` |
 | 15 个端到端 UI 测试全绿（覆盖 T01–T20，其中 T05/T18/T19 部分需真机手工补验） | `make test-ui` |
 | 6 张 fixture 的整链路（图→OCR→字段）结果 | `docs/reports/ocr-accuracy.md` 第二之二节 |
 | 字段准确率与幻觉率 | `docs/reports/ocr-accuracy.md` |
@@ -39,7 +39,7 @@
 
 ## 4. 数字（待填最终版）
 
-- 单元/集成测试：60 通过 / 0 失败
+- 单元/集成测试：64 通过 / 0 失败
 - 端到端 UI 测试：15 通过 / 0 失败（总耗时约 150 秒）
 - 字段准确率：name 100% / company 100% / title 100% / email 100% / website 100% /
   address 100% / mobile 100% / office 98% / fax 90%

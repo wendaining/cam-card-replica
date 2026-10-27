@@ -1,7 +1,7 @@
+@testable import CamCardReplica
 import CoreGraphics
 import ImageIO
 import XCTest
-@testable import CamCardReplica
 
 final class ImageCodingTests: XCTestCase {
     private func makeImage(width: Int, height: Int) -> CGImage {
