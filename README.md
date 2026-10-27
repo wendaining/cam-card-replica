@@ -11,7 +11,7 @@
 
 | | |
 |---|---|
-| 单元 / 集成测试 | **64 个，全绿**（含 50 张语料的字段准确率评测） |
+| 单元 / 集成测试 | **65 个，全绿**（含 50 张语料的字段准确率评测） |
 | 端到端测试 | **15 个场景，全绿**，覆盖 T01–T20（iPhone 18 Pro 与 iPad Pro 11 各跑一遍） |
 | 字段准确率 | name/company/title/email/website/address **100%**，office 98%，fax 90%，**幻觉率 0%** |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
@@ -114,7 +114,7 @@ Sources/
   Features/      CardList · Scanner · Crop · Review · Detail · Shared
   DesignSystem/  主题、TagChip、EmptyState、readableWidth
   Support/       A11y 标识、UITest 配置、fixture、Demo 数据
-Tests/           64 个单元/集成测试（含语料准确率评测）
+Tests/           65 个单元/集成测试（含语料准确率评测）
 UITests/         T01–T20 端到端 + 截图用例
 TestData/        50 张合成名片 + Ground Truth（确定性生成，可复现）
 Scripts/         语料生成、验证脚本
