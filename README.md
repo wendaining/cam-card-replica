@@ -31,6 +31,9 @@ make test                      # 期望结尾：Executed 60 tests, with 0 failur
 open CamCardReplica.xcodeproj  # 选 iPhone 18 Pro，Cmd+R
 ```
 
+**第一次亲手用**（不写代码，跟着点）：[docs/guides/first-run.md](docs/guides/first-run.md) —
+15 分钟走完闭环，顺带验掉 20 条验收里的 15 条。
+
 第一次跑会遇到的两件事：
 
 1. **模拟器没有摄像头**，这是预期的。扫描页会显示提示，用右下角的「测试名片」按钮
@@ -131,6 +134,7 @@ docs/            spec / api / architecture(5 篇 ADR) / testing / guides / repor
 | [docs/testing/strategy.md](docs/testing/strategy.md) | 测试分层、语料说明、设备矩阵 |
 | [docs/reports/ocr-accuracy.md](docs/reports/ocr-accuracy.md) | 准确率、按维度切分、错误归因 |
 | [docs/reports/demo-script.md](docs/reports/demo-script.md) | 90 秒演示脚本 + 答辩问答 |
+| [docs/guides/first-run.md](docs/guides/first-run.md) | 第一次上手：三条命令 + 15 分钟验收路线 |
 | [docs/guides/environment.md](docs/guides/environment.md) | 环境搭建与排障 |
 
 ## 合规
