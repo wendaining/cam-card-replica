@@ -41,7 +41,15 @@
 ## 运行
 
 ```bash
-make test        # 单元 + 集成
-make test-ui     # T01–T20
+make test        # 单元 + 集成（57 个）
+make test-ui     # T01–T20（15 个用例，约 2.5 分钟）
+make test-ipad   # 同一套在 iPad 上跑，验证布局
 make bench       # 只跑语料评测并输出表格
 ```
+
+设备矩阵（本地实测，2026-10-27）：
+
+| 设备 | 系统 | 结果 |
+|---|---|---|
+| iPhone 18 Pro | iOS 27.0 | 57 + 15 全绿 |
+| iPad Pro 11-inch (M5) | iOS 27.0 | 见 `TestResults/ui-tests-ipad.log` |

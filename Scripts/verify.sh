@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-DESTINATION="${DESTINATION:-platform=iOS Simulator,name=iPhone Duo}"
+DESTINATION="${DESTINATION:-platform=iOS Simulator,name=iPhone 18 Pro}"
 
 echo "==> swiftformat (lint)"
 swiftformat --lint Sources Tests UITests

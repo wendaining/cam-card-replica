@@ -113,7 +113,8 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 ## 9. 环境事实
 
 - macOS 27.0.1 / Xcode 27.1 / iOS SDK 27.1（runtime 已安装）
-- 本机 MDM 只允许已存在的模拟器 **`iPhone Duo`**（不能 `simctl create`），`Makefile` 已按此配置
+- 测试默认目标：**iPhone 18 Pro**（iOS 27.0）；另有 `make test-ipad`（iPad Pro 11-inch M5）验证布局
+- 早先 `simctl create` 失败是 Xcode 附加组件没装完；Device Hub 修复后设备已可选
 - 机器是 SAP MDM 托管，App Store 安装受策略影响；Xcode 来自 Self Service。
 - 部署目标 iOS 17.0；`TARGETED_DEVICE_FAMILY = 1,2`。
 

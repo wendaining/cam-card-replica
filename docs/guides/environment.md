@@ -41,8 +41,15 @@ open CamCardReplica.xcodeproj    # Cmd+R
 命令行跑测试：
 
 ```bash
-make test
-make test-ui
+make test          # 单元 + 集成（57 个）
+make test-ui       # 端到端（15 个，约 2.5 分钟）
+make test-ipad     # 同一套端到端在 iPad 上跑，验证布局适配
+```
+
+默认目标是 `iPhone 18 Pro`；换机器/换机型：
+
+```bash
+DESTINATION='platform=iOS Simulator,name=iPhone 17' make test
 ```
 
 ## 常见问题
@@ -55,5 +62,5 @@ make test-ui
 | 相机预览黑屏 | 模拟器没有摄像头，属预期；用相册或测试名片 |
 | 编译报 `No such module 'Vision'` | 部署目标写成 macOS 了，检查 `project.yml` 的 `platform: iOS` |
 | 签名错误 | 模拟器不需要签名；真机需在 Xcode 里选个人 Team |
-| `Unable to create a device for device type` | 本机受公司 MDM 管理，**只允许已存在的模拟器**（本机为 `iPhone Duo`）。`Makefile` 的 `DESTINATION` 已按此设置，命令行可用 `DESTINATION='platform=iOS Simulator,name=...'` 覆盖 |
+| `Unable to create a device for device type` / 设备列表只有一个怪名字的机型 | 通常是 Xcode 附加组件没装完。执行 `sudo xcodebuild -runFirstLaunch`，再用 **Device Hub**（Xcode → Open Developer Tool → Device Hub）确认机型；本机现已有 `iPhone 18 Pro` 等标准机型 |
 | `Install Failed: Authorization is required` | `xcodebuild -runFirstLaunch` 需要管理员：`sudo xcodebuild -runFirstLaunch` |

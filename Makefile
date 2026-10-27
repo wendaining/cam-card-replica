@@ -1,10 +1,11 @@
 SHELL := /bin/bash
 SCHEME := CamCardReplica
 PROJECT := CamCardReplica.xcodeproj
-DESTINATION ?= platform=iOS Simulator,name=iPhone Duo
+DESTINATION ?= platform=iOS Simulator,name=iPhone 18 Pro
+IPAD_DESTINATION ?= platform=iOS Simulator,name=iPad Pro 11-inch (M5)
 XCODEBUILD := xcodebuild -project $(PROJECT) -scheme $(SCHEME) -destination '$(DESTINATION)'
 
-.PHONY: help bootstrap build test test-ui bench lint format verify run testdata clean hooks
+.PHONY: help bootstrap build test test-ui test-ipad bench lint format verify run testdata clean hooks
 
 help: ## 显示可用命令
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
@@ -36,8 +37,11 @@ verify: lint build test ## 提交前必跑
 
 run: ## 直接装到模拟器并启动
 	$(XCODEBUILD) build
-	xcrun simctl boot "iPhone Duo" || true
+	xcrun simctl boot "iPhone 18 Pro" || true
 	open -a Simulator
+
+test-ipad: ## 在 iPad 模拟器上跑 UI 测试（验证布局适配）
+	xcodebuild -project $(PROJECT) -scheme $(SCHEME) -destination '$(IPAD_DESTINATION)' test -only-testing:CamCardReplicaUITests
 
 testdata: ## 重新生成语料（会改变 ground truth）
 	python3 Scripts/generate_test_cards.py --clean
