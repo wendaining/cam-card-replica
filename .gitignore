@@ -25,6 +25,7 @@ TestResults/
 *.xcresult
 TestData/rendered/
 Scripts/__pycache__/
+.dsh-computer-use/
 
 # Local env
 .env
