@@ -6,6 +6,9 @@ struct CardListView: View {
 
     @State private var query = ""
     @State private var selectedTag: String?
+    @State private var errorMessage: String?
+    @State private var pendingDeletion: [BusinessCard] = []
+    @State private var showDeleteConfirmation = false
 
     private var allCards: [BusinessCard] {
         services.library.cards
@@ -26,6 +29,28 @@ struct CardListView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Theme.screenBackground)
         .navigationTitle("名片夹")
+        .onChange(of: services.library.tags) { _, tags in
+            if let selectedTag, !tags.contains(where: { $0.name == selectedTag }) {
+                self.selectedTag = nil
+            }
+        }
+        .alert("操作失败", isPresented: Binding(get: { errorMessage != nil }, set: {
+            if !$0 {
+                errorMessage = nil
+            }
+        })) {
+            Button("好", role: .cancel) { errorMessage = nil }
+        } message: { Text(errorMessage ?? "") }
+        .confirmationDialog("删除选中的名片？", isPresented: $showDeleteConfirmation,
+                            titleVisibility: .visible, presenting: pendingDeletion) { victims in
+            Button("删除", role: .destructive) {
+                do { try services.library.delete(at: IndexSet(victims.indices), in: victims) } catch {
+                    errorMessage = error.localizedDescription
+                }
+                pendingDeletion = []
+            }
+            Button("取消", role: .cancel) { pendingDeletion = [] }
+        } message: { _ in Text("删除后无法恢复，原始图片也会一并移除。") }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: onScan) {
@@ -107,9 +132,13 @@ struct CardListView: View {
                         CardRow(card: card, thumbnail: thumbnail(for: card))
                             .accessibilityIdentifier(A11y.cardRow(card.id))
                     }
-                }
-                .onDelete { offsets in
-                    services.library.delete(at: offsets, in: visibleCards)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button("删除") {
+                            pendingDeletion = [card]
+                            showDeleteConfirmation = true
+                        }
+                        .tint(.red)
+                    }
                 }
             }
             .listStyle(.plain)

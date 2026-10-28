@@ -35,7 +35,6 @@ import math
 import random
 import shutil
 from dataclasses import dataclass, field, asdict
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -148,6 +147,18 @@ class CardSpec:
         return f"{self.cid}.png"
 
 
+def resolve_font(spec: CardSpec) -> str:
+    """Choose a real family deterministically; this is not a fallback list."""
+    latin = [FONT_SANS[0], FONT_SERIF[0], FONT_MONO[0]]
+    cjk = [FONT_CANDIDATES[0], FONT_CANDIDATES[1], "/System/Library/Fonts/Supplemental/Songti.ttc"]
+    families = latin if spec.lang == "en" else cjk
+    index = (int(spec.cid.split("-")[-1]) - 1) % len(families)
+    selected = families[index]
+    if not Path(selected).is_file():
+        raise FileNotFoundError(f"Corpus font is required for reproducibility: {selected}")
+    return selected
+
+
 def pick_font(paths: list[str], size: int) -> ImageFont.FreeTypeFont:
     for p in paths:
         if Path(p).exists():
@@ -234,11 +245,11 @@ def render_card_with_meta(spec: CardSpec, rng: random.Random) -> tuple[Image.Ima
     m = 56 if not vertical else 48
     y = 58 if not vertical else 64
 
-    f_name = pick_font(FONT_CANDIDATES, 46 if not vertical else 40)
-    f_title = pick_font(FONT_CANDIDATES, 24)
-    f_company = pick_font(FONT_CANDIDATES, 28 if not vertical else 24)
-    f_body = pick_font(FONT_CANDIDATES, 19)
-    f_small = pick_font(FONT_CANDIDATES, 16)
+    f_name = pick_font([resolve_font(spec)], 46 if not vertical else 40)
+    f_title = pick_font([resolve_font(spec)], 24)
+    f_company = pick_font([resolve_font(spec)], 28 if not vertical else 24)
+    f_body = pick_font([resolve_font(spec)], 19)
+    f_small = pick_font([resolve_font(spec)], 16)
 
     align_center = spec.layout == "centered"
     cx = W // 2
@@ -730,6 +741,7 @@ def ground_truth_entry(
         "theme": spec.theme,
         "logo": spec.logo,
         "labels": spec.labels,
+        "font_file": resolve_font(spec),
         "occlusion": occlusion,
         "notes": spec.notes,
         "fields": {
@@ -791,9 +803,24 @@ def main() -> int:
                 occluded_photo.save(CARDS_DIR / ofile, quality=92, optimize=True, progressive=True)
                 entries.append(ground_truth_entry(spec, ofile, "occluded-photo", photo_meta))
 
+    # Keep the small app fixture bundle in sync with this exact corpus version.
+    if not args.preview:
+        fixture_names = ["bi-06", "en-02", "en-02-occluded", "en-03-photo", "zh-01",
+                         "zh-01-photo", "zh-01-occluded", "zh-04", "bi-14-photo-occluded"]
+        directory = ROOT / "Resources" / "Fixtures"
+        directory.mkdir(parents=True, exist_ok=True)
+        for name in fixture_names:
+            photo_source = CARDS_DIR / (name + ".jpg")
+            target = directory / (name + ".jpg")
+            if photo_source.exists():
+                shutil.copyfile(photo_source, target)
+            else:
+                with Image.open(CARDS_DIR / (name + ".png")) as source:
+                    source.convert("RGB").save(target, quality=92, optimize=True)
+
     gt = {
-        "version": 1,
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "version": 2,
+        "generated_at": "2026-10-28T00:00:00+00:00",
         "generator": "Scripts/generate_test_cards.py",
         "seed": 20261027,
         "canvas": {"flat": [CARD_W, CARD_H], "vertical": [VERT_W, VERT_H]},
@@ -806,11 +833,11 @@ def main() -> int:
     )
 
     with (GT_DIR / "manifest.csv").open("w", newline="", encoding="utf-8") as fh:
-        w = csv.writer(fh)
-        w.writerow(["id", "file", "kind", "lang", "layout", "theme", "logo", "name", "company", "missing"])
+        w = csv.writer(fh, lineterminator="\n")
+        w.writerow(["id", "file", "kind", "lang", "layout", "theme", "logo", "font_file", "name", "company", "missing"])
         for e in entries:
             w.writerow([
-                e["id"], e["file"], e["kind"], e["lang"], e["layout"], e["theme"], e["logo"],
+                e["id"], e["file"], e["kind"], e["lang"], e["layout"], e["theme"], e["logo"], e["font_file"],
                 e["fields"]["name"], e["fields"]["company"] or "", ",".join(e["expected_absent"]),
             ])
 

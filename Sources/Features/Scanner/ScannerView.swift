@@ -103,8 +103,8 @@ struct ScannerView: View {
                 }
             }
         }
-        .disabled(isCapturing || (!permission.canUseCamera && !usesFixtures))
-        .opacity(permission.canUseCamera || usesFixtures ? 1 : 0.4)
+        .disabled(isCapturing || !permission.canUseCamera)
+        .opacity(permission.canUseCamera ? 1 : 0.4)
         .accessibilityIdentifier(A11y.shutterButton)
         .accessibilityLabel("拍摄")
     }
@@ -168,12 +168,17 @@ struct ScannerView: View {
                 return
             }
             model.handle(image: image, orientation: ImageCoding.orientation(of: data))
+            await model.confirmPreview()
         } catch {
             model.report(error: error.localizedDescription)
         }
     }
 
     private func refreshPermission() async {
+        if usesFixtures, services.configuration.simulatedCameraPermission == nil {
+            permission = .authorized
+            return
+        }
         permission = services.permission.currentStatus()
         if permission == .notDetermined {
             permission = await services.permission.requestAccess()

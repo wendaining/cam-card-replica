@@ -31,7 +31,7 @@ SKIP_DIRS = {"build", ".git", "TestResults", "DerivedData"}
 # The research plan was written before the code existed and lives on as a record
 # of the planning, not as a specification; its illustrative paths are allowed to
 # point at things that were later renamed or dropped.
-HISTORICAL_DOCS = {"00-作业调研与执行方案.md"}
+HISTORICAL_DOCS = {"00-作业调研与执行方案.md", "review-2026-10-28.md"}
 
 # Names that look like paths but are runtime artifacts or external files.
 ALLOWED_PATHS = {"library.json", "spec.md"}
@@ -62,7 +62,7 @@ def repo_facts() -> dict:
         "images": len(ground_truth["cards"]),
         "unit_tests": unit_methods,
         "ui_tests": ui_methods,
-        "scenarios": ui_methods - 1,  # one UI method captures screenshots
+        "scenarios": len(set(re.findall(r"\| (T\d{2}) \|", (ROOT / "docs/spec/acceptance.md").read_text()))),
         "fixtures": len(fixtures),
         "adrs": len(adrs),
         "make_targets": set(re.findall(r"^([a-z][a-z-]*):", makefile, re.M)),
@@ -89,7 +89,7 @@ def check() -> list[str]:
     expectations = {
         "单元/集成测试": ("unit_tests", "unit/integration test methods"),
         "单元测试": ("unit_tests", "unit/integration test methods"),
-        "场景": ("scenarios", "acceptance scenarios (UI methods minus the screenshot helper)"),
+        "场景": ("scenarios", "defined acceptance scenarios (not inferred from UI method counts)"),
         "个验收场景": ("scenarios", "acceptance scenarios"),
         "张图": ("images", "corpus images"),
         "张名片": ("cards", "corpus cards"),

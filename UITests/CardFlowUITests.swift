@@ -24,7 +24,12 @@ final class CardFlowUITests: XCTestCase {
         seed: Bool = true,
         fixtures: Bool = true,
         permission: String? = nil,
-        fixtureName: String? = nil
+        fixtureName: String? = nil,
+        persistentID: String? = nil,
+        resetStore: Bool = false,
+        failSave: Bool = false,
+        failRecognition: Bool = false,
+        emptyRecognition: Bool = false
     ) -> XCUIApplication {
         // UserDefaults parses `-key value` pairs: a bare flag would swallow the
         // next argument, so every switch gets an explicit YES.
@@ -37,6 +42,13 @@ final class CardFlowUITests: XCTestCase {
         if let fixtureName {
             app.launchArguments += ["-fixture-name", fixtureName]
         }
+        if let persistentID {
+            app.launchArguments += ["-persistent-test-id", persistentID]
+        }
+        app.launchArguments += ["-reset-test-store", resetStore ? "YES" : "NO"]
+        app.launchArguments += ["-fail-store-save", failSave ? "YES" : "NO"]
+        app.launchArguments += ["-fail-recognition", failRecognition ? "YES" : "NO"]
+        app.launchArguments += ["-empty-recognition", emptyRecognition ? "YES" : "NO"]
         app.launch()
         return app
     }
@@ -104,6 +116,7 @@ final class CardFlowUITests: XCTestCase {
         app.buttons["scan-button"].tap()
         XCTAssertTrue(element("camera-denied-message").waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["需要相机权限才能拍摄名片"].exists)
+        XCTAssertFalse(app.buttons["shutter-button"].isEnabled)
     }
 
     // MARK: - T04 / T06 capture + boundary detection
@@ -254,8 +267,144 @@ final class CardFlowUITests: XCTestCase {
         launch()
         scanToReview()
         app.buttons["scan-cancel"].tap()
-        XCTAssertTrue(element("scanner-view").waitForExistence(timeout: 5))
-        app.buttons["scan-cancel"].tap()
+        XCTAssertFalse(element("scanner-view").exists)
         XCTAssertTrue(element("card-list").waitForExistence(timeout: 5))
+    }
+
+    func testT13_savedImageOpensAndCanSwitchToOriginal() {
+        launch(seed: false, fixtureName: "zh-01")
+        scanToReview()
+        app.buttons["review-save"].tap()
+        XCTAssertTrue(app.staticTexts["朱宏明"].firstMatch.waitForExistence(timeout: 5))
+        app.staticTexts["朱宏明"].firstMatch.tap()
+        app.buttons["detail-image"].tap()
+        let picker = app.segmentedControls["image-source-picker"]
+        XCTAssertTrue(picker.waitForExistence(timeout: 5), app.debugDescription)
+        picker.buttons["原图"].tap()
+        XCTAssertTrue(picker.buttons["原图"].isSelected)
+        try? XCUIScreen.main.screenshot().pngRepresentation
+            .write(to: URL(fileURLWithPath: "/tmp/camcard-viewer-validation.png"))
+        app.buttons["image-viewer-done"].tap()
+        XCTAssertTrue(element("detail-view").waitForExistence(timeout: 5))
+    }
+
+    func testT17_swipeDeleteCanBeCancelled() {
+        launch()
+        let row = app.staticTexts["David Chen"].firstMatch
+        row.swipeLeft()
+        app.buttons.matching(NSPredicate(format: "label == %@ OR label == %@", "Delete", "删除")).firstMatch.tap()
+        let cancel = app.buttons.matching(NSPredicate(format: "label == %@ OR label == %@", "取消", "Cancel")).firstMatch
+        XCTAssertTrue(app.sheets["删除选中的名片？"].waitForExistence(timeout: 5))
+        if cancel.exists {
+            cancel.tap()
+        } else {
+            // iOS 27 and iPad present a popover; tapping outside is its native cancel action.
+            app.otherElements["PopoverDismissRegion"].tap()
+        }
+        XCTAssertTrue(app.staticTexts["David Chen"].exists)
+        row.swipeLeft()
+        app.buttons["删除"].firstMatch.tap()
+        let confirmation = app.sheets["删除选中的名片？"]
+        XCTAssertTrue(confirmation.waitForExistence(timeout: 5))
+        confirmation.buttons["删除"].tap()
+        let gone = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"),
+                                             object: app.staticTexts["David Chen"].firstMatch)
+        XCTAssertEqual(XCTWaiter.wait(for: [gone], timeout: 5), .completed, app.debugDescription)
+    }
+
+    func testT20_cancelDoesNotCreateDraftTag() {
+        launch(seed: false, fixtureName: "zh-01")
+        scanToReview()
+        for _ in 0 ..< 6 where !app.buttons["新建标签"].isHittable {
+            app.swipeUp()
+        }
+        app.buttons["新建标签"].tap()
+        app.alerts.textFields.firstMatch.typeText("Review Draft")
+        app.alerts.buttons["添加"].tap()
+        app.buttons["scan-cancel"].tap()
+        XCTAssertTrue(element("empty-state").waitForExistence(timeout: 5))
+        XCTAssertFalse(element("tag-chip-Review Draft").exists)
+    }
+
+    func testT20_storageFailureKeepsReviewAndShowsReason() {
+        launch(seed: false, fixtureName: "zh-01", failSave: true)
+        scanToReview()
+        app.buttons["review-save"].tap()
+        XCTAssertTrue(app.alerts["保存失败"].waitForExistence(timeout: 5))
+        app.alerts.buttons["好"].tap()
+        XCTAssertTrue(element("review-view").exists)
+        app.buttons["scan-cancel"].tap()
+        XCTAssertTrue(element("empty-state").waitForExistence(timeout: 5))
+    }
+
+    func testT20_recognitionFailureShowsRetryAndRetake() {
+        launch(seed: false, fixtureName: "zh-01", failRecognition: true)
+        app.buttons["scan-button"].tap()
+        app.buttons["fixture-capture"].tap()
+        app.buttons["preview-use"].tap()
+        app.buttons["crop-confirm"].tap()
+        XCTAssertTrue(element("scan-error").waitForExistence(timeout: 10))
+        XCTAssertTrue(app.buttons["crop-confirm"].exists)
+        app.buttons["crop-retake"].tap()
+        XCTAssertTrue(element("scanner-view").waitForExistence(timeout: 5))
+    }
+
+    func testT20_emptyRecognitionDisablesSaveUntilNameEntered() {
+        launch(seed: false, fixtureName: "zh-01", emptyRecognition: true)
+        scanToReview()
+        XCTAssertFalse(app.buttons["review-save"].isEnabled)
+        let name = app.textFields["field-name"]
+        name.tap()
+        name.typeText("Manual Contact\n")
+        XCTAssertTrue(app.buttons["review-save"].isEnabled)
+        app.buttons["review-save"].tap()
+        XCTAssertTrue(app.staticTexts["Manual Contact"].waitForExistence(timeout: 5))
+    }
+
+    func testT18_processRelaunchKeepsEditsTagsNotesAndBothImages() {
+        let testID = UUID().uuidString
+        launch(seed: false, fixtureName: "zh-01", persistentID: testID, resetStore: true)
+        scanToReview()
+        let name = app.textFields["field-name"]
+        let expectedName = (name.value as? String ?? "") + "R"
+        name.tap()
+        name.typeText("R\n")
+        for _ in 0 ..< 7 where !app.buttons["新建标签"].isHittable {
+            app.swipeUp()
+        }
+        app.buttons["新建标签"].tap()
+        app.alerts.textFields.firstMatch.typeText("Persistence")
+        app.alerts.buttons["添加"].tap()
+        let notes = app.textViews["field-notes"]
+        for _ in 0 ..< 5 where !notes.isHittable {
+            app.swipeUp()
+        }
+        notes.tap()
+        notes.typeText("Persistence note")
+        app.buttons["review-save"].tap()
+        XCTAssertTrue(app.staticTexts[expectedName].waitForExistence(timeout: 5))
+        app.staticTexts[expectedName].tap()
+        app.buttons["detail-more"].tap()
+        app.buttons["detail-edit"].tap()
+        let company = app.textFields["field-company"]
+        company.tap()
+        company.typeText(" Edited\n")
+        app.buttons["detail-edit-save"].tap()
+        app.terminate()
+        launch(seed: false, fixtureName: "zh-01", persistentID: testID)
+        XCTAssertTrue(app.staticTexts[expectedName].waitForExistence(timeout: 5))
+        app.staticTexts[expectedName].tap()
+        XCTAssertTrue(app.staticTexts["同济大学 Edited"].waitForExistence(timeout: 5))
+        app.buttons["detail-image"].tap()
+        let picker = app.segmentedControls["image-source-picker"]
+        XCTAssertTrue(picker.waitForExistence(timeout: 5), app.debugDescription)
+        picker.buttons["原图"].tap()
+        XCTAssertTrue(picker.buttons["原图"].isSelected)
+        app.buttons["image-viewer-done"].tap()
+        for _ in 0 ..< 6 where !app.staticTexts["Persistence note"].exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(app.staticTexts["Persistence note"].exists)
+        XCTAssertTrue(element("tag-chip-Persistence").exists)
     }
 }

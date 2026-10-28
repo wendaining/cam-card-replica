@@ -18,7 +18,7 @@ CardStore 协议 ── FileCardStore / InMemoryCardStore
 
 1. **不确定的东西都在协议后面。** 相机、OCR、检测、导出各有协议；
    UI 测试通过 `AppServices.make(arguments:)` 注入替身，生产路径零改动。
-2. **单一写入点。** 所有变更走 `CardLibraryModel`，写入即落盘 → T18 自然通过。
+2. **单一写入点。** 所有变更走 `CardLibraryModel`，提交成功后才发布内存；失败保留表单。T18 用文件库 terminate/launch 回归验证。
 3. **状态是枚举，不是布尔堆。** `ScanFlowModel.Stage` 决定当前屏幕，
    不可能出现"裁剪页和确认页同时存在"这种状态。
 4. **解析器是纯函数。** 输入 `OCRResult`，输出 `ParsedCard`，无 IO 无随机，
@@ -42,6 +42,7 @@ CameraController ──Data──> ImageCoding.cgImage ──CGImage──> Scan
 ## 并发
 
 - UI 与状态在主 actor；`AVCaptureSession` 的 start/stop 在专用串行队列；
+- 检测、透视校正、OCR、解析在后台任务，主 actor 通过 token 接受当前结果，取消后丢弃迟到结果；
 - 拍照回调在任意队列，用独立的 `PhotoCaptureDelegate` 桥接成 `async`，
   不把 UIKit/AVFoundation 类型泄漏进模型层。
 
@@ -60,3 +61,4 @@ CameraController ──Data──> ImageCoding.cgImage ──CGImage──> Scan
 | [0003](adr/ADR-0003-json-file-persistence.md) | 持久化用 Codable + 文件，不用 SwiftData |
 | [0004](adr/ADR-0004-protocol-seams-and-fixtures.md) | 协议抽象 + fixture 注入换取可测性 |
 | [0005](adr/ADR-0005-xcodegen-and-conventional-commits.md) | XcodeGen 生成工程 + Conventional Commits |
+| [0006](adr/ADR-0006-recognition-evidence-and-evaluation.md) | 识别快照、完整图像测量、语料 v2 与网站证据边界 |

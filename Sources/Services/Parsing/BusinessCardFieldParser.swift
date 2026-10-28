@@ -395,13 +395,18 @@ struct HeuristicFieldParser: FieldParsing {
     }
 
     private func pickWebsite(from lines: [Line]) -> (Int, String)? {
-        var flattened = lines.flatMap { line in line.websites.map { (line.index, $0) } }
+        var flattened = lines.flatMap { line -> [(Int, String)] in
+            let label = line.label?.lowercased() ?? ""
+            guard !["email", "e-mail", "邮箱", "邮件"].contains(label) else { return [] }
+            let labelledWebsite = ["web", "website", "url", "网址", "网站"].contains(label)
+            return line.websites.filter { labelledWebsite || hasWebPrefix($0) }.map { (line.index, $0) }
+        }
         if flattened.isEmpty {
             // Fallback: a line that clearly starts with a web prefix even if the
             // TLD is outside the whitelist.
             for line in lines {
                 let lowered = line.text.lowercased()
-                if lowered.hasPrefix("www.") || lowered.hasPrefix("http") {
+                if hasWebPrefix(lowered) {
                     let value = TextNormalizer.strippingKnownLabels(line.text)
                     if !value.isEmpty {
                         flattened.append((line.index, value))
@@ -413,8 +418,13 @@ struct HeuristicFieldParser: FieldParsing {
         // Prefer an explicit www./http(s) form over a bare domain guess.
         return flattened.first { value in
             let lowered = value.1.lowercased()
-            return lowered.hasPrefix("www.") || lowered.hasPrefix("http")
+            return hasWebPrefix(lowered)
         } ?? flattened.first
+    }
+
+    private func hasWebPrefix(_ value: String) -> Bool {
+        let lower = value.lowercased()
+        return lower.hasPrefix("www.") || lower.hasPrefix("https://") || lower.hasPrefix("http://")
     }
 
     // MARK: - Helpers

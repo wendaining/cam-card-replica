@@ -14,7 +14,8 @@ protocol TextRecognizing: Sendable {
 - 输入：`CGImage` + EXIF 方向。
 - 输出：`OCRResult { lines: [OCRTextLine], rawText, imageSize, duration, languages }`。
 - 坐标约定：**归一化 0...1，原点左上**（Vision 原始为左下，已在适配层翻转）。
-- 失败：抛 `VNError`；调用方降级为"空结果 + 可重拍"。
+- 失败：抛 VNError；调用方回裁剪页，明确显示识别失败，可重试/重拍。识别结果为空则进入空确认表单，可手填。
+- 检测、校正、OCR 由 ScanFlowModel 放在后台任务执行；取消使任务 token 失效，迟到结果不更新 UI。
 
 ## CardDetecting
 
@@ -26,6 +27,7 @@ protocol CardDetecting: Sendable {
 
 - 返回 `nil` 表示没有可信矩形，调用方用 `Quad.fullFrame`。
 - 内部按 `confidenceLevels [0.75, 0.55, 0.35]` 逐级放宽。
+- 产品长边/短边区间为 1.25–2.4，转换成 Vision 的短边/长边区间约 0.417–0.8。
 
 ## ImageCorrecting
 
@@ -74,6 +76,10 @@ protocol CardStore: AnyObject {
 - 文件实现写临时文件后 `replaceItemAt`，避免半个 JSON。
 - 内存实现供 UI 测试与预览使用。
 
+CardLibraryModel 的 add/update/delete/ensureTag/deleteTag/setTags 均 throws；先保存候选库，成功后才发布内存状态。add 可同时接收原图/校正图 Data，失败清理本次新图片；delete 在 JSON 成功后清理无引用图片。加载损坏时禁止覆盖旧库。调用 UI 留在当前表单并显示错误，不能静默关闭。
+
+VCardDocument 是当前已保存名片的 Transferable 值；分享时生成新文件，使用 UUID 目录/文件名，编辑后以及同名联系人之间不会复用旧内容。
+
 ## CameraPermissionProviding
 
 ```swift
@@ -91,3 +97,5 @@ protocol CameraPermissionProviding: Sendable {
 `AppServices.make(arguments:)` 是唯一装配点：
 `-ui-testing` / `-seed-data` / `-fixture-camera` / `-camera-permission denied`
 决定用真实现还是替身。生产路径不受测试开关影响。
+
+仅在 ui-testing 模式启用 persistent-test-id（UUID）与 reset-test-store，使用独立的 Application Support/UITests 子库验证真实进程重启。fail-store-save、fail-recognition、empty-recognition 仅用于失败分支注入，不影响正常库。

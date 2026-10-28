@@ -2,7 +2,7 @@ import CoreGraphics
 import Foundation
 
 /// One recognized text observation.
-struct OCRTextLine: Identifiable, Hashable, Sendable {
+struct OCRTextLine: Codable, Identifiable, Hashable, Sendable {
     let id: UUID
     /// Normalized text as returned by the recognizer (whitespace collapsed).
     var text: String
@@ -33,7 +33,7 @@ struct OCRTextLine: Identifiable, Hashable, Sendable {
 
 /// Everything the OCR stage produces. Kept verbatim so that the benchmark in
 /// `docs/reports/ocr-accuracy.md` can be reproduced from a saved run.
-struct OCRResult: Sendable {
+struct OCRResult: Codable, Hashable, Sendable {
     var lines: [OCRTextLine]
     var rawText: String
     var imageSize: CGSize

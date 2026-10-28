@@ -54,9 +54,17 @@ struct ReviewView: View {
             if let saveError {
                 Section {
                     Text(saveError).foregroundStyle(.red).font(.footnote)
+                        .accessibilityIdentifier("review-save-error")
                 }
             }
         }
+        .alert("保存失败", isPresented: Binding(get: { saveError != nil }, set: {
+            if !$0 {
+                saveError = nil
+            }
+        })) {
+            Button("好", role: .cancel) { saveError = nil }
+        } message: { Text(saveError ?? "") }
         .navigationTitle("确认并保存")
         .navigationBarTitleDisplayMode(.inline)
         .accessibilityElement(children: .contain)
@@ -71,7 +79,7 @@ struct ReviewView: View {
             }
         }
         .sheet(isPresented: $showRawText) {
-            RawTextSheet(text: model.ocr?.rawText ?? "", lines: model.ocr?.lines ?? [])
+            RawTextSheet(text: model.ocr?.rawText ?? "", lines: model.ocr?.lines ?? [], parsed: model.parsed)
         }
     }
 
@@ -93,6 +101,7 @@ struct ReviewView: View {
 struct RawTextSheet: View {
     let text: String
     let lines: [OCRTextLine]
+    var parsed: ParsedCard?
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -102,6 +111,17 @@ struct RawTextSheet: View {
                     Text(text.isEmpty ? "（空）" : text)
                         .font(.system(.footnote, design: .monospaced))
                         .textSelection(.enabled)
+                }
+                if let parsed {
+                    Section("初始解析结果（人工修改前）") {
+                        ForEach(Array(parsed.explanations.enumerated()), id: \.offset) { _, entry in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(entry.title + "：" + entry.value.value)
+                                Text(String(format: "置信度 %.2f · %@", entry.value.confidence, entry.value.evidence))
+                                    .font(.caption).foregroundStyle(.secondary)
+                            }
+                        }
+                    }
                 }
                 if !lines.isEmpty {
                     Section("按行置信度") {

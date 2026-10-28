@@ -2,6 +2,22 @@
 import XCTest
 
 final class PhoneClassifierTests: XCTestCase {
+    func testMixedLabelsOnOneRowUseNearestLabel() {
+        let values = PhoneClassifier.candidates(in: "Mobile: 13800001234 Tel: 021-60001234 Fax: 021-60005678")
+        XCTAssertEqual(values.map(\.kind), [.mobile, .office, .fax])
+        XCTAssertEqual(values.map(\.value), ["13800001234", "021-60001234", "021-60005678"])
+    }
+
+    func testLongDigitsInsideEmailWebsiteAndIdentifiersAreNotPhones() {
+        for line in ["Email: user13800001234@demo.example", "13800001234@demo.example",
+                     "https://demo.example/13800001234", "ID: abc13800001234xyz"] {
+            XCTAssertTrue(PhoneClassifier.candidates(in: line).isEmpty, line)
+        }
+        let both = PhoneClassifier.candidates(in: "Email: user13800001234@demo.example Tel: 021-60001234")
+        XCTAssertEqual(both.map(\.value), ["021-60001234"])
+        XCTAssertEqual(both.first?.kind, .office)
+    }
+
     func testMainlandMobileIsDetectedWithoutLabel() {
         let candidates = PhoneClassifier.candidates(in: "+86 138 0000 1234")
         XCTAssertEqual(candidates.count, 1)

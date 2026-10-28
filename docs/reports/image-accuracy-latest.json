@@ -1,0 +1,9186 @@
+[
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "同济大学"
+        ],
+        "correct": true,
+        "expected": [
+          "同济大学"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "计算机科学与技术学院"
+        ],
+        "correct": true,
+        "expected": [
+          "计算机科学与技术学院"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contactol@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact01@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "021-6000 1235"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1235"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "教授"
+        ],
+        "correct": true,
+        "expected": [
+          "教授"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "朱宏明"
+        ],
+        "correct": true,
+        "expected": [
+          "朱宏明"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example0l.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example01.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-01.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "同济大学"
+        ],
+        "correct": true,
+        "expected": [
+          "同济大学"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "计算机科学与技术学院"
+        ],
+        "correct": true,
+        "expected": [
+          "计算机科学与技术学院"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contactol@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact01@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "021-6000 1235"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1235"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "教授"
+        ],
+        "correct": true,
+        "expected": [
+          "教授"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "朱宏明"
+        ],
+        "correct": true,
+        "expected": [
+          "朱宏明"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example0l.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example01.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-01-occluded.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "occluded",
+    "labels": true,
+    "lang": "zh",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "同济大学"
+        ],
+        "correct": true,
+        "expected": [
+          "同济大学"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "计算机科学与技术学院"
+        ],
+        "correct": true,
+        "expected": [
+          "计算机科学与技术学院"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contactol@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact01@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "021-6000 1235"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1235"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "教授"
+        ],
+        "correct": true,
+        "expected": [
+          "教授"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "朱宏明"
+        ],
+        "correct": true,
+        "expected": [
+          "朱宏明"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example0l.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example01.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-01-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "zh",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "同济大学"
+        ],
+        "correct": true,
+        "expected": [
+          "同济大学"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "计算机科学与技术学院"
+        ],
+        "correct": true,
+        "expected": [
+          "计算机科学与技术学院"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contactol@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact01@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "021-6000 1235"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1235"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "教授"
+        ],
+        "correct": true,
+        "expected": [
+          "教授"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "朱宏明"
+        ],
+        "correct": true,
+        "expected": [
+          "朱宏明"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example0l.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example01.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-01-photo-occluded.jpg",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "occluded-photo",
+    "labels": true,
+    "lang": "zh",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "北京市海淀区中关村大街1号100080"
+        ],
+        "correct": false,
+        "expected": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "华远科技股份有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "华远科技股份有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "研发中心"
+        ],
+        "correct": true,
+        "expected": [
+          "研发中心"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contacto2@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact02@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "技术总监"
+        ],
+        "correct": true,
+        "expected": [
+          "技术总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "李静"
+        ],
+        "correct": true,
+        "expected": [
+          "李静"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example02.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example02.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-02.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "东方物流集团"
+        ],
+        "correct": true,
+        "expected": [
+          "东方物流集团"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "运营管理部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact03@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact03@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "副总经理"
+        ],
+        "correct": true,
+        "expected": [
+          "副总经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86137 00009012"
+        ],
+        "correct": false,
+        "expected": [
+          "+86 137 0000 9012"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "王建国"
+        ],
+        "correct": true,
+        "expected": [
+          "王建国"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example03.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example03.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-03.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "zh",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "correct": true,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "明德咨询有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "明德咨询有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "战略咨询"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contacto4@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact04@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "高级顾问"
+        ],
+        "correct": true,
+        "expected": [
+          "高级顾问"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 150 0000 3344"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 150 0000 3344"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "陈雨欣"
+        ],
+        "correct": true,
+        "expected": [
+          "陈雨欣"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0571-3000 3456"
+        ],
+        "correct": true,
+        "expected": [
+          "0571-3000 3456"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-04.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "长安精密制造有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "长安精密制造有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contacto5@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact05@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "总经理"
+        ],
+        "correct": true,
+        "expected": [
+          "总经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "张伟"
+        ],
+        "correct": true,
+        "expected": [
+          "张伟"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example05.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example05.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-05.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "长安精密制造有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "长安精密制造有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contacto5@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact05@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "总经理"
+        ],
+        "correct": true,
+        "expected": [
+          "总经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "张伟"
+        ],
+        "correct": true,
+        "expected": [
+          "张伟"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example05.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example05.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-05-occluded.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "occluded",
+    "labels": true,
+    "lang": "zh",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "长安精密制造有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "长安精密制造有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact05@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact05@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "总经理"
+        ],
+        "correct": true,
+        "expected": [
+          "总经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "张伟"
+        ],
+        "correct": true,
+        "expected": [
+          "张伟"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.exampleos.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example05.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-05-photo.jpg",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "zh",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "长安精密制造有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "长安精密制造有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact05@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact05@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "总经理"
+        ],
+        "correct": true,
+        "expected": [
+          "总经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "张伟"
+        ],
+        "correct": true,
+        "expected": [
+          "张伟"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example05.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example05.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-05-photo-occluded.jpg",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "occluded-photo",
+    "labels": true,
+    "lang": "zh",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "海通律师事务所"
+        ],
+        "correct": true,
+        "expected": [
+          "海通律师事务所"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "知识产权"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact06@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact06@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "0755-2000 9013"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "合伙人"
+        ],
+        "correct": true,
+        "expected": [
+          "合伙人"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "刘晓峰"
+        ],
+        "correct": true,
+        "expected": [
+          "刘晓峰"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0755-2000 9013"
+        ],
+        "correct": false,
+        "expected": [],
+        "extra": 1,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example06.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example06.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-06.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "zh",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "correct": true,
+        "expected": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "康宁医疗器械有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "康宁医疗器械有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "市场部"
+        ],
+        "correct": true,
+        "expected": [
+          "市场部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contacto7@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact07@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "市场经理"
+        ],
+        "correct": true,
+        "expected": [
+          "市场经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 133 0000 4455"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 133 0000 4455"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "赵敏"
+        ],
+        "correct": true,
+        "expected": [
+          "赵敏"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example07.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example07.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-07.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Add:深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "北方电力设计院"
+        ],
+        "correct": true,
+        "expected": [
+          "北方电力设计院"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "输电线路室"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contacto8@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact08@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "主任工程师"
+        ],
+        "correct": true,
+        "expected": [
+          "主任工程师"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 159 0000 6677"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 159 0000 6677"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "孙立"
+        ],
+        "correct": true,
+        "expected": [
+          "孙立"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-08.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "青禾文化传媒"
+        ],
+        "correct": true,
+        "expected": [
+          "青禾文化传媒"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact09@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact09@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "创意总监"
+        ],
+        "correct": true,
+        "expected": [
+          "创意总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "周婷"
+        ],
+        "correct": true,
+        "expected": [
+          "周婷"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example0y.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example09.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-09.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "zh",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "青禾文化传媒"
+        ],
+        "correct": true,
+        "expected": [
+          "青禾文化传媒"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact09@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact09@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "创意总监"
+        ],
+        "correct": true,
+        "expected": [
+          "创意总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "周婷"
+        ],
+        "correct": true,
+        "expected": [
+          "周婷"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example0y.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example09.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-09-occluded.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "occluded",
+    "labels": false,
+    "lang": "zh",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "青禾文化传媒"
+        ],
+        "correct": true,
+        "expected": [
+          "青禾文化传媒"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact09@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact09@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "创意总监"
+        ],
+        "correct": true,
+        "expected": [
+          "创意总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "周婷"
+        ],
+        "correct": true,
+        "expected": [
+          "周婷"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.examplc09.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example09.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-09-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "photo",
+    "labels": false,
+    "lang": "zh",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "青禾文化传媒"
+        ],
+        "correct": true,
+        "expected": [
+          "青禾文化传媒"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact09@cxamplc.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact09@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "创意总监"
+        ],
+        "correct": true,
+        "expected": [
+          "创意总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "周婷"
+        ],
+        "correct": true,
+        "expected": [
+          "周婷"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.examplc09.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example09.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "zh-09-photo-occluded.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "occluded-photo",
+    "labels": false,
+    "lang": "zh",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "correct": true,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "南山置业发展有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "南山置业发展有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "工程部"
+        ],
+        "correct": true,
+        "expected": [
+          "工程部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contactlo@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact10@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "项目经理"
+        ],
+        "correct": true,
+        "expected": [
+          "项目经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "吴强"
+        ],
+        "correct": true,
+        "expected": [
+          "吴强"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0571-3000 3456"
+        ],
+        "correct": true,
+        "expected": [
+          "0571-3000 3456"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example10.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example10.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-10.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号200092"
+        ],
+        "correct": false,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "星河银行"
+        ],
+        "correct": true,
+        "expected": [
+          "星河银行"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "对公业务部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact11@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact11@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "010-8000 5679"
+        ],
+        "correct": true,
+        "expected": [
+          "010-8000 5679"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "客户经理"
+        ],
+        "correct": true,
+        "expected": [
+          "客户经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 137 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 137 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "郑丽华"
+        ],
+        "correct": true,
+        "expected": [
+          "郑丽华"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example11.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example11.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-11.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "云图数据科技有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "云图数据科技有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "数据平台"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact12@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact12@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "算法工程师"
+        ],
+        "correct": true,
+        "expected": [
+          "算法工程师"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 150 0000 3344"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 150 0000 3344"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "何俊"
+        ],
+        "correct": true,
+        "expected": [
+          "何俊"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-12.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "zh",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "云图数据科技有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "云图数据科技有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "数据平台"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact12@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact12@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "算法工程师"
+        ],
+        "correct": true,
+        "expected": [
+          "算法工程师"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 150 0000 3344"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 150 0000 3344"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "何俊"
+        ],
+        "correct": true,
+        "expected": [
+          "何俊"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-12-occluded.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "occluded",
+    "labels": false,
+    "lang": "zh",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Add:深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "远航国际贸易有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "远航国际贸易有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "进出口部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact13@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact13@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "外贸经理"
+        ],
+        "correct": true,
+        "expected": [
+          "外贸经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "马晓东"
+        ],
+        "correct": true,
+        "expected": [
+          "马晓东"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example13.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example13.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-13.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "远航国际贸易有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "远航国际贸易有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "进出口部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "contact13@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact13@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "外贸经理"
+        ],
+        "correct": true,
+        "expected": [
+          "外贸经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "马晓东"
+        ],
+        "correct": true,
+        "expected": [
+          "马晓东"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example13.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example13.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-13-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "zh",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号310012"
+        ],
+        "correct": false,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "华夏中医药研究院"
+        ],
+        "correct": true,
+        "expected": [
+          "华夏中医药研究院"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "药理研究室"
+        ],
+        "correct": true,
+        "expected": [
+          "药理研究室"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contactl4@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "contact14@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "研究员"
+        ],
+        "correct": true,
+        "expected": [
+          "研究员"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "林芳"
+        ],
+        "correct": true,
+        "expected": [
+          "林芳"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example14.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example14.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-14.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "zh",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "蓝天航空服务有限公司"
+        ],
+        "correct": true,
+        "expected": [
+          "蓝天航空服务有限公司"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "contact15@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "contact15@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "运营总监"
+        ],
+        "correct": true,
+        "expected": [
+          "运营总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 133 0000 4455"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 133 0000 4455"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "高鹏"
+        ],
+        "correct": true,
+        "expected": [
+          "高鹏"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example15.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example15.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "zh-15.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "zh",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "correct": true,
+        "expected": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "ABC Technologles"
+        ],
+        "correct": false,
+        "expected": [
+          "ABC Technologies"
+        ],
+        "extra": 1,
+        "field": "company",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Platform Engineering"
+        ],
+        "correct": true,
+        "expected": [
+          "Platform Engineering"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "david.chen@example.org",
+          "info@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "david.chen@example.org",
+          "info@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Technical Director"
+        ],
+        "correct": true,
+        "expected": [
+          "Technical Director"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "David Chen"
+        ],
+        "correct": true,
+        "expected": [
+          "David Chen"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1415 000 8000"
+        ],
+        "correct": false,
+        "expected": [
+          "+1 415 000 8000"
+        ],
+        "extra": 1,
+        "field": "office",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "www.abc.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.abc.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-01.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "12 Kig William Street, London EC4N 7BJ"
+        ],
+        "correct": false,
+        "expected": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Northwind Analytics"
+        ],
+        "correct": true,
+        "expected": [
+          "Northwind Analytics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "AI Lab"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "emily.zhang@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "+44 20 0000 7001"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Senior Data Scientist"
+        ],
+        "correct": true,
+        "expected": [
+          "Senior Data Scientist"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 212 000 5678",
+          "+44 20 0000 7001"
+        ],
+        "correct": false,
+        "expected": [
+          "+1 212 000 5678"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Emily Zhang"
+        ],
+        "correct": true,
+        "expected": [
+          "Emily Zhang"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-02.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "flat",
+    "labels": false,
+    "lang": "en",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "12 Kig William Street, London EC4N 7BJ"
+        ],
+        "correct": false,
+        "expected": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Northwind Analytics"
+        ],
+        "correct": true,
+        "expected": [
+          "Northwind Analytics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "AI Lab"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "emily.zhang@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "+44 20 0000 7001"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Senior Data Scientist"
+        ],
+        "correct": true,
+        "expected": [
+          "Senior Data Scientist"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 212 000 5678",
+          "+44 20 0000 7001"
+        ],
+        "correct": false,
+        "expected": [
+          "+1 212 000 5678"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Emily Zhang"
+        ],
+        "correct": true,
+        "expected": [
+          "Emily Zhang"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-02-occluded.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "occluded",
+    "labels": false,
+    "lang": "en",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Add: Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "correct": false,
+        "expected": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Bright Harbor Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "Bright Harbor Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Global Accounts"
+        ],
+        "correct": true,
+        "expected": [
+          "Global Accounts"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "michael.obrian@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "michael.obrian@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "VP Sales"
+        ],
+        "correct": true,
+        "expected": [
+          "VP Sales"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+44 20 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+44 20 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Michael o'Brian"
+        ],
+        "correct": true,
+        "expected": [
+          "Michael O'Brian"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+49 30 0000 6000"
+        ],
+        "correct": true,
+        "expected": [
+          "+49 30 0000 6000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.bright.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.bright.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-03.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Add: Friedrichstrasse 88,10117 Berlin, Germany"
+        ],
+        "correct": false,
+        "expected": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Bright Harbor Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "Bright Harbor Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "G1obal Accounts"
+        ],
+        "correct": false,
+        "expected": [
+          "Global Accounts"
+        ],
+        "extra": 1,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "michael.obrian@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "michael.obrian@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "VP Sales"
+        ],
+        "correct": true,
+        "expected": [
+          "VP Sales"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+44 20 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+44 20 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Michae1 o'Brian"
+        ],
+        "correct": false,
+        "expected": [
+          "Michael O'Brian"
+        ],
+        "extra": 1,
+        "field": "name",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+49 30 00006000"
+        ],
+        "correct": false,
+        "expected": [
+          "+49 30 0000 6000"
+        ],
+        "extra": 1,
+        "field": "office",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "www.bright.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.bright.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-03-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "photo",
+    "labels": true,
+    "lang": "en",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Lumen Health Systems"
+        ],
+        "correct": true,
+        "expected": [
+          "Lumen Health Systems"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Clinical Products"
+        ],
+        "correct": true,
+        "expected": [
+          "Clinical Products"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "sarah.kim@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "sarah.kim@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Proauct Manager"
+        ],
+        "correct": false,
+        "expected": [
+          "Product Manager"
+        ],
+        "extra": 1,
+        "field": "jobTitle",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+49 30 0000 3456"
+        ],
+        "correct": true,
+        "expected": [
+          "+49 30 0000 3456"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Sarah Kim"
+        ],
+        "correct": true,
+        "expected": [
+          "Sarah Kim"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.lumen.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.lumen.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-04.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "correct": true,
+        "expected": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Kestrel Robotics GmbH"
+        ],
+        "correct": true,
+        "expected": [
+          "Kestrel Robotics GmbH"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Motion Control"
+        ],
+        "correct": true,
+        "expected": [
+          "Motion Control"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "robert.fischer@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "robert.fischer@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Chief Engineer"
+        ],
+        "correct": true,
+        "expected": [
+          "Chief Engineer"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+81 3 0000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "+81 3 0000 7890"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Robert Fischer"
+        ],
+        "correct": true,
+        "expected": [
+          "Robert Fischer"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 8000"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 8000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-05.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "12 King william Street, London EC4N 7BJ"
+        ],
+        "correct": true,
+        "expected": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Sierra Legal Partners"
+        ],
+        "correct": true,
+        "expected": [
+          "Sierra Legal Partners"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Intellectual Property"
+        ],
+        "correct": true,
+        "expected": [
+          "Intellectual Property"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "laura.mendosa@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "laura.mendosa@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "+49 30 0000 6001"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Partner"
+        ],
+        "correct": true,
+        "expected": [
+          "Partner"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+65 0000 2345",
+          "+49 30 0000 6001"
+        ],
+        "correct": false,
+        "expected": [
+          "+65 0000 2345"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Laura Mendosa"
+        ],
+        "correct": true,
+        "expected": [
+          "Laura Mendosa"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.sierra.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.sierra.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-06.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "flat",
+    "labels": false,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "12 King william Street, London EC4N 7BJ"
+        ],
+        "correct": true,
+        "expected": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Sierra Legal Partners"
+        ],
+        "correct": true,
+        "expected": [
+          "Sierra Legal Partners"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Intellectual Property"
+        ],
+        "correct": true,
+        "expected": [
+          "Intellectual Property"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "laura.mendosa@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "laura.mendosa@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "+49 30 0000 6001"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Partner"
+        ],
+        "correct": true,
+        "expected": [
+          "Partner"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+65 0000 2345",
+          "+49 30 0000 6001"
+        ],
+        "correct": false,
+        "expected": [
+          "+65 0000 2345"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Laura Mendosa"
+        ],
+        "correct": true,
+        "expected": [
+          "Laura Mendosa"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.sierra.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.sierra.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-06-occluded.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "occluded",
+    "labels": false,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "correct": true,
+        "expected": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Rhine Valley Chemicals"
+        ],
+        "correct": true,
+        "expected": [
+          "Rhine Valley Chemicals"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Supply Chain"
+        ],
+        "correct": true,
+        "expected": [
+          "Supply Chain"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "thomas.weber@example.org",
+          "info@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "thomas.weber@example.org",
+          "info@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Head of Procurement"
+        ],
+        "correct": true,
+        "expected": [
+          "Head of Procurement"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Thomas Weber"
+        ],
+        "correct": true,
+        "expected": [
+          "Thomas Weber"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+49 30 0000 6000"
+        ],
+        "correct": true,
+        "expected": [
+          "+49 30 0000 6000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.rhine.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.rhine.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-07.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Atlas Capital Group"
+        ],
+        "correct": true,
+        "expected": [
+          "Atlas Capital Group"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Growth Equity"
+        ],
+        "correct": true,
+        "expected": [
+          "Growth Equity"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "grace.lin@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Investment Analyst"
+        ],
+        "correct": true,
+        "expected": [
+          "Investment Analyst"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 212 000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 212 000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Grace Lin"
+        ],
+        "correct": true,
+        "expected": [
+          "Grace Lin"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-08.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Atlas Capital Group"
+        ],
+        "correct": true,
+        "expected": [
+          "Atlas Capital Group"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Growth Equity"
+        ],
+        "correct": true,
+        "expected": [
+          "Growth Equity"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "grace.lin@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "grace.lin@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Investment Analyst"
+        ],
+        "correct": true,
+        "expected": [
+          "Investment Analyst"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 212 000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 212 000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Grace Lin"
+        ],
+        "correct": true,
+        "expected": [
+          "Grace Lin"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-08-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "photo",
+    "labels": true,
+    "lang": "en",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "500 Market Street, suite 900, San Erancisco, CA 94105"
+        ],
+        "correct": false,
+        "expected": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Vertex Construction Ltd."
+        ],
+        "correct": true,
+        "expected": [
+          "Vertex Construction Ltd."
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Project Delivery"
+        ],
+        "correct": true,
+        "expected": [
+          "Project Delivery"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "james.okafor@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "james.okafor@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Site Manager"
+        ],
+        "correct": true,
+        "expected": [
+          "Site Manager"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+44 20 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+44 20 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "James Okafor"
+        ],
+        "correct": true,
+        "expected": [
+          "James Okafor"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 8000"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 8000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.vertex.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.vertex.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-09.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "correct": true,
+        "expected": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Aurora Design Studio"
+        ],
+        "correct": true,
+        "expected": [
+          "Aurora Design Studio"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Brand Design"
+        ],
+        "correct": true,
+        "expected": [
+          "Brand Design"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "anna.petrova@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "anna.petrova@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "+1 415 000 8001"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Creative Lead"
+        ],
+        "correct": true,
+        "expected": [
+          "Creative Lead"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+49 30 0000 3456",
+          "+1 415 000 8001"
+        ],
+        "correct": false,
+        "expected": [
+          "+49 30 0000 3456"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Anna Petrova"
+        ],
+        "correct": true,
+        "expected": [
+          "Anna Petrova"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.aurora.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.aurora.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-10.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "kind": "flat",
+    "labels": false,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "correct": true,
+        "expected": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Pacific Freight Co."
+        ],
+        "correct": true,
+        "expected": [
+          "Pacific Freight Co."
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Ocean Freight"
+        ],
+        "correct": true,
+        "expected": [
+          "Ocean Freight"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "kevin.wu@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "kevin.wu@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations Manager"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations Manager"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+81 3 0000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "+81 3 0000 7890"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Kevin Wu"
+        ],
+        "correct": true,
+        "expected": [
+          "Kevin Wu"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+49 30 0000 6000"
+        ],
+        "correct": true,
+        "expected": [
+          "+49 30 0000 6000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-11.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Friedrichstrasse 88, 10117 Berlin, Grermany"
+        ],
+        "correct": false,
+        "expected": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Pacific Freight Co."
+        ],
+        "correct": true,
+        "expected": [
+          "Pacific Freight Co."
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Ocean Freight"
+        ],
+        "correct": true,
+        "expected": [
+          "Ocean Freight"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "kevin.wu@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "kevin.wu@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations Manager"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations Manager"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+81 3 0000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "+81 3 0000 7890"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Kevin Wu"
+        ],
+        "correct": true,
+        "expected": [
+          "Kevin Wu"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+49 30 0000 6000"
+        ],
+        "correct": true,
+        "expected": [
+          "+49 30 0000 6000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-11-occluded.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "occluded",
+    "labels": true,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Meridian Education Group"
+        ],
+        "correct": true,
+        "expected": [
+          "Meridian Education Group"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "curriculum"
+        ],
+        "correct": true,
+        "expected": [
+          "Curriculum"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "rachel.adler@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "rachel.adler@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Academic Director"
+        ],
+        "correct": true,
+        "expected": [
+          "Academic Director"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+65 0000 2345"
+        ],
+        "correct": true,
+        "expected": [
+          "+65 0000 2345"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Rachel Adler"
+        ],
+        "correct": true,
+        "expected": [
+          "Rachel Adler"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.meridian.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.meridian.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-12.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Add: 500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "correct": false,
+        "expected": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Skyline Semiconductors"
+        ],
+        "correct": true,
+        "expected": [
+          "Skyline Semiconductors"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Analog Design"
+        ],
+        "correct": true,
+        "expected": [
+          "Analog Design"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "daniel.ito@example.org",
+          "info@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "daniel.ito@example.org",
+          "info@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Staff Engineer"
+        ],
+        "correct": true,
+        "expected": [
+          "Staff Engineer"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Daniel Ito"
+        ],
+        "correct": true,
+        "expected": [
+          "Daniel Ito"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 8000"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 8000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.skyline.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.skyline.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-13.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Add: 500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "correct": false,
+        "expected": [
+          "500 Market Street, Suite 900, San Francisco, CA 94105"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Skyline Semiconductors"
+        ],
+        "correct": true,
+        "expected": [
+          "Skyline Semiconductors"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Analog Design"
+        ],
+        "correct": true,
+        "expected": [
+          "Analog Design"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "daniel.ito@example.org",
+          "info@example.org"
+        ],
+        "correct": true,
+        "expected": [
+          "daniel.ito@example.org",
+          "info@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Staff Engineer"
+        ],
+        "correct": true,
+        "expected": [
+          "Staff Engineer"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 415 000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+1 415 000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Daniel Ito"
+        ],
+        "correct": true,
+        "expected": [
+          "Daniel Ito"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1415 000 8000"
+        ],
+        "correct": false,
+        "expected": [
+          "+1 415 000 8000"
+        ],
+        "extra": 1,
+        "field": "office",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "www.skyline.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.skyline.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-13-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "kind": "photo",
+    "labels": true,
+    "lang": "en",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "correct": true,
+        "expected": [
+          "12 King William Street, London EC4N 7BJ"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Cedar & Finch"
+        ],
+        "correct": true,
+        "expected": [
+          "Cedar & Finch"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "oliva.brown@example.org"
+        ],
+        "correct": false,
+        "expected": [
+          "olivia.brown@example.org"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "+44 20 0000 7001"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Founder"
+        ],
+        "correct": true,
+        "expected": [
+          "Founder"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+1 212 000 5678",
+          "+44 20 0000 7001"
+        ],
+        "correct": false,
+        "expected": [
+          "+1 212 000 5678"
+        ],
+        "extra": 1,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Olivia Brown"
+        ],
+        "correct": true,
+        "expected": [
+          "Olivia Brown"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-14.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "kind": "flat",
+    "labels": false,
+    "lang": "en",
+    "layout": "minimal"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "correct": true,
+        "expected": [
+          "Friedrichstrasse 88, 10117 Berlin, Germany"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Gulf Horizon Energy"
+        ],
+        "correct": true,
+        "expected": [
+          "Gulf Horizon Energy"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Middle East"
+        ],
+        "correct": true,
+        "expected": [
+          "Middle East"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": false,
+        "expected": [
+          "hassan.al-rashid@example.org"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Business Development"
+        ],
+        "correct": true,
+        "expected": [
+          "Business Development"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+44 20 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+44 20 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Hassan Al-Rashid"
+        ],
+        "correct": true,
+        "expected": [
+          "Hassan Al-Rashid"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+49 30 0000 6000"
+        ],
+        "correct": true,
+        "expected": [
+          "+49 30 0000 6000"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.gulf.example"
+        ],
+        "correct": true,
+        "expected": [
+          "www.gulf.example"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "en-15.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "kind": "flat",
+    "labels": true,
+    "lang": "en",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "同济大学 Tongji University"
+        ],
+        "correct": true,
+        "expected": [
+          "同济大学 Tongji University"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "计算机学院 School of CS"
+        ],
+        "correct": true,
+        "expected": [
+          "计算机学院 School of CS"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz01@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz01@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "教授 Professor"
+        ],
+        "correct": true,
+        "expected": [
+          "教授 Professor"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "朱宏明 Zhu Hongming"
+        ],
+        "correct": true,
+        "expected": [
+          "朱宏明 Zhu Hongming"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0755-2000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "0755-2000 9012"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-01.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "北京市海淀区中关村大街1号100080"
+        ],
+        "correct": false,
+        "expected": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "华远科技 Huayuan Tech"
+        ],
+        "correct": true,
+        "expected": [
+          "华远科技 Huayuan Tech"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "研发中心 R&D Center"
+        ],
+        "correct": true,
+        "expected": [
+          "研发中心 R&D Center"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizo2@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz02@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "010-8000 5679"
+        ],
+        "correct": true,
+        "expected": [
+          "010-8000 5679"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "技术总监 CTO"
+        ],
+        "correct": true,
+        "expected": [
+          "技术总监 CTO"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "李静 Li Jing"
+        ],
+        "correct": true,
+        "expected": [
+          "李静 Li Jing"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example02.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example02.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-02.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "北京市海淀区中关村大街1号100080"
+        ],
+        "correct": false,
+        "expected": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "华远科技 Huayuan Tech"
+        ],
+        "correct": true,
+        "expected": [
+          "华远科技 Huayuan Tech"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "研发中心 R&D Center"
+        ],
+        "correct": true,
+        "expected": [
+          "研发中心 R&D Center"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz02@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz02@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "010-8000 5679"
+        ],
+        "correct": true,
+        "expected": [
+          "010-8000 5679"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "技术总监 CTO"
+        ],
+        "correct": true,
+        "expected": [
+          "技术总监 CTO"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "李静 Li Jing"
+        ],
+        "correct": true,
+        "expected": [
+          "李静 Li Jing"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example02.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example02.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-02-photo.jpg",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "ABC Technologies 艾博西科技"
+        ],
+        "correct": true,
+        "expected": [
+          "ABC Technologies 艾博西科技"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Platform 平台部"
+        ],
+        "correct": true,
+        "expected": [
+          "Platform 平台部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz03@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz03@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Director 总监"
+        ],
+        "correct": true,
+        "expected": [
+          "Director 总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 137 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 137 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "David Chen 陈大卫"
+        ],
+        "correct": true,
+        "expected": [
+          "David Chen 陈大卫"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "028-4000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "028-4000 7890"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example03.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example03.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-03.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "ABC Technologies 艾博西科技"
+        ],
+        "correct": true,
+        "expected": [
+          "ABC Technologies 艾博西科技"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Platform 平台部"
+        ],
+        "correct": true,
+        "expected": [
+          "Platform 平台部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz03@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz03@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Director 总监"
+        ],
+        "correct": true,
+        "expected": [
+          "Director 总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 137 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 137 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "David Chen 陈大卫"
+        ],
+        "correct": true,
+        "expected": [
+          "David Chen 陈大卫"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "028-4000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "028-4000 7890"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example03.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example03.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-03-occluded.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "occluded",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "correct": true,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "东方物流 Orient Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "东方物流 Orient Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations 运营"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations 运营"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz04@example.com",
+          "sales04@example.net"
+        ],
+        "correct": true,
+        "expected": [
+          "biz04@example.com",
+          "sales04@example.net"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "剧总经理 VP"
+        ],
+        "correct": false,
+        "expected": [
+          "副总经理 VP"
+        ],
+        "extra": 1,
+        "field": "jobTitle",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+86 150 0000 3344"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 150 0000 3344"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "王建国 Wang Jianguo"
+        ],
+        "correct": true,
+        "expected": [
+          "王建国 Wang Jianguo"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-04.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Northwind Analytics 北风数据"
+        ],
+        "correct": true,
+        "expected": [
+          "Northwind Analytics 北风数据"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz05@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz05@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Data Scientist 数据科学家"
+        ],
+        "correct": true,
+        "expected": [
+          "Data Scientist 数据科学家"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Emily Zhang 张艾米"
+        ],
+        "correct": true,
+        "expected": [
+          "Emily Zhang 张艾米"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example05.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example05.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-05.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "bilingual",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Mingde Consulting 明德咨询"
+        ],
+        "correct": true,
+        "expected": [
+          "Mingde Consulting 明德咨询"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz06@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz06@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Senior Consultant 高级顾问"
+        ],
+        "correct": true,
+        "expected": [
+          "Senior Consultant 高级顾问"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "陈雨欣 Chen Yuxin"
+        ],
+        "correct": true,
+        "expected": [
+          "陈雨欣 Chen Yuxin"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example06.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example06.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-06.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Mingde Consulting 明德咨询"
+        ],
+        "correct": true,
+        "expected": [
+          "Mingde Consulting 明德咨询"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz06@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz06@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Senior Consultant 高级顾间"
+        ],
+        "correct": false,
+        "expected": [
+          "Senior Consultant 高级顾问"
+        ],
+        "extra": 1,
+        "field": "jobTitle",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "陈雨欣 Chen Yuxin"
+        ],
+        "correct": true,
+        "expected": [
+          "陈雨欣 Chen Yuxin"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example06.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example06.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-06-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Rhine Valley 莱茵化工"
+        ],
+        "correct": true,
+        "expected": [
+          "Rhine Valley 莱茵化工"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz07@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz07@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1235"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1235"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Head of Procurement 采购总监"
+        ],
+        "correct": true,
+        "expected": [
+          "Head of Procurement 采购总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 133 0000 4455"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 133 0000 4455"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Thomas Weber 托马斯"
+        ],
+        "correct": true,
+        "expected": [
+          "Thomas Weber 托马斯"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0755-2000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "0755-2000 9012"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-07.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Conning Meaical 康宁医疗"
+        ],
+        "correct": false,
+        "expected": [
+          "Conning Medical 康宁医疗"
+        ],
+        "extra": 1,
+        "field": "company",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizo8@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz08@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Marketing Manager 市场经理"
+        ],
+        "correct": true,
+        "expected": [
+          "Marketing Manager 市场经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 159 0000 6677"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 159 0000 6677"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "赵敏 Zhao Min"
+        ],
+        "correct": true,
+        "expected": [
+          "赵敏 Zhao Min"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example08.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example08.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-08.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Conning Meaical 康宁医疗"
+        ],
+        "correct": false,
+        "expected": [
+          "Conning Medical 康宁医疗"
+        ],
+        "extra": 1,
+        "field": "company",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizo8@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz08@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Marketing Manager 市场经理"
+        ],
+        "correct": true,
+        "expected": [
+          "Marketing Manager 市场经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 159 0000 6677"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 159 0000 6677"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "赵敏 Zhao Min"
+        ],
+        "correct": true,
+        "expected": [
+          "赵敏 Zhao Min"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example08.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example08.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-08-occluded.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "occluded",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号310012"
+        ],
+        "correct": false,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Atlas Capital 阿特拉斯资本"
+        ],
+        "correct": true,
+        "expected": [
+          "Atlas Capital 阿特拉斯资本"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz09@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz09@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Analyst 分析师"
+        ],
+        "correct": true,
+        "expected": [
+          "Analyst 分析师"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Grace Lin 林格蕾"
+        ],
+        "correct": true,
+        "expected": [
+          "Grace Lin 林格蕾"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "028-4000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "028-4000 7890"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example09.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example09.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-09.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "correct": true,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "北方电力 North Power Design"
+        ],
+        "correct": true,
+        "expected": [
+          "北方电力 North Power Design"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizlo@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz10@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "主任工程师 Chief Engineer"
+        ],
+        "correct": true,
+        "expected": [
+          "主任工程师 Chief Engineer"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "孙立 Sun Li"
+        ],
+        "correct": true,
+        "expected": [
+          "孙立 Sun Li"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-10.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "北方电力 North Power Design"
+        ],
+        "correct": true,
+        "expected": [
+          "北方电力 North Power Design"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizl0@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz10@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "主任工程师 Chief Engineer"
+        ],
+        "correct": true,
+        "expected": [
+          "主任工程师 Chief Engineer"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "孙立 Sun Li"
+        ],
+        "correct": true,
+        "expected": [
+          "孙立 Sun Li"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-10-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "photo",
+    "labels": false,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "同济大学 Tongii University"
+        ],
+        "correct": false,
+        "expected": [
+          "同济大学 Tongji University"
+        ],
+        "extra": 1,
+        "field": "company",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "计算机学院 School of CS"
+        ],
+        "correct": true,
+        "expected": [
+          "计算机学院 School of CS"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "1@example.com",
+          "salesl1@example.net"
+        ],
+        "correct": false,
+        "expected": [
+          "biz11@example.com",
+          "sales11@example.net"
+        ],
+        "extra": 2,
+        "field": "emails",
+        "missing": 2
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "教授 Professor"
+        ],
+        "correct": true,
+        "expected": [
+          "教授 Professor"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 137 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 137 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "朱宏明 Zhu Hongming"
+        ],
+        "correct": true,
+        "expected": [
+          "朱宏明 Zhu Hongming"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example1l.com"
+        ],
+        "correct": false,
+        "expected": [
+          "www.example11.com"
+        ],
+        "extra": 1,
+        "field": "website",
+        "missing": 1
+      }
+    ],
+    "file": "bi-11.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "北京市海淀区中关村大街1号100080"
+        ],
+        "correct": false,
+        "expected": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "华远科技 Huayuan Tech"
+        ],
+        "correct": true,
+        "expected": [
+          "华远科技 Huayuan Tech"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "研发中心 R&D Ccntcr"
+        ],
+        "correct": false,
+        "expected": [
+          "研发中心 R&D Center"
+        ],
+        "extra": 1,
+        "field": "department",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "biz12@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz12@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0755-2000 9013"
+        ],
+        "correct": true,
+        "expected": [
+          "0755-2000 9013"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "技术总监 CTO"
+        ],
+        "correct": true,
+        "expected": [
+          "技术总监 CTO"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 150 0000 3344"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 150 0000 3344"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "李静 LiJing"
+        ],
+        "correct": false,
+        "expected": [
+          "李静 Li Jing"
+        ],
+        "extra": 1,
+        "field": "name",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example12.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example12.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-12.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "ABC Technologies 艾博西科技"
+        ],
+        "correct": true,
+        "expected": [
+          "ABC Technologies 艾博西科技"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Platform 平台部"
+        ],
+        "correct": true,
+        "expected": [
+          "Platform 平台部"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz13@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz13@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Director 总监"
+        ],
+        "correct": true,
+        "expected": [
+          "Director 总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 186 0000 7788"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 186 0000 7788"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "David Chen 陈大卫"
+        ],
+        "correct": true,
+        "expected": [
+          "David Chen 陈大卫"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0755-2000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "0755-2000 9012"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-13.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号310012"
+        ],
+        "correct": false,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "东方物流 Orient Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "东方物流 Orient Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations 运营"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations 运营"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz14@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz14@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "倒总经理 VP"
+        ],
+        "correct": false,
+        "expected": [
+          "副总经理 VP"
+        ],
+        "extra": 1,
+        "field": "jobTitle",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "王建国 Wang Jianguo"
+        ],
+        "correct": true,
+        "expected": [
+          "王建国 Wang Jianguo"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example14.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example14.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-14.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号310012"
+        ],
+        "correct": false,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "东方物流 Orient Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "东方物流 Orient Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations 运营"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations 运营"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz14@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz14@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "倒总经理 VP"
+        ],
+        "correct": false,
+        "expected": [
+          "副总经理 VP"
+        ],
+        "extra": 1,
+        "field": "jobTitle",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "王建国 Wang Jianguo"
+        ],
+        "correct": true,
+        "expected": [
+          "王建国 Wang Jianguo"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example14.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example14.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-14-occluded.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "occluded",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号310012"
+        ],
+        "correct": false,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "东方物流 Orient Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "东方物流 Orient Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations 运营"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations 运营"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizl4@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz14@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "副总经理 VP"
+        ],
+        "correct": true,
+        "expected": [
+          "副总经理 VP"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "王建国 Wang Jianguo"
+        ],
+        "correct": true,
+        "expected": [
+          "王建国 Wang Jianguo"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example14.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example14.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-14-photo.jpg",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "correct": true,
+        "expected": [
+          "杭州市西湖区文三路90号 310012"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "东方物流 Orient Logistics"
+        ],
+        "correct": true,
+        "expected": [
+          "东方物流 Orient Logistics"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Operations 运营"
+        ],
+        "correct": true,
+        "expected": [
+          "Operations 运营"
+        ],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizl4@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz14@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "倒总经理 VP"
+        ],
+        "correct": false,
+        "expected": [
+          "副总经理 VP"
+        ],
+        "extra": 1,
+        "field": "jobTitle",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "+86 188 0000 2211"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 188 0000 2211"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "王建国 Wang Jianguo"
+        ],
+        "correct": true,
+        "expected": [
+          "王建国 Wang Jianguo"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example14.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example14.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-14-photo-occluded.jpg",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "occluded-photo",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Northwind Analytics 北风数据"
+        ],
+        "correct": true,
+        "expected": [
+          "Northwind Analytics 北风数据"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz15@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz15@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Data Scientist 数据科学家"
+        ],
+        "correct": true,
+        "expected": [
+          "Data Scientist 数据科学家"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 133 0000 4455"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 133 0000 4455"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Emily Zhang 张艾米"
+        ],
+        "correct": true,
+        "expected": [
+          "Emily Zhang 张艾米"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "028-4000 7890"
+        ],
+        "correct": true,
+        "expected": [
+          "028-4000 7890"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example15.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example15.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-15.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "bilingual",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "correct": true,
+        "expected": [
+          "上海市杨浦区四平路1239号 200092"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Mingde Consulting 明德咨询"
+        ],
+        "correct": true,
+        "expected": [
+          "Mingde Consulting 明德咨询"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizl6@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz16@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Senior Consultant 高级顾问"
+        ],
+        "correct": true,
+        "expected": [
+          "Senior Consultant 高级顾问"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 159 0000 6677"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 159 0000 6677"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "陈雨欣 Chen Yuxin"
+        ],
+        "correct": true,
+        "expected": [
+          "陈雨欣 Chen Yuxin"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-16.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "vertical"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "correct": true,
+        "expected": [
+          "北京市海淀区中关村大街1号 100080"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Rhine Valley 莱茵化工"
+        ],
+        "correct": true,
+        "expected": [
+          "Rhine Valley 莱茵化工"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "bizl7@example.com"
+        ],
+        "correct": false,
+        "expected": [
+          "biz17@example.com"
+        ],
+        "extra": 1,
+        "field": "emails",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "010-8000 5679"
+        ],
+        "correct": true,
+        "expected": [
+          "010-8000 5679"
+        ],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Head of Procurement 采购总监"
+        ],
+        "correct": true,
+        "expected": [
+          "Head of Procurement 采购总监"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 138 0000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 138 0000 1234"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Thomas Weber 托马斯"
+        ],
+        "correct": true,
+        "expected": [
+          "Thomas Weber 托马斯"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "021-6000 1234"
+        ],
+        "correct": true,
+        "expected": [
+          "021-6000 1234"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example17.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example17.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-17.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "classic"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "correct": true,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Conning Medical 康宁医疗"
+        ],
+        "correct": true,
+        "expected": [
+          "Conning Medical 康宁医疗"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz18@example.com",
+          "sales18@example.net"
+        ],
+        "correct": true,
+        "expected": [
+          "biz18@example.com",
+          "sales18@example.net"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Marketing Manager 市场经理"
+        ],
+        "correct": true,
+        "expected": [
+          "Marketing Manager 市场经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "赵敏 Zhao Min"
+        ],
+        "correct": true,
+        "expected": [
+          "赵敏 Zhao Min"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example18.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example18.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-18.png",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "深圳市南山区科技园南路18号518057"
+        ],
+        "correct": false,
+        "expected": [
+          "深圳市南山区科技园南路18号 518057"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "Conning Medical 康宁医疗"
+        ],
+        "correct": true,
+        "expected": [
+          "Conning Medical 康宁医疗"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz18@examplc.com",
+          "sales18@example.nct"
+        ],
+        "correct": false,
+        "expected": [
+          "biz18@example.com",
+          "sales18@example.net"
+        ],
+        "extra": 2,
+        "field": "emails",
+        "missing": 2
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Marketing Manager 市场经理"
+        ],
+        "correct": true,
+        "expected": [
+          "Marketing Manager 市场经理"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 139 0000 5678"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 139 0000 5678"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "赵敏 Zhao Min"
+        ],
+        "correct": true,
+        "expected": [
+          "赵敏 Zhao Min"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example18.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example18.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-18-photo.jpg",
+    "fontFile": "/System/Library/Fonts/Supplemental/Songti.ttc",
+    "kind": "photo",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "centered"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "address",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Atlas Capital 阿特拉斯资本"
+        ],
+        "correct": true,
+        "expected": [
+          "Atlas Capital 阿特拉斯资本"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz19@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz19@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Analyst 分析师"
+        ],
+        "correct": true,
+        "expected": [
+          "Analyst 分析师"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 137 0000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 137 0000 9012"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "Grace Lin 林格蕾"
+        ],
+        "correct": true,
+        "expected": [
+          "Grace Lin 林格蕾"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "0755-2000 9012"
+        ],
+        "correct": true,
+        "expected": [
+          "0755-2000 9012"
+        ],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-19.png",
+    "fontFile": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "kind": "flat",
+    "labels": true,
+    "lang": "bilingual",
+    "layout": "two-column"
+  },
+  {
+    "comparisons": [
+      {
+        "actual": [
+          "成都市高新区天府大道中段1号610041"
+        ],
+        "correct": false,
+        "expected": [
+          "成都市高新区天府大道中段1号 610041"
+        ],
+        "extra": 1,
+        "field": "address",
+        "missing": 1
+      },
+      {
+        "actual": [
+          "北方电力 North Power Design"
+        ],
+        "correct": true,
+        "expected": [
+          "北方电力 North Power Design"
+        ],
+        "extra": 0,
+        "field": "company",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "department",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "biz20@example.com"
+        ],
+        "correct": true,
+        "expected": [
+          "biz20@example.com"
+        ],
+        "extra": 0,
+        "field": "emails",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "fax",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "主任工程师 Chief Engineer"
+        ],
+        "correct": true,
+        "expected": [
+          "主任工程师 Chief Engineer"
+        ],
+        "extra": 0,
+        "field": "jobTitle",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "+86 150 0000 3344"
+        ],
+        "correct": true,
+        "expected": [
+          "+86 150 0000 3344"
+        ],
+        "extra": 0,
+        "field": "mobile",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "孙立 Sun Li"
+        ],
+        "correct": true,
+        "expected": [
+          "孙立 Sun Li"
+        ],
+        "extra": 0,
+        "field": "name",
+        "missing": 0
+      },
+      {
+        "actual": [],
+        "correct": true,
+        "expected": [],
+        "extra": 0,
+        "field": "office",
+        "missing": 0
+      },
+      {
+        "actual": [
+          "www.example20.com"
+        ],
+        "correct": true,
+        "expected": [
+          "www.example20.com"
+        ],
+        "extra": 0,
+        "field": "website",
+        "missing": 0
+      }
+    ],
+    "file": "bi-20.png",
+    "fontFile": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "kind": "flat",
+    "labels": false,
+    "lang": "bilingual",
+    "layout": "vertical"
+  }
+]

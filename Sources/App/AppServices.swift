@@ -39,8 +39,14 @@ final class AppServices {
 
     static func make(arguments: [String] = ProcessInfo.processInfo.arguments) -> AppServices {
         let configuration = UITestConfiguration.fromProcess(arguments)
-        let store: CardStore
-        if configuration.isUITesting || configuration.seedDemoData {
+        var store: CardStore
+        if let testID = configuration.persistentTestID, UUID(uuidString: testID) != nil {
+            let root = FileCardStore.defaultRoot().appendingPathComponent("UITests/" + testID, isDirectory: true)
+            if configuration.resetTestStore {
+                try? FileManager.default.removeItem(at: root)
+            }
+            store = FileCardStore(root: root)
+        } else if configuration.isUITesting || configuration.seedDemoData {
             // T01 needs the empty state; T12+ need seed data. Both are in-memory
             // so tests never touch the real store.
             let library = configuration.seedDemoData
@@ -51,13 +57,19 @@ final class AppServices {
             store = FileCardStore()
         }
 
+        if configuration.failsStoreSave {
+            store = SaveFailingStore(base: store)
+        }
+        let recognizer: any TextRecognizing = configuration.failsRecognition || configuration.emptyRecognition
+            ? UITestTextRecognizer(fails: configuration.failsRecognition) : VisionTextRecognizer()
+
         let permission: any CameraPermissionProviding = configuration.simulatedCameraPermission
             .map { StubCameraPermission(status: $0) }
             ?? SystemCameraPermission()
 
         return AppServices(
             library: CardLibraryModel(store: store),
-            recognizer: VisionTextRecognizer(),
+            recognizer: recognizer,
             detector: VisionCardDetector(),
             corrector: CoreImageCardCorrector(),
             exporter: ContactsExporter(),

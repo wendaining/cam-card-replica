@@ -94,9 +94,8 @@ enum KeywordTables {
     )
 
     static let websitePattern =
-        #"(?i)\b((?:https?://)?(?:www\.)?[a-z0-9\-]+(?:\.[a-z0-9\-]+)*\."#
-            + #"(?:com|cn|net|org|io|co|ai|dev|edu|gov|de|jp|uk|sg|example|test|local)"#
-            + #"(?:/[^\s]*)?)"#
+        #"(?i)(?<![a-z0-9_@.\-])((?:https?://)?(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+"#
+            + #"[a-z]{2,63}(?![a-z0-9_\-]|\.[a-z0-9\-])(?:/[^\s]*)?)"#
 
     static let websiteRegex = try! NSRegularExpression( // swiftlint:disable:this force_try
         pattern: websitePattern,

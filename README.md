@@ -11,9 +11,9 @@
 
 | | |
 |---|---|
-| 单元 / 集成测试 | **65 个，全绿**（含 50 张语料的字段准确率评测） |
-| 端到端测试 | **16 个场景，全绿**，覆盖 T01–T20（iPhone 18 Pro 与 iPad Pro 11 各跑一遍） |
-| 字段准确率 | name/company/title/email/website/address **100%**，office 98%，fax 90%，**幻觉率 0%** |
+| 单元 / 集成测试 | **93 个方法**，含理想文本和全部图片评测 |
+| 端到端测试 | **24 个方法（含截图）**，真机与参考 App 待验项单列 |
+| 字段准确率 | [理想文本与真实图像分开报告](docs/reports/ocr-accuracy.md)，完整集合与缺失误填均计数 |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
 
 ![名片夹](docs/reports/screenshots/02-list.png)
@@ -27,18 +27,18 @@ brew install xcodegen          # 一次性，约 10 秒
 git clone <this repo> && cd cam-card-replica
 make bootstrap                 # 由 project.yml 生成 CamCardReplica.xcodeproj
 make build                     # 期望结尾：** BUILD SUCCEEDED **
-make test                      # 期望结尾：Executed 64 tests, with 0 failures
+make test                      # 期望结尾：Executed 93 tests, with 0 failures
 open CamCardReplica.xcodeproj  # 选 iPhone 18 Pro，Cmd+R
 ```
 
 **第一次亲手用**（不写代码，跟着点）：[docs/guides/first-run.md](docs/guides/first-run.md) —
-15 分钟走完闭环，顺带验掉 20 条验收里的 15 条。
+15 分钟走完本地闭环；真机与正版行为另行签收。
 
 第一次跑会遇到的两件事：
 
-1. **模拟器没有摄像头**，这是预期的。扫描页会显示提示，用右下角的「测试名片」按钮
-   （试管图标）走完整条识别链路，或用左下角从相册导入。
-2. 想直接看效果、不想点：`make test-ui` 会跑完 15 条端到端场景，约 2.5 分钟。
+1. **模拟器没有摄像头**，可用左下角从相册导入。按首次运行指南显式启用 fixture-camera 后，
+   右下角的「测试名片」按钮（试管图标）可走完整条识别链路。
+2. 想直接看效果、不想点：`make test-ui` 运行端到端回归，含失败、取消与真实进程重启。
 
 截图重新生成：
 
@@ -82,7 +82,7 @@ ls /tmp/camcard-shots
 1. **不确定的东西都藏在协议后面**：相机、权限、OCR、检测、导出各有协议，
    测试注入替身，生产路径零 `if debug`（[ADR-0004](docs/architecture/adr/ADR-0004-protocol-seams-and-fixtures.md)）。
 2. **单一写入点**：所有变更走 `CardLibraryModel` → `CardStore`，写入即落盘，
-   所以「杀进程重启」天然成立（[ADR-0003](docs/architecture/adr/ADR-0003-json-file-persistence.md)）。
+   失败时不发布内存状态，终止/重启用文件库实测（[ADR-0003](docs/architecture/adr/ADR-0003-json-file-persistence.md)）。
 3. **解析器是纯函数**：`OCRResult → ParsedCard`，无 IO 无随机，
    50 张语料可以直接当单元测试跑（[ADR-0002](docs/architecture/adr/ADR-0002-rule-based-parser.md)）。
 
@@ -114,11 +114,11 @@ Sources/
   Features/      CardList · Scanner · Crop · Review · Detail · Shared
   DesignSystem/  主题、TagChip、EmptyState、readableWidth
   Support/       A11y 标识、UITest 配置、fixture、Demo 数据
-Tests/           65 个单元/集成测试（含语料准确率评测）
+Tests/           93 个单元/集成测试（含全部图片测量）
 UITests/         T01–T20 端到端 + 截图用例
 TestData/        50 张合成名片 + Ground Truth（确定性生成，可复现）
 Scripts/         语料生成、验证脚本
-docs/            spec / api / architecture(5 篇 ADR) / testing / guides / reports
+docs/            spec / api / architecture(6 篇 ADR) / testing / guides / reports
 ```
 
 ## 文档
@@ -131,7 +131,7 @@ docs/            spec / api / architecture(5 篇 ADR) / testing / guides / repor
 | [docs/spec/data-model.md](docs/spec/data-model.md) | `BusinessCard` 模型与每个字段的判定规则 |
 | [docs/spec/acceptance.md](docs/spec/acceptance.md) | T01–T20 追溯矩阵 |
 | [docs/api/services.md](docs/api/services.md) | 七个服务协议的输入/输出/失败语义 |
-| [docs/architecture/overview.md](docs/architecture/overview.md) | 架构与 5 篇 ADR |
+| [docs/architecture/overview.md](docs/architecture/overview.md) | 架构与 6 篇 ADR |
 | [docs/testing/strategy.md](docs/testing/strategy.md) | 测试分层、语料说明、设备矩阵 |
 | [docs/reports/ocr-accuracy.md](docs/reports/ocr-accuracy.md) | 准确率、按维度切分、错误归因 |
 | [docs/reports/demo-script.md](docs/reports/demo-script.md) | 90 秒演示脚本 + 答辩问答 |

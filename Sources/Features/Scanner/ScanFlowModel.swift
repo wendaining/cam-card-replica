@@ -21,6 +21,16 @@ final class ScanFlowModel {
 
     private let services: AppServices
     private var fixtureIndex = 0
+    private var operationID = UUID()
+    private var detectionTask: Task<(Quad, TimeInterval), Never>?
+    private var recognitionTask: Task<RecognitionOutput, Error>?
+
+    private struct RecognitionOutput: Sendable {
+        var image: CGImage
+        var ocr: OCRResult
+        var parsed: ParsedCard
+        var timings: [String: TimeInterval]
+    }
 
     private(set) var stage: Stage = .capture
     private(set) var capturedImage: CGImage?
@@ -44,6 +54,7 @@ final class ScanFlowModel {
     func handle(image: CGImage, orientation: CGImagePropertyOrientation = .up) {
         // Bake the orientation in first: everything downstream (detection,
         // perspective correction, OCR) then shares one coordinate space.
+        retake()
         let upright = ImageCoding.applyingOrientation(image, orientation)
         capturedImage = upright
         errorMessage = nil
@@ -52,15 +63,23 @@ final class ScanFlowModel {
     }
 
     /// Accepts the shot: run boundary detection, then show the crop screen.
-    func confirmPreview() {
-        guard let image = capturedImage else { return }
-        let started = CFAbsoluteTimeGetCurrent()
-        do {
-            quad = try services.detector.detectCard(in: image, orientation: .up) ?? .fullFrame
-        } catch {
-            quad = .fullFrame
+    func confirmPreview() async {
+        guard let image = capturedImage, stage == .preview else { return }
+        let token = UUID()
+        operationID = token
+        stage = .processing
+        let detector = services.detector
+        let task = Task.detached(priority: .userInitiated) {
+            let started = CFAbsoluteTimeGetCurrent()
+            let result = (try? detector.detectCard(in: image, orientation: .up)) ?? .fullFrame
+            return (result, CFAbsoluteTimeGetCurrent() - started)
         }
-        timings["detect"] = CFAbsoluteTimeGetCurrent() - started
+        detectionTask = task
+        let (result, duration) = await task.value
+        guard operationID == token, !Task.isCancelled else { return }
+        detectionTask = nil
+        quad = result
+        timings["detect"] = duration
         stage = .crop
     }
 
@@ -88,6 +107,14 @@ final class ScanFlowModel {
     }
 
     func retake() {
+        operationID = UUID()
+        detectionTask?.cancel()
+        recognitionTask?.cancel()
+        detectionTask = nil
+        recognitionTask = nil
+        draft = CardDraft()
+        lowConfidenceFields = []
+        timings = [:]
         capturedImage = nil
         correctedImage = nil
         ocr = nil
@@ -100,37 +127,49 @@ final class ScanFlowModel {
     // MARK: - Recognition
 
     func confirmCrop() async {
-        guard let image = capturedImage else { return }
+        guard let image = capturedImage, stage == .crop else { return }
+        let token = UUID()
+        operationID = token
         stage = .processing
         errorMessage = nil
-
-        let started = CFAbsoluteTimeGetCurrent()
-        let corrected = (try? services.corrector.correct(image, quad: quad)) ?? image
-        correctedImage = corrected
-        timings["correct"] = CFAbsoluteTimeGetCurrent() - started
-
-        do {
+        let corrector = services.corrector
+        let recognizer = services.recognizer
+        let parser = services.parser
+        let quad = quad
+        let task = Task.detached(priority: .userInitiated) {
+            try Task.checkCancellation()
+            var durations: [String: TimeInterval] = [:]
+            let correctionStarted = CFAbsoluteTimeGetCurrent()
+            let corrected = (try? corrector.correct(image, quad: quad)) ?? image
+            durations["correct"] = CFAbsoluteTimeGetCurrent() - correctionStarted
+            try Task.checkCancellation()
             let ocrStarted = CFAbsoluteTimeGetCurrent()
-            let result = try services.recognizer.recognize(image: corrected, orientation: .up)
-            timings["ocr"] = CFAbsoluteTimeGetCurrent() - ocrStarted
-            ocr = result
-
+            let result = try recognizer.recognize(image: corrected, orientation: .up)
+            durations["ocr"] = CFAbsoluteTimeGetCurrent() - ocrStarted
+            try Task.checkCancellation()
             let parseStarted = CFAbsoluteTimeGetCurrent()
-            let parsedResult = services.parser.parse(result)
-            timings["parse"] = CFAbsoluteTimeGetCurrent() - parseStarted
-            parsed = parsedResult
-            draft = CardDraft(parsed: parsedResult, rawText: result.rawText)
-            lowConfidenceFields = Self.lowConfidenceFields(in: parsedResult)
-
+            let parsed = parser.parse(result)
+            durations["parse"] = CFAbsoluteTimeGetCurrent() - parseStarted
+            return RecognitionOutput(image: corrected, ocr: result, parsed: parsed, timings: durations)
+        }
+        recognitionTask = task
+        do {
+            let result = try await task.value
+            guard operationID == token, !Task.isCancelled else { return }
+            recognitionTask = nil
+            correctedImage = result.image
+            ocr = result.ocr
+            parsed = result.parsed
+            draft = CardDraft(parsed: result.parsed, rawText: result.ocr.rawText, ocr: result.ocr)
+            lowConfidenceFields = Self.lowConfidenceFields(in: result.parsed)
+            timings.merge(result.timings) { _, latest in latest }
             stage = .review
         } catch {
-            errorMessage = error.localizedDescription
+            guard operationID == token, !Task.isCancelled else { return }
+            recognitionTask = nil
+            errorMessage = "识别失败：" + error.localizedDescription
             stage = .crop
         }
-    }
-
-    func cancelReview() {
-        retake()
     }
 
     // MARK: - Save
@@ -143,14 +182,13 @@ final class ScanFlowModel {
         do {
             let originalData = capturedImage.flatMap { ImageCoding.jpegData(from: $0) }
             let processedData = correctedImage.flatMap { ImageCoding.jpegData(from: $0) }
-            let originalID = try originalData.map { try services.library.saveImage($0) }
-            let processedID = try processedData.map { try services.library.saveImage($0) }
-            let card = draft.makeCard(
-                originalImageID: originalID,
-                processedImageID: processedID,
-                rawText: ocr?.rawText
+            let card = draft.makeCard(rawText: ocr?.rawText)
+            return try services.library.add(
+                card,
+                originalImageData: originalData,
+                processedImageData: processedData,
+                deletingTags: draft.deletedTags
             )
-            return services.library.add(card)
         } catch {
             errorMessage = error.localizedDescription
             return nil

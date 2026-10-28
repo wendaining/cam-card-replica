@@ -22,6 +22,7 @@ struct BusinessCard: Codable, Identifiable, Hashable, Sendable {
     var originalImageID: String?
     var processedImageID: String?
     var rawText: String?
+    var recognition: RecognitionSnapshot?
     var createdAt: Date
     var updatedAt: Date
 
@@ -40,6 +41,7 @@ struct BusinessCard: Codable, Identifiable, Hashable, Sendable {
         originalImageID: String? = nil,
         processedImageID: String? = nil,
         rawText: String? = nil,
+        recognition: RecognitionSnapshot? = nil,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -57,6 +59,7 @@ struct BusinessCard: Codable, Identifiable, Hashable, Sendable {
         self.originalImageID = originalImageID
         self.processedImageID = processedImageID
         self.rawText = rawText
+        self.recognition = recognition
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }

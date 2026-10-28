@@ -1,0 +1,40 @@
+Review baseline: 7c938f5
+Device: iPhone 18 Pro / iOS 27.0
+Date: 2026-10-28 Asia/Shanghai
+Production source and TestData: unchanged
+
+make verify
+** BUILD SUCCEEDED **
+Executed 5 tests, with 0 failures (0 unexpected) in 0.005 (0.007) seconds
+Executed 4 tests, with 0 failures (0 unexpected) in 0.006 (0.007) seconds
+Executed 7 tests, with 0 failures (0 unexpected) in 0.092 (0.096) seconds
+Executed 9 tests, with 0 failures (0 unexpected) in 0.013 (0.015) seconds
+Executed 4 tests, with 0 failures (0 unexpected) in 0.005 (0.006) seconds
+Executed 13 tests, with 0 failures (0 unexpected) in 0.060 (0.064) seconds
+Executed 4 tests, with 0 failures (0 unexpected) in 0.012 (0.013) seconds
+Executed 3 tests, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Executed 1 test, with 0 failures (0 unexpected) in 0.384 (0.385) seconds
+Executed 7 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Executed 6 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Executed 2 tests, with 0 failures (0 unexpected) in 10.938 (10.939) seconds
+Executed 65 tests, with 0 failures (0 unexpected) in 11.524 (11.546) seconds
+Executed 65 tests, with 0 failures (0 unexpected) in 11.524 (11.546) seconds
+** TEST SUCCEEDED **
+
+make test-ui (final serial run)
+Executed 16 tests, with 0 failures (0 unexpected) in 166.528 (166.545) seconds
+Executed 1 test, with 0 failures (0 unexpected) in 29.095 (29.096) seconds
+Executed 17 tests, with 0 failures (0 unexpected) in 195.623 (195.644) seconds
+Executed 17 tests, with 0 failures (0 unexpected) in 195.623 (195.645) seconds
+** TEST SUCCEEDED **
+
+extra image corpus measurement
+Executed 1 test, with 0 failures (0 unexpected) in 45.628 (45.630) seconds
+Executed 1 test, with 0 failures (0 unexpected) in 45.628 (45.630) seconds
+Executed 1 test, with 0 failures (0 unexpected) in 45.628 (45.630) seconds
+** TEST SUCCEEDED **
+
+make audit: problems: 0
+The first UI run was contaminated by a concurrently launched review probe. It was not used as evidence of an app defect. The full final serial UI run passed.
+The first corpus review probe exited unexpectedly; per-image autoreleasepool was added to the scratch measurement harness, then all 76 images completed.
+Temporary probe removed from Tests/Integration; regenerated project has original test counts.

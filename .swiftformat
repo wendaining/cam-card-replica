@@ -3,4 +3,4 @@
 --maxwidth 120
 --stripunusedargs closure-only
 --disable hoistPatternLet,redundantSelf,wrapMultilineStatementBraces
---exclude build,DerivedData,.build
+--exclude build,DerivedData,.build,docs/reports/review-evidence-2026-10-28

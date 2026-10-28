@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generated_at": "2026-10-27T14:21:30+00:00",
+  "version": 2,
+  "generated_at": "2026-10-28T00:00:00+00:00",
   "generator": "Scripts/generate_test_cards.py",
   "seed": 20261027,
   "canvas": {
@@ -25,6 +25,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -75,6 +76,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -129,6 +131,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -179,6 +182,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": {
         "corner": "top-right",
         "angle": 1.1,
@@ -233,6 +237,7 @@
       "theme": "white",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -273,6 +278,7 @@
       "theme": "navy",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -314,6 +320,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话，缺网站",
       "fields": {
@@ -360,6 +367,7 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -401,6 +409,7 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -446,6 +455,7 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -487,6 +497,7 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": {
         "corner": "bottom-right",
         "angle": 18.0,
@@ -532,6 +543,7 @@
       "theme": "blueprint",
       "logo": "block",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -578,6 +590,7 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -623,6 +636,7 @@
       "theme": "white",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中文名片，缺网站",
       "fields": {
@@ -664,6 +678,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -705,6 +720,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -750,6 +766,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -791,6 +808,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": {
         "corner": "bottom-right",
         "angle": 6.2,
@@ -836,6 +854,7 @@
       "theme": "charcoal",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -881,6 +900,7 @@
       "theme": "mint",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -926,6 +946,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中文名片，缺网站",
       "fields": {
@@ -967,6 +988,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -1012,6 +1034,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -1057,6 +1080,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中文名片，双电话",
       "fields": {
@@ -1102,6 +1126,7 @@
       "theme": "white",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -1142,6 +1167,7 @@
       "theme": "navy",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中文名片",
       "fields": {
@@ -1183,6 +1209,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Arial.ttf",
       "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
@@ -1230,6 +1257,7 @@
       "theme": "charcoal",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1276,6 +1304,7 @@
       "theme": "charcoal",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": {
         "corner": "bottom-right",
         "scale": 1.0,
@@ -1326,6 +1355,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1371,6 +1401,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1416,6 +1447,7 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Arial.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1457,6 +1489,7 @@
       "theme": "ivory",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1503,6 +1536,7 @@
       "theme": "white",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1548,6 +1582,7 @@
       "theme": "white",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": {
         "corner": "bottom-right",
         "scale": 1.0,
@@ -1597,6 +1632,7 @@
       "theme": "navy",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Arial.ttf",
       "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
@@ -1644,6 +1680,7 @@
       "theme": "charcoal",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1685,6 +1722,7 @@
       "theme": "charcoal",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1726,6 +1764,7 @@
       "theme": "mint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1771,6 +1810,7 @@
       "theme": "blueprint",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Arial.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1816,6 +1856,7 @@
       "theme": "ivory",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1862,6 +1903,7 @@
       "theme": "ivory",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -1912,6 +1954,7 @@
       "theme": "white",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -1953,6 +1996,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Arial.ttf",
       "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
@@ -2000,6 +2044,7 @@
       "theme": "navy",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Arial.ttf",
       "occlusion": null,
       "notes": "英文名片，多 Email",
       "fields": {
@@ -2047,6 +2092,7 @@
       "theme": "charcoal",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -2093,6 +2139,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Courier New.ttf",
       "occlusion": null,
       "notes": "英文名片",
       "fields": {
@@ -2138,6 +2185,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2184,6 +2232,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2229,6 +2278,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2274,6 +2324,7 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2320,6 +2371,7 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -2370,6 +2422,7 @@
       "theme": "white",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2413,6 +2466,7 @@
       "theme": "navy",
       "logo": "block",
       "labels": false,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2459,6 +2513,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2500,6 +2555,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2541,6 +2597,7 @@
       "theme": "mint",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2592,6 +2649,7 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2633,6 +2691,7 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": {
         "corner": "bottom-right",
         "scale": 1.0,
@@ -2678,6 +2737,7 @@
       "theme": "ivory",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2724,6 +2784,7 @@
       "theme": "white",
       "logo": "monogram",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2765,6 +2826,7 @@
       "theme": "white",
       "logo": "monogram",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2806,6 +2868,7 @@
       "theme": "navy",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2854,6 +2917,7 @@
       "theme": "charcoal",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2899,6 +2963,7 @@
       "theme": "mint",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2945,6 +3010,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -2985,6 +3051,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": {
         "corner": "bottom-left",
         "scale": 1.0,
@@ -3029,6 +3096,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3069,6 +3137,7 @@
       "theme": "blueprint",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": {
         "corner": "top-right",
         "angle": -27.9,
@@ -3113,6 +3182,7 @@
       "theme": "ivory",
       "logo": "circle",
       "labels": false,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3159,6 +3229,7 @@
       "theme": "white",
       "logo": "none",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3200,6 +3271,7 @@
       "theme": "navy",
       "logo": "block",
       "labels": true,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3251,6 +3323,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3294,6 +3367,7 @@
       "theme": "charcoal",
       "logo": "monogram",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3337,6 +3411,7 @@
       "theme": "mint",
       "logo": "circle",
       "labels": true,
+      "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {
@@ -3383,6 +3458,7 @@
       "theme": "blueprint",
       "logo": "none",
       "labels": false,
+      "font_file": "/System/Library/Fonts/STHeiti Medium.ttc",
       "occlusion": null,
       "notes": "中英双语名片",
       "fields": {

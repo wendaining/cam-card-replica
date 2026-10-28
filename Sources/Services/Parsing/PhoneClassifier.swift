@@ -35,42 +35,44 @@ enum PhoneClassifier {
     /// Finds every phone-like token in a line, tolerating the separators OCR
     /// produces (`+86 138 0000 1234`, `(021) 6000-1234`, `021-6000 1234`).
     static func candidates(in line: String) -> [Candidate] {
-        let (label, _) = TextNormalizer.splitLabel(line)
-        let labelKind = label.flatMap { kind(forLabel: $0) }
-
-        let scalars = Array(line)
-        var results: [Candidate] = []
-        var index = 0
-        while index < scalars.count {
-            guard isNumberLike(scalars[index]) else {
-                index += 1
-                continue
+        let text = TextNormalizer.normalize(line)
+        let source = text as NSString
+        let fullRange = NSRange(location: 0, length: source.length)
+        let masked = NSMutableString(string: text)
+        for regex in [KeywordTables.emailRegex, KeywordTables.websiteRegex] {
+            for match in regex.matches(in: text, range: fullRange).reversed() {
+                masked.replaceCharacters(in: match.range, with: String(repeating: "#", count: match.range.length))
             }
-            var end = index
-            var chunk = ""
-            while end < scalars.count, isNumberLike(scalars[end]) {
-                chunk.append(scalars[end])
-                end += 1
-            }
-            // Trim trailing separators that belong to the sentence, not the number.
-            while let last = chunk.last, last == " " || last == "-" || last == "." || last == "," {
-                chunk.removeLast()
-            }
-            let digits = chunk.filter(\.isNumber)
-            if (7 ... 16).contains(digits.count) {
-                let (kind, confidence) = inferKind(digits: digits, raw: chunk, labelKind: labelKind)
-                results.append(Candidate(
-                    value: chunk.trimmingCharacters(in: .whitespaces),
-                    digits: digits,
-                    kind: kind,
-                    confidence: confidence,
-                    label: label
-                ))
-            }
-            index = max(end, index + 1)
         }
-        return results
+        let scan = masked as String
+        let labels = labelRegex.matches(in: scan, range: fullRange)
+        let (head, _) = TextNormalizer.splitLabel(text)
+        if labels.isEmpty, let head, ["address", "add", "地址", "邮编"].contains(head.lowercased()) {
+            return []
+        }
+        return numberRegex.matches(in: scan, range: fullRange).compactMap { match in
+            let raw = source.substring(with: match.range).trimmingCharacters(in: .whitespaces)
+            let digits = raw.filter(\.isNumber)
+            guard (7 ... 16).contains(digits.count) else { return nil }
+            let label = labels.last { $0.range.location < match.range.location }
+                .map { source.substring(with: $0.range(at: 1)) }
+            let (kind, confidence) = inferKind(digits: digits, raw: raw, labelKind: label.flatMap(kind(forLabel:)))
+            return Candidate(value: raw, digits: digits, kind: kind, confidence: confidence, label: label)
+        }
     }
+
+    private static let labelRegex: NSRegularExpression = {
+        let labels = (mobileLabels + officeLabels + faxLabels).sorted { $0.count > $1.count }
+            .map(NSRegularExpression.escapedPattern(for:)).joined(separator: "|")
+        // The expression is built exclusively from escaped labels.
+        return try! NSRegularExpression( // swiftlint:disable:this force_try
+            pattern: "(?i)(?<![A-Za-z0-9_])(" + labels + #")\s*[:：]\s*"#
+        )
+    }()
+
+    private static let numberRegex = try! NSRegularExpression( // swiftlint:disable:this force_try
+        pattern: #"(?<![\p{L}\p{N}_@])\+?\(?\d[\d +().\-]*\d\)?(?![\p{L}\p{N}_@])"#
+    )
 
     static func inferKind(digits: String, raw: String, labelKind: PhoneKind?) -> (PhoneKind, Double) {
         if let labelKind {
