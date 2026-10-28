@@ -7,9 +7,9 @@
 | macOS | 27.x | 本机 27.0.1 |
 | Xcode | 27.1 | 来自公司 Self Service（App Store 也可） |
 | iOS SDK | 27.1 | 随 Xcode |
-| 模拟器 runtime | iOS 27.1 | `xcodebuild -downloadPlatform iOS`（约 8–10 GB） |
+| 模拟器 runtime | iOS 27.0 / 27.1 | 当前默认 iPhone 18 Pro 使用 27.0 |
 | XcodeGen | 最新 | `brew install xcodegen` |
-| Python 3 + Pillow | 3.12+ | 仅重新生成语料时需要 |
+| Python 3 + Pillow + NumPy | 3.12+ | 仅生成语料及工具测试需要，可用 PYTHON 指定现有解释器 |
 
 ## 首次安装
 
@@ -41,8 +41,8 @@ open CamCardReplica.xcodeproj    # Cmd+R
 命令行跑测试：
 
 ```bash
-make test          # 单元 + 集成（57 个）
-make test-ui       # 端到端（15 个，约 2.5 分钟）
+make test          # 单元 + 集成（93 个方法）
+make test-ui       # 端到端（24 个方法，含截图；本机约 5.5 分钟）
 make test-ipad     # 同一套端到端在 iPad 上跑，验证布局适配
 ```
 

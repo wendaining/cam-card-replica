@@ -1,0 +1,120 @@
+kind,field,correct,total,accuracy
+flat,address,43,50,0.860
+flat,company,47,50,0.940
+flat,emails,28,50,0.560
+flat,fax,45,50,0.900
+flat,jobTitle,45,50,0.900
+flat,mobile,46,50,0.920
+flat,name,48,50,0.960
+flat,office,49,50,0.980
+flat,website,48,50,0.960
+occluded,address,9,10,0.900
+occluded,company,10,10,1.000
+occluded,emails,3,10,0.300
+occluded,fax,8,10,0.800
+occluded,jobTitle,8,10,0.800
+occluded,mobile,8,10,0.800
+occluded,name,10,10,1.000
+occluded,office,10,10,1.000
+occluded,website,9,10,0.900
+occluded-photo,address,3,4,0.750
+occluded-photo,company,4,4,1.000
+occluded-photo,emails,2,4,0.500
+occluded-photo,fax,4,4,1.000
+occluded-photo,jobTitle,4,4,1.000
+occluded-photo,mobile,4,4,1.000
+occluded-photo,name,4,4,1.000
+occluded-photo,office,4,4,1.000
+occluded-photo,website,3,4,0.750
+photo,address,6,12,0.500
+photo,company,12,12,1.000
+photo,emails,7,12,0.583
+photo,fax,12,12,1.000
+photo,jobTitle,12,12,1.000
+photo,mobile,12,12,1.000
+photo,name,12,12,1.000
+photo,office,12,12,1.000
+photo,website,11,12,0.917
+FAILURES
+zh-01|flat|website|expected=["www.example01.com"]|actual=["www.example0l.com"]
+zh-01|flat|emails|expected=["contact01@example.com"]|actual=["contactol@example.com"]
+zh-01|occluded|website|expected=["www.example01.com"]|actual=["www.example0l.com"]
+zh-01|occluded|emails|expected=["contact01@example.com"]|actual=["contactol@example.com"]
+zh-01|photo|website|expected=["www.example01.com"]|actual=["www.example0l.com"]
+zh-01|photo|emails|expected=["contact01@example.com"]|actual=["contactol@example.com"]
+zh-01|occluded-photo|website|expected=["www.example01.com"]|actual=["www.example0l.com"]
+zh-01|occluded-photo|emails|expected=["contact01@example.com"]|actual=["contactol@example.com"]
+zh-02|flat|address|expected=["北京市海淀区中关村大街1号 100080"]|actual=["北京市海淀区中关村大街1号100080"]
+zh-02|flat|emails|expected=["contact02@example.com"]|actual=["contactoz@example.com"]
+zh-03|flat|jobTitle|expected=["副总经理"]|actual=["倒总经理"]
+zh-03|flat|emails|expected=["contact03@example.com"]|actual=["contacto3@example.com"]
+zh-04|flat|emails|expected=["contact04@example.com"]|actual=["contacto4@example.com"]
+zh-05|flat|emails|expected=["contact05@example.com"]|actual=["contacto5@example.com"]
+zh-05|occluded|emails|expected=["contact05@example.com"]|actual=["contacto5@example.com"]
+zh-05|photo|emails|expected=["contact05@example.com"]|actual=["contactO5@example.com"]
+zh-05|occluded-photo|address|expected=["成都市高新区天府大道中段1号 610041"]|actual=["成都市高新区天府大道中段1号610041"]
+zh-06|flat|emails|expected=["contact06@example.com"]|actual=["contactO6@example.com"]
+zh-06|flat|office|expected=[]|actual=["0755-2000 9013"]
+zh-06|flat|fax|expected=["0755-2000 9013"]|actual=[]
+zh-07|flat|emails|expected=["contact07@example.com"]|actual=["contacto7@example.com"]
+zh-08|flat|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["Add:深圳市南山区科技园南路18号518057"]
+zh-08|flat|emails|expected=["contact08@example.com"]|actual=["contactog@example.com"]
+zh-09|flat|website|expected=["www.example09.com"]|actual=["www.exampleo9.com"]
+zh-09|flat|emails|expected=["contact09@example.com"]|actual=["contactog@example.com"]
+zh-09|occluded|emails|expected=["contact09@example.com"]|actual=["contactog@example.com"]
+zh-09|photo|emails|expected=["contact09@example.com"]|actual=["contactog@example.com"]
+zh-09|occluded-photo|emails|expected=["contact09@example.com"]|actual=["contactog@example.com"]
+zh-10|flat|emails|expected=["contact10@example.com"]|actual=["contactlo@example.com"]
+zh-11|flat|emails|expected=["contact11@example.com"]|actual=["contactll@example.com"]
+zh-12|flat|emails|expected=["contact12@example.com"]|actual=["contactl2@example.com"]
+zh-12|occluded|emails|expected=["contact12@example.com"]|actual=["contactl2@example.com"]
+zh-13|flat|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["Add:深圳市南山区科技园南路18号518057"]
+zh-13|photo|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["深圳市南山区科技园南路18号518057"]
+zh-14|flat|emails|expected=["contact14@example.com"]|actual=["contactl4@example.com"]
+en-02|flat|mobile|expected=["+1 212 000 5678"]|actual=["+1 212 000 5678", "+44 20 0000 7001"]
+en-02|flat|fax|expected=["+44 20 0000 7001"]|actual=[]
+en-02|occluded|mobile|expected=["+1 212 000 5678"]|actual=["+1 212 000 5678", "+44 20 0000 7001"]
+en-02|occluded|fax|expected=["+44 20 0000 7001"]|actual=[]
+en-03|flat|address|expected=["Friedrichstrasse 88, 10117 Berlin, Germany"]|actual=["Add: Friedrichstrasse 88, 10117 Berlin, Germany"]
+en-03|photo|address|expected=["Friedrichstrasse 88, 10117 Berlin, Germany"]|actual=["Add: Friedrichstrasse 88, 10117 Berlin, Germany"]
+en-06|flat|emails|expected=["laura.mendosa@example.org"]|actual=["laura.menaosa@example.org"]
+en-06|flat|mobile|expected=["+65 0000 2345"]|actual=["+65 0000 2345", "+49 30 0000 6001"]
+en-06|flat|fax|expected=["+49 30 0000 6001"]|actual=[]
+en-06|occluded|emails|expected=["laura.mendosa@example.org"]|actual=["laura.menaosa@example.org"]
+en-06|occluded|mobile|expected=["+65 0000 2345"]|actual=["+65 0000 2345", "+49 30 0000 6001"]
+en-06|occluded|fax|expected=["+49 30 0000 6001"]|actual=[]
+en-09|flat|company|expected=["Vertex Construction Ltd."]|actual=["Vertex Construction Lta."]
+en-10|flat|company|expected=["Aurora Design Studio"]|actual=["Aurora Design Studlo"]
+en-10|flat|mobile|expected=["+49 30 0000 3456"]|actual=["+49 30 0000 3456", "+1 415 000 8001"]
+en-10|flat|fax|expected=["+1 415 000 8001"]|actual=[]
+en-12|flat|name|expected=["Rachel Adler"]|actual=["Racnel Adler"]
+en-13|flat|company|expected=["Skyline Semiconductors"]|actual=["Skyline Semiconauctors"]
+en-13|photo|address|expected=["500 Market Street, Suite 900, San Francisco, CA 94105"]|actual=["Add: 500 Market Street, Suite 900, San Francisco, CA 94105"]
+en-14|flat|mobile|expected=["+1 212 000 5678"]|actual=["+1 212 000 5678", "+44 20 0000 7001"]
+en-14|flat|fax|expected=["+44 20 0000 7001"]|actual=[]
+en-15|flat|name|expected=["Hassan Al-Rashid"]|actual=["Hassan Al-Rasnid"]
+bi-02|flat|emails|expected=["biz02@example.com"]|actual=["bizo2@example.com"]
+bi-02|photo|emails|expected=["biz02@example.com"]|actual=["biz0z@example.com"]
+bi-04|flat|jobTitle|expected=["副总经理 VP"]|actual=["剧总经理 VP"]
+bi-08|flat|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["深圳市南山区科技园南路18号518057"]
+bi-08|flat|jobTitle|expected=["Marketing Manager 市场经理"]|actual=["Marketing Manager 市场经埋"]
+bi-08|flat|emails|expected=["biz08@example.com"]|actual=["bizog@example.com"]
+bi-08|occluded|jobTitle|expected=["Marketing Manager 市场经理"]|actual=["Marketing Manager 市场经埋"]
+bi-08|occluded|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["深圳市南山区科技园南路18号518057"]
+bi-08|occluded|emails|expected=["biz08@example.com"]|actual=["bizog@example.com"]
+bi-09|flat|emails|expected=["biz09@example.com"]|actual=["bizog@example.com"]
+bi-10|flat|emails|expected=["biz10@example.com"]|actual=["bizlo@example.com"]
+bi-10|photo|address|expected=["成都市高新区天府大道中段1号 610041"]|actual=["成都市高新区天府大道中段1号610041"]
+bi-10|photo|emails|expected=["biz10@example.com"]|actual=["bizl0@example.com"]
+bi-11|flat|emails|expected=["biz11@example.com", "sales11@example.net"]|actual=["bizll@example.com", "sales11@example.net"]
+bi-13|flat|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["深圳市南山区科技园南路18号518057"]
+bi-14|flat|jobTitle|expected=["副总经理 VP"]|actual=["到总经理 VP"]
+bi-14|flat|emails|expected=["biz14@example.com"]|actual=["bizl4@example.com"]
+bi-14|occluded|jobTitle|expected=["副总经理 VP"]|actual=["到总经理 VP"]
+bi-14|occluded|emails|expected=["biz14@example.com"]|actual=["bizl4@example.com"]
+bi-14|photo|address|expected=["杭州市西湖区文三路90号 310012"]|actual=["杭州市西湖区文三路90号310012"]
+bi-16|flat|emails|expected=["biz16@example.com"]|actual=["bizl6@example.com"]
+bi-18|flat|emails|expected=["biz18@example.com", "sales18@example.net"]|actual=["bizl8@example.com", "sales18@example.net"]
+bi-18|photo|address|expected=["深圳市南山区科技园南路18号 518057"]|actual=["深圳市南山区科技园南路18号518057"]
+bi-20|flat|address|expected=["成都市高新区天府大道中段1号 610041"]|actual=["成都市高新区天府大道中段1号610041"]
+bi-20|flat|jobTitle|expected=["主任工程师 Chief Engineer"]|actual=["王任工程师 Chief Engineer"]

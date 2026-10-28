@@ -1,0 +1,11 @@
+FAILED_SAVE returned=true flowError=nil libraryError=The operation couldn’t be completed. (review disk full error 28.) inMemory=1 disk=0
+FAILED_DELETE diskCards=1 imageExists=false
+TAG_CASE library=[probe.CardTag(name: "Conference")] card=["conference"] filtered=0
+FIRST_SAVE inMemory=1 error=nil reloaded=1 returned=Review Fixture
+PARSE ["Jordan Lee", "Independent professional", "Email: jordan@demo.example"] => name=Jordan Lee company=Independent professional title=nil site=nil phones=[]
+PARSE ["Jordan Lee", "Mobile: 13800001234 Tel: 021-60001234 Fax: 021-60005678"] => name=Jordan Lee company=nil title=nil site=nil phones=[probe.ParsedPhone(kind: probe.PhoneKind.mobile, value: probe.ParsedValue(value: "13800001234", confidence: 0.96, evidence: "标签「Mobile」")), probe.ParsedPhone(kind: probe.PhoneKind.mobile, value: probe.ParsedValue(value: "021-60001234", confidence: 0.96, evidence: "标签「Mobile」")), probe.ParsedPhone(kind: probe.PhoneKind.mobile, value: probe.ParsedValue(value: "021-60005678", confidence: 0.96, evidence: "标签「Mobile」"))]
+PARSE ["Jordan Lee", "Designer", "Email: user13800001234@demo.example"] => name=Jordan Lee company=nil title=Designer site=nil phones=[probe.ParsedPhone(kind: probe.PhoneKind.mobile, value: probe.ParsedValue(value: "13800001234", confidence: 0.88, evidence: "标签「Email」"))]
+PARSE ["Jordan Lee", "Tel: 021-60001234", "www.example.com.hk"] => name=Jordan Lee company=nil title=nil site=www.example.com phones=[probe.ParsedPhone(kind: probe.PhoneKind.office, value: probe.ParsedValue(value: "021-60001234", confidence: 0.96, evidence: "标签「Tel」"))]
+VISION ratio after setter: 0.5,1.0
+DETECT zh-01-photo.jpg: Optional(probe.Quad(topLeft: (0.22881634533405304, 0.1432439088821411), topRight: (0.7736685872077942, 0.21956878900527954), bottomRight: (0.7370374202728271, 0.6808774471282959), bottomLeft: (0.219378262758255, 0.60530886054039)))
+DETECT bi-14-photo-occluded.jpg: Optional(probe.Quad(topLeft: (0.11583052575588226, 0.1978992223739624), topRight: (0.739639401435852, 0.21328657865524292), bottomRight: (0.7068511247634888, 0.7513149678707123), bottomLeft: (0.11431710422039032, 0.7005305290222168)))

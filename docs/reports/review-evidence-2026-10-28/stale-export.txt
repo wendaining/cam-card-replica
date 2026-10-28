@@ -1,0 +1,23 @@
+Computer Use manual check, iPhone 18 Pro / iOS 27.0
+Fixture zh-01, in-memory test library.
+Opened saved card detail, initial VCF ORG: 同济大学;计算机科学与技术学院
+Changed company via editor to Review Company and saved.
+Accessibility detail text after save: Review Company
+VCF remained byte-identical: True
+VCF contains Review Company: False
+VCF after edit (display normalized to LF; byte comparison above used the original files):
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 27.0//EN
+N:;朱宏明;;;
+FN:朱宏明
+ORG:同济大学;计算机科学与技术学院
+TITLE:教授
+EMAIL;type=INTERNET;type=WORK;type=pref:contactol@example.com
+TEL;type=CELL;type=VOICE;type=pref:+86 138 0000 1234
+TEL;type=WORK;type=VOICE:021-6000 1234
+TEL;type=WORK;type=FAX:021-6000 1235
+ADR;type=WORK;type=pref:;;上海市杨浦区四平路1239号 200092;;;;
+item1.URL;type=pref:https://www.example0l.com
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
