@@ -2,7 +2,7 @@
 
 | 目录 | 放什么 | 谁维护 |
 |---|---|---|
-| `spec/` | 产品规格、数据模型、**验收追溯**（`spec/acceptance.md`）、**作业条款逐条核对**（`spec/conformance-audit.md`） | 先改这里，再改代码 |
+| `spec/` | 产品规格、数据模型、**验收追溯**（`spec/acceptance.md`，即 `docs/spec/acceptance.md`）、**作业条款逐条核对**（`spec/conformance-audit.md`） | 先改这里，再改代码 |
 | `api/` | 服务协议与契约（OCR、检测、校正、解析、导出） | 改协议必须同步 ADR |
 | `architecture/` | 架构总览 + ADR（每个决策一条，不复改） | 决策变了就新加一条 |
 | `testing/` | 测试策略、测试计划、语料说明 | 加测试时同步 |
@@ -11,5 +11,5 @@
 
 写作约定：
 - 规格写"系统应当怎样"，不写"代码怎么写"。
-- 每条规格带编号（如 `7.5.3`），`acceptance.md` 用它做追溯。
+- 每条规格带编号（如 `7.5.3`），`docs/spec/acceptance.md` 用它做追溯。
 - 数字必须可复现：写清命令、日期、语料版本。

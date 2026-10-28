@@ -5,7 +5,7 @@ DESTINATION ?= platform=iOS Simulator,name=iPhone 18 Pro
 IPAD_DESTINATION ?= platform=iOS Simulator,name=iPad Pro 11-inch (M5)
 XCODEBUILD := xcodebuild -project $(PROJECT) -scheme $(SCHEME) -destination '$(DESTINATION)'
 
-.PHONY: help bootstrap build test test-ui test-ipad bench lint format verify run relaunch reset photos testdata clean hooks
+.PHONY: help bootstrap build test test-ui test-ipad bench audit lint format verify run relaunch reset photos testdata clean hooks
 
 help: ## 显示可用命令
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
@@ -25,6 +25,9 @@ test-ui: ## 端到端 T01–T20
 bench: ## 跑 Ground Truth 准确率评测（解析器 + Vision 全链路）
 	mkdir -p TestResults
 	$(XCODEBUILD) test -only-testing:CamCardReplicaTests/ParserBenchmarkTests -only-testing:CamCardReplicaTests/VisionOCRTests 2>&1 | tee TestResults/bench.log
+
+audit: ## 检查文档与代码是否一致（悬空路径 / 不存在的 make 子命令 / 过期数字）
+	python3 Scripts/audit_docs.py
 
 lint: ## 静态检查（swiftlint 阻塞；swiftformat 只报告，因为规则会随版本变化）
 	swiftlint --quiet

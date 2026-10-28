@@ -59,9 +59,9 @@
 
 | 样本 | 遮挡方式 | 结果 |
 |---|---|---|
-| `zh-01-occluded.png` | 手指压左下角（覆盖卡片面积 2.6%，全部在页边距内） | 姓名/公司/三个电话/邮箱/网址 **全对** |
-| `en-02-occluded.png` | 手指压右下角 | 姓名/公司/两个电话/邮箱 **全对** |
-| `bi-14-photo-occluded.jpg` | 桌上名片 + 手指压右上角（照片空间） | **边界仍被检出**；姓名/公司/电话/邮箱/网址全对 |
+| `TestData/cards/zh-01-occluded.png` | 手指压左下角（覆盖卡片面积 2.6%，全部在页边距内） | 姓名/公司/三个电话/邮箱/网址 **全对** |
+| `TestData/cards/en-02-occluded.png` | 手指压右下角 | 姓名/公司/两个电话/邮箱 **全对** |
+| `TestData/cards/bi-14-photo-occluded.jpg` | 桌上名片 + 手指压右上角（照片空间） | **边界仍被检出**；姓名/公司/电话/邮箱/网址全对 |
 | `CardDetectorTests.testDetectsCardWithOneCornerOccluded` | 同上 | `VisionCardDetector` 在轮廓被切断时仍返回有效四边形 |
 
 设计约束（要写清楚，否则评测会被误读）：**遮挡物只允许落在页边距，不允许压住文字**。

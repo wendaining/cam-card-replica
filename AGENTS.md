@@ -15,6 +15,7 @@
 - 调研与执行方案：`00-作业调研与执行方案.md`
 - 交付物与验收：`docs/spec/acceptance.md`
 - 作业条款逐条核对：`docs/spec/conformance-audit.md`（改功能前先看这里哪条没实现）
+- 交接说明（先读这个）：`HANDOFF.md`——验证状态、已知缺口、审查建议
 
 **硬截止：2026-11-06。** 时间不够时优先保「确定性 20 条」，再保「OCR 量化分析」。
 
@@ -74,7 +75,8 @@ make build         # 编译 Debug
 make test          # 单元 + 集成测试
 make test-ui       # T01–T20（需要模拟器）
 make bench         # Ground Truth 准确率，结果贴进 docs/reports/ocr-accuracy.md
-make lint          # swiftformat --lint + swiftlint
+make lint          # swiftlint（阻塞）+ swiftformat（只报告）
+make audit         # 文档与代码一致性审计（改完文档/改完代码都跑）
 make format        # 自动格式化
 make verify        # lint + build + test（提交前必须全绿）
 make testdata      # 重新生成 TestData（会改变语料，非必要不要跑）

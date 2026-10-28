@@ -39,6 +39,9 @@ jobs:
           swiftlint --quiet
           swiftformat --lint . || true
 
+      - name: Docs match the code
+        run: python3 Scripts/audit_docs.py
+
       - name: Pick an iPhone simulator
         id: sim
         run: |

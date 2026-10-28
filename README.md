@@ -125,7 +125,8 @@ docs/            spec / api / architecture(5 篇 ADR) / testing / guides / repor
 
 | 先看哪篇 | 内容 |
 |---|---|
-| [AGENTS.md](AGENTS.md) | 工程契约：约束、命令、提交规范、当前状态（换 agent 先读这个） |
+| [HANDOFF.md](HANDOFF.md) | **换人/换 agent 先读**：验证过什么、没验证什么、已知缺口、审查建议 |
+| [AGENTS.md](AGENTS.md) | 工程契约：约束、命令、提交规范、当前状态 |
 | [docs/spec/product-spec.md](docs/spec/product-spec.md) | 产品规格（编号条款，按作业章节组织） |
 | [docs/spec/data-model.md](docs/spec/data-model.md) | `BusinessCard` 模型与每个字段的判定规则 |
 | [docs/spec/acceptance.md](docs/spec/acceptance.md) | T01–T20 追溯矩阵 |
