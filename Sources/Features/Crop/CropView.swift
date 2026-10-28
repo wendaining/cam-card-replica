@@ -33,6 +33,10 @@ struct CropView: View {
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier(A11y.cropView)
 
+            if let message = model.errorMessage {
+                Text(message).foregroundStyle(.orange).font(.footnote)
+                    .accessibilityIdentifier("scan-error")
+            }
             hint
             buttons
         }

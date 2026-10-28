@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Tag editing (spec 十一): create, attach, remove.
 struct TagPickerView: View {
-    @Binding var selected: [String]
+    @Binding var draft: CardDraft
     @Environment(AppServices.self) private var services
 
     @State private var isAdding = false
@@ -14,7 +14,7 @@ struct TagPickerView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         ForEach(knownTags, id: \.self) { tag in
-                            TagChip(name: tag, selected: selected.contains(tag)) {
+                            TagChip(name: tag, selected: draft.tags.contains(tag)) {
                                 toggle(tag)
                             }
                         }
@@ -34,8 +34,7 @@ struct TagPickerView: View {
                     Menu {
                         ForEach(knownTags, id: \.self) { tag in
                             Button(role: .destructive) {
-                                services.library.deleteTag(named: tag)
-                                selected.removeAll { $0 == tag }
+                                draft.deleteTag(named: tag)
                             } label: {
                                 Label("删除「\(tag)」", systemImage: "trash")
                             }
@@ -60,23 +59,20 @@ struct TagPickerView: View {
 
     private var knownTags: [String] {
         let fromLibrary = services.library.tags.map(\.name)
-        return Array(Set(fromLibrary + selected)).sorted()
+        return Array(Set(fromLibrary + draft.tags)).filter { tag in
+            !draft.deletedTags.contains { $0.caseInsensitiveCompare(tag) == .orderedSame }
+        }.sorted()
     }
 
     private func toggle(_ tag: String) {
-        if let index = selected.firstIndex(of: tag) {
-            selected.remove(at: index)
+        if let index = draft.tags.firstIndex(of: tag) {
+            draft.tags.remove(at: index)
         } else {
-            selected.append(tag)
+            draft.tags.append(tag)
         }
     }
 
     private func createTag() {
-        let name = newTag.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !name.isEmpty else { return }
-        services.library.ensureTag(named: name)
-        if !selected.contains(name) {
-            selected.append(name)
-        }
+        draft.createTag(named: newTag, knownTags: services.library.tags)
     }
 }

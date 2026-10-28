@@ -43,7 +43,7 @@ struct PreviewView: View {
                     .accessibilityIdentifier(A11y.previewRetake)
 
                     Button {
-                        model.confirmPreview()
+                        Task { await model.confirmPreview() }
                     } label: {
                         Label("使用这张", systemImage: "checkmark")
                             .frame(maxWidth: .infinity)

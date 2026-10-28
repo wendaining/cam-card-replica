@@ -55,6 +55,7 @@ struct CardImageViewer: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("完成") { dismiss() }
+                        .accessibilityIdentifier("image-viewer-done")
                 }
             }
         }

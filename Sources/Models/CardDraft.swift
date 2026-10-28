@@ -16,6 +16,22 @@ struct CardDraft: Equatable {
     var address: String = ""
     var notes: String = ""
     var tags: [String] = []
+    var deletedTags: Set<String> = []
+    var recognition: RecognitionSnapshot?
+
+    mutating func createTag(named name: String, knownTags: [CardTag]) {
+        guard let name = name.nilIfBlank else { return }
+        let canonical = knownTags.first { $0.name.caseInsensitiveCompare(name) == .orderedSame }?.name ?? name
+        deletedTags = deletedTags.filter { $0.caseInsensitiveCompare(canonical) != .orderedSame }
+        if !tags.contains(where: { $0.caseInsensitiveCompare(canonical) == .orderedSame }) {
+            tags.append(canonical)
+        }
+    }
+
+    mutating func deleteTag(named name: String) {
+        deletedTags.insert(name)
+        tags.removeAll { $0.caseInsensitiveCompare(name) == .orderedSame }
+    }
 
     /// Confidence reported by the parser per field, used to highlight the
     /// fields a human should double-check (spec 九, T11).
@@ -37,9 +53,11 @@ struct CardDraft: Equatable {
         address = card.address ?? ""
         notes = card.notes ?? ""
         tags = card.tags
+        recognition = card.recognition
+        rawText = card.rawText
     }
 
-    init(parsed: ParsedCard, rawText: String) {
+    init(parsed: ParsedCard, rawText: String, ocr: OCRResult? = nil) {
         self.name = parsed.name?.value ?? ""
         self.company = parsed.company?.value ?? ""
         self.jobTitle = parsed.jobTitle?.value ?? ""
@@ -51,6 +69,7 @@ struct CardDraft: Equatable {
         self.notes = ""
         self.tags = []
         self.rawText = rawText
+        self.recognition = ocr.map { RecognitionSnapshot(ocr: $0, parsed: parsed) }
     }
 
     private var rawText: String?
@@ -82,6 +101,7 @@ struct CardDraft: Equatable {
             originalImageID: originalImageID,
             processedImageID: processedImageID,
             rawText: rawText ?? storedRawText,
+            recognition: recognition,
             createdAt: createdAt,
             updatedAt: Date()
         )

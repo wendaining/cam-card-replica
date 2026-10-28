@@ -3,20 +3,20 @@ import Foundation
 /// A single extracted value plus the evidence that produced it. The evidence
 /// strings are surfaced in the review screen ("为什么这么填") and logged in the
 /// benchmark output, which is what makes the parser auditable.
-struct ParsedValue: Equatable, Sendable {
+struct ParsedValue: Codable, Hashable, Sendable {
     var value: String
     var confidence: Double
     var evidence: String
 }
 
-struct ParsedPhone: Equatable, Sendable {
+struct ParsedPhone: Codable, Hashable, Sendable {
     var kind: PhoneKind
     var value: ParsedValue
 }
 
 /// Parser output before a human confirms it. Nothing here is persisted as-is:
 /// `CardDraft(parsed:rawText:)` turns it into editable state (spec 九).
-struct ParsedCard: Equatable, Sendable {
+struct ParsedCard: Codable, Hashable, Sendable {
     var name: ParsedValue?
     var company: ParsedValue?
     var jobTitle: ParsedValue?

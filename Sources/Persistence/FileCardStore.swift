@@ -10,7 +10,6 @@ final class FileCardStore: CardStore {
     private let root: URL
     private let imagesDirectory: URL
     private let libraryURL: URL
-    private let queue = DispatchQueue(label: "com.wendaining.camcard.store")
 
     init(root: URL? = nil) {
         let base = root ?? FileCardStore.defaultRoot()

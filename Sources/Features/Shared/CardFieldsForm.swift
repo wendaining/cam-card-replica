@@ -36,15 +36,27 @@ struct CardFieldsForm: View {
 
         if showsTags {
             Section("标签") {
-                TagPickerView(selected: $draft.tags)
+                TagPickerView(draft: $draft)
             }
         }
 
         if showsNotes {
             Section("备注") {
-                TextField("添加备注", text: $draft.notes, axis: .vertical)
-                    .lineLimit(2 ... 6)
-                    .accessibilityIdentifier(A11y.field(.notes))
+                ZStack(alignment: .topLeading) {
+                    if draft.notes.isEmpty {
+                        Text("添加备注")
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 5)
+                            .padding(.top, 8)
+                            .allowsHitTesting(false)
+                            .accessibilityHidden(true)
+                    }
+                    TextEditor(text: $draft.notes)
+                        .frame(minHeight: 72, maxHeight: 140)
+                        .scrollContentBackground(.hidden)
+                        .accessibilityLabel("备注")
+                        .accessibilityIdentifier(A11y.field(.notes))
+                }
             }
         }
     }

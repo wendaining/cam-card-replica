@@ -31,16 +31,14 @@ struct ScannerFlowView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("取消") {
-                        if model?.stage == .review {
-                            model?.cancelReview()
-                        } else {
-                            dismiss()
-                        }
+                        model?.retake()
+                        dismiss()
                     }
                     .accessibilityIdentifier("scan-cancel")
                 }
             }
         }
+        .onDisappear { model?.retake() }
         .task {
             if model == nil {
                 model = ScanFlowModel(services: services)

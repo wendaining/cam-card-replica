@@ -14,6 +14,11 @@ struct UITestConfiguration: Sendable {
     /// Pin one bundled fixture (by file name without extension) instead of
     /// cycling, so a test can assert on a known card.
     var fixtureName: String?
+    var persistentTestID: String?
+    var resetTestStore = false
+    var failsStoreSave = false
+    var failsRecognition = false
+    var emptyRecognition = false
 
     static let production = UITestConfiguration(
         isUITesting: false,
@@ -34,7 +39,12 @@ struct UITestConfiguration: Sendable {
             seedDemoData: seed,
             useFixtureCamera: fixtures,
             simulatedCameraPermission: permissionValue.flatMap(CameraPermissionStatus.init(rawValue:)),
-            fixtureName: defaults.string(forKey: "fixture-name")
+            fixtureName: defaults.string(forKey: "fixture-name"),
+            persistentTestID: isUITesting ? defaults.string(forKey: "persistent-test-id") : nil,
+            resetTestStore: isUITesting && defaults.bool(forKey: "reset-test-store"),
+            failsStoreSave: isUITesting && defaults.bool(forKey: "fail-store-save"),
+            failsRecognition: isUITesting && defaults.bool(forKey: "fail-recognition"),
+            emptyRecognition: isUITesting && defaults.bool(forKey: "empty-recognition")
         )
     }
 }

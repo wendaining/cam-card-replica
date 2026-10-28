@@ -12,7 +12,6 @@ struct CardDetailView: View {
     @State private var showDeleteConfirmation = false
     @State private var showRawText = false
     @State private var showImageViewer = false
-    @State private var vCardURL: URL?
     @State private var alertMessage: String?
     @State private var showAlert = false
 
@@ -47,15 +46,16 @@ struct CardDetailView: View {
             Text(alertMessage ?? "")
         }
         .sheet(isPresented: $showRawText) {
-            RawTextSheet(text: card?.rawText ?? "", lines: [])
+            RawTextSheet(
+                text: card?.rawText ?? "",
+                lines: card?.recognition?.ocr.lines ?? [],
+                parsed: card?.recognition?.parsed
+            )
         }
-        .sheet(isPresented: $showImageViewer) {
+        .fullScreenCover(isPresented: $showImageViewer) {
             if let card {
                 CardImageViewer(card: card, library: services.library)
             }
-        }
-        .task(id: cardID) {
-            prepareVCard()
         }
     }
 
@@ -164,11 +164,18 @@ struct CardDetailView: View {
     private func cardImage(for card: BusinessCard) -> some View {
         if let data = services.library.imageData(for: card, original: false),
            let image = ImageCoding.cgImage(from: data) {
-            Image(decorative: image, scale: 1)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 180)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+            Button { showImageViewer = true } label: {
+                Image(decorative: image, scale: 1)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxHeight: 180)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("查看名片图片")
+            .accessibilityIdentifier("detail-image")
         }
     }
 
@@ -198,6 +205,7 @@ struct CardDetailView: View {
             if isEditing {
                 Button("保存") { saveEdits() }
                     .bold()
+                    .disabled(!draft.canSave)
                     .accessibilityIdentifier(A11y.detailEditSave)
             } else {
                 Menu {
@@ -208,8 +216,11 @@ struct CardDetailView: View {
                     }
                     .accessibilityIdentifier(A11y.detailEdit)
 
-                    if let vCardURL {
-                        ShareLink(item: vCardURL) {
+                    if let card {
+                        ShareLink(
+                            item: VCardDocument(card: card, exporter: services.exporter),
+                            preview: SharePreview(card.name)
+                        ) {
                             Label("导出 vCard", systemImage: "square.and.arrow.up")
                         }
                         .accessibilityIdentifier(A11y.detailExport)
@@ -251,22 +262,24 @@ struct CardDetailView: View {
             rawText: card.rawText,
             createdAt: card.createdAt
         )
-        services.library.update(updated)
-        isEditing = false
+        do {
+            try services.library.update(updated, deletingTags: draft.deletedTags)
+            isEditing = false
+        } catch {
+            alertMessage = error.localizedDescription
+            showAlert = true
+        }
     }
 
     private func delete() {
         guard let card else { return }
-        services.library.delete(card)
-        dismiss()
-    }
-
-    private func prepareVCard() {
-        guard let card, let data = try? services.exporter.vCard(for: card) else { return }
-        let safeName = card.name.replacingOccurrences(of: "/", with: "-")
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("\(safeName).vcf")
-        try? data.write(to: url, options: .atomic)
-        vCardURL = url
+        do {
+            try services.library.delete(card)
+            dismiss()
+        } catch {
+            alertMessage = error.localizedDescription
+            showAlert = true
+        }
     }
 
     private func saveToContacts() async {
