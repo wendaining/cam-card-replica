@@ -11,49 +11,69 @@ concurrency:
 
 jobs:
   verify:
-    # macOS runner is required for Xcode. On GitHub.com use `macos-15`;
-    # on an internal GHE instance point this at a self-hosted macOS runner
-    # (label `self-hosted-macos`).
+    # macOS is required for Xcode. `macos-15` ships Xcode 16.x; the project's
+    # deployment target is iOS 17, so it builds there even though local
+    # development runs Xcode 27.
     runs-on: macos-15
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+      - name: Toolchain info
+        run: |
+          xcodebuild -version
+          xcode-select -p
+          xcrun simctl list runtimes
 
       - name: Install tooling
-        run: |
-          brew install xcodegen swiftlint swiftformat
-          xcodebuild -downloadPlatform iOS || true
+        run: brew install xcodegen swiftlint swiftformat
 
-      - name: Pick a simulator
-        run: |
-          xcrun simctl list devices available | sed -n '1,40p'
-          echo "SIMULATOR=$(xcrun simctl list devices available | grep -oE 'iPhone [A-Za-z0-9 ]+' | head -1)" >> "$GITHUB_ENV"
-
-      - name: Bootstrap
+      - name: Bootstrap project
         run: xcodegen generate --spec project.yml
 
-      - name: Lint
+      - name: Lint (same command as `make lint`)
         run: |
-          swiftformat --lint Sources Tests UITests || true
-          swiftlint --quiet --strict || true
+          swiftformat --lint .
+          swiftlint --quiet
+
+      - name: Pick an iPhone simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available --json | python3 -c '
+          import json, sys
+          data = json.load(sys.stdin)["devices"]
+          for runtime, devices in sorted(data.items()):
+              for device in devices:
+                  if device["name"].startswith("iPhone"):
+                      print(device["udid"])
+                      raise SystemExit(0)
+          raise SystemExit("no iPhone simulator available")
+          ')
+          echo "Simulator: $UDID"
+          echo "UDID=$UDID" >> "$GITHUB_OUTPUT"
 
       - name: Unit + integration tests
         run: |
-          xcodebuild test -project CamCardReplica.xcodeproj -scheme CamCardReplica \
-            -destination "platform=iOS Simulator,name=${SIMULATOR}" \
+          mkdir -p TestResults
+          xcodebuild test \
+            -project CamCardReplica.xcodeproj -scheme CamCardReplica \
+            -destination "id=${{ steps.sim.outputs.UDID }}" \
+            -derivedDataPath build \
             -only-testing:CamCardReplicaTests \
             -resultBundlePath TestResults/unit.xcresult
 
-      - name: UI tests (T01–T20)
+      - name: UI tests (T01-T20)
+        # The acceptance suite drives real taps; treat it as evidence, not a gate,
+        # so a flaky simulator does not block the build.
+        continue-on-error: true
         run: |
-          xcodebuild test -project CamCardReplica.xcodeproj -scheme CamCardReplica \
-            -destination "platform=iOS Simulator,name=${SIMULATOR}" \
+          mkdir -p TestResults
+          xcodebuild test \
+            -project CamCardReplica.xcodeproj -scheme CamCardReplica \
+            -destination "id=${{ steps.sim.outputs.UDID }}" \
+            -derivedDataPath build \
             -only-testing:CamCardReplicaUITests \
             -resultBundlePath TestResults/ui.xcresult
-        continue-on-error: true
 
       - name: Upload results
         if: always()
