@@ -29,8 +29,8 @@ final class VisionCardDetector: CardDetecting {
         let handler = VNImageRequestHandler(cgImage: image, orientation: orientation, options: [:])
         for confidence in config.confidenceLevels {
             let request = VNDetectRectanglesRequest()
-            request.minimumAspectRatio = config.minimumAspectRatio
-            request.maximumAspectRatio = config.maximumAspectRatio
+            request.minimumAspectRatio = 1 / config.maximumAspectRatio
+            request.maximumAspectRatio = 1 / config.minimumAspectRatio
             request.minimumSize = config.minimumSize
             request.quadratureTolerance = config.quadratureTolerance
             request.minimumConfidence = confidence

@@ -2,6 +2,21 @@
 import XCTest
 
 final class CardDetectorTests: XCTestCase {
+    func testWideCardIsDetectedButSquareIsRejected() throws {
+        func rectangle(width: Int, height: Int) -> CGImage {
+            let context = CGContext(data: nil, width: 600, height: 600, bitsPerComponent: 8,
+                                    bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(),
+                                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+            context.setFillColor(CGColor(gray: 0.1, alpha: 1))
+            context.fill(CGRect(x: 0, y: 0, width: 600, height: 600))
+            context.setFillColor(CGColor(gray: 1, alpha: 1))
+            context.fill(CGRect(x: 60, y: 60, width: width, height: height))
+            return context.makeImage()!
+        }
+        XCTAssertNotNil(try VisionCardDetector().detectCard(in: rectangle(width: 460, height: 210), orientation: .up))
+        XCTAssertNil(try VisionCardDetector().detectCard(in: rectangle(width: 400, height: 400), orientation: .up))
+    }
+
     func testFullFrameIsPlausible() {
         XCTAssertTrue(Quad.fullFrame.isPlausible)
         XCTAssertEqual(Quad.fullFrame.area, 1, accuracy: 0.001)
