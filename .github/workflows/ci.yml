@@ -69,15 +69,14 @@ jobs:
             -resultBundlePath TestResults/unit.xcresult
 
       - name: UI tests (T01-T20)
-        # The acceptance suite drives real taps; treat it as evidence, not a gate,
-        # so a flaky simulator does not block the build.
-        continue-on-error: true
+        # Deterministic acceptance scenarios are a required gate.
         run: |
           mkdir -p TestResults
           xcodebuild test \
             -project CamCardReplica.xcodeproj -scheme CamCardReplica \
             -destination "id=${{ steps.sim.outputs.UDID }}" \
             -derivedDataPath build \
+            -enableCodeCoverage NO \
             -only-testing:CamCardReplicaUITests \
             -resultBundlePath TestResults/ui.xcresult
 

@@ -1,23 +1,5 @@
 #!/usr/bin/env bash
-# Local equivalent of CI: what `make verify` runs, with nicer output.
+# Keep this entry point identical to the documented build gate.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-
-DESTINATION="${DESTINATION:-platform=iOS Simulator,name=iPhone 18 Pro}"
-
-echo "==> swiftformat (lint)"
-swiftformat --lint Sources Tests UITests
-
-echo "==> swiftlint"
-swiftlint --quiet || true
-
-echo "==> build"
-xcodebuild -project CamCardReplica.xcodeproj -scheme CamCardReplica \
-  -destination "$DESTINATION" -derivedDataPath build build | tail -3
-
-echo "==> unit + integration tests"
-xcodebuild -project CamCardReplica.xcodeproj -scheme CamCardReplica \
-  -destination "$DESTINATION" -derivedDataPath build test \
-  -only-testing:CamCardReplicaTests | grep -E "Executed .* tests|TEST" | tail -5
-
-echo "==> OK"
+exec make verify "$@"
