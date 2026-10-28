@@ -32,24 +32,37 @@ final class VisionOCRTests: XCTestCase {
                 XCTFail("cannot decode \(file.lastPathComponent)")
                 continue
             }
-            let quad = (try? detector.detectCard(in: image, orientation: .up)) ?? nil
-            let cropped = (try? ImageCoding.cgImage(from: ImageCoding.jpegData(from: image) ?? data)) ?? image
-            let target = quad.flatMap { try? CoreImageCardCorrector().correct(cropped, quad: $0) } ?? cropped
+            // Kept as separate statements on purpose: as one expression Xcode 16's
+            // type checker gives up ("unable to type-check in reasonable time"),
+            // which made CI fail while the newer local toolchain was happy.
+            let detected: Quad? = try? detector.detectCard(in: image, orientation: .up)
+            let target: CGImage
+            if let detected,
+               let corrected = try? CoreImageCardCorrector().correct(image, quad: detected) {
+                target = corrected
+            } else {
+                target = image
+            }
+
             let ocr = try recognizer.recognize(image: target, orientation: .up)
             let parsed = parser.parse(ocr)
 
-            print([
+            let mobile = parsed.phones.first { $0.kind == .mobile }?.value.value
+            let office = parsed.phones.first { $0.kind == .office }?.value.value
+            let fax = parsed.phones.first { $0.kind == .fax }?.value.value
+            let columns: [String] = [
                 file.lastPathComponent,
-                "\(ocr.lines.count)",
+                String(ocr.lines.count),
                 parsed.name?.value ?? "-",
                 parsed.company?.value ?? "-",
-                "\(parsed.phones.count)",
-                parsed.phones.first { $0.kind == .mobile }?.value.value ?? "-",
-                parsed.phones.first { $0.kind == .office }?.value.value ?? "-",
-                parsed.phones.first { $0.kind == .fax }?.value.value ?? "-",
+                String(parsed.phones.count),
+                mobile ?? "-",
+                office ?? "-",
+                fax ?? "-",
                 parsed.emails.first?.value ?? "-",
                 parsed.website?.value ?? "-",
-            ].joined(separator: "|"))
+            ]
+            print(columns.joined(separator: "|"))
 
             XCTAssertFalse(parsed.name?.value.isEmpty ?? true, "\(file.lastPathComponent): no name")
         }
