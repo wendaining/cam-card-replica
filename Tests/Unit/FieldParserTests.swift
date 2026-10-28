@@ -4,6 +4,38 @@ import XCTest
 /// Table-driven tests for the field parser. Each case mirrors a scenario in the
 /// assignment's spec so that "rule changed" and "spec changed" are the same diff.
 final class FieldParserTests: XCTestCase {
+    func testUnlabelledDomainWithoutWebsiteEvidenceStaysUnassigned() {
+        // OCR may lose an email's @; a domain-shaped token alone is insufficient evidence.
+        let token = "jordan.leeQdemo.example"
+        let result = HeuristicFieldParser().parse(lines: ["Jordan Lee", "ABC Technologies", token])
+        XCTAssertNil(result.website)
+        XCTAssertTrue(result.unassignedLines.contains(token))
+    }
+
+    func testLabelledBareDomainRemainsAWebsite() {
+        for domain in ["demo.example", "demo.company", "demo.com.hk"] {
+            let result = HeuristicFieldParser().parse(lines: ["Jordan Lee", "Web: " + domain])
+            XCTAssertEqual(result.website?.value, domain)
+        }
+    }
+
+    func testNumericEmailDoesNotInventPhone() {
+        let result = HeuristicFieldParser().parse(lines: [
+            "Jordan Lee",
+            "Designer",
+            "Email: user13800001234@demo.example",
+        ])
+        XCTAssertTrue(result.phones.isEmpty)
+        XCTAssertEqual(result.emails.map(\.value), ["user13800001234@demo.example"])
+    }
+
+    func testWebsiteKeepsEntireHostAndPath() {
+        for host in ["www.example.com.hk", "www.example.company", "https://demo.example/path?q=1"] {
+            let result = HeuristicFieldParser().parse(lines: ["Jordan Lee", "Designer", host])
+            XCTAssertEqual(result.website?.value, host)
+        }
+    }
+
     private let parser = HeuristicFieldParser()
 
     // MARK: - 7.5 required example
