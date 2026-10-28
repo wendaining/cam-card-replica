@@ -105,8 +105,8 @@ App 被强杀后重新打开：名片、你改过的字段、标签、备注、�
 ## 4. 跑自动测试（看数字，不用点）
 
 ```bash
-make test        # 60 个单元/集成测试，约 10 秒
-make test-ui     # 15 条端到端场景，约 2.5 分钟（会自己点界面）
+make test        # 65 个单元/集成测试，约 10 秒
+make test-ui     # 16 条端到端场景，约 2.5 分钟（会自己点界面）
 make bench       # 50 张语料的字段准确率 + 按语言/标签切分
 make lint        # 代码风格检查
 make verify      # lint + build + test（提交前跑这个）

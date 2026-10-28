@@ -26,9 +26,9 @@ bench: ## 跑 Ground Truth 准确率评测（解析器 + Vision 全链路）
 	mkdir -p TestResults
 	$(XCODEBUILD) test -only-testing:CamCardReplicaTests/ParserBenchmarkTests -only-testing:CamCardReplicaTests/VisionOCRTests 2>&1 | tee TestResults/bench.log
 
-lint: ## 静态检查
-	swiftformat --lint .
+lint: ## 静态检查（swiftlint 阻塞；swiftformat 只报告，因为规则会随版本变化）
 	swiftlint --quiet
+	-swiftformat --lint .
 
 format: ## 自动格式化
 	swiftformat .

@@ -126,10 +126,10 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.1 / iOS 27.0 模拟器 `iPhone 18 Pro`）
 - [x] iPad Pro 11-inch (M5) 上同一套 UI 测试也全绿（布局适配已验证）
-- [x] 65 个单元/集成测试 + 15 个场景 UI 测试（+1 截图用例）全绿（2026-10-27）
+- [x] 65 个单元/集成测试 + 16 个场景 UI 测试（+1 截图用例）全绿（2026-10-27）
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [ ] T05（真实相册 picker）、T18（真机杀进程）、T19（真机通讯录）手工验收
 - [ ] 与正版 CamCard 的截图对比与差异清单
 - [x] 演示稿 `docs/reports/demo-script.md`（90 秒主线 + 答辩问答）
-- [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（5 处缺口已列明）
+- [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（已补 4 处，剩 3 处低优先）
 - [ ] 最终报告定稿

@@ -12,7 +12,7 @@
 | | |
 |---|---|
 | 单元 / 集成测试 | **65 个，全绿**（含 50 张语料的字段准确率评测） |
-| 端到端测试 | **15 个场景，全绿**，覆盖 T01–T20（iPhone 18 Pro 与 iPad Pro 11 各跑一遍） |
+| 端到端测试 | **16 个场景，全绿**，覆盖 T01–T20（iPhone 18 Pro 与 iPad Pro 11 各跑一遍） |
 | 字段准确率 | name/company/title/email/website/address **100%**，office 98%，fax 90%，**幻觉率 0%** |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
 

@@ -36,13 +36,10 @@ final class VisionOCRTests: XCTestCase {
             // type checker gives up ("unable to type-check in reasonable time"),
             // which made CI fail while the newer local toolchain was happy.
             let detected: Quad? = try? detector.detectCard(in: image, orientation: .up)
-            let target: CGImage
-            if let detected,
-               let corrected = try? CoreImageCardCorrector().correct(image, quad: detected) {
-                target = corrected
-            } else {
-                target = image
+            let corrected: CGImage? = detected.flatMap {
+                try? CoreImageCardCorrector().correct(image, quad: $0)
             }
+            let target: CGImage = corrected ?? image
 
             let ocr = try recognizer.recognize(image: target, orientation: .up)
             let parsed = parser.parse(ocr)

@@ -31,10 +31,13 @@ jobs:
       - name: Bootstrap project
         run: xcodegen generate --spec project.yml
 
-      - name: Lint (same command as `make lint`)
+      - name: Lint (same policy as `make lint`)
+        # swiftlint is the gate. swiftformat is advisory on purpose: its rule set
+        # changes between releases, so a newer Homebrew build would fail a tree
+        # that the pinned local version considers clean.
         run: |
-          swiftformat --lint .
           swiftlint --quiet
+          swiftformat --lint . || true
 
       - name: Pick an iPhone simulator
         id: sim

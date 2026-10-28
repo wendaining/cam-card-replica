@@ -11,6 +11,8 @@
 
 `CardStore` 协议 + `FileCardStore`：`library.json`（原子写）+ `Images/<uuid>.jpg`。
 
+> 这两个是**运行时产物**，不在仓库里；仓库里只有读写它们的代码和测试。运行时位置：`~/Library/Application Support/CamCardReplica/`（模拟器里在对应 App 容器内）。
+
 ## 理由
 
 1. **可检查**：JSON 能直接看，评测脚本、答辩演示都能当场打开。
