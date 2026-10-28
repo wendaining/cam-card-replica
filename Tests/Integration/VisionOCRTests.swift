@@ -1,11 +1,8 @@
 @testable import CamCardReplica
 import XCTest
 
-/// Runs the real Vision pipeline over the bundled fixture cards.
-///
-/// This is the second half of the accuracy story: `ParserBenchmarkTests` measures
-/// "text -> fields" with perfect text, this one measures the whole chain
-/// "image -> OCR -> fields" on real renders (and two photographed variants).
+/// Smoke checks for real Vision on the nine bundled fixtures.
+/// ImageCorpusTests separately compares all fields on every corpus image.
 final class VisionOCRTests: XCTestCase {
     private let recognizer = VisionTextRecognizer()
     private let detector = VisionCardDetector()
@@ -65,8 +62,8 @@ final class VisionOCRTests: XCTestCase {
         }
     }
 
-    /// Character recall against the Ground Truth text, per fixture.
-    func testTextRecallOnFixtures() throws {
+    /// Fraction of complete expected text lines found in OCR, averaged per fixture.
+    func testExpectedLineRecallOnFixtures() throws {
         let directory = try fixtureDirectory()
         let files = try FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)
             .filter { ["jpg", "png", "jpeg"].contains($0.pathExtension.lowercased()) }
@@ -84,9 +81,9 @@ final class VisionOCRTests: XCTestCase {
         }
         XCTAssertFalse(recalls.isEmpty)
         let average = recalls.reduce(0, +) / Double(recalls.count)
-        print("text recall per fixture:", recalls.map { String(format: "%.2f", $0) })
-        print("average text recall:", String(format: "%.2f", average))
-        XCTAssertGreaterThan(average, 0.7, "Vision should read most of a clean render")
+        print("expected-line recall per fixture:", recalls.map { String(format: "%.2f", $0) })
+        print("average expected-line recall:", String(format: "%.2f", average))
+        XCTAssertGreaterThan(average, 0.7, "Vision should recover most expected text lines in the fixture set")
     }
 
     private func expectedText(for fixtureName: String) throws -> [String] {
