@@ -5,7 +5,7 @@
 > 避免把时间花在重复验证，或者被文档里的漂亮话误导。
 >
 > 仓库：`github.com/wendaining/cam-card-replica`（private）｜分支：`main`
-> 本文件对应提交：`a453ced`（提交总数 50）
+> 本文件对应提交：见 `git log -1`（文档里不写死提交号，避免过期）
 
 ---
 
@@ -43,6 +43,7 @@ make bench                     # 语料准确率，输出 field,correct,total,ac
 | `make verify` | `** TEST SUCCEEDED **`，`Executed 65 tests, with 0 failures` |
 | `make test-ui` | `Executed 17 tests, with 0 failures`（16 场景 + 1 截图用例） |
 | `make bench` | `name/company/jobTitle/email/website/address` 均 1.000，`phone_fax` 0.900 |
+| `make audit` | `problems: 0`（文档与代码一致性检查） |
 
 数字对不上就是有人改了代码没改文档——**以你跑出来的为准，然后提 issue/pr 改文档**。
 
@@ -102,6 +103,21 @@ make bench                     # 语料准确率，输出 field,correct,total,ac
   文档里"不同字体"的覆盖是弱的。
 - **竖排文字**：只有竖版**版式**，没有竖排**文字**。已知限制，见 `AGENTS.md` §8。
 - **真实拍摄质量**：语料的"照片变体"是合成透视+噪声，不是真实手机拍摄的模糊/反光/阴影。
+
+### ✅ CI（GitHub Actions）已跑通
+
+最近一次 `main` 的 CI 全绿（`gh run list` 可查）：
+
+| 步骤 | 结果 |
+|---|---|
+| swiftlint | ✅ |
+| 文档与代码一致性（`Scripts/audit_docs.py`） | ✅ |
+| 选模拟器（`simctl` JSON → UDID） | ✅ |
+| 单元 + 集成测试（65 个） | ✅ |
+| UI 测试（T01–T20，17 个方法） | ✅ |
+
+注意：CI 里的 UI 测试步骤是 `continue-on-error: true`（模拟器偶发不稳不该阻塞构建），
+所以"绿"不等于它一定跑了——要确认请点开 run 看该步骤的 conclusion。
 
 ### 🔧 环境差异（会让你看到不同结果）
 
