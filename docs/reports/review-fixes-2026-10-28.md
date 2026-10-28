@@ -38,7 +38,7 @@
 - 理想文本与图像结果见 ocr-accuracy 和 image-accuracy-latest。
 - 真机相机/权限/系统通讯录/实拍质量、正版 CamCard 对比见 `docs/testing/external-acceptance.md`。
 - 系统 PhotosPicker 实际选取与取消单独留证，不把 fixture 按钮当作系统选择器。
-- 远端 CI 未推送运行；本地通过不能冒充远端结果。
+- 远端 CI 的首次 PR 运行被账户付款/额度限制阻止启动，见文末；本地通过不能冒充远端结果。
 
 ## 最终本地验证
 
@@ -67,3 +67,11 @@
 4. 一次取消返回名片夹；操作前后容器内全部5个 library.json（含之前的隔离测试库）SHA-256 相同。
 
 证据：[系统选择器](screenshots/photos-picker/01-system-picker.png)、[导入后裁剪](screenshots/photos-picker/02-imported-crop.png)、[识别确认](screenshots/photos-picker/03-recognized-review.png)、[取消回列表](screenshots/photos-picker/04-cancelled-library.png)。这证明本次模拟器系统选图交互，不替代真机相机、通讯录或正版行为签收。
+
+### PR 合并检查（2026-10-28）
+
+[PR #1](https://github.com/wendaining/cam-card-replica/pull/1) 指向 main；检查时 main 为 7c938f5，修复分支包含其全部历史，git merge-tree 成功，GitHub 报告 MERGEABLE。main 未启用分支保护。这些只证明没有文本冲突，不代表 CI 已通过。
+
+`.dsh-computer-use/` 已加入 gitignore，文件保留在本地但不再显示为未跟踪改动。该修改后重新执行 make verify：93个测试、0个非预期失败，仍有同一项已披露的期望失败；文档审计0个问题。
+
+[首次远端 CI](https://github.com/wendaining/cam-card-replica/actions/runs/40660758363) 对应提交 9aaa385。verify 作业没有启动任何步骤；GitHub 注解说明近期账户付款失败或需要提高消费额度。另有 macOS arm64 容量提示，但失败主因是计费限制。当前未合并，也未改动或绕过 CI 门槛。恢复 Actions 计费/额度后需重跑并核对最新提交的结果。
