@@ -27,7 +27,7 @@ iPad 版本在 `screenshots/ipad/`，同一套页面、同一套测试。
 | 证据 | 位置 |
 |---|---|
 | 65 个单元/集成测试全绿（2026-10-27 实测） | `make test` |
-| 15 个端到端 UI 测试全绿（覆盖 T01–T20，其中 T05/T18/T19 部分需真机手工补验） | `make test-ui` |
+| 16 个端到端 UI 测试全绿（覆盖 T01–T20，其中 T05/T18/T19 部分需真机手工补验） | `make test-ui` |
 | 6 张 fixture 的整链路（图→OCR→字段）结果 | `docs/reports/ocr-accuracy.md` 第二之二节 |
 | 字段准确率与幻觉率 | `docs/reports/ocr-accuracy.md` |
 | 需求↔测试↔代码追溯 | `docs/spec/acceptance.md` |
@@ -43,7 +43,7 @@ iPad 版本在 `screenshots/ipad/`，同一套页面、同一套测试。
 ## 4. 数字（待填最终版）
 
 - 单元/集成测试：65 通过 / 0 失败
-- 端到端 UI 测试：15 通过 / 0 失败（总耗时约 150 秒）
+- 端到端 UI 测试：16 通过 / 0 失败（总耗时约 150 秒）
 - 字段准确率：name 100% / company 100% / title 100% / email 100% / website 100% /
   address 100% / mobile 100% / office 98% / fax 90%
 - 幻觉率：0%
