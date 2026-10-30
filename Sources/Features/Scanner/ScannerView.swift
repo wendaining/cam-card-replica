@@ -161,17 +161,7 @@ struct ScannerView: View {
 
     private func loadPickedImage(_ item: PhotosPickerItem?) async {
         guard let item else { return }
-        do {
-            guard let data = try await item.loadTransferable(type: Data.self),
-                  let image = ImageCoding.cgImage(from: data) else {
-                model.report(error: "无法读取所选图片。")
-                return
-            }
-            model.handle(image: image, orientation: ImageCoding.orientation(of: data))
-            await model.confirmPreview()
-        } catch {
-            model.report(error: error.localizedDescription)
-        }
+        await model.importImage { try await item.loadTransferable(type: Data.self) }
     }
 
     private func refreshPermission() async {

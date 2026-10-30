@@ -25,7 +25,119 @@ private struct ThrowingRecognizer: TextRecognizing {
 }
 
 @MainActor
+private final class ControlledImageLoader {
+    let entered: XCTestExpectation
+    private var continuation: CheckedContinuation<Data?, Error>?
+
+    init(entered: XCTestExpectation) {
+        self.entered = entered
+    }
+
+    func load() async throws -> Data? {
+        try await withCheckedThrowingContinuation { continuation in
+            self.continuation = continuation
+            entered.fulfill()
+        }
+    }
+
+    func finish(_ result: Result<Data?, Error>) {
+        continuation?.resume(with: result)
+        continuation = nil
+    }
+}
+
+@MainActor
 final class ScanFlowModelTests: XCTestCase {
+    func testImageImportShowsCropAndReportsCurrentLoadErrors() async throws {
+        let data = try XCTUnwrap(ImageCoding.jpegData(from: TestServices.image()))
+        let model = ScanFlowModel(services: TestServices.make(store: InMemoryCardStore()))
+        await model.importImage { data }
+        XCTAssertEqual(model.stage, .crop)
+        XCTAssertNotNil(model.capturedImage)
+        XCTAssertNil(model.errorMessage)
+        let failures: [Result<Data?, Error>] = [
+            .success(nil), .success(Data([0])), .failure(CocoaError(.fileReadCorruptFile)),
+        ]
+        for result in failures {
+            model.retake()
+            await model.importImage { try result.get() }
+            XCTAssertEqual(model.stage, .capture)
+            XCTAssertNil(model.capturedImage)
+            XCTAssertNotNil(model.errorMessage)
+        }
+    }
+
+    func testLateImageImportCannotReplaceReviewedCaptureOrReportOldError() async throws {
+        let data = try XCTUnwrap(ImageCoding.jpegData(from: TestServices.image()))
+        for fails in [false, true] {
+            let store = InMemoryCardStore()
+            let model = ScanFlowModel(services: TestServices.make(store: store))
+            let entered = expectation(description: "image loading")
+            let loader = ControlledImageLoader(entered: entered)
+            let work = Task { await model.importImage { try await loader.load() } }
+            await fulfillment(of: [entered], timeout: 2)
+            let replacement = TestServices.image()
+            model.handle(image: replacement)
+            await model.confirmPreview()
+            await model.confirmCrop()
+            model.draft.name = "Edited new capture"
+            loader.finish(fails ? .failure(CocoaError(.fileReadCorruptFile)) : .success(data))
+            await work.value
+            XCTAssertEqual(model.stage, .review)
+            XCTAssertTrue(model.capturedImage === replacement)
+            XCTAssertEqual(model.draft.name, "Edited new capture")
+            XCTAssertNil(model.errorMessage)
+            XCTAssertTrue(store.library.cards.isEmpty)
+        }
+    }
+
+    func testNewImageSelectionSupersedesPendingImport() async throws {
+        let data = try XCTUnwrap(ImageCoding.jpegData(from: TestServices.image()))
+        let model = ScanFlowModel(services: TestServices.make(store: InMemoryCardStore()))
+        let entered = expectation(description: "old selection loading")
+        let loader = ControlledImageLoader(entered: entered)
+        let old = Task { await model.importImage { try await loader.load() } }
+        await fulfillment(of: [entered], timeout: 2)
+        await model.importImage { data }
+        let selected = try XCTUnwrap(model.capturedImage)
+        loader.finish(.success(data))
+        await old.value
+        XCTAssertEqual(model.stage, .crop)
+        XCTAssertTrue(model.capturedImage === selected)
+        XCTAssertNil(model.errorMessage)
+    }
+
+    func testCancelledImageImportDoesNotReviveCapture() async throws {
+        let data = try XCTUnwrap(ImageCoding.jpegData(from: TestServices.image()))
+        for cancelTask in [false, true] {
+            let store = InMemoryCardStore()
+            let model = ScanFlowModel(services: TestServices.make(store: store))
+            let entered = expectation(description: "cancelled image loading")
+            let loader = ControlledImageLoader(entered: entered)
+            let work = Task { await model.importImage { try await loader.load() } }
+            await fulfillment(of: [entered], timeout: 2)
+            if cancelTask {
+                work.cancel()
+            } else {
+                model.retake()
+            }
+            loader.finish(.success(data))
+            await work.value
+            XCTAssertEqual(model.stage, .capture)
+            XCTAssertNil(model.capturedImage)
+            XCTAssertNil(model.errorMessage)
+            XCTAssertTrue(store.library.cards.isEmpty)
+        }
+        let model = ScanFlowModel(services: TestServices.make(store: InMemoryCardStore()))
+        let current = TestServices.image()
+        model.handle(image: current)
+        let cancelled = Task { await model.importImage { data } }
+        cancelled.cancel()
+        await cancelled.value
+        XCTAssertEqual(model.stage, .preview)
+        XCTAssertTrue(model.capturedImage === current, "an already cancelled task must not reset the current capture")
+    }
+
     func testRecognitionRunsOffMainActorAndLateResultIsDiscarded() async {
         let entered = expectation(description: "recognizer entered")
         let recognizer = ControlledRecognizer(entered: entered)

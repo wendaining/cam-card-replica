@@ -17,6 +17,10 @@ protocol TextRecognizing: Sendable {
 - 失败：抛 VNError；调用方回裁剪页，明确显示识别失败，可重试/重拍。识别结果为空则进入空确认表单，可手填。
 - 检测、校正、OCR 由 ScanFlowModel 放在后台任务执行；取消使任务 token 失效，迟到结果不更新 UI。
 
+## ScanFlowModel 相册入口
+
+`importImage(using:)` 接收异步 Data 加载闭包；PhotosPicker 只负责提供加载器。新选择先使旧任务 token 失效，加载返回后验证 token 和取消状态，再解码并进入裁剪。旧成功/失败结果均忽略；当前加载的空数据、损坏图片或异常显示错误。拍摄、重拍及整个流程退出共用同一失效机制。
+
 ## CardDetecting
 
 ```swift

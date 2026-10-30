@@ -50,6 +50,26 @@ final class ScanFlowModel {
 
     // MARK: - Capture
 
+    /// Shared photo-library entry point; the loader is injectable for race tests.
+    func importImage(using load: () async throws -> Data?) async {
+        guard !Task.isCancelled else { return }
+        retake()
+        let token = operationID
+        do {
+            let data = try await load()
+            guard operationID == token, !Task.isCancelled else { return }
+            guard let data, let image = ImageCoding.cgImage(from: data) else {
+                report(error: "无法读取所选图片。")
+                return
+            }
+            handle(image: image, orientation: ImageCoding.orientation(of: data))
+            await confirmPreview()
+        } catch {
+            guard operationID == token, !Task.isCancelled else { return }
+            report(error: error.localizedDescription)
+        }
+    }
+
     /// Entry point from the camera or the photo picker.
     func handle(image: CGImage, orientation: CGImagePropertyOrientation = .up) {
         // Bake the orientation in first: everything downstream (detection,
