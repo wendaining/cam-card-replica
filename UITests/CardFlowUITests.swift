@@ -57,6 +57,20 @@ final class CardFlowUITests: XCTestCase {
         app.descendants(matching: .any)[identifier]
     }
 
+    /// Taps a navigation-bar / toolbar button by its coordinate.
+    ///
+    /// A plain `.tap()` first asks the accessibility system to scroll the
+    /// element to visible. On the older simulator runtimes CI uses (Xcode 16 /
+    /// iOS 17), that AX action fails with `kAXErrorCannotComplete` for a
+    /// toolbar button that is *already* on screen, which flaked T14/T17/T18.
+    /// A normalized-coordinate tap skips the scroll step and is stable across
+    /// iOS 17 through 27. The wait keeps us honest: the button must exist.
+    private func tapToolbarButton(_ identifier: String) {
+        let button = app.buttons[identifier]
+        XCTAssertTrue(button.waitForExistence(timeout: 5), "\(identifier) not found")
+        button.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+    }
+
     /// Form rows below the fold are not in the accessibility tree until they are
     /// rendered, so scroll until the field can actually be interacted with.
     private func field(_ identifier: String) -> XCUIElement {
@@ -216,7 +230,7 @@ final class CardFlowUITests: XCTestCase {
         launch()
         app.staticTexts["朱宏明"].firstMatch.tap()
         XCTAssertTrue(element("detail-view").waitForExistence(timeout: 5))
-        app.buttons["detail-more"].tap()
+        tapToolbarButton("detail-more")
         app.buttons["detail-edit"].tap()
         let name = app.textFields["field-name"]
         XCTAssertTrue(name.waitForExistence(timeout: 5))
@@ -254,7 +268,7 @@ final class CardFlowUITests: XCTestCase {
         launch()
         app.staticTexts["David Chen"].firstMatch.tap()
         XCTAssertTrue(element("detail-view").waitForExistence(timeout: 5))
-        app.buttons["detail-more"].tap()
+        tapToolbarButton("detail-more")
         app.buttons["detail-delete"].tap()
         app.buttons["删除"].tap()
         XCTAssertTrue(element("card-list").waitForExistence(timeout: 5))
@@ -384,7 +398,7 @@ final class CardFlowUITests: XCTestCase {
         app.buttons["review-save"].tap()
         XCTAssertTrue(app.staticTexts[expectedName].waitForExistence(timeout: 5))
         app.staticTexts[expectedName].tap()
-        app.buttons["detail-more"].tap()
+        tapToolbarButton("detail-more")
         app.buttons["detail-edit"].tap()
         let company = app.textFields["field-company"]
         company.tap()
