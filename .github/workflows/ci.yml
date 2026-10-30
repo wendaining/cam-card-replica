@@ -1,5 +1,14 @@
 name: CI
 
+# This is a personal coursework repo. The real acceptance evidence is the local
+# `make verify` / `make test-ui` run on Xcode 27 / iPhone 18 Pro (see HANDOFF.md
+# and docs/spec/acceptance.md). GitHub's macOS runners bill at 10x, queue under
+# capacity pressure, and only re-run what the local suite already proves — with
+# the added cost of XCUITest flaking on their older Xcode 16 / iOS 17 simulator.
+# So CI keeps just the cheap Linux check that a machine *other* than the author's
+# can still verify: the docs stay consistent with the code. Build + unit + UI
+# tests are a local gate, intentionally not duplicated here.
+
 on:
   push:
     branches: [main]
@@ -10,94 +19,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # The docs/code consistency audit is pure Python (stdlib only, reads source
-  # files — no Xcode, no generated project). Running it on Linux (1x billing)
-  # instead of the 10x macOS runner means a docs-only change costs a cheap
-  # Linux minute, and lets the expensive macOS job skip those paths entirely.
   audit:
+    # Pure Python, stdlib only, reads source files — no Xcode, no simulator.
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Docs match the code
         run: python3 Scripts/audit_docs.py
-
-  verify:
-    # macOS is required for Xcode. `macos-15` ships Xcode 16.x; the project's
-    # deployment target is iOS 17, so it builds there even though local
-    # development runs Xcode 27. macOS runners bill at 10x the Linux rate, so
-    # this job is deliberately kept to a single build (see the combined test
-    # step). The cheap Linux audit gates it: `needs: audit` means a failed
-    # docs/code check never starts the 10x macOS runner at all.
-    needs: audit
-    runs-on: macos-15
-    timeout-minutes: 45
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Toolchain info
-        run: |
-          xcodebuild -version
-          xcode-select -p
-          xcrun simctl list runtimes
-
-      # Homebrew formulae are a cold download+install every run otherwise, which
-      # costs several minutes on the 10x-billed macOS runner. Cache the bottles
-      # keyed on the tool list so a hit skips the network entirely.
-      - name: Cache Homebrew downloads
-        uses: actions/cache@v4
-        with:
-          path: ~/Library/Caches/Homebrew/downloads
-          key: brew-${{ runner.os }}-xcodegen-swiftlint-swiftformat
-
-      - name: Install tooling
-        run: brew install xcodegen swiftlint swiftformat
-
-      - name: Bootstrap project
-        run: xcodegen generate --spec project.yml
-
-      - name: Lint (same policy as `make lint`)
-        # swiftlint is the gate. swiftformat is advisory on purpose: its rule set
-        # changes between releases, so a newer Homebrew build would fail a tree
-        # that the pinned local version considers clean.
-        run: |
-          swiftlint --quiet
-          swiftformat --lint . || true
-
-      - name: Pick an iPhone simulator
-        id: sim
-        run: |
-          UDID=$(xcrun simctl list devices available --json | python3 -c '
-          import json, sys
-          data = json.load(sys.stdin)["devices"]
-          for runtime, devices in sorted(data.items()):
-              for device in devices:
-                  if device["name"].startswith("iPhone"):
-                      print(device["udid"])
-                      raise SystemExit(0)
-          raise SystemExit("no iPhone simulator available")
-          ')
-          echo "Simulator: $UDID"
-          echo "UDID=$UDID" >> "$GITHUB_OUTPUT"
-
-      # One `xcodebuild test` invocation builds the app + both test bundles once.
-      # Previously unit and UI tests were two separate steps, so the whole target
-      # was compiled twice — pure waste on a 10x-billed runner. Both the unit
-      # suite and the T01-T20 UI acceptance scenarios remain required gates.
-      - name: Unit + integration + UI tests (incl. T01-T20)
-        run: |
-          mkdir -p TestResults
-          xcodebuild test \
-            -project CamCardReplica.xcodeproj -scheme CamCardReplica \
-            -destination "id=${{ steps.sim.outputs.UDID }}" \
-            -derivedDataPath build \
-            -enableCodeCoverage NO \
-            -resultBundlePath TestResults/all.xcresult
-
-      - name: Upload results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: TestResults
-          retention-days: 14
