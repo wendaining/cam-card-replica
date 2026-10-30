@@ -148,6 +148,20 @@ final class FieldParserTests: XCTestCase {
         XCTAssertEqual(card.phones.first { $0.kind == .fax }?.value.value, "+65 0000 5001")
     }
 
+    func testSharedOfficeAndFaxNumberPreservesBothKinds() {
+        for lines in [
+            ["Tel: 021-60001234", "Fax: 021-60001234", "Tel: 021 6000 1234"],
+            ["Fax: 021-60001234 Tel: 021-60001234", "Fax: 021 6000 1234"],
+        ] {
+            let result = parser.parse(lines: ["Alice Chen"] + lines)
+            XCTAssertEqual(result.phones.count, 2)
+            XCTAssertEqual(Set(result.phones.map(\.kind)), [.office, .fax])
+            let draft = CardDraft(parsed: result, rawText: lines.joined(separator: "\n"))
+            let contact = ContactsExporter().makeContact(from: draft.makeCard())
+            XCTAssertEqual(contact.phoneNumbers.count, 2, "both labelled numbers must survive export")
+        }
+    }
+
     func testUnlabelledPhoneIsStillReported() {
         let card = parser.parse(lines: ["David Chen", "ABC Technologies", "+1 415 000 1234"])
         XCTAssertEqual(card.phones.count, 1)

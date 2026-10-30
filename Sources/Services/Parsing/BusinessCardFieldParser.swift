@@ -132,10 +132,10 @@ struct HeuristicFieldParser: FieldParsing {
         }
 
         // 8. Phones
-        var seenDigits = Set<String>()
+        var seenDigits: [PhoneKind: Set<String>] = [:]
         for (index, line) in lines.enumerated() {
-            for candidate in line.phones where !seenDigits.contains(candidate.digits) {
-                seenDigits.insert(candidate.digits)
+            for candidate in line.phones where !seenDigits[candidate.kind, default: []].contains(candidate.digits) {
+                seenDigits[candidate.kind, default: []].insert(candidate.digits)
                 parsed.phones.append(ParsedPhone(
                     kind: candidate.kind,
                     value: ParsedValue(

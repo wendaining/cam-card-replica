@@ -64,3 +64,4 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 | R19 联系方式数字误填地址 | `FieldParserTests.testContactDigitsDoNotInventPostalAddress`：邮箱、电话、网址反例及真实地址对照 | 地址打分与邮编检测排除已识别联系方式 |
 | R20 负分公司候选误作职位 | `FieldParserTests.testNegativeTitleCandidateRemainsACompany`：中英文公司、有/无独立职位对照 | 职位净分必须大于零，否则保留给公司提取 |
 | R21 短英文地址漏提取 | `FieldParserTests.testShortStreetAddressUsesLabelOrHouseNumberEvidence`：标签/无标签、门牌号、空标签与孤立街道词 | 地址标签和门牌号参与证据打分，保留联系方式排除规则 |
+| R22 座机/传真同号丢类型 | `FieldParserTests.testSharedOfficeAndFaxNumberPreservesBothKinds`：正反顺序、同行、格式重复、草稿到导出 | 按号码类型和数字共同去重 |
