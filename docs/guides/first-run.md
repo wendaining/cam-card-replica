@@ -113,8 +113,8 @@ App 被强杀后重新打开：名片、你改过的字段、标签、备注、�
 ## 4. 跑自动测试（看数字，不用点）
 
 ```bash
-make test        # 102 个单元/集成测试，本机测试执行约 58 秒
-make test-ui     # 24 个 UI 方法（含截图），本机测试执行约 5.5 分钟
+make test        # 103 个单元/集成测试，本机测试执行约 58 秒
+make test-ui     # 25 个 UI 方法（含截图），本机测试执行约 5.5 分钟
 make bench       # 50 张名片 / 76 张图的文本基准与真实图像测量
 make lint        # 代码风格检查
 make verify      # lint + build + test（提交前跑这个）
@@ -159,5 +159,5 @@ make run        # 装好并打开
 make photos     # 往相册灌测试名片
 make relaunch   # 杀进程重开（验持久化）
 make reset      # 清空数据（回到首次启动）
-make test-ui    # 自动运行 24 个 UI 方法（含截图）
+make test-ui    # 自动运行 25 个 UI 方法（含截图）
 ```

@@ -17,6 +17,7 @@ struct UITestConfiguration: Sendable {
     var persistentTestID: String?
     var resetTestStore = false
     var failsStoreSave = false
+    var failsStoreLoadOnce = false
     var failsRecognition = false
     var emptyRecognition = false
 
@@ -43,6 +44,7 @@ struct UITestConfiguration: Sendable {
             persistentTestID: isUITesting ? defaults.string(forKey: "persistent-test-id") : nil,
             resetTestStore: isUITesting && defaults.bool(forKey: "reset-test-store"),
             failsStoreSave: isUITesting && defaults.bool(forKey: "fail-store-save"),
+            failsStoreLoadOnce: isUITesting && defaults.bool(forKey: "fail-store-load-once"),
             failsRecognition: isUITesting && defaults.bool(forKey: "fail-recognition"),
             emptyRecognition: isUITesting && defaults.bool(forKey: "empty-recognition")
         )

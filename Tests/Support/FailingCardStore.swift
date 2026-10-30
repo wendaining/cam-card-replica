@@ -6,11 +6,15 @@ final class FailingCardStore: CardStore {
     var library: CardLibrary = .empty
     var images: [String: Data] = [:]
     var failsSave = false
+    var failsLoad = false
     var failingImageWrite: Int?
     private var imageWriteCount = 0
 
     func load() throws -> CardLibrary {
-        library
+        if failsLoad {
+            throw CardStoreError.corruptedLibrary(underlying: CocoaError(.fileReadCorruptFile))
+        }
+        return library
     }
 
     func save(_ library: CardLibrary) throws {

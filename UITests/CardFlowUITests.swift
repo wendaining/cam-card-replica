@@ -28,6 +28,7 @@ final class CardFlowUITests: XCTestCase {
         persistentID: String? = nil,
         resetStore: Bool = false,
         failSave: Bool = false,
+        failLoadOnce: Bool = false,
         failRecognition: Bool = false,
         emptyRecognition: Bool = false
     ) -> XCUIApplication {
@@ -47,6 +48,7 @@ final class CardFlowUITests: XCTestCase {
         }
         app.launchArguments += ["-reset-test-store", resetStore ? "YES" : "NO"]
         app.launchArguments += ["-fail-store-save", failSave ? "YES" : "NO"]
+        app.launchArguments += ["-fail-store-load-once", failLoadOnce ? "YES" : "NO"]
         app.launchArguments += ["-fail-recognition", failRecognition ? "YES" : "NO"]
         app.launchArguments += ["-empty-recognition", emptyRecognition ? "YES" : "NO"]
         app.launch()
@@ -108,6 +110,18 @@ final class CardFlowUITests: XCTestCase {
     }
 
     // MARK: - T01 first launch
+
+    func testT20_libraryLoadFailureShowsRetryInsteadOfEmptyState() {
+        launch(failLoadOnce: true)
+        XCTAssertTrue(app.staticTexts["无法读取名片"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["还没有名片"].exists)
+        XCTAssertFalse(app.buttons["scan-button"].isEnabled)
+        app.buttons["重试"].tap()
+        XCTAssertTrue(element("card-list").waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["David Chen"].exists)
+        XCTAssertFalse(app.staticTexts["无法读取名片"].exists)
+        XCTAssertTrue(app.buttons["scan-button"].isEnabled)
+    }
 
     func testT01_firstLaunchShowsEmptyState() {
         launch(seed: false)

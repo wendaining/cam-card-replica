@@ -66,3 +66,4 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 | R21 短英文地址漏提取 | `FieldParserTests.testShortStreetAddressUsesLabelOrHouseNumberEvidence`：标签/无标签、门牌号、空标签与孤立街道词 | 地址标签和门牌号参与证据打分，保留联系方式排除规则 |
 | R22 座机/传真同号丢类型 | `FieldParserTests.testSharedOfficeAndFaxNumberPreservesBothKinds`：正反顺序、同行、格式重复、草稿到导出 | 按号码类型和数字共同去重 |
 | R23 相册迟到结果覆盖草稿 | `ScanFlowModelTests`：正常导入/错误、旧成功与失败、替换选择、重拍与 Task 取消 | 相册异步加载进入流程模型，共用 operationID 失效检查 |
+| R24 读取失败伪装成空库 | `CardLibraryModelTests.testReloadRecoversReadFailureWithoutReplacingStoredCards`；`testT20_libraryLoadFailureShowsRetryInsteadOfEmptyState` | 独立加载错误状态、首页错误/重试入口、恢复前禁用扫描 |

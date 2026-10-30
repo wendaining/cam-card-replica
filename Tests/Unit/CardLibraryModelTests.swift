@@ -24,6 +24,28 @@ final class CardLibraryModelTests: XCTestCase {
         XCTAssertThrowsError(try model.update(edited))
         XCTAssertEqual(model.card(id: saved.id)?.name, saved.name)
         XCTAssertEqual(CardLibraryModel(store: store).card(id: saved.id)?.name, saved.name)
+        XCTAssertNil(model.loadErrorMessage, "a save failure is not a library loading failure")
+    }
+
+    func testReloadRecoversReadFailureWithoutReplacingStoredCards() throws {
+        let store = FailingCardStore()
+        let saved = card()
+        store.library = CardLibrary(cards: [saved])
+        store.failsLoad = true
+        let model = CardLibraryModel(store: store)
+        XCTAssertNotNil(model.loadErrorMessage)
+        XCTAssertThrowsError(try model.add(card(name: "Must not overwrite")))
+        model.reload()
+        XCTAssertNotNil(model.loadErrorMessage)
+        XCTAssertEqual(store.library.cards, [saved])
+        store.failsLoad = false
+        model.reload()
+        XCTAssertNil(model.loadErrorMessage)
+        XCTAssertEqual(model.cards, [saved])
+        var edited = saved
+        edited.notes = "Recovered"
+        try model.update(edited)
+        XCTAssertEqual(store.library.cards.first?.notes, "Recovered")
     }
 
     func testDeleteFailureKeepsRecordAndBothImages() throws {

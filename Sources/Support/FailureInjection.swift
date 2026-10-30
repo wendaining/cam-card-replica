@@ -39,3 +39,37 @@ struct UITestTextRecognizer: TextRecognizing {
         return .empty
     }
 }
+
+/// Allows UI tests to recover by retrying, without modifying the underlying library.
+final class LoadOnceFailingStore: CardStore {
+    private let base: CardStore
+    private var failsNextLoad = true
+
+    init(base: CardStore) {
+        self.base = base
+    }
+
+    func load() throws -> CardLibrary {
+        if failsNextLoad {
+            failsNextLoad = false
+            throw CardStoreError.corruptedLibrary(underlying: CocoaError(.fileReadCorruptFile))
+        }
+        return try base.load()
+    }
+
+    func save(_ library: CardLibrary) throws {
+        try base.save(library)
+    }
+
+    func writeImage(_ data: Data, id: String) throws {
+        try base.writeImage(data, id: id)
+    }
+
+    func readImage(id: String) -> Data? {
+        base.readImage(id: id)
+    }
+
+    func deleteImage(id: String) {
+        base.deleteImage(id: id)
+    }
+}

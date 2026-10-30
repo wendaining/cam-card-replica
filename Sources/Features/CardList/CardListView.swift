@@ -58,6 +58,7 @@ struct CardListView: View {
                 }
                 .accessibilityIdentifier(A11y.scanButton)
                 .accessibilityLabel("扫描名片")
+                .disabled(services.library.loadErrorMessage != nil)
             }
         }
     }
@@ -111,7 +112,16 @@ struct CardListView: View {
 
     @ViewBuilder
     private var content: some View {
-        if allCards.isEmpty {
+        if let message = services.library.loadErrorMessage {
+            EmptyStateView(
+                title: "无法读取名片",
+                message: message,
+                systemImage: "exclamationmark.folder",
+                actionTitle: "重试",
+                action: { services.library.reload() }
+            )
+            .accessibilityIdentifier("library-load-error")
+        } else if allCards.isEmpty {
             EmptyStateView(
                 title: "还没有名片",
                 message: "扫描或导入一张名片，开始建立你的名片夹。",

@@ -1,7 +1,7 @@
 # AGENTS.md — 工程契约（换会话 / 换 Agent 必读）
 
 > 本文件是本仓库的**唯一事实来源**。任何 agent（人或 AI）在改代码之前，先读完这一页。
-> 最后更新：2026-10-28。
+> 最后更新：2026-10-30。
 
 ---
 
@@ -127,8 +127,8 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 模型 / 持久化 / 解析器 / Vision 服务 / 导出
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.1 / iOS 27.0 模拟器 `iPhone 18 Pro`）
-- [x] iPad Pro 11-inch (M5) 上同一套 UI 测试也全绿（布局适配已验证）
-- [x] 102 个单元/集成测试方法、24 个 UI 方法（含截图）；最新验证见 docs/reports/review-fixes-2026-10-28.md
+- [x] 2026-10-28 的 UI 套件在 iPad Pro 11-inch (M5) 上全绿；本轮新增用例的验证范围见最新报告
+- [x] 103 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/review-fixes-2026-10-30.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
 - [ ] T18（真机杀进程）、T19（真机通讯录）及相机/权限手工验收

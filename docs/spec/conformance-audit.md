@@ -114,7 +114,7 @@
 |---|---|---|
 | 字段歧义（如 "Apple" 是公司/产品/地址） | ⚠️ | 没有专门语料。当前策略：无机构关键词的孤立行按"字号最大且无其他特征"判为姓名。已加测试固定该行为，**不硬编码特殊词**（否则就是过拟合） |
 | 人名与公司混淆（Jordan Lee / Lee Consulting） | ✅ | `FieldParserTests.testPersonNameIsNotCompany` |
-| 多电话判断 Mobile/Office/Fax | ✅ | 标签优先；无标签时**不猜**，见准确率报告 |
+| 多电话判断 Mobile/Office/Fax | ✅ | 标签优先；同号不同显式类型分别保留；无标签仍有格式/低置信回退歧义，按准确率报告计错 |
 | 中英文混排 | ✅ | `TextNormalizer.separateScriptRuns` |
 | 字段缺失不得凭空产生 | ⚠️ | 已检查完整字段集合并记录误填；无标签号码归类和 OCR 错字仍可能导致误填，不能宣称全部字段为零 |
 

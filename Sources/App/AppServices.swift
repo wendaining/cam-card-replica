@@ -60,6 +60,9 @@ final class AppServices {
         if configuration.failsStoreSave {
             store = SaveFailingStore(base: store)
         }
+        if configuration.failsStoreLoadOnce {
+            store = LoadOnceFailingStore(base: store)
+        }
         let recognizer: any TextRecognizing = configuration.failsRecognition || configuration.emptyRecognition
             ? UITestTextRecognizer(fails: configuration.failsRecognition) : VisionTextRecognizer()
 

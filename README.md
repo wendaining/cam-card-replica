@@ -11,10 +11,12 @@
 
 | | |
 |---|---|
-| 单元 / 集成测试 | **102 个方法**，含理想文本和全部图片评测 |
-| 端到端测试 | **24 个方法（含截图）**，真机与参考 App 待验项单列 |
+| 单元 / 集成测试 | **103 个方法**，含理想文本和全部图片评测 |
+| 端到端测试 | **25 个方法（含截图）**，真机与参考 App 待验项单列 |
 | 字段准确率 | [理想文本与真实图像分开报告](docs/reports/ocr-accuracy.md)，完整集合与缺失误填均计数 |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
+
+最新全仓审查修复与验证范围：[2026-10-30 修复记录](docs/reports/review-fixes-2026-10-30.md)。
 
 ![名片夹](docs/reports/screenshots/02-list.png)
 
@@ -27,7 +29,7 @@ brew install xcodegen          # 一次性，约 10 秒
 git clone <this repo> && cd cam-card-replica
 make bootstrap                 # 由 project.yml 生成 CamCardReplica.xcodeproj
 make build                     # 期望结尾：** BUILD SUCCEEDED **
-make test                      # 期望结尾：Executed 102 tests, with 0 failures
+make test                      # 期望结尾：Executed 103 tests, with 0 failures
 open CamCardReplica.xcodeproj  # 选 iPhone 18 Pro，Cmd+R
 ```
 
@@ -114,7 +116,7 @@ Sources/
   Features/      CardList · Scanner · Crop · Review · Detail · Shared
   DesignSystem/  主题、TagChip、EmptyState、readableWidth
   Support/       A11y 标识、UITest 配置、fixture、Demo 数据
-Tests/           102 个单元/集成测试（含全部图片测量）
+Tests/           103 个单元/集成测试（含全部图片测量）
 UITests/         T01–T20 端到端 + 截图用例
 TestData/        50 张合成名片 + Ground Truth（确定性生成，可复现）
 Scripts/         语料生成、验证脚本

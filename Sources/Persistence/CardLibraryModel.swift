@@ -22,6 +22,10 @@ final class CardLibraryModel {
         cards.isEmpty
     }
 
+    var loadErrorMessage: String? {
+        loadError?.localizedDescription
+    }
+
     func card(id: UUID) -> BusinessCard? {
         cards.first { $0.id == id }
     }
