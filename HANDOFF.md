@@ -32,7 +32,7 @@ python3 Scripts/report_benchmark.py
 make audit
 ```
 
-当前正式目标包含103个单元/集成方法、25个 UI 方法（含默认跳过的截图）；T01–T20 是20条定义的验收场景，部分仍需外部补验。本轮提交及红/绿记录见 `docs/reports/review-fixes-2026-10-30.md`；2026-10-28 的历史完整验收记录仍保留。
+当前正式目标包含104个单元/集成方法、25个 UI 方法（含默认跳过的截图）；T01–T20 是20条定义的验收场景，部分仍需外部补验。本轮提交及红/绿记录见 `docs/reports/review-fixes-2026-10-30.md`；2026-10-28 的历史完整验收记录仍保留。
 
 2026-10-28 完整 make verify、iPhone/iPad UI、bench、工具测试、audit 已通过。T05 真实系统 PhotosPicker 选取/取消已手动留证，取消前后文件库哈希一致；make run 实际安装启动成功。
 

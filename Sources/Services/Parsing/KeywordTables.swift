@@ -49,6 +49,11 @@ enum KeywordTables {
         "Chemicals", "Education", "Partners", "Systems", "Physics",
     ]
 
+    /// Legal abbreviations may be joined by dots, e.g. "Example Co.Ltd".
+    static let corporateAbbreviations: Set<String> = [
+        "co", "corp", "inc", "ltd", "llc", "gmbh", "ag", "bv", "nv", "plc", "pty", "kg",
+    ]
+
     /// Department / division markers. Lower weight than company markers because
     /// "School of Computer Science" is a department inside a university.
     static let departmentMarkers: [String] = [

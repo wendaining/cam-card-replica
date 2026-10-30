@@ -438,11 +438,26 @@ struct HeuristicFieldParser: FieldParsing {
 extension HeuristicFieldParser {
     /// Domains and mailbox names are contact values, not organization evidence.
     private func withoutInternetAddresses(_ text: String) -> String {
-        [KeywordTables.emailRegex, KeywordTables.websiteRegex].reduce(text) { value, regex in
-            regex.stringByReplacingMatches(
-                in: value, range: NSRange(value.startIndex..., in: value), withTemplate: " "
-            )
+        let emailFree = KeywordTables.emailRegex.stringByReplacingMatches(
+            in: text, range: NSRange(text.startIndex..., in: text), withTemplate: " "
+        )
+        let source = emailFree as NSString
+        let masked = NSMutableString(string: emailFree)
+        let label = TextNormalizer.splitLabel(text).label
+        for match in KeywordTables.websiteRegex.matches(
+            in: emailFree, range: NSRange(location: 0, length: source.length)
+        ).reversed() {
+            let parts = source.substring(with: match.range).lowercased().split(separator: ".")
+            let prefix = source.substring(to: match.range.location)
+            // A named company's dotted legal suffix is not a domain. Bare tokens
+            // and explicitly labelled contacts keep the conservative masking rule.
+            let namedSuffix = label == nil && prefix.contains { $0.isLetter || $0.isNumber }
+                && parts.count > 1 && parts.allSatisfy { KeywordTables.corporateAbbreviations.contains(String($0)) }
+            if !namedSuffix {
+                masked.replaceCharacters(in: match.range, with: " ")
+            }
         }
+        return masked as String
     }
 
     private func isStructured(_ line: Line) -> Bool {

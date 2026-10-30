@@ -4,6 +4,23 @@ import XCTest
 /// Table-driven tests for the field parser. Each case mirrors a scenario in the
 /// assignment's spec so that "rule changed" and "spec changed" are the same diff.
 final class FieldParserTests: XCTestCase {
+    func testDottedCompanySuffixSurvivesInternetAddressMasking() {
+        for company in ["Example Co.Ltd", "Example Co.Ltd.", "Example Corp.Inc"] {
+            let result = parser.parse(lines: [
+                "Alice Chen", company, "Engineer", "Email: alice@demo.example",
+            ])
+            XCTAssertEqual(result.company?.value, company)
+            XCTAssertEqual(result.jobTitle?.value, "Engineer")
+        }
+        for contact in ["Web: co.ltd", "https://co.ltd", "www.co.ltd", "Email: co.ltd", "co.ltd"] {
+            let result = parser.parse(lines: ["Alice Chen", contact, "Email: alice@demo.example"])
+            XCTAssertNil(result.company, contact)
+            XCTAssertNil(result.jobTitle, contact)
+        }
+        let website = parser.parse(lines: ["Alice Chen", "Web: co.ltd"])
+        XCTAssertEqual(website.website?.value, "co.ltd")
+    }
+
     func testContactDigitsDoNotInventPostalAddress() {
         for contact in [
             "Email: alice123456@example.example", "Tel: +44 20 000000",

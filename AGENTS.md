@@ -128,7 +128,7 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.1 / iOS 27.0 模拟器 `iPhone 18 Pro`）
 - [x] 2026-10-28 的 UI 套件在 iPad Pro 11-inch (M5) 上全绿；本轮新增用例的验证范围见最新报告
-- [x] 103 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/review-fixes-2026-10-30.md
+- [x] 104 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/review-fixes-2026-10-30.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
 - [ ] T18（真机杀进程）、T19（真机通讯录）及相机/权限手工验收
