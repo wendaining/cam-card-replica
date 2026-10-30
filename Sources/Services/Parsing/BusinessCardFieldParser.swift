@@ -510,8 +510,16 @@ extension HeuristicFieldParser {
 
     private func addressScore(_ text: String) -> Double {
         var score = 0.0
+        let (label, value) = TextNormalizer.splitLabel(text)
+        if let label, ["address", "add", "地址"].contains(label.lowercased()), value.nilIfBlank != nil {
+            score += 3
+        }
         for marker in KeywordTables.addressStrongMarkers where containsKeyword(text, marker) {
             score += 2
+        }
+        // A street word plus a leading house number is stronger than either alone.
+        if score >= 2, text.range(of: #"^\d+[A-Za-z]?(?:-\d+)?\s+"#, options: .regularExpression) != nil {
+            score += 1
         }
         for marker in KeywordTables.addressWeakMarkers where containsKeyword(text, marker) {
             score += 1

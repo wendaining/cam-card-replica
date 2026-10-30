@@ -195,6 +195,22 @@ final class FieldParserTests: XCTestCase {
         XCTAssertEqual(card.address?.value, "深圳市南山区科技园南路18号 518057")
     }
 
+    func testShortStreetAddressUsesLabelOrHouseNumberEvidence() {
+        for address in ["123 Main Street", "42 Example Road"] {
+            for prefix in ["", "Address: ", "Add: ", "地址: "] {
+                let result = parser.parse(lines: ["Alice Chen", prefix + address, "Email: alice@demo.example"])
+                XCTAssertEqual(result.address?.value, address, prefix + address)
+                XCTAssertNil(result.company)
+            }
+        }
+        let labelled = parser.parse(lines: ["Alice Chen", "Address: PO Box 42"])
+        XCTAssertEqual(labelled.address?.value, "PO Box 42")
+        for ambiguous in ["Main Street", "Address:", "Address: alice@demo.example"] {
+            let result = parser.parse(lines: ["Alice Chen", ambiguous, "Email: alice@demo.example"])
+            XCTAssertNil(result.address, ambiguous)
+        }
+    }
+
     // MARK: - Confidence plumbing (T11)
 
     func testLowConfidenceFieldsAreMarked() {
