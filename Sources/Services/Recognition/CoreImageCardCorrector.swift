@@ -8,6 +8,12 @@ final class CoreImageCardCorrector: ImageCorrecting {
     private let context = CIContext(options: [.useSoftwareRenderer: false])
 
     func correct(_ image: CGImage, quad: Quad) throws -> CGImage {
+        // Detection fallback and "use whole image" need no geometric change.
+        // Rendering an identity perspective transform still changes decoded
+        // pixels through interpolation/color conversion, damaging small text.
+        if quad == .fullFrame {
+            return image
+        }
         let invalid = Quad(
             topLeft: .zero, topRight: .zero, bottomRight: .zero, bottomLeft: .zero
         )

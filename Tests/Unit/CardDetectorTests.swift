@@ -87,4 +87,16 @@ final class CardDetectorTests: XCTestCase {
         let quad = try VisionCardDetector().detectCard(in: image, orientation: .up)
         XCTAssertNil(quad, "nothing to detect when the card fills the frame")
     }
+
+    func testWholeImageCorrectionPreservesDecodedPixels() throws {
+        for name in ["en-02.jpg", "zh-01.jpg"] {
+            let original = try fixtureImage(name)
+            let corrected = try CoreImageCardCorrector().correct(original, quad: .fullFrame)
+            XCTAssertEqual(corrected.width, original.width, name)
+            XCTAssertEqual(corrected.height, original.height, name)
+            let before = try XCTUnwrap(original.dataProvider?.data) as Data
+            let after = try XCTUnwrap(corrected.dataProvider?.data) as Data
+            XCTAssertTrue(before == after, "Using the whole image must not resample small text: \(name)")
+        }
+    }
 }
