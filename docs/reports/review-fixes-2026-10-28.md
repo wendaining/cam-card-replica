@@ -46,7 +46,7 @@
 
 | 命令/检查 | 实际结果 |
 |---|---|
-| make verify | lint、build、93个单元/集成测试通过，0个非预期失败；含1个明确披露的无标签传真归类期望失败 |
+| make verify | lint、build、当时单元/集成方法数为93，全部通过，0个非预期失败；含1个明确披露的无标签传真归类期望失败 |
 | make test-ui | iPhone 18 Pro，24个方法通过（23个功能回归+1个截图），326.3秒 |
 | make test-ipad | iPad Pro 11-inch (M5)，同一套24个方法通过，319.3秒 |
 | make bench + report_benchmark.py | 全部76张图真实 Vision 链路完成，报告已更新；原理想文本门槛未下调 |

@@ -4,6 +4,26 @@ import XCTest
 /// Table-driven tests for the field parser. Each case mirrors a scenario in the
 /// assignment's spec so that "rule changed" and "spec changed" are the same diff.
 final class FieldParserTests: XCTestCase {
+    func testInternetAddressesDoNotInventOrganizationFields() {
+        for contact in [
+            "Email: sales@company.example", "Email: director@example.example",
+            "Email: research@demo.example", "Web: https://director.company.example/research",
+        ] {
+            let result = parser.parse(lines: ["Alice Chen", contact])
+            XCTAssertNil(result.company, contact)
+            XCTAssertNil(result.jobTitle, contact)
+            XCTAssertNil(result.department, contact)
+            XCTAssertEqual(result.name?.value, "Alice Chen")
+        }
+        let result = parser.parse(lines: [
+            "Alice Chen", "ABC Technologies", "Director", "Research", "Email: sales@company.example",
+        ])
+        XCTAssertEqual(result.company?.value, "ABC Technologies")
+        XCTAssertEqual(result.jobTitle?.value, "Director")
+        XCTAssertEqual(result.department?.value, "Research")
+        XCTAssertEqual(result.emails.map(\.value), ["sales@company.example"])
+    }
+
     func testUnlabelledDomainWithoutWebsiteEvidenceStaysUnassigned() {
         // OCR may lose an email's @; a domain-shaped token alone is insufficient evidence.
         let token = "jordan.leeQdemo.example"

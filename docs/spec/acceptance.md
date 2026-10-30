@@ -55,3 +55,9 @@
 | R17 运行路径 | Scripts/test_tooling.py；make run 实际安装验证 | 统一 derivedDataPath 与产品路径 |
 
 T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图；真机与正版的未签收项见 `docs/testing/external-acceptance.md`。方法数不等于20条场景全部签收。
+
+## 2026-10-30 全仓审查修复追溯
+
+| 问题 | 回归证据 | 对应实现 |
+|---|---|---|
+| R18 邮箱/网址误填组织字段 | `FieldParserTests.testInternetAddressesDoNotInventOrganizationFields`：反例先红；完整 verify 与 bench | 关键词匹配排除邮箱和网址区间，独立组织字段继续识别 |

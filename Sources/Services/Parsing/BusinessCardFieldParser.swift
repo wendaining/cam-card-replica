@@ -231,12 +231,13 @@ struct HeuristicFieldParser: FieldParsing {
                 !emailRanges.contains { $0.contains(candidate) || candidate.contains($0) }
             }
 
-            line.matchedTitle = longestKeyword(in: text, from: KeywordTables.jobTitles)
-            line.matchedCompany = longestKeyword(in: text, from: KeywordTables.companyMarkers)
-            line.matchedDepartment = longestKeyword(in: text, from: KeywordTables.departmentMarkers)
+            let keywordText = withoutInternetAddresses(text)
+            line.matchedTitle = longestKeyword(in: keywordText, from: KeywordTables.jobTitles)
+            line.matchedCompany = longestKeyword(in: keywordText, from: KeywordTables.companyMarkers)
+            line.matchedDepartment = longestKeyword(in: keywordText, from: KeywordTables.departmentMarkers)
             line.addressScore = addressScore(text)
             line.hasPostalCode = text.range(of: #"(?<!\d)\d{6}(?!\d)"#, options: .regularExpression) != nil
-            line.hasSuffixCompanyMarker = hasSuffixMarker(text)
+            line.hasSuffixCompanyMarker = hasSuffixMarker(keywordText)
             lines.append(line)
         }
         return lines
@@ -428,6 +429,15 @@ struct HeuristicFieldParser: FieldParsing {
     }
 
     // MARK: - Helpers
+
+    /// Domains and mailbox names are contact values, not organization evidence.
+    private func withoutInternetAddresses(_ text: String) -> String {
+        [KeywordTables.emailRegex, KeywordTables.websiteRegex].reduce(text) { value, regex in
+            regex.stringByReplacingMatches(
+                in: value, range: NSRange(value.startIndex..., in: value), withTemplate: " "
+            )
+        }
+    }
 
     private func isStructured(_ line: Line) -> Bool {
         if !line.emails.isEmpty || !line.websites.isEmpty {
