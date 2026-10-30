@@ -328,6 +328,7 @@ struct HeuristicFieldParser: FieldParsing {
             if line.text.split(separator: " ").count > 4 {
                 score -= 2
             }
+            guard score > 0 else { return nil }
             return Scored(index: line.index, score: score)
         }
         return scored.max { lhs, rhs in

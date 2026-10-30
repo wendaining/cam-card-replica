@@ -168,6 +168,17 @@ final class FieldParserTests: XCTestCase {
         XCTAssertEqual(card.jobTitle?.value, "Partner")
     }
 
+    func testNegativeTitleCandidateRemainsACompany() {
+        for company in ["Chief Engineer Consulting Ltd", "设计师事务所"] {
+            let result = parser.parse(lines: ["Alice Chen", company, "Email: alice@demo.example"])
+            XCTAssertEqual(result.company?.value, company)
+            XCTAssertNil(result.jobTitle)
+            let withTitle = parser.parse(lines: ["Alice Chen", company, "Director"])
+            XCTAssertEqual(withTitle.company?.value, company)
+            XCTAssertEqual(withTitle.jobTitle?.value, "Director")
+        }
+    }
+
     func testBilingualNameIsKeptWhole() {
         let card = parser.parse(lines: ["朱宏明 Zhu Hongming", "同济大学 Tongji University", "教授 Professor"])
         XCTAssertEqual(card.name?.value, "朱宏明 Zhu Hongming")

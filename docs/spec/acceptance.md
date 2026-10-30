@@ -62,3 +62,4 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 |---|---|---|
 | R18 邮箱/网址误填组织字段 | `FieldParserTests.testInternetAddressesDoNotInventOrganizationFields`：反例先红；完整 verify 与 bench | 关键词匹配排除邮箱和网址区间，独立组织字段继续识别 |
 | R19 联系方式数字误填地址 | `FieldParserTests.testContactDigitsDoNotInventPostalAddress`：邮箱、电话、网址反例及真实地址对照 | 地址打分与邮编检测排除已识别联系方式 |
+| R20 负分公司候选误作职位 | `FieldParserTests.testNegativeTitleCandidateRemainsACompany`：中英文公司、有/无独立职位对照 | 职位净分必须大于零，否则保留给公司提取 |
