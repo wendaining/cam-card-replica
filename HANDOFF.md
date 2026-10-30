@@ -49,7 +49,7 @@ make audit
 | T19 真机通讯录 | 授权/拒绝两条路径；实际写入合成联系人后在系统通讯录核对全部字段与电话标签；VCF 映射和编辑后最新值已在本地验证 |
 | 真实拍照质量 | 反光、阴影、模糊、旋转等实拍的识别错误与人工校正次数；竖排文字仍是已知限制，合成照片不能代表这些质量分布 |
 | 正版 CamCard 对比 | 锁定版本、iOS、设备、语言、登录/会员范围；同一批 v2 语料逐页截图、T01–T20 行为观察、同图识别差异与回归，补 difference-analysis |
-| 远端 CI | 恢复 GitHub Actions 付款/消费额度后，对最新 main 重跑完整工作流；当前失败是作业未启动，尚无远端编译/测试结果 |
+| 远端 CI | 仓库已改 public，Actions 恢复运行（不再受付款额度阻塞）。CI 现只在 Linux 跑 docs audit；build/单元/集成/UI 测试回归为本地 gate，不在远端重复。详见文末「CI 策略」 |
 | 最终报告 | 外部证据签收后更新差异分析、验收矩阵和 final-report，再定稿行为等价结论 |
 
 按 `docs/testing/external-acceptance.md` 收集设备、版本、日期、结果和截图/录屏；本地修复不冒充上述验收完成。T05 真实系统 PhotosPicker 选取/取消已在模拟器手动留证，不再列为待验。
@@ -58,4 +58,17 @@ make audit
 
 - `docs/reports/review-2026-10-28.md` 与对应 evidence 目录是修复前基线 7c938f5 的历史快照，不代表当前源码；其中旧探针仅可在基线运行。
 - 产品/spec/API/追溯表描述当前契约；最终报告仍需等外部验收后定稿。
-- CI 工作流中的 UI 测试不再忽略失败。PR 已按用户决定合并；[合并提交的 CI](https://github.com/wendaining/cam-card-replica/actions/runs/40662086654) 仍因账户付款/消费额度限制未启动任何步骤，不能算作编译或测试失败，也不能当作远端验证通过。详见修复记录；计费与远端复验仍待处理。
+- 仓库已改 public，GitHub Actions 恢复运行；此前「合并提交 CI 因付款额度未启动」的描述已过时。CI 当前范围见下。
+
+## CI 策略（2026-10-30 更新）
+
+仓库改 public 后 Actions 恢复运行。权衡后 CI 只保留 **Linux 上的 docs audit**（`Scripts/audit_docs.py`，1× 计费、秒级），`.github/workflows/ci.yml` 已移除 macOS job。
+
+原因：本作业的验收证据来自**本地** `make verify` / `make test-ui`（Xcode 27 / iPhone 18 Pro）。macOS runner 10× 计费、容量紧张时排队，且主要是重复本地已证明的东西。build / 单元 / 集成 / UI 测试仍是**本地强制 gate**，只是不在远端重复。
+
+一个诚实的技术发现（public 化后 macOS runner 跑过两次，留档）：
+
+- 远端 `macos-15` 用 Xcode 16 / iOS 17 模拟器，比本地 iOS 27 旧。该环境暴露了 3 个 UI 测试的**交互脆性**（非功能缺陷）：
+  - T14 / T17 / T18 原在 `app.buttons["detail-more"].tap()` 失败——旧 runtime 对已可见的导航栏按钮执行隐式 `scrollToVisible` 抛 `kAXErrorCannotComplete`。已改用坐标点击（`tapToolbarButton`），旧 runtime 第二次运行 T14 / T17 **转绿**。
+  - T18 随后在最后一行标签 chip 断言失败：标签 Section 在备注之前，为露出备注的连续 `swipeUp` 把标签 chip 滚出可见区。注意此时**重启后的姓名、公司、备注、两张图均已回读并断言通过**——持久化数据正常，仅滚动位置问题。已把标签断言提到滚动到备注之前。
+- **未验项**：T18 的标签顺序修复只在**本地 iOS 27** 验证通过；因 macOS CI 已移除，**未在旧 runtime 复验**。若日后需要 iOS 17 兼容证据，需临时恢复 macOS job 或在本地旧模拟器重跑。
