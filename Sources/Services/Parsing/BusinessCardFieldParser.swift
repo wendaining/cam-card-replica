@@ -235,8 +235,11 @@ struct HeuristicFieldParser: FieldParsing {
             line.matchedTitle = longestKeyword(in: keywordText, from: KeywordTables.jobTitles)
             line.matchedCompany = longestKeyword(in: keywordText, from: KeywordTables.companyMarkers)
             line.matchedDepartment = longestKeyword(in: keywordText, from: KeywordTables.departmentMarkers)
-            line.addressScore = addressScore(text)
-            line.hasPostalCode = text.range(of: #"(?<!\d)\d{6}(?!\d)"#, options: .regularExpression) != nil
+            let addressText = line.phones.reduce(keywordText) { value, phone in
+                value.replacingOccurrences(of: phone.value, with: " ")
+            }
+            line.addressScore = addressScore(addressText)
+            line.hasPostalCode = addressText.range(of: #"(?<!\d)\d{6}(?!\d)"#, options: .regularExpression) != nil
             line.hasSuffixCompanyMarker = hasSuffixMarker(keywordText)
             lines.append(line)
         }
@@ -427,9 +430,11 @@ struct HeuristicFieldParser: FieldParsing {
         let lower = value.lowercased()
         return lower.hasPrefix("www.") || lower.hasPrefix("https://") || lower.hasPrefix("http://")
     }
+}
 
-    // MARK: - Helpers
+// MARK: - Helpers
 
+extension HeuristicFieldParser {
     /// Domains and mailbox names are contact values, not organization evidence.
     private func withoutInternetAddresses(_ text: String) -> String {
         [KeywordTables.emailRegex, KeywordTables.websiteRegex].reduce(text) { value, regex in
