@@ -25,6 +25,8 @@
 | T19 | 导出 vCard/通讯录 | 13.1–2 | `ContactsExporterTests` + `VCardDocumentTests`（编辑后完整 VCF 重读）；通讯录落库待真机 | `ContactsExporter` / `VCardDocument` |
 | T20 | 异常路径 | 4 节 | `testT20_*`、`testT03_*`、`testT06_*` | 各状态机 |
 
+课程原始用例来源及边界见 [参考测试套件](../testing/reference-test-suite.md)。T19 本轮采用已有导出自动测试证据，T18 采用模拟器回归；下列真机任务暂缓。
+
 ## 概率性功能（不算"通过率"，算准确率）
 
 | 指标 | 目标 | 证据 |
@@ -34,7 +36,7 @@
 | 完整多值/全部缺失字段/真实76张图 | 比较完整集合、漏值、多值、误填；已知歧义也计错，不声称全部为零 | `ImageCorpusTests` + image-accuracy-latest 报告 |
 | 照片变体（斜拍/阴影） | 单独统计，不计入通过率 | `docs/reports/ocr-accuracy.md` |
 
-## 手工验收（需截图存档）
+## 手工验收（暂缓，非本轮执行项）
 
 - T18 真机 / 模拟器：保存 → 上滑杀进程 → 重开 → 名片、修改、标签、备注、图片都在。
 - T03 真机：真实系统权限弹窗「允许/不允许」两条路径。

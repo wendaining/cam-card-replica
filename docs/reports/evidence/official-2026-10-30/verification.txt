@@ -1,0 +1,37 @@
+Excerpt from camcard-verify-ambiguity.log
+** BUILD SUCCEEDED **
+SwiftCompile normal arm64 Compiling\ BusinessCardTests.swift,\ CameraPermissionTests.swift /Users/I783217/Projects/mobile-app-dev/cam-card-replica/Tests/Unit/BusinessCardTests.swift /Users/I783217/Projects/mobile-app-dev/cam-card-replica/Tests/Unit/CameraPermissionTests.swift (in target 'CamCardReplicaTests' from project 'CamCardReplica')
+SwiftCompile normal arm64 /Users/I783217/Projects/mobile-app-dev/cam-card-replica/Tests/Unit/CameraPermissionTests.swift (in target 'CamCardReplicaTests' from project 'CamCardReplica')
+    builtin-SwiftPerFileCompile CameraPermissionTests.swift
+SwiftDriverJobDiscovery normal arm64 Compiling BusinessCardTests.swift, CameraPermissionTests.swift (in target 'CamCardReplicaTests' from project 'CamCardReplica')
+Test Suite 'CameraPermissionTests' started at 2026-10-30 22:27:17.678.
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testOnlyAuthorizedAllowsTheCamera]' started.
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testOnlyAuthorizedAllowsTheCamera]' passed (0.000 seconds).
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testStubReportsInjectedStatus]' started.
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testStubReportsInjectedStatus]' passed (0.000 seconds).
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testStubRequestDoesNotChangeState]' started.
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testStubRequestDoesNotChangeState]' passed (0.001 seconds).
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testSystemProviderReturnsAKnownStatus]' started.
+Test Case '-[CamCardReplicaTests.CameraPermissionTests testSystemProviderReturnsAKnownStatus]' passed (0.003 seconds).
+Test Suite 'CameraPermissionTests' passed at 2026-10-30 22:27:17.683.
+Test Case '-[CamCardReplicaTests.FieldParserTests testAmbiguousCompanyUsesContextAndRequiresReview]' started.
+Test Case '-[CamCardReplicaTests.FieldParserTests testAmbiguousCompanyUsesContextAndRequiresReview]' passed (0.003 seconds).
+Test Case '-[CamCardReplicaTests.FieldParserTests testAmbiguousWordAloneDoesNotInventAContact]' started.
+Test Case '-[CamCardReplicaTests.FieldParserTests testAmbiguousWordAloneDoesNotInventAContact]' passed (0.001 seconds).
+Test Case '-[CamCardReplicaTests.FieldParserTests testAmbiguousWordInAddressDoesNotBecomeCompany]' started.
+Test Case '-[CamCardReplicaTests.FieldParserTests testAmbiguousWordInAddressDoesNotBecomeCompany]' passed (0.002 seconds).
+	 Executed 108 tests, with 0 failures (0 unexpected) in 60.976 (61.005) seconds
+	 Executed 108 tests, with 0 failures (0 unexpected) in 60.976 (61.006) seconds
+** TEST SUCCEEDED **
+Excerpt from camcard-permission-ui.log
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project CamCardReplica.xcodeproj -scheme CamCardReplica -destination "platform=iOS Simulator,name=iPhone 18 Pro" -derivedDataPath build test -enableCodeCoverage NO "-only-testing:CamCardReplicaUITests/CardFlowUITests/testT03_cameraDeniedShowsExplanation"
+SwiftCompile normal arm64 Compiling\ BusinessCardTests.swift,\ CameraPermissionTests.swift /Users/I783217/Projects/mobile-app-dev/cam-card-replica/Tests/Unit/BusinessCardTests.swift /Users/I783217/Projects/mobile-app-dev/cam-card-replica/Tests/Unit/CameraPermissionTests.swift (in target 'CamCardReplicaTests' from project 'CamCardReplica')
+SwiftCompile normal arm64 /Users/I783217/Projects/mobile-app-dev/cam-card-replica/Tests/Unit/CameraPermissionTests.swift (in target 'CamCardReplicaTests' from project 'CamCardReplica')
+    builtin-SwiftPerFileCompile CameraPermissionTests.swift
+SwiftDriverJobDiscovery normal arm64 Compiling BusinessCardTests.swift, CameraPermissionTests.swift (in target 'CamCardReplicaTests' from project 'CamCardReplica')
+Test Case '-[CamCardReplicaUITests.CardFlowUITests testT03_cameraDeniedShowsExplanation]' started.
+Test Case '-[CamCardReplicaUITests.CardFlowUITests testT03_cameraDeniedShowsExplanation]' passed (8.186 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 8.186 (8.188) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 8.186 (8.189) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 8.186 (8.190) seconds
+** TEST SUCCEEDED **

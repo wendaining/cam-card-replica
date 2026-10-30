@@ -131,8 +131,8 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 108 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/review-fixes-2026-10-30.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
-- [ ] T18（真机杀进程）、T19（真机通讯录）及相机/权限手工验收
-- [ ] 与正版 CamCard 的截图对比与差异清单
+- [ ] 人工验收暂缓（2026-10-30 用户安排）；T18 沿用模拟器回归，T19 采用自动映射/VCF 回读测试
+- [x] 官网资料调研与功能差异文档；指定版本截图/实测等价尚未验证、暂缓
 - [x] 演示稿 `docs/reports/demo-script.md`（90 秒主线 + 答辩问答）
 - [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（本地修复和外部未验项分开记录）
 - [ ] 最终报告定稿
