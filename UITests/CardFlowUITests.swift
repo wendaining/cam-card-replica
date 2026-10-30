@@ -415,10 +415,18 @@ final class CardFlowUITests: XCTestCase {
         picker.buttons["原图"].tap()
         XCTAssertTrue(picker.buttons["原图"].isSelected)
         app.buttons["image-viewer-done"].tap()
+        // The Tags section sits above Notes in the detail form, so check the tag
+        // chip first: scrolling down far enough to reveal the note would push the
+        // chip out of the accessibility tree. On the smaller CI simulator that
+        // ordering is what flaked T18 — the data round-trips fine (name, company,
+        // note and both images all assert above), only the chip had scrolled off.
+        for _ in 0 ..< 6 where !element("tag-chip-Persistence").exists {
+            app.swipeUp()
+        }
+        XCTAssertTrue(element("tag-chip-Persistence").exists)
         for _ in 0 ..< 6 where !app.staticTexts["Persistence note"].exists {
             app.swipeUp()
         }
         XCTAssertTrue(app.staticTexts["Persistence note"].exists)
-        XCTAssertTrue(element("tag-chip-Persistence").exists)
     }
 }
