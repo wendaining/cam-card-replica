@@ -187,6 +187,33 @@ final class FieldParserTests: XCTestCase {
 
     // MARK: - Ambiguity cases from section 八
 
+    func testAmbiguousWordAloneDoesNotInventAContact() {
+        let card = parser.parse(lines: ["Apple"])
+        XCTAssertTrue(card.isEmpty)
+        XCTAssertNil(card.department)
+        XCTAssertEqual(card.unassignedLines, ["Apple"])
+    }
+
+    func testAmbiguousCompanyUsesContextAndRequiresReview() throws {
+        let card = parser.parse(lines: ["Jordan Lee", "Apple", "Email: jordan@demo.example"])
+        XCTAssertEqual(card.name?.value, "Jordan Lee")
+        XCTAssertEqual(card.company?.value, "Apple")
+        let company = try XCTUnwrap(card.company)
+        XCTAssertFalse(company.evidence.isEmpty)
+        XCTAssertTrue(ScanFlowModel.lowConfidenceFields(in: card).contains(.company))
+        XCTAssertNil(card.website, "A brand or email domain must not invent a website")
+        XCTAssertNil(card.address)
+        XCTAssertNil(card.jobTitle)
+    }
+
+    func testAmbiguousWordInAddressDoesNotBecomeCompany() {
+        let card = parser.parse(lines: ["Jordan Lee", "Address: 42 Apple Road"])
+        XCTAssertEqual(card.name?.value, "Jordan Lee")
+        XCTAssertEqual(card.address?.value, "42 Apple Road")
+        XCTAssertNil(card.company)
+        XCTAssertNil(card.website)
+    }
+
     func testPersonNameIsNotCompany() {
         let card = parser.parse(lines: ["Jordan Lee", "Lee Consulting", "Principal"])
         XCTAssertEqual(card.name?.value, "Jordan Lee")

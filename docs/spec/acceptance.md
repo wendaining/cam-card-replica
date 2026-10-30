@@ -68,3 +68,13 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 | R23 相册迟到结果覆盖草稿 | `ScanFlowModelTests`：正常导入/错误、旧成功与失败、替换选择、重拍与 Task 取消 | 相册异步加载进入流程模型，共用 operationID 失效检查 |
 | R24 读取失败伪装成空库 | `CardLibraryModelTests.testReloadRecoversReadFailureWithoutReplacingStoredCards`；`testT20_libraryLoadFailureShowsRetryInsteadOfEmptyState` | 独立加载错误状态、首页错误/重试入口、恢复前禁用扫描 |
 | R25 整图路径无谓重采样 | `CardDetectorTests.testWholeImageCorrectionPreservesDecodedPixels`：深/浅底 fixture 像素回读先红后绿 | fullFrame 直接保留归一方向后的输入图像 |
+
+## 歧义字段测试补充（2026-10-30）
+
+| 课程要求 | 自动化证据 | 行为 |
+|---|---|---|
+| 第八节字段歧义，T08/T09/T11 | FieldParserTests.testAmbiguousWordAloneDoesNotInventAContact | 孤立 Apple 无联系方式或机构证据，保留未归类文字，不生成联系人 |
+| 第八节上下文与人工核对 | FieldParserTests.testAmbiguousCompanyUsesContextAndRequiresReview | 姓名后的 Apple 可作公司候选，但必须低置信提示；不补网站、地址、职位 |
+| 第八节语义冲突 | FieldParserTests.testAmbiguousWordInAddressDoesNotBecomeCompany | Address: 42 Apple Road 保留为地址，不误作公司 |
+
+本轮仅加测试，不修改解析规则或评测语料。
