@@ -18,7 +18,7 @@
 
 - 每个提交前运行 make verify；五个解析修复及最后的兼容补丁另外运行 make bench。
 - R23 先原样提取相册加载入口供控制完成顺序，确认新测试在旧行为下失败，再加入版本和取消检查。
-- R24 先注入首次读取失败，确认原首页无法展示错误；随后验证重试能读回原有名片，而不是清空库。损坏 JSON 不被覆盖的原有文件测试继续保留。
+- R24 先注入首次读取失败，确认原首页无法展示错误；随后验证重试能读回原有名片，并保留原有文件库。损坏 JSON 不被覆盖的原有文件测试继续保留。
 - 最终兼容补丁的 make verify：当时104个测试通过（单元/集成），0个非预期失败，执行56.3秒。无标签号码的既有期望失败仍明确保留。
 - 新增首页读取失败 UI 用例先红后绿，单独回归通过。完整 iPhone UI：24个功能用例通过，1个截图用例按默认配置跳过，执行307.4秒；iPad 本轮未重跑。
 - make audit 与 git diff --check 通过。
@@ -27,7 +27,7 @@
 
 收尾复查发现 R18 的网址屏蔽会误屏蔽带公司名的 Co.Ltd 连写后缀；与基线对照后增加第八个小提交修复。新增测试同时检查公司后缀、裸域名、邮箱标签和明确网址，防止重新放开邮箱/网址误填。
 
-本地临时日志位于 /tmp/camcard-fix1-red.log 至 /tmp/camcard-fix8-red.log；各步验证使用对应的 verify/bench 日志，R23 的最终验证为 /tmp/camcard-fix6-final-verify.log，最终 UI 为 /tmp/camcard-final-ui.log，兼容补丁使用 /tmp/camcard-fix8-verify.log 和 /tmp/camcard-fix8-bench.log。可复现的回归测试和关键结论保存在仓库中，临时日志不是交付依赖。
+本地临时日志位于 /tmp/camcard-fix1-red.log 至 /tmp/camcard-fix8-red.log；各步验证使用对应的 verify/bench 日志，R23 的最终验证为 /tmp/camcard-fix6-final-verify.log，最终 UI 为 /tmp/camcard-final-ui.log，兼容补丁使用 /tmp/camcard-fix8-verify.log 和 /tmp/camcard-fix8-bench.log。可复现的回归测试和关键结论保存在仓库中，永久报告与回归代码提供交付证据。
 
 ## 验收边界
 

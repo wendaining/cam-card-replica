@@ -19,7 +19,7 @@ CardStore 协议 ── FileCardStore / InMemoryCardStore
 1. **不确定的东西都在协议后面。** 相机、OCR、检测、导出各有协议；
    UI 测试通过 `AppServices.make(arguments:)` 注入替身，生产路径零改动。
 2. **单一写入点。** 所有变更走 `CardLibraryModel`，提交成功后才发布内存；失败保留表单。T18 用文件库 terminate/launch 回归验证。
-3. **状态是枚举，不是布尔堆。** `ScanFlowModel.Stage` 决定当前屏幕，
+3. **状态由枚举统一表示。** `ScanFlowModel.Stage` 决定当前屏幕，
    不可能出现"裁剪页和确认页同时存在"这种状态。
 4. **解析器是纯函数。** 输入 `OCRResult`，输出 `ParsedCard`，无 IO 无随机，
    所以 50 张语料可以当单元测试跑，回归成本接近零。

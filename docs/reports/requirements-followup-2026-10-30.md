@@ -15,7 +15,7 @@
 | 验证 | 实跑结果 | 边界 |
 |---|---|---|
 | make verify | 成功；当时执行 108 个方法，0 个非预期失败 | 既有概率性期望失败仍按原报告解释；本轮未重跑完整 UI 套件 |
-| CameraPermissionTests | 4 个方法通过 | 授权/拒绝 stub、仅 authorized 可用相机、系统状态映射；不是系统弹窗自动验收 |
+| CameraPermissionTests | 4 个方法通过 | 授权/拒绝 stub、仅 authorized 可用相机、系统状态映射；真实系统弹窗保留待验证状态 |
 | CardFlowUITests.testT03_cameraDeniedShowsExplanation | 1 个方法通过；0 失败 | 注入 denied，断言权限说明和禁用快门 |
 | make audit | 通过 | 路径、测试引用、数量与命令一致性 |
 
