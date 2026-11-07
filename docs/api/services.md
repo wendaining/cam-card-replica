@@ -95,8 +95,7 @@ protocol CameraPermissionProviding: Sendable {
 }
 ```
 
-- 模拟器无法弹真实相机权限：T03 用 `StubCameraPermission` 注入 `denied` 验证 UI 分支，
-  真机再手工验一次真实弹窗。
+- T03 常规测试用 `StubCameraPermission` 注入 `denied`。系统专项通过 SystemCameraPermission 验证模拟器原生弹窗允许/拒绝以及已有授权/拒绝状态，四项通过，见 [权限证据](../reports/evidence/permissions-2026-11-07/README.md)。
 
 ## 依赖注入
 

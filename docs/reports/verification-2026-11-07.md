@@ -4,7 +4,7 @@
 
 macOS 27.0.1；Xcode 27.2（27B52）；iOS SDK 27.2；iPhone 18 Pro 模拟器、iOS 27.0。日期与时区采用 Asia/Shanghai。
 
-本次修改 ImageCorpusTests、报告导出、证据校验、打包工具和文档。App 的 Sources 目录保持原有实现，语料与 GT 保持原有内容。
+本次修改 ImageCorpusTests、报告导出、证据校验、打包工具和文档。App 的 Sources 目录仅更新相机权限测试边界注释，运行逻辑保持原有实现，语料与 GT 保持原有内容。
 
 ## 实际运行结果
 
@@ -23,7 +23,7 @@ macOS 27.0.1；Xcode 27.2（27B52）；iOS SDK 27.2；iPhone 18 Pro 模拟器、
 
 [永久测试摘要](evidence/validation-2026-11-07/verification.txt)、[Python 证据检查](evidence/validation-2026-11-07/python-evidence.txt)、[Python 工具检查](evidence/validation-2026-11-07/python-tooling.txt)随提交材料保存。
 
-完整 Xcode 日志保留在本地 TestResults，结果包保留在 build/Logs/Test。提交材料保存必要摘要、可复现代码、运行元数据和识别附件。iPad 沿用 2026-10-28 的历史 UI 结果；正常快门与照片回调已通过 FauxCam 专项；真实系统权限、实拍质量、正版行为与同图识别等待作者验证。
+完整 Xcode 日志保留在本地 TestResults，结果包保留在 build/Logs/Test。提交材料保存必要摘要、可复现代码、运行元数据和识别附件。iPad 沿用 2026-10-28 的历史 UI 结果；正常快门与照片回调已通过 FauxCam 专项；原生系统权限已在模拟器完成四项专项；实拍质量、正版行为与同图识别保留未验证状态。
 
 ## OCR 证据导出
 
@@ -32,15 +32,15 @@ make bootstrap
 make verify
 make bench
 python3 Scripts/report_benchmark.py \
-  --log TestResults/submission-bench-2026-11-07.log \
+  --log TestResults/permission-final-verify-2026-11-07.log \
   --date 2026-11-07 \
   --environment 'Xcode 27.2 / iPhone 18 Pro / iOS 27.0' \
-  --xcresult 'build/Logs/Test/Test-CamCardReplica-2026.11.07_20-47-36-+0800.xcresult' \
+  --xcresult 'build/Logs/Test/Test-CamCardReplica-2026.11.07_23-54-46-+0800.xcresult' \
   --evidence-dir docs/reports/evidence/ocr-2026-11-07
 make test-evidence
 ```
 
-以上导出参数对应本次实际运行，评测日志在执行时保存为 TestResults/submission-bench-2026-11-07.log。普通 make bench 将日志保存为 TestResults/bench.log；重新测量时填写该次日志、日期、设备环境与结果包路径。
+以上导出参数对应 23:55 完成的完整验证运行，该次日志同时包含全部 76 个输入的测量。普通 make bench 将日志保存为 TestResults/bench.log；重新测量时填写该次日志、日期、设备环境与结果包路径。
 
 结果包路径由 xcodebuild 结束时输出。导出工具要求测试运行成功，识别记录完整，并检查原图、处理图片、GT 及初始字段比较。所有哈希均可用 Python hashlib 或系统 shasum 复算。
 
@@ -68,4 +68,8 @@ Vision 在部分输入输出 CVPixelBufferCreate -6680 诊断日志，本次所�
 
 FauxCam 使用 make test-fauxcam 显式运行，安装位置、配置和结果见 [相机专项](fauxcam-validation-2026-11-07.md)。
 
-提交前再次执行 make verify，2026-11-07 23:04 完成，109 个方法通过，0 个非预期失败；结果包为 2026.11.07_23-03-14。FauxCam 专项在 23:01 的独立结果包通过，UI 定义总数为 26。
+提交前再次执行 make verify，2026-11-07 23:04 完成，109 个方法通过，0 个非预期失败；结果包为 2026.11.07_23-03-14。FauxCam 专项在 23:01 的独立结果包通过，新增系统权限专项后 UI 定义总数为 27。
+
+系统相机权限专项在 23:50–23:51 完成四项独立运行：已有授权 9.411 秒、已有拒绝 8.403 秒、系统弹窗允许 10.232 秒、系统弹窗拒绝 10.193 秒，全部通过。使用真实 SystemCameraPermission，未注入 FauxCam，见 [原始证据](evidence/permissions-2026-11-07/README.md)。
+
+权限测试和注释更新后再次执行 make verify，23:55 完成，109 个方法通过，0 个非预期失败，结果包为 2026.11.07_23-54-46。从该次实际结果重新导出 OCR 原始证据，76 条逐字段比较与此前归档完全一致，测量元数据保存当前源码哈希。

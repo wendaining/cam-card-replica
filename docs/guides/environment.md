@@ -42,7 +42,7 @@ open CamCardReplica.xcodeproj    # Cmd+R
 
 ```bash
 make test          # 单元 + 集成（109 个方法）
-make test-ui       # 端到端（26 个方法，含默认跳过的截图与 FauxCam 专项；历史约 5.5 分钟）
+make test-ui       # 端到端（27 个方法，含默认跳过的截图、FauxCam 与系统权限专项；历史约 5.5 分钟）
 make test-ipad     # 同一套端到端在 iPad 上跑，验证布局适配
 ```
 

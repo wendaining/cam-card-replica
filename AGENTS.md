@@ -73,6 +73,7 @@ make bootstrap     # 生成 CamCardReplica.xcodeproj（改动 project.yml 后必
 make build         # 编译 Debug
 make test          # 单元 + 集成测试
 make test-ui       # T01–T20（需要模拟器）
+make test-camera-permissions # 系统相机授权、拒绝与首次弹窗
 make test-fauxcam  # FauxCam 正常快门与照片回调专项（需先安装工具）
 make bench         # Ground Truth 准确率，结果贴进 docs/reports/ocr-accuracy.md
 make lint          # swiftlint（阻塞）+ swiftformat（只报告）
@@ -128,11 +129,12 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.2 / iOS 27.0 模拟器 `iPhone 18 Pro`）
 - [x] 2026-10-28 的 UI 套件在 iPad Pro 11-inch (M5) 上全绿；本轮新增用例的验证范围见最新报告
-- [x] 109 个单元/集成测试方法、26 个 UI 方法（截图与 FauxCam 专项默认跳过）；最新验证见 docs/reports/verification-2026-11-07.md
+- [x] 109 个单元/集成测试方法、27 个 UI 方法（截图、FauxCam 与系统权限专项默认跳过）；最新验证见 docs/reports/verification-2026-11-07.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [x] FauxCam 1.1.0 正常快门、预览、重拍、识别与保存专项通过，见 docs/reports/fauxcam-validation-2026-11-07.md
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
-- [ ] 真机与正版人工验收待使用者填写；操作清单见 docs/submission/user-actions.md；T18 模拟器回归及 T19 VCF 回读已有证据
+- [x] 模拟器原生系统相机权限四项验证通过；使用者没有 iPhone，实拍质量保留未验证
+- [ ] 正版人工验收待使用者填写；操作清单见 docs/submission/user-actions.md；T18 模拟器回归及 T19 VCF 回读已有证据
 - [x] 官网资料调研与功能差异文档；指定版本观察保留填写模板
 - [x] 演示稿 `docs/reports/demo-script.md`（约 110 秒主线 + 答辩问答）
 - [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（本地修复和外部未验项分开记录）
