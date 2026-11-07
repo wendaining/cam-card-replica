@@ -9,7 +9,7 @@ PYTHON ?= python3
 SIMULATOR ?= iPhone 18 Pro
 XCODEBUILD := xcodebuild -project $(PROJECT) -scheme $(SCHEME) -destination '$(DESTINATION)' -derivedDataPath $(DERIVED_DATA_PATH)
 
-.PHONY: help bootstrap build test test-ui test-ipad bench audit lint format verify run relaunch reset photos testdata test-tooling test-evidence test-fauxcam clean hooks
+.PHONY: help bootstrap build test test-ui test-ipad bench audit lint format verify run relaunch reset photos testdata test-tooling test-evidence test-fauxcam package clean hooks
 
 help: ## 显示可用命令
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
@@ -82,6 +82,9 @@ test-evidence: ## 校验 OCR 证据导出的拒绝条件与完整性
 
 test-fauxcam: ## 使用已安装的 FauxCam 验证正常快门和照片回调
 	bash Scripts/test_fauxcam.sh
+
+package: ## 生成带 SHA-256 清单的提交压缩包
+	$(PYTHON) Scripts/package_submission.py
 
 hooks: ## 安装 git hooks（conventional commit 校验）
 	git config core.hooksPath .githooks
