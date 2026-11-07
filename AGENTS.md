@@ -1,15 +1,14 @@
 # AGENTS.md — 工程契约（换会话 / 换 Agent 必读）
 
 > 本文件是本仓库的**唯一事实来源**。任何 agent（人或 AI）在改代码之前，先读完这一页。
-> 最后更新：2026-10-30。
+> 最后更新：2026-11-07。
 
 ---
 
 ## 1. 项目是什么
 
 课程作业：用 SDD（规格驱动开发）100% 黑盒复刻「名片全能王 CamCard」的
-**名片数字化 + 联系人管理**功能切片。评分看的是"能不能用规格和测试证明它按预期工作"，
-不是"功能有没有"。
+**名片数字化 + 联系人管理**功能切片。评分依据规格、测试和人工验收证据。
 
 - 作业原文：`移动应用开发课程作业-v2.pdf`
 - 调研与执行方案：`00-作业调研与执行方案.md`
@@ -17,7 +16,7 @@
 - 作业条款逐条核对：`docs/spec/conformance-audit.md`（改功能前先看这里哪条没实现）
 - 交接说明（先读这个）：`HANDOFF.md`——验证状态、已知缺口、审查建议
 
-**硬截止：2026-11-06。** 时间不够时优先保「确定性 20 条」，再保「OCR 量化分析」。
+**提交安排：2026-11-08（使用者于 2026-11-07 说明明天提交）。** 优先完成「确定性 20 条」验收证据与「OCR 量化分析」。
 
 ## 2. 技术栈与边界（不要随意更换）
 
@@ -64,7 +63,7 @@ docs/             spec / api / architecture / testing / guides / reports
 
 1. **不虚构字段。** 名片上没有 Website 就返回 `nil`（T09）。任何"合理猜测"都是 bug。
    - 实现位置：`BusinessCardFieldParser.dropLowConfidence` + 每条规则的 evidence 记录。
-2. **AI 的输出不是数据。** OCR/解析结果必须经过 `ReviewView` 的人工确认才能落库。
+2. **识别结果需要人工确认。** OCR/解析结果必须经过 `ReviewView` 的人工确认才能落库。
 3. **重启必须还在。** 任何写操作都必须立刻经 `CardLibraryModel` → `CardStore` 落盘（T18）。
 
 ## 5. 命令
@@ -115,7 +114,7 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 
 ## 9. 环境事实
 
-- macOS 27.0.1 / Xcode 27.1 / iOS SDK 27.1（runtime 已安装）
+- macOS 27.0.1 / Xcode 27.2 / iOS SDK 27.2（runtime 已安装）
 - 测试默认目标：**iPhone 18 Pro**（iOS 27.0）；另有 `make test-ipad`（iPad Pro 11-inch M5）验证布局
 - 早先 `simctl create` 失败是 Xcode 附加组件没装完；Device Hub 修复后设备已可选
 - 机器是 SAP MDM 托管，App Store 安装受策略影响；Xcode 来自 Self Service。
@@ -126,13 +125,14 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 语料 50 张 / 76 张图（含 10 张遮挡 + 4 张照片遮挡）+ Ground Truth，生成可复现
 - [x] 模型 / 持久化 / 解析器 / Vision 服务 / 导出
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
-- [x] `make build` 通过（Xcode 27.1 / iOS 27.0 模拟器 `iPhone 18 Pro`）
+- [x] `make build` 通过（Xcode 27.2 / iOS 27.0 模拟器 `iPhone 18 Pro`）
 - [x] 2026-10-28 的 UI 套件在 iPad Pro 11-inch (M5) 上全绿；本轮新增用例的验证范围见最新报告
-- [x] 108 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/review-fixes-2026-10-30.md
+- [x] 109 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/verification-2026-11-07.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
-- [ ] 人工验收暂缓（2026-10-30 用户安排）；T18 沿用模拟器回归，T19 采用自动映射/VCF 回读测试
-- [x] 官网资料调研与功能差异文档；指定版本截图/实测等价尚未验证、暂缓
-- [x] 演示稿 `docs/reports/demo-script.md`（90 秒主线 + 答辩问答）
+- [ ] 真机与正版人工验收待使用者填写；操作清单见 docs/submission/user-actions.md；T18 模拟器回归及 T19 VCF 回读已有证据
+- [x] 官网资料调研与功能差异文档；指定版本观察保留填写模板
+- [x] 演示稿 `docs/reports/demo-script.md`（约 110 秒主线 + 答辩问答）
 - [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（本地修复和外部未验项分开记录）
-- [ ] 最终报告定稿
+- [x] 最终报告、逐图 OCR 原始证据与提交目录已整理；本人最终填写保留模板
+- [x] AI 协作说明记录 Codex 与 TRAE，TRAE 具体历史附件由使用者填写
