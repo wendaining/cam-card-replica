@@ -25,20 +25,20 @@
 | T19 | 导出 vCard/通讯录 | 13.1–2 | `ContactsExporterTests` + `VCardDocumentTests`（编辑后完整 VCF 重读）；通讯录落库待真机 | `ContactsExporter` / `VCardDocument` |
 | T20 | 异常路径 | 4 节 | `testT20_*`、`testT03_*`、`testT06_*` | 各状态机 |
 
-课程原始用例来源及边界见 [参考测试套件](../testing/reference-test-suite.md)。T19 本轮采用已有导出自动测试证据，T18 采用模拟器回归；下列真机任务暂缓。
+课程原始用例来源及边界见 [参考测试套件](../testing/reference-test-suite.md)。T19 采用导出自动测试证据，T18 采用模拟器回归；本人操作清单记录其他待验证项目。
 
 ## 概率性功能（不算"通过率"，算准确率）
 
 | 指标 | 目标 | 证据 |
 |---|---|---|
-| 理想文本首值历史门槛（不是图像准确率） | name/company/email/website/address ≥ 98%，office ≥ 95%，fax ≥ 85% | `ParserBenchmarkTests` 原门槛保留 |
+| 理想文本首值历史门槛 | name/company/email/website/address ≥ 98%，office ≥ 95%，fax ≥ 85% | `ParserBenchmarkTests` 原门槛保留 |
 | 缺网站历史门槛 | 误填 0% | missing_website_legacy（仅缺网站） |
 | 完整多值/全部缺失字段/真实76张图 | 比较完整集合、漏值、多值、误填；已知歧义也计错，不声称全部为零 | `ImageCorpusTests` + image-accuracy-latest 报告 |
 | 照片变体（斜拍/阴影） | 单独统计，不计入通过率 | `docs/reports/ocr-accuracy.md` |
 
-## 手工验收（暂缓，非本轮执行项）
+## 本人补充的验收记录
 
-- T18 真机 / 模拟器：保存 → 上滑杀进程 → 重开 → 名片、修改、标签、备注、图片都在。
+- T18 真机 / 模拟器：保存 → 终止进程 → 重新打开 → 名片、修改、标签、备注、图片都在。
 - T03 真机：真实系统权限弹窗「允许/不允许」两条路径。
 - T19 真机：写入通讯录后打开「通讯录」核对字段。
 - UI 一致性：与参考 App 的页面截图并排对比（见 `docs/reports/`）。
@@ -81,9 +81,20 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 
 本轮仅加测试，不修改解析规则或评测语料。
 
+## 2026-11-07 提交前复核
+
+Xcode 27.2 / iPhone 18 Pro / iOS 27.0：重新生成工程后，make verify 通过（108 个单元/集成方法，0 个非预期失败）；完整 iPhone UI 的 24 个功能方法通过，另 1 个截图方法默认跳过。T18 再次验证真实进程重启后的修改、标签、备注和两张图片。76 张图片的逐图字段测量与已归档 JSON 完全一致。
+
+本次是现有实现回归和规格说明校正，不代表真机相机、系统权限、正版行为或同图识别对比已验收。最终交付缺口、文档核对和命令结果见 [提交前核实](../reports/submission-audit-2026-11-07.md)。
+
 ## 2026-11-07 OCR 原始证据归档
 
 规格 7.4.5–7.4.6 对应 ImageCorpusTests.testEvidenceRoundTripKeepsRawOCRAndInitialFields、完整图片评测和 Python 证据导出检查。当前 make verify 执行 109 个方法，0 个非预期失败；make bench 的 7 个评测方法通过。76 条记录保留原文、逐行坐标与置信度、初始解析、四角、原图哈希及实际识别输入 PNG。
 
 [原始证据](../reports/evidence/ocr-2026-11-07/README.md)、[完整验证](../reports/verification-2026-11-07.md)和 [本人填写模板](../submission/final-signoff.md)已关联。真机、正版观察和最终人工确认保留实际状态。
 
+## FauxCam 正常相机接口专项（2026-11-07）
+
+规格 7.2.7 对应 FauxCameraUITests.testT04_fauxCameraShutterRetakeRecognizeAndSave。FauxCam 1.1.0 提供 en-01.png 输入，关闭 fixture-camera，正常快门、预览、重拍、裁剪、Vision、原文与保存通过，18.967 秒。当前 UI 定义包含 26 个方法，专项与截图均有显式启用条件。真实系统授权和实拍质量保留待验证。
+
+[专项记录](../reports/fauxcam-validation-2026-11-07.md)保存工具版本、签名检查、输入条件、截图和测试摘要。

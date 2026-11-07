@@ -1,0 +1,10 @@
+FauxCam 1.1.0 / Xcode 27.2 / iPhone 18 Pro / iOS 27.0
+fixture-camera=NO; source=TestData/cards/en-01.png; frame=720x1280 at 15 fps; in-memory test library
+
+Test Case '-[CamCardReplicaUITests.FauxCameraUITests testT04_fauxCameraShutterRetakeRecognizeAndSave]' started.
+Test Case '-[CamCardReplicaUITests.FauxCameraUITests testT04_fauxCameraShutterRetakeRecognizeAndSave]' passed (18.967 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 18.967 (18.969) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 18.967 (18.969) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 18.967 (18.970) seconds
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_23-01-23-+0800.xcresult
+** TEST SUCCEEDED **

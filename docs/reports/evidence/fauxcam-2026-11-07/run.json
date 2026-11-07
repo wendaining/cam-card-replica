@@ -1,0 +1,21 @@
+{
+  "tool": "FauxCam",
+  "version": "1.1.0",
+  "date": "2026-11-07",
+  "source": "TestData/cards/en-01.png",
+  "sourceSHA256": "e4bc3aeab6b7b9178e61e589d6e4115add48fa617d45c2463b7d11db5a2956ae",
+  "dmgSHA256": "95e4adbc65a5fd7b6eeb9c44424f267c47e9d3c3ec52c47971830cb2fb91fc86",
+  "cliSHA256": "f8bb32a2edb7757bec066a125956ced0fca9478b33bdc4bb2575339e7309b3d6",
+  "guestSHA256": "257c9d0cf191fe68a509dd1f4445bd1aa96a5436dfdb6332ba7e13adaf200a08",
+  "guestSigning": "ad-hoc signed copy of bundled guest",
+  "frameWidth": 720,
+  "frameHeight": 1280,
+  "fps": 15,
+  "durationSeconds": 18.967,
+  "fixtureCamera": false,
+  "permissionProvider": "SystemCameraPermission with FauxCam video-authorization hook",
+  "storage": "InMemoryCardStore",
+  "resultBundle": "Test-CamCardReplica-2026.11.07_23-01-23-+0800.xcresult",
+  "test": "FauxCameraUITests.testT04_fauxCameraShutterRetakeRecognizeAndSave",
+  "status": "passed"
+}

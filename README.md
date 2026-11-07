@@ -12,7 +12,7 @@
 | | |
 |---|---|
 | 单元 / 集成测试 | **109 个方法**，含理想文本和全部图片评测 |
-| 端到端测试 | **25 个方法（含截图）**，真机与参考 App 待验项单列 |
+| 端到端测试 | **26 个方法（含截图与 FauxCam 专项）**，真机与参考 App 待验项单列 |
 | 字段准确率 | [理想文本与真实图像分开报告](docs/reports/ocr-accuracy.md)，完整集合与缺失误填均计数 |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
 
@@ -22,10 +22,10 @@
 
 ## 5 分钟跑起来
 
-前置：macOS + Xcode（含 iOS 模拟器 runtime）+ `xcodegen`。
+前置：macOS + Xcode（含 iOS 模拟器 runtime）+ `xcodegen`。运行 `make verify` 还需 `swiftlint`、`swiftformat`；Python 工具检查/语料生成需 Pillow、NumPy，详见环境指南。
 
 ```bash
-brew install xcodegen          # 一次性，约 10 秒
+brew install xcodegen swiftlint swiftformat
 git clone <this repo> && cd cam-card-replica
 make bootstrap                 # 由 project.yml 生成 CamCardReplica.xcodeproj
 make build                     # 期望结尾：** BUILD SUCCEEDED **
@@ -61,7 +61,8 @@ ls /tmp/camcard-shots
                     ┌───────────────────▼─────────────────────┐
                     │ ViewModels (@Observable, 主线程状态机)   │
                     │ ScanFlowModel.Stage =                   │
-                    │   capture → crop → processing → review  │
+                    │ capture → preview → crop → processing   │
+                    │                            → review     │
                     └───────────────────┬─────────────────────┘
                                         │ 只依赖协议
      ┌──────────────────────────────────▼──────────────────────────────────┐
@@ -127,6 +128,7 @@ docs/            spec / api / architecture(6 篇 ADR) / testing / guides / repor
 
 | 先看哪篇 | 内容 |
 |---|---|
+| [提交前核实（2026-11-07）](docs/reports/submission-audit-2026-11-07.md) | 当前交付材料、最后回归、剩余证据与提交建议 |
 | [HANDOFF.md](HANDOFF.md) | **换人/换 agent 先读**：验证过什么、没验证什么、已知缺口、审查建议 |
 | [AGENTS.md](AGENTS.md) | 工程契约：约束、命令、提交规范、当前状态 |
 | [docs/spec/product-spec.md](docs/spec/product-spec.md) | 产品规格（编号条款，按作业章节组织） |

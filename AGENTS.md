@@ -73,6 +73,7 @@ make bootstrap     # 生成 CamCardReplica.xcodeproj（改动 project.yml 后必
 make build         # 编译 Debug
 make test          # 单元 + 集成测试
 make test-ui       # T01–T20（需要模拟器）
+make test-fauxcam  # FauxCam 正常快门与照片回调专项（需先安装工具）
 make bench         # Ground Truth 准确率，结果贴进 docs/reports/ocr-accuracy.md
 make lint          # swiftlint（阻塞）+ swiftformat（只报告）
 make audit         # 文档与代码一致性审计（改完文档/改完代码都跑）
@@ -110,7 +111,7 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - 已知限制（不要"顺手修"掉，除非同步更新文档）：
   - 无标签的第二、三个号码缺少可靠的类型证据；按格式/低置信回退仍可能误归座机或手机，完整评测照常计错；
   - 竖排文字、艺术字、强反光识别差；
-  - 模拟器没有摄像头，T04 走「测试名片」注入路径。
+  - 模拟器通过固定图源或外部 FauxCam 专项验证 T04；系统授权与真实拍摄质量单独记录。
 
 ## 9. 环境事实
 
@@ -127,8 +128,9 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.2 / iOS 27.0 模拟器 `iPhone 18 Pro`）
 - [x] 2026-10-28 的 UI 套件在 iPad Pro 11-inch (M5) 上全绿；本轮新增用例的验证范围见最新报告
-- [x] 109 个单元/集成测试方法、25 个 UI 方法（含默认跳过的截图）；最新验证见 docs/reports/verification-2026-11-07.md
+- [x] 109 个单元/集成测试方法、26 个 UI 方法（截图与 FauxCam 专项默认跳过）；最新验证见 docs/reports/verification-2026-11-07.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
+- [x] FauxCam 1.1.0 正常快门、预览、重拍、识别与保存专项通过，见 docs/reports/fauxcam-validation-2026-11-07.md
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
 - [ ] 真机与正版人工验收待使用者填写；操作清单见 docs/submission/user-actions.md；T18 模拟器回归及 T19 VCF 回读已有证据
 - [x] 官网资料调研与功能差异文档；指定版本观察保留填写模板
