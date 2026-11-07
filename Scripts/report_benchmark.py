@@ -192,7 +192,7 @@ def main():
     groups = summarize(records)
     keys = ('correct', 'total', 'present_correct', 'present', 'absent', 'hallucinated', 'missing', 'extra', 'expected_values')
     with (evidence / 'metrics.csv').open('w', newline='', encoding='utf-8') as stream:
-        writer = csv.writer(stream)
+        writer = csv.writer(stream, lineterminator="\n")
         writer.writerow(('dimension', 'bucket', 'field', *keys))
         for key, counts in sorted(groups.items()):
             writer.writerow((*key, *(counts[item] for item in keys)))

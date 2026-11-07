@@ -1,0 +1,53 @@
+{
+  "address": {
+    "confidence": 0.84,
+    "evidence": "命中地址特征（1 行）",
+    "value": "Friedrichstrasse 88, 10117 Berlin, Grermany"
+  },
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「Freight」",
+    "value": "Pacific Freight Co."
+  },
+  "department": {
+    "confidence": 0.78,
+    "evidence": "命中部门词「Ocean Freight」",
+    "value": "Ocean Freight"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "kevin.wu@example.org"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「Operations Manager」",
+    "value": "Operations Manager"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.7x 中位数，无其他字段特征",
+    "value": "Kevin Wu"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Mobile」",
+        "value": "+81 3 0000 7890"
+      }
+    },
+    {
+      "kind": "office",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Tel」",
+        "value": "+49 30 0000 6000"
+      }
+    }
+  ],
+  "unassignedLines": []
+}

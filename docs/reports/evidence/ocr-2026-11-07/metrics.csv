@@ -1,0 +1,211 @@
+dimension,bucket,field,correct,total,present_correct,present,absent,hallucinated,missing,extra,expected_values
+all,all,address,44,76,25,57,19,0,32,32,57
+all,all,company,72,76,72,76,0,0,4,4,76
+all,all,department,63,76,37,50,26,0,13,2,50
+all,all,emails,47,76,47,76,0,0,31,27,84
+all,all,fax,69,76,10,17,59,0,7,0,17
+all,all,jobTitle,70,76,70,76,0,0,6,6,76
+all,all,mobile,69,76,69,76,0,0,1,7,76
+all,all,name,74,76,74,76,0,0,2,2,76
+all,all,office,72,76,28,31,45,1,3,4,31
+all,all,website,66,76,46,56,20,0,10,10,56
+font,Arial.ttf,address,4,6,3,5,1,0,2,2,5
+font,Arial.ttf,company,5,6,5,6,0,0,1,1,6
+font,Arial.ttf,department,6,6,6,6,0,0,0,0,6
+font,Arial.ttf,emails,6,6,6,6,0,0,0,0,10
+font,Arial.ttf,fax,5,6,0,1,5,0,1,0,1
+font,Arial.ttf,jobTitle,5,6,5,6,0,0,1,1,6
+font,Arial.ttf,mobile,5,6,5,6,0,0,0,1,6
+font,Arial.ttf,name,6,6,6,6,0,0,0,0,6
+font,Arial.ttf,office,4,6,2,4,2,0,2,2,4
+font,Arial.ttf,website,6,6,6,6,0,0,0,0,6
+font,Courier New.ttf,address,4,7,3,6,1,0,3,3,6
+font,Courier New.ttf,company,7,7,7,7,0,0,0,0,7
+font,Courier New.ttf,department,6,7,6,7,0,0,1,1,7
+font,Courier New.ttf,emails,6,7,6,7,0,0,1,0,7
+font,Courier New.ttf,fax,5,7,0,2,5,0,2,0,2
+font,Courier New.ttf,jobTitle,7,7,7,7,0,0,0,0,7
+font,Courier New.ttf,mobile,5,7,5,7,0,0,0,2,7
+font,Courier New.ttf,name,6,7,6,7,0,0,1,1,7
+font,Courier New.ttf,office,6,7,3,4,3,0,1,1,4
+font,Courier New.ttf,website,7,7,7,7,0,0,0,0,7
+font,Hiragino Sans GB.ttc,address,13,17,11,15,2,0,4,4,15
+font,Hiragino Sans GB.ttc,company,17,17,17,17,0,0,0,0,17
+font,Hiragino Sans GB.ttc,department,14,17,9,12,5,0,3,0,12
+font,Hiragino Sans GB.ttc,emails,7,17,7,17,0,0,10,10,18
+font,Hiragino Sans GB.ttc,fax,17,17,5,5,12,0,0,0,5
+font,Hiragino Sans GB.ttc,jobTitle,16,17,16,17,0,0,1,1,17
+font,Hiragino Sans GB.ttc,mobile,17,17,17,17,0,0,0,0,17
+font,Hiragino Sans GB.ttc,name,17,17,17,17,0,0,0,0,17
+font,Hiragino Sans GB.ttc,office,17,17,13,13,4,0,0,0,13
+font,Hiragino Sans GB.ttc,website,13,17,4,8,9,0,4,4,8
+font,STHeiti Medium.ttc,address,3,20,2,19,1,0,17,17,19
+font,STHeiti Medium.ttc,company,17,20,17,20,0,0,3,3,20
+font,STHeiti Medium.ttc,department,18,20,9,11,9,0,2,0,11
+font,STHeiti Medium.ttc,emails,8,20,8,20,0,0,13,13,21
+font,STHeiti Medium.ttc,fax,20,20,4,4,16,0,0,0,4
+font,STHeiti Medium.ttc,jobTitle,17,20,17,20,0,0,3,3,20
+font,STHeiti Medium.ttc,mobile,20,20,20,20,0,0,0,0,20
+font,STHeiti Medium.ttc,name,20,20,20,20,0,0,0,0,20
+font,STHeiti Medium.ttc,office,20,20,3,3,17,0,0,0,3
+font,STHeiti Medium.ttc,website,18,20,17,19,1,0,2,2,19
+font,Songti.ttc,address,15,18,3,6,12,0,3,3,6
+font,Songti.ttc,company,18,18,18,18,0,0,0,0,18
+font,Songti.ttc,department,13,18,2,7,11,0,5,1,7
+font,Songti.ttc,emails,16,18,16,18,0,0,3,3,20
+font,Songti.ttc,fax,17,18,1,2,16,0,1,0,2
+font,Songti.ttc,jobTitle,17,18,17,18,0,0,1,1,18
+font,Songti.ttc,mobile,17,18,17,18,0,0,1,1,18
+font,Songti.ttc,name,17,18,17,18,0,0,1,1,18
+font,Songti.ttc,office,17,18,4,4,14,1,0,1,4
+font,Songti.ttc,website,14,18,12,16,2,0,4,4,16
+font,Times New Roman.ttf,address,5,8,3,6,2,0,3,3,6
+font,Times New Roman.ttf,company,8,8,8,8,0,0,0,0,8
+font,Times New Roman.ttf,department,6,8,5,7,1,0,2,0,7
+font,Times New Roman.ttf,emails,4,8,4,8,0,0,4,1,8
+font,Times New Roman.ttf,fax,5,8,0,3,5,0,3,0,3
+font,Times New Roman.ttf,jobTitle,8,8,8,8,0,0,0,0,8
+font,Times New Roman.ttf,mobile,5,8,5,8,0,0,0,3,8
+font,Times New Roman.ttf,name,8,8,8,8,0,0,0,0,8
+font,Times New Roman.ttf,office,8,8,3,3,5,0,0,0,3
+font,Times New Roman.ttf,website,8,8,0,0,8,0,0,0,0
+kind,flat,address,32,50,19,37,13,0,18,18,37
+kind,flat,company,47,50,47,50,0,0,3,3,50
+kind,flat,department,41,50,25,34,16,0,9,1,34
+kind,flat,emails,32,50,32,50,0,0,19,16,56
+kind,flat,fax,45,50,6,11,39,0,5,0,11
+kind,flat,jobTitle,47,50,47,50,0,0,3,3,50
+kind,flat,mobile,45,50,45,50,0,0,1,5,50
+kind,flat,name,49,50,49,50,0,0,1,1,50
+kind,flat,office,48,50,22,23,27,1,1,2,23
+kind,flat,website,47,50,32,35,15,0,3,3,35
+kind,occluded,address,5,10,2,7,3,0,5,5,7
+kind,occluded,company,9,10,9,10,0,0,1,1,10
+kind,occluded,department,8,10,5,7,3,0,2,0,7
+kind,occluded,emails,6,10,6,10,0,0,4,3,10
+kind,occluded,fax,8,10,1,3,7,0,2,0,3
+kind,occluded,jobTitle,9,10,9,10,0,0,1,1,10
+kind,occluded,mobile,8,10,8,10,0,0,0,2,10
+kind,occluded,name,10,10,10,10,0,0,0,0,10
+kind,occluded,office,10,10,3,3,7,0,0,0,3
+kind,occluded,website,8,10,5,7,3,0,2,2,7
+kind,occluded-photo,address,3,4,2,3,1,0,1,1,3
+kind,occluded-photo,company,4,4,4,4,0,0,0,0,4
+kind,occluded-photo,department,4,4,2,2,2,0,0,0,2
+kind,occluded-photo,emails,1,4,1,4,0,0,3,3,4
+kind,occluded-photo,fax,4,4,1,1,3,0,0,0,1
+kind,occluded-photo,jobTitle,3,4,3,4,0,0,1,1,4
+kind,occluded-photo,mobile,4,4,4,4,0,0,0,0,4
+kind,occluded-photo,name,4,4,4,4,0,0,0,0,4
+kind,occluded-photo,office,4,4,1,1,3,0,0,0,1
+kind,occluded-photo,website,2,4,2,4,0,0,2,2,4
+kind,photo,address,4,12,2,10,2,0,8,8,10
+kind,photo,company,12,12,12,12,0,0,0,0,12
+kind,photo,department,10,12,5,7,5,0,2,1,7
+kind,photo,emails,8,12,8,12,0,0,5,5,14
+kind,photo,fax,12,12,2,2,10,0,0,0,2
+kind,photo,jobTitle,11,12,11,12,0,0,1,1,12
+kind,photo,mobile,12,12,12,12,0,0,0,0,12
+kind,photo,name,11,12,11,12,0,0,1,1,12
+kind,photo,office,10,12,2,4,8,0,2,2,4
+kind,photo,website,9,12,7,10,2,0,3,3,10
+labels,False,address,15,20,5,10,10,0,5,5,10
+labels,False,company,20,20,20,20,0,0,0,0,20
+labels,False,department,14,20,3,9,11,0,6,0,9
+labels,False,emails,14,20,14,20,0,0,6,4,20
+labels,False,fax,13,20,0,7,13,0,7,0,7
+labels,False,jobTitle,20,20,20,20,0,0,0,0,20
+labels,False,mobile,13,20,13,20,0,0,1,7,20
+labels,False,name,20,20,20,20,0,0,0,0,20
+labels,False,office,19,20,2,2,18,1,0,1,2
+labels,False,website,16,20,9,13,7,0,4,4,13
+labels,True,address,29,56,20,47,9,0,27,27,47
+labels,True,company,52,56,52,56,0,0,4,4,56
+labels,True,department,49,56,34,41,15,0,7,2,41
+labels,True,emails,33,56,33,56,0,0,25,23,64
+labels,True,fax,56,56,10,10,46,0,0,0,10
+labels,True,jobTitle,50,56,50,56,0,0,6,6,56
+labels,True,mobile,56,56,56,56,0,0,0,0,56
+labels,True,name,54,56,54,56,0,0,2,2,56
+labels,True,office,53,56,26,29,27,0,3,3,29
+labels,True,website,50,56,37,43,13,0,6,6,43
+lang,bilingual,address,15,29,9,23,6,0,14,14,23
+lang,bilingual,company,26,29,26,29,0,0,3,3,29
+lang,bilingual,department,28,29,12,13,16,0,1,1,13
+lang,bilingual,emails,18,29,18,29,0,0,13,13,33
+lang,bilingual,fax,29,29,5,5,24,0,0,0,5
+lang,bilingual,jobTitle,24,29,24,29,0,0,5,5,29
+lang,bilingual,mobile,29,29,29,29,0,0,0,0,29
+lang,bilingual,name,28,29,28,29,0,0,1,1,29
+lang,bilingual,office,29,29,11,11,18,0,0,0,11
+lang,bilingual,website,28,29,20,21,8,0,1,1,21
+lang,en,address,13,21,9,17,4,0,8,8,17
+lang,en,company,20,21,20,21,0,0,1,1,21
+lang,en,department,18,21,17,20,1,0,3,1,20
+lang,en,emails,16,21,16,21,0,0,5,1,25
+lang,en,fax,15,21,0,6,15,0,6,0,6
+lang,en,jobTitle,20,21,20,21,0,0,1,1,21
+lang,en,mobile,15,21,15,21,0,0,0,6,21
+lang,en,name,20,21,20,21,0,0,1,1,21
+lang,en,office,18,21,8,11,10,0,3,3,11
+lang,en,website,21,21,13,13,8,0,0,0,13
+lang,zh,address,16,26,7,17,9,0,10,10,17
+lang,zh,company,26,26,26,26,0,0,0,0,26
+lang,zh,department,17,26,8,17,9,0,9,0,17
+lang,zh,emails,13,26,13,26,0,0,13,13,26
+lang,zh,fax,25,26,5,6,20,0,1,0,6
+lang,zh,jobTitle,26,26,26,26,0,0,0,0,26
+lang,zh,mobile,25,26,25,26,0,0,1,1,26
+lang,zh,name,26,26,26,26,0,0,0,0,26
+lang,zh,office,25,26,9,9,17,1,0,1,9
+lang,zh,website,17,26,13,22,4,0,9,9,22
+layout,centered,address,10,20,7,17,3,0,10,10,17
+layout,centered,company,20,20,20,20,0,0,0,0,20
+layout,centered,department,16,20,10,14,6,0,4,0,14
+layout,centered,emails,10,20,10,20,0,0,11,9,23
+layout,centered,fax,18,20,2,4,16,0,2,0,4
+layout,centered,jobTitle,16,20,16,20,0,0,4,4,20
+layout,centered,mobile,18,20,18,20,0,0,0,2,20
+layout,centered,name,20,20,20,20,0,0,0,0,20
+layout,centered,office,20,20,2,2,18,0,0,0,2
+layout,centered,website,20,20,14,14,6,0,0,0,14
+layout,classic,address,14,19,13,18,1,0,5,5,18
+layout,classic,company,18,19,18,19,0,0,1,1,19
+layout,classic,department,17,19,14,16,3,0,2,0,16
+layout,classic,emails,13,19,13,19,0,0,6,5,20
+layout,classic,fax,15,19,6,10,9,0,4,0,10
+layout,classic,jobTitle,19,19,19,19,0,0,0,0,19
+layout,classic,mobile,16,19,16,19,0,0,0,3,19
+layout,classic,name,19,19,19,19,0,0,0,0,19
+layout,classic,office,17,19,13,14,5,1,1,2,14
+layout,classic,website,15,19,10,14,5,0,4,4,14
+layout,minimal,address,4,9,2,7,2,0,5,5,7
+layout,minimal,company,9,9,9,9,0,0,0,0,9
+layout,minimal,department,9,9,3,3,6,0,0,0,3
+layout,minimal,emails,5,9,5,9,0,0,4,4,9
+layout,minimal,fax,8,9,0,1,8,0,1,0,1
+layout,minimal,jobTitle,8,9,8,9,0,0,1,1,9
+layout,minimal,mobile,8,9,8,9,0,0,0,1,9
+layout,minimal,name,9,9,9,9,0,0,0,0,9
+layout,minimal,office,9,9,2,2,7,0,0,0,2
+layout,minimal,website,8,9,7,8,1,0,1,1,8
+layout,two-column,address,9,16,0,7,9,0,7,7,7
+layout,two-column,company,15,16,15,16,0,0,1,1,16
+layout,two-column,department,11,16,8,13,3,0,5,1,13
+layout,two-column,emails,13,16,13,16,0,0,4,3,19
+layout,two-column,fax,16,16,1,1,15,0,0,0,1
+layout,two-column,jobTitle,16,16,16,16,0,0,0,0,16
+layout,two-column,mobile,15,16,15,16,0,0,1,1,16
+layout,two-column,name,15,16,15,16,0,0,1,1,16
+layout,two-column,office,14,16,10,12,4,0,2,2,12
+layout,two-column,website,15,16,10,11,5,0,1,1,11
+layout,vertical,address,7,12,3,8,4,0,5,5,8
+layout,vertical,company,10,12,10,12,0,0,2,2,12
+layout,vertical,department,10,12,2,4,8,0,2,1,4
+layout,vertical,emails,6,12,6,12,0,0,6,6,13
+layout,vertical,fax,12,12,1,1,11,0,0,0,1
+layout,vertical,jobTitle,11,12,11,12,0,0,1,1,12
+layout,vertical,mobile,12,12,12,12,0,0,0,0,12
+layout,vertical,name,11,12,11,12,0,0,1,1,12
+layout,vertical,office,12,12,1,1,11,0,0,0,1
+layout,vertical,website,8,12,5,9,3,0,4,4,9

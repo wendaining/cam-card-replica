@@ -1,0 +1,50 @@
+{
+  "address": {
+    "confidence": 0.9,
+    "evidence": "命中地址特征（1 行）",
+    "value": "杭州市西湖区文三路90号 310012"
+  },
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「有限公司」",
+    "value": "明德咨询有限公司"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "contacto4@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「高级顾问」",
+    "value": "高级顾问"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.8x 中位数，无其他字段特征",
+    "value": "陈雨欣"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「手机」",
+        "value": "+86 150 0000 3344"
+      }
+    },
+    {
+      "kind": "office",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「电话」",
+        "value": "0571-3000 3456"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "战略咨询"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "company": {
+    "confidence": 0.62,
+    "evidence": "位于姓名「Thomas Weber 托马斯」之后，无机构关键词",
+    "value": "Rhine Valley 莱茵化工"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "biz07@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「Head of Procurement」",
+    "value": "Head of Procurement 采购总监"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 2.1x 中位数，无其他字段特征",
+    "value": "Thomas Weber 托马斯"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Mobile」",
+        "value": "+86 133 0000 4455"
+      }
+    },
+    {
+      "kind": "office",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Tel」",
+        "value": "0755-2000 9012"
+      }
+    },
+    {
+      "kind": "fax",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Fax」",
+        "value": "021-6000 1235"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "BILINGUAL"
+  ]
+}

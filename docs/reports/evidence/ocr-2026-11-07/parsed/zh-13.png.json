@@ -1,0 +1,56 @@
+{
+  "address": {
+    "confidence": 0.9,
+    "evidence": "命中地址特征（1 行）",
+    "value": "Add:深圳市南山区科技园南路18号518057"
+  },
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「有限公司」",
+    "value": "远航国际贸易有限公司"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "contact13@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「外贸经理」",
+    "value": "外贸经理"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 2.1x 中位数，无其他字段特征",
+    "value": "马晓东"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「手机」",
+        "value": "+86 186 0000 7788"
+      }
+    },
+    {
+      "kind": "office",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「电话」",
+        "value": "021-6000 1234"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "进出口部",
+    "ZH"
+  ],
+  "website": {
+    "confidence": 0.92,
+    "evidence": "匹配网址格式",
+    "value": "www.example13.com"
+  }
+}

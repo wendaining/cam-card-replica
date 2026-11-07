@@ -1,0 +1,37 @@
+{
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「有限公司」",
+    "value": "云图数据科技有限公司"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "contact12@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「算法工程师」",
+    "value": "算法工程师"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.7x 中位数，无其他字段特征",
+    "value": "何俊"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.88,
+        "evidence": "号码格式推断",
+        "value": "+86 150 0000 3344"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "数据平台"
+  ]
+}

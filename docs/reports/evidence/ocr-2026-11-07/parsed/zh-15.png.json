@@ -1,0 +1,40 @@
+{
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「有限公司」",
+    "value": "蓝天航空服务有限公司"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "contact15@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「运营总监」",
+    "value": "运营总监"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.7x 中位数，无其他字段特征",
+    "value": "高鹏"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.88,
+        "evidence": "号码格式推断",
+        "value": "+86 133 0000 4455"
+      }
+    }
+  ],
+  "unassignedLines": [],
+  "website": {
+    "confidence": 0.92,
+    "evidence": "匹配网址格式",
+    "value": "www.example15.com"
+  }
+}

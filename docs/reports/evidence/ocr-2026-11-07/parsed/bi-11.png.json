@@ -1,0 +1,61 @@
+{
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「University」",
+    "value": "同济大学 Tongii University"
+  },
+  "department": {
+    "confidence": 0.78,
+    "evidence": "命中部门词「School of」",
+    "value": "计算机学院 School of CS"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "1@example.com"
+    },
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "salesl1@example.net"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「Professor」",
+    "value": "教授 Professor"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 2.2x 中位数，无其他字段特征",
+    "value": "朱宏明 Zhu Hongming"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Mobile」",
+        "value": "+86 137 0000 9012"
+      }
+    },
+    {
+      "kind": "office",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Tel」",
+        "value": "021-6000 1234"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "Emall",
+    "BILINGUAL"
+  ],
+  "website": {
+    "confidence": 0.92,
+    "evidence": "匹配网址格式",
+    "value": "www.example1l.com"
+  }
+}

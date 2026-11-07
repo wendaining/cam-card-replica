@@ -1,0 +1,45 @@
+{
+  "address": {
+    "confidence": 0.84,
+    "evidence": "命中地址特征（1 行）",
+    "value": "12 Kig William Street, London EC4N 7BJ"
+  },
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「Analytics」",
+    "value": "Northwind Analytics"
+  },
+  "emails": [],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「Data Scientist」",
+    "value": "Senior Data Scientist"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 2.3x 中位数，无其他字段特征",
+    "value": "Emily Zhang"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.62,
+        "evidence": "号码格式推断",
+        "value": "+1 212 000 5678"
+      }
+    },
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.62,
+        "evidence": "号码格式推断",
+        "value": "+44 20 0000 7001"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "AILab",
+    "emily.zhangQexample.org"
+  ]
+}

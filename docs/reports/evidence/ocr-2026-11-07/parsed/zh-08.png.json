@@ -1,0 +1,43 @@
+{
+  "address": {
+    "confidence": 0.9,
+    "evidence": "命中地址特征（1 行）",
+    "value": "Add:深圳市南山区科技园南路18号518057"
+  },
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「设计院」",
+    "value": "北方电力设计院"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "contacto8@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「主任工程师」",
+    "value": "主任工程师"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.9x 中位数，无其他字段特征",
+    "value": "孙立"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「手机」",
+        "value": "+86 159 0000 6677"
+      }
+    }
+  ],
+  "unassignedLines": [
+    "输电线路室",
+    "ZH"
+  ]
+}

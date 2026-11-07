@@ -1,0 +1,40 @@
+{
+  "address": {
+    "confidence": 0.9,
+    "evidence": "命中地址特征（1 行）",
+    "value": "上海市杨浦区四平路1239号 200092"
+  },
+  "company": {
+    "confidence": 0.78,
+    "evidence": "命中机构词「Consulting」",
+    "value": "Mingde Consulting 明德咨询"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "bizl6@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「Senior Consultant」",
+    "value": "Senior Consultant 高级顾问"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.5x 中位数，无其他字段特征",
+    "value": "陈雨欣 Chen Yuxin"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.96,
+        "evidence": "标签「Mobile」",
+        "value": "+86 159 0000 6677"
+      }
+    }
+  ],
+  "unassignedLines": []
+}

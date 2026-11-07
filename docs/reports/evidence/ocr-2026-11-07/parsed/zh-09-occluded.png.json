@@ -1,0 +1,40 @@
+{
+  "company": {
+    "confidence": 0.9,
+    "evidence": "命中机构词「传媒」",
+    "value": "青禾文化传媒"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "contact09@example.com"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「创意总监」",
+    "value": "创意总监"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.5x 中位数，无其他字段特征",
+    "value": "周婷"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.88,
+        "evidence": "号码格式推断",
+        "value": "+86 138 0000 1234"
+      }
+    }
+  ],
+  "unassignedLines": [],
+  "website": {
+    "confidence": 0.92,
+    "evidence": "匹配网址格式",
+    "value": "www.example0y.com"
+  }
+}

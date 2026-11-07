@@ -1,0 +1,48 @@
+{
+  "address": {
+    "confidence": 0.84,
+    "evidence": "命中地址特征（1 行）",
+    "value": "12 King William Street, London EC4N 7BJ"
+  },
+  "company": {
+    "confidence": 0.62,
+    "evidence": "位于姓名「Olivia Brown」之后，无机构关键词",
+    "value": "Cedar & Finch"
+  },
+  "emails": [
+    {
+      "confidence": 0.96,
+      "evidence": "匹配邮箱格式",
+      "value": "oliva.brown@example.org"
+    }
+  ],
+  "jobTitle": {
+    "confidence": 0.9,
+    "evidence": "命中职位词「Founder」",
+    "value": "Founder"
+  },
+  "name": {
+    "confidence": 0.93,
+    "evidence": "字号 1.9x 中位数，无其他字段特征",
+    "value": "Olivia Brown"
+  },
+  "phones": [
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.62,
+        "evidence": "号码格式推断",
+        "value": "+1 212 000 5678"
+      }
+    },
+    {
+      "kind": "mobile",
+      "value": {
+        "confidence": 0.62,
+        "evidence": "号码格式推断",
+        "value": "+44 20 0000 7001"
+      }
+    }
+  ],
+  "unassignedLines": []
+}
