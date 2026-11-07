@@ -80,3 +80,10 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 | 第八节语义冲突 | FieldParserTests.testAmbiguousWordInAddressDoesNotBecomeCompany | Address: 42 Apple Road 保留为地址，不误作公司 |
 
 本轮仅加测试，不修改解析规则或评测语料。
+
+## 2026-11-07 OCR 原始证据归档
+
+规格 7.4.5–7.4.6 对应 ImageCorpusTests.testEvidenceRoundTripKeepsRawOCRAndInitialFields、完整图片评测和 Python 证据导出检查。当前 make verify 执行 109 个方法，0 个非预期失败；make bench 的 7 个评测方法通过。76 条记录保留原文、逐行坐标与置信度、初始解析、四角、原图哈希及实际识别输入 PNG。
+
+[原始证据](../reports/evidence/ocr-2026-11-07/README.md)、[完整验证](../reports/verification-2026-11-07.md)和 [本人填写模板](../submission/final-signoff.md)已关联。真机、正版观察和最终人工确认保留实际状态。
+
