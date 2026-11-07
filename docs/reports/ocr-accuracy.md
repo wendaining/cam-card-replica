@@ -1,6 +1,8 @@
-# OCR 与字段抽取准确率（2026-10-28）
+# OCR 与字段抽取准确率（2026-11-07）
 
-语料 v2：50张合成名片/76张图，业务 GT 不变，字体按编号轮换，图片与 v1 不同。环境：Xcode 27.1 / iPhone 18 Pro / iOS 27.0。命令：make bench；python3 Scripts/report_benchmark.py。原始数据与全部切片见 [图像完整测量](image-accuracy-latest.md) 和对应 JSON。
+2026-11-07 已重新执行全部图片评测，逐图字段比较与原有结果一致。[原始证据](evidence/ocr-2026-11-07/README.md)包含实际 OCR、初始解析、处理图片及哈希；[错误案例](ocr-error-cases.md)提供同一次运行的文字和字段结果。
+
+语料 v2：50张合成名片/76张图，业务 GT 不变，字体按编号轮换，图片与 v1 不同。本次环境：Xcode 27.2 / iPhone 18 Pro / iOS 27.0。执行 make bench 后，按验证记录中的日期、环境与结果包参数导出报告。原始数据与全部切片见 [图像完整测量](image-accuracy-latest.md) 和对应 JSON。
 
 ## 三种数字不能混用
 
@@ -22,7 +24,7 @@
 
 原 no_hallucination 名称已更正为 missing_website_legacy。它只有15次缺网站检查，不能推出所有字段幻觉率为零。
 
-九个 fixture 的 OCR 冒烟检查另有 expected-line recall：每张图按完整 present_text 行是否出现在 OCR 中计数，再对图片取平均，门槛仍为大于0.7。它是整行命中比例，不是字符召回率，也不替代全部图片的完整字段测量。
+九个 fixture 的 OCR 冒烟检查另有 expected-line recall：每张图按完整 present_text 行是否出现在 OCR 中计数，再对图片取平均，门槛仍为大于0.7。该比例按完整文字行统计，字符指标和完整图片字段测量分别记录。
 
 ## 理想文本完整集合
 
@@ -52,7 +54,7 @@
 
 ## 2026-10-30 全仓审查增量回归
 
-同一批76张图、同一模拟器和 Vision 配置，未改变 GT。每步均执行 make verify 与 make bench，历史理想文本门槛全部保留。下表为完整字段集合正确数（包含字段缺失且输出为空），不是确定性场景通过率。
+同一批76张图、同一模拟器和 Vision 配置，未改变 GT。每步均执行 make verify 与 make bench，历史理想文本门槛全部保留。下表为完整字段集合正确数（包含字段缺失且输出为空）。确定性场景另按验收证据记录。
 
 | 修复步骤 | name | company | jobTitle | department | emails | website | address | mobile | office | fax |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|

@@ -1,0 +1,59 @@
+Recorded on 2026-11-07 (Asia/Shanghai). Excerpts retain test results; local project paths are abbreviated.
+
+Evidence red
+source log: submission-evidence-red-2026-11-07.log
+<project>/Tests/Integration/ImageCorpusTests.swift:35: error: -[CamCardReplicaTests.ImageCorpusTests testEvidenceRoundTripKeepsRawOCRAndInitialFields] : XCTAssertEqual failed: ("nil") is not equal to ("Optional("David Chen\nExample Company")")
+<project>/Tests/Integration/ImageCorpusTests.swift:36: error: -[CamCardReplicaTests.ImageCorpusTests testEvidenceRoundTripKeepsRawOCRAndInitialFields] : XCTAssertEqual failed: ("nil") is not equal to ("Optional(1)")
+<project>/Tests/Integration/ImageCorpusTests.swift:38: error: -[CamCardReplicaTests.ImageCorpusTests testEvidenceRoundTripKeepsRawOCRAndInitialFields] : XCTAssertEqual failed: ("nil") is not equal to ("Optional("line 0: name candidate")")
+<project>/Tests/Integration/ImageCorpusTests.swift:39: error: -[CamCardReplicaTests.ImageCorpusTests testEvidenceRoundTripKeepsRawOCRAndInitialFields] : XCTAssertEqual failed: ("nil") is not equal to ("Optional(0.72)")
+<project>/Tests/Integration/ImageCorpusTests.swift:40: error: -[CamCardReplicaTests.ImageCorpusTests testEvidenceRoundTripKeepsRawOCRAndInitialFields] : XCTAssertEqual failed: ("nil") is not equal to ("Optional("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")")
+<project>/Tests/Integration/ImageCorpusTests.swift:41: error: -[CamCardReplicaTests.ImageCorpusTests testEvidenceRoundTripKeepsRawOCRAndInitialFields] : XCTAssertEqual failed: ("nil") is not equal to ("Optional("processed-sample.png")")
+	 Executed 1 test, with 6 failures (0 unexpected) in 0.221 (0.223) seconds
+	 Executed 1 test, with 6 failures (0 unexpected) in 0.221 (0.223) seconds
+	 Executed 1 test, with 6 failures (0 unexpected) in 0.221 (0.223) seconds
+Test session results, code coverage, and logs:
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_20-42-54-+0800.xcresult
+** TEST FAILED **
+
+Evidence green
+source log: submission-evidence-green-2026-11-07.log
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.005) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.005) seconds
+Test session results, code coverage, and logs:
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_20-44-11-+0800.xcresult
+** TEST SUCCEEDED **
+
+Full verification
+source log: submission-verify-2026-11-07.log
+** BUILD SUCCEEDED **
+Test session results, code coverage, and logs:
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_20-46-03-+0800.xcresult
+** TEST SUCCEEDED **
+	 Executed 109 tests, with 0 failures (0 unexpected) in 60.511 (60.542) seconds
+	 Executed 109 tests, with 0 failures (0 unexpected) in 60.511 (60.542) seconds
+
+Benchmark
+source log: submission-bench-2026-11-07.log
+Test session results, code coverage, and logs:
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_20-47-36-+0800.xcresult
+** TEST SUCCEEDED **
+	 Executed 7 tests, with 0 failures (0 unexpected) in 57.813 (57.816) seconds
+	 Executed 7 tests, with 0 failures (0 unexpected) in 57.813 (57.817) seconds
+
+iPhone UI
+source log: final-ui-2026-11-07.log
+Test session results, code coverage, and logs:
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_20-18-10-+0800.xcresult
+** TEST SUCCEEDED **
+	 Executed 25 tests, with 1 test skipped and 0 failures (0 unexpected) in 308.955 (308.973) seconds
+	 Executed 25 tests, with 1 test skipped and 0 failures (0 unexpected) in 308.955 (308.974) seconds
+
+
+Final pre-push verification, after adding the FauxCam test target
+source log: push-final-verify-2026-11-07.log
+** BUILD SUCCEEDED **
+	 Executed 109 tests, with 0 failures (0 unexpected) in 58.552 (58.583) seconds
+	 Executed 109 tests, with 0 failures (0 unexpected) in 58.552 (58.584) seconds
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_23-03-14-+0800.xcresult
+** TEST SUCCEEDED **
