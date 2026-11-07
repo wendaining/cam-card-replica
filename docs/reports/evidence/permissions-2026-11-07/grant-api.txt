@@ -1,0 +1,12 @@
+Xcode 27.2 / iPhone 18 Pro / iOS 27.0; no FauxCam injection
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.011 (0.013) seconds
+SYSTEM_CAMERA_BEFORE=3
+SYSTEM_CAMERA_DEVICE=<none>
+SYSTEM_CAMERA_DYLIB=<unset>
+SYSTEM_CAMERA_REQUEST_GRANTED=true
+SYSTEM_CAMERA_AFTER=3
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.209 (0.209) seconds
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.220 (0.223) seconds
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.220 (0.224) seconds
+	<project>/build/Logs/Test/Test-CamCardReplica-2026.11.07_23-45-13-+0800.xcresult
+** TEST SUCCEEDED **

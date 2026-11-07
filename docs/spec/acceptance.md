@@ -39,7 +39,7 @@
 ## 本人补充的验收记录
 
 - T18 真机 / 模拟器：保存 → 终止进程 → 重新打开 → 名片、修改、标签、备注、图片都在。
-- T03 真机：真实系统权限弹窗「允许/不允许」两条路径。
+- T03 模拟器：真实系统权限弹窗「允许/不允许」两条路径，以及已有授权/拒绝状态，四项专项已通过。
 - T19 真机：写入通讯录后打开「通讯录」核对字段。
 - UI 一致性：与参考 App 的页面截图并排对比（见 `docs/reports/`）。
 
@@ -95,6 +95,10 @@ Xcode 27.2 / iPhone 18 Pro / iOS 27.0：重新生成工程后，make verify 通�
 
 ## FauxCam 正常相机接口专项（2026-11-07）
 
-规格 7.2.7 对应 FauxCameraUITests.testT04_fauxCameraShutterRetakeRecognizeAndSave。FauxCam 1.1.0 提供 en-01.png 输入，关闭 fixture-camera，正常快门、预览、重拍、裁剪、Vision、原文与保存通过，18.967 秒。当前 UI 定义包含 26 个方法，专项与截图均有显式启用条件。真实系统授权和实拍质量保留待验证。
+规格 7.2.7 对应 FauxCameraUITests.testT04_fauxCameraShutterRetakeRecognizeAndSave。FauxCam 1.1.0 提供 en-01.png 输入，关闭 fixture-camera，正常快门、预览、重拍、裁剪、Vision、原文与保存通过，18.967 秒。当前 UI 定义包含 27 个方法，专项与截图均有显式启用条件。原生系统授权另有四项模拟器专项通过；实拍质量未验证。
 
 [专项记录](../reports/fauxcam-validation-2026-11-07.md)保存工具版本、签名检查、输入条件、截图和测试摘要。
+
+## 2026-11-07 系统权限专项补充
+
+规格 7.2.1 对应 SystemCameraPermissionUITests.testT03_systemCameraPermission。make test-camera-permissions 分别设置已有授权、已有拒绝与未决定状态，并操作真实 SpringBoard 弹窗允许/拒绝。四项通过，未加载 FauxCam；截图、API 探测和摘要见 [系统权限证据](../reports/evidence/permissions-2026-11-07/README.md)。

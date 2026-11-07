@@ -1,0 +1,18 @@
+{
+  "README.md": "642f83ec5cdac06b2f523ee51e021e87b079a2a6a51d32e3184c148e3f73d2e4",
+  "authorized.png": "2eef17fdcef3e9b974f06e6147e527a3b58a65f3dc55a71d6bf1183b2fda9018",
+  "authorized.txt": "35e963b535980b345d1c45ee1e11175da0f8c696b2a132eedd614aa3ed4301f6",
+  "denied.png": "279954774cf5f1034e3cfac129860ed5c584911b771d05cd90776c09f3efe02d",
+  "denied.txt": "d79cf02487b63578b32d4416b1955ade7b24a2a37314de000ea7108cfeaa6b37",
+  "deny-api.txt": "1ee08b975bb8ea419c4a6392ee4be797875a6063e25fdb99d6c53fcc98685544",
+  "final-verify.txt": "c8ad71d0546cec6fa7681dbe00904372db431f3abdbb56b60db23a3907800c78",
+  "grant-api.txt": "70013afd47d506e885e85c7a1f8876d9e417833e4126ca2426330805d4d45818",
+  "prompt-allow.png": "12e93dec30cbb0f6920a86fb4eed2829d02fd05d1b7aadf0824d4817cee9ca52",
+  "prompt-allow.txt": "2bdafef20884cb62d42cb841ceaf4033400dc54b8459bc4558d5f861fda4a2c9",
+  "prompt-deny.png": "c6b9bfddcba4a1122b73306e35f9569e6ce20789028eb4a90cd42c1af6b0f1a6",
+  "prompt-deny.txt": "a49632a917a72f09aa72546ea90ac0a84d3dd514caaec70be42e5f95d8857065",
+  "prompt-prompt-allow.png": "2ac7a526897fb93b5e647c21beb208be7828f87e78b46298036d4937639a5e6f",
+  "prompt-prompt-deny.png": "2ac7a526897fb93b5e647c21beb208be7828f87e78b46298036d4937639a5e6f",
+  "simctl-camera.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "system-camera-probe.swift.txt": "28ab39083b3040ae7a0a9c2693b987b92d5e6271b5f47455da4334f01c5a8a6c"
+}

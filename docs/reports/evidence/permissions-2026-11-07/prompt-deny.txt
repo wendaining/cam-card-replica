@@ -1,0 +1,9 @@
+Test Case '-[CamCardReplicaUITests.SystemCameraPermissionUITests testT03_systemCameraPermission]' started.
+SYSTEM_CAMERA_ALERT=允许“CamCard Replica”访问相机？
+SYSTEM_CAMERA_ALERT_BUTTONS=不允许|允许
+Test Case '-[CamCardReplicaUITests.SystemCameraPermissionUITests testT03_systemCameraPermission]' passed (10.193 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.193 (10.195) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.193 (10.196) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 10.193 (10.197) seconds
+	/Users/I783217/Projects/mobile-app-dev/cam-card-replica/build/Logs/Test/Test-CamCardReplica-2026.11.07_23-51-17-+0800.xcresult
+** TEST SUCCEEDED **

@@ -1,0 +1,18 @@
+@testable import CamCardReplica
+import AVFoundation
+import XCTest
+
+final class SimulatorCameraPermissionProbeTests: XCTestCase {
+    func testObserveSystemAuthorizationWithoutFauxCam() async throws {
+        let before = AVCaptureDevice.authorizationStatus(for: .video)
+        let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+        let dylib = ProcessInfo.processInfo.environment["DYLD_INSERT_LIBRARIES"] ?? "<unset>"
+        print("SYSTEM_CAMERA_BEFORE=\(before.rawValue)")
+        print("SYSTEM_CAMERA_DEVICE=\(device?.localizedName ?? "<none>")")
+        print("SYSTEM_CAMERA_DYLIB=\(dylib)")
+        let granted = await AVCaptureDevice.requestAccess(for: .video)
+        print("SYSTEM_CAMERA_REQUEST_GRANTED=\(granted)")
+        print("SYSTEM_CAMERA_AFTER=\(AVCaptureDevice.authorizationStatus(for: .video).rawValue)")
+        XCTAssertNil(device)
+    }
+}

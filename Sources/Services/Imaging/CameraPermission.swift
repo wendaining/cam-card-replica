@@ -12,9 +12,8 @@ enum CameraPermissionStatus: String, Sendable {
     }
 }
 
-/// T03's test seam: the UI tests inject a fixed status instead of trying to
-/// drive the real system prompt (which the simulator cannot even show for a
-/// camera that does not exist).
+/// T03's permission boundary. Regular UI tests inject a fixed status;
+/// the opt-in system-camera suite exercises native simulator authorization.
 protocol CameraPermissionProviding: Sendable {
     func currentStatus() -> CameraPermissionStatus
     func requestAccess() async -> CameraPermissionStatus
