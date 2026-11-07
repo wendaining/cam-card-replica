@@ -4,7 +4,7 @@
 
 单元测试覆盖解析反例、仓库提交/失败回滚、图片一致性、标签草稿、导出及识别快照兼容。UI 覆盖扫描、保存、原图切换、编辑、搜索、删除确认、取消、失败与空字段。T18 使用独立 UUID 文件库真正 terminate/launch，不把重建内存模型当成进程重启。
 
-20条验收定义见 acceptance，方法数不是覆盖率。真机/正版未验项单列在 external-acceptance；不得用模拟器绿灯冒充签收。
+20条验收定义见 acceptance，覆盖情况依据逐项验收证据记录。真机/正版未验项单列在 external-acceptance；不得用模拟器绿灯冒充签收。
 
 ## 三类识别指标
 
@@ -20,7 +20,7 @@
 
 英文按编号选择 Arial/Times New Roman/Courier New，中文/双语选择 Hiragino Sans GB/STHeiti/Songti。指定字体不存在直接报错；font_file 存入 GT 和 manifest。固定 seed=20261027，固定发布时间，生成器同步九个 app fixture。
 
-Pillow 与 NumPy 是生成器依赖，不是 App 的 SPM 依赖。可通过 make testdata PYTHON=解释器路径重建；make test-tooling 验证字体选择和构建路径。本次重复生成所有图片、GT、manifest、fixture 逐文件 SHA-256 一致，业务 GT 与原版本逐项相等。
+Pillow 与 NumPy 用于生成语料及检查 Python 工具。可通过 make testdata PYTHON=解释器路径重建；make test-tooling 验证字体选择和构建路径。本次重复生成所有图片、GT、manifest、fixture 逐文件 SHA-256 一致，业务 GT 与原版本逐项相等。
 
 ## 命令与证据
 
@@ -28,7 +28,9 @@ Pillow 与 NumPy 是生成器依赖，不是 App 的 SPM 依赖。可通过 make
 - make test-ui、make test-ipad：真实交互回归，逐个模拟器串行执行。
 - UI 目标不收集代码覆盖率，避免当前 Xcode 在 UI 用例结束后等待覆盖率回收；单元/集成仍按工程配置收集，功能断言未跳过。
 - make bench：保留文本基准并测量真实全部图片；pipefail 确保测试失败不被 tee 掩盖。
-- python3 Scripts/report_benchmark.py：从 bench 日志生成完整 JSON 与图像准确率表。
+- python3 Scripts/report_benchmark.py：使用实际日期、设备环境和结果包参数，导出完整 OCR、处理图片与字段统计；命令见 docs/reports/verification-2026-11-07.md。
 - make audit：校验当前文档引用和数字；修复前审查快照按历史文档处理。场景数取验收定义，不从 UI 方法数量推算。
 
-最新运行结果见 `docs/reports/review-fixes-2026-10-28.md`。CI 的 UI 步骤现为必过，不再 continue-on-error。远端 CI 结果须另查，不能推断为本地已跑结果。
+历史运行结果见 `docs/reports/review-fixes-2026-10-30.md`；提交前复核见 [2026-11-07 核实](../reports/submission-audit-2026-11-07.md)。远端 CI 当前仅执行 Linux 文档审计；build、单元/集成和 UI 回归是本地 gate。远端文档审计通过不代表 Xcode 或 UI 测试通过。
+
+本次新增的逐图 OCR、初始解析、实际识别输入 PNG、源图哈希和证据清单由 ImageCorpusTests 产出，导出工具校验输入与字段比较的一致性。Python 导出检查可使用 make test-evidence 运行。

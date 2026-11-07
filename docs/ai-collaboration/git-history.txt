@@ -1,0 +1,242 @@
+001aee8 2026-11-07T23:10:26+08:00 docs(report): expand the engineering report and measured analysis
+Spec: docs/spec/acceptance.md
+Refs: T01, T07, T08, T18, T19
+
+Expand the Markdown report to twenty chapters with architecture, transactions, coordinate systems, parsing rules, measured slices, value-level metrics, eight raw error cases, and explicit pending evidence.
+
+753e549 2026-11-07T23:09:09+08:00 build(submission): package Markdown reports and verified evidence
+Spec: docs/spec/acceptance.md
+Refs: T07, T19
+
+Package source, Markdown reports, images, author templates, and SHA-256 manifests. Verify archive CRC and each file digest. Remove the generated PDF requirement.
+
+a2f19f3 2026-11-07T23:08:37+08:00 test(camera): verify capture through FauxCam and AVFoundation
+Refs: T04, T06, T07, T12
+Spec: docs/spec/product-spec.md#7.2.7
+
+Use the normal shutter and photo callback with fixture-camera disabled. Exercise retake, cropping, Vision output, raw text, and saving. Archive six screenshots and the passing 720x1280 run.
+
+505693f 2026-11-07T23:07:15+08:00 test(ocr): archive the measured 76-image evidence corpus
+Refs: T07, T08, T09, T10
+Spec: docs/spec/product-spec.md#7.4
+
+Archive actual OCR text, initial parsing evidence, lossless recognition inputs, run metadata, sliced metrics, and SHA-256 manifests. Emit CSV artifacts with portable LF line endings.
+
+c07da1c 2026-11-07T23:06:31+08:00 test(ocr): retain raw recognition and verified image inputs
+Spec: docs/spec/product-spec.md#7.4
+Refs: T07, T08
+
+Preserve OCR observations, initial parsed fields, correction geometry, source hashes, and the exact image submitted to Vision. Validate exported evidence against images, Ground Truth, and initial parser values.
+
+df8d589 2026-11-07T21:28:31+08:00 docs: update agents.md
+
+77a8bf8 2026-10-30T22:30:41+08:00 docs(review): ground comparison in official CamCard sources
+Refs: T01-T20
+
+b9a0ce0 2026-10-30T22:29:04+08:00 test(parser): cover ambiguous words in different contexts
+Refs: T08, T09, T11
+
+3174248 2026-10-30T20:54:19+08:00 fix(imaging): preserve pixels when using the whole image
+Refs: T06, T07
+
+e55d7aa 2026-10-30T18:16:22+08:00 fix(parser): preserve named dotted corporate suffixes
+Refs: T08, T09
+
+b9b243b 2026-10-30T18:12:29+08:00 fix(library): show read failures and allow safe retry
+Refs: T01, T18, T20
+
+b232f04 2026-10-30T18:02:23+08:00 fix(scanner): discard superseded photo library loads
+Refs: T05, T20
+
+1c4158e 2026-10-30T17:57:35+08:00 fix(parser): preserve distinct labels for shared phone numbers
+Refs: T10, T19
+
+0dcbf90 2026-10-30T17:53:00+08:00 fix(parser): recognize labelled and numbered street addresses
+Refs: T08, T09
+
+cda2c6a 2026-10-30T17:48:12+08:00 fix(parser): reject nonpositive job title candidates
+Refs: T08, T09
+
+34caf21 2026-10-30T17:43:35+08:00 fix(parser): exclude contact digits from postal evidence
+Refs: T08, T09
+
+02db310 2026-10-30T17:38:47+08:00 fix(parser): exclude internet addresses from organization evidence
+Refs: T08, T09
+
+127fa4f 2026-10-30T17:18:00+08:00 docs(handoff): record public repo, CI scope, and UI-test flake findings
+Repo is now public so Actions runs again; the old "CI blocked on billing"
+note is stale. CI is now Linux docs-audit only — build/unit/integration/UI
+stay a local gate. Also records the honest finding that the old Xcode 16 /
+iOS 17 CI simulator exposed interaction flakes in T14/T17/T18 (not
+functional defects), that T14/T17 went green with the coordinate-tap fix,
+and that the T18 tag-chip reorder is verified only on local iOS 27 since
+the macOS job was removed.
+
+Refs: HANDOFF.md
+
+df72799 2026-10-30T17:17:07+08:00 ci: drop the macOS job, keep only the Linux docs audit
+This is a personal coursework repo and the acceptance evidence is the
+local `make verify` / `make test-ui` run on Xcode 27 / iPhone 18 Pro.
+GitHub's macOS runners bill at 10x, queue under capacity pressure, and
+mostly re-run what the local suite already proves — while XCUITest
+flakes on their older Xcode 16 / iOS 17 simulator (the detail-more
+scroll-to-visible and the T18 tag-chip ordering both surfaced there).
+
+Keep the one check a machine other than the author's adds value on: the
+pure-Python docs/code consistency audit on Linux (1x, seconds). Build,
+unit, integration and UI tests remain a local gate, by design.
+
+Refs: HANDOFF.md
+
+17166da 2026-10-30T17:17:00+08:00 test(ui): assert T18 tag chip before scrolling to notes
+On the Xcode 16 / iOS 17 CI simulator the coordinate-tap fix cleared the
+T14/T17/T18 scroll-to-visible flake, but T18 then failed its last line:
+the Tags section sits above Notes, so scrolling down to reveal the note
+pushed tag-chip-Persistence out of the accessibility tree and its exists
+check returned false. The persisted data was fine — name, company, note
+and both images all round-trip and assert green above it.
+
+Check the tag chip first (it is higher in the form), then scroll on to
+the note, so each element is asserted while it is actually on screen.
+Local iOS 27 run stays green.
+
+Refs: T18
+
+88043a5 2026-10-30T16:59:24+08:00 test(ui): tap detail-more by coordinate to fix flake on CI simulators
+With the repo now public, Actions runs on macos-15 (Xcode 16 / iOS 17
+simulator). There T14/T17/T18 failed in `app.buttons["detail-more"].tap()`
+with `kAXErrorCannotComplete performing kAXScrollToVisibleAction`: the
+implicit scroll-to-visible fails on that runtime for a navigation-bar
+button that is already on screen. Local iOS 27 never hit it.
+
+Tap the toolbar button by normalized coordinate instead, which skips the
+scroll step and is stable on iOS 17-27. New `tapToolbarButton` helper
+still asserts the button exists first, so coverage is unchanged. The
+functionality (unit + integration suites, iOS 27 UI run) was always green;
+this only fixes how the test interacts with the button.
+
+Refs: T14 T17 T18
+
+add8f3e 2026-10-30T16:39:26+08:00 ci: split docs audit to Linux job and dedupe the macOS build
+Cut GitHub Actions spend on the 10x-billed macOS runner:
+- move the pure-Python docs/code audit to an ubuntu-latest job that
+  gates verify via `needs: audit`, so a failed check never starts macOS
+- merge the separate unit and UI test steps into one `xcodebuild test`
+  so the scheme is compiled once instead of twice
+- cache Homebrew bottles to skip the cold xcodegen/swiftlint/swiftformat
+  install each run
+
+Behaviour unchanged: push+PR still run the full unit, integration and
+T01-T20 UI suites. Verified locally — combined xcodebuild test runs
+93 unit + 24 UI (1 skipped) green; audit_docs.py reports 0 problems.
+
+Refs: HANDOFF.md (remote CI billing blocker)
+
+339bca7 2026-10-28T17:15:39+08:00 docs(handoff): record merged PR and remaining acceptance
+Record PR #1 merge 058fa41 and the synchronized local main branch. List pending real-device, licensed CamCard, remote CI, and final-report evidence while keeping completed PhotosPicker validation explicit.
+
+Refs: T03, T04, T05, T18, T19
+
+058fa41 2026-10-28T17:09:43+08:00 fix: preserve card data and close local review findings (#1)
+Merge locally verified review fixes. Remote CI did not start because of account billing or spending limits; the repository owner explicitly authorized merging before that is resolved.
+
+Refs: T01-T20
+df6243c 2026-10-28T17:00:33+08:00 docs(ci): record merge readiness and billing blocker
+Record conflict-free PR status separately from the remote Actions job that never started because of account billing or spending limits. Keep local verification evidence and pending external acceptance explicit.
+
+Refs: T01-T20
+
+9aaa385 2026-10-28T16:59:02+08:00 chore(git): ignore local computer-use artifacts
+Keep generated device screenshots and automation traces outside version control.
+
+Refs: T20
+
+dec0da5 2026-10-28T16:01:00+08:00 docs(acceptance): record review fixes and external validation
+Record R01-R17 outcomes, regression evidence, complete local validation, and the real PhotosPicker manual flow. Keep baseline review probes archived and distinguish outstanding real-device and CamCard acceptance from local simulator results.
+
+Refs: T01-T20
+
+bcca822 2026-10-28T15:59:29+08:00 test(ocr): clarify fixture recall and complete field metrics
+Name the fixture metric by complete expected lines, retain its threshold, and distinguish it from character recall and the full image corpus evaluation.
+
+Refs: T07, T08, T09
+
+d25f21e 2026-10-28T15:56:42+08:00 build(dev): align simulator products and verification gates
+Use the same derived-data directory for builds and installs, select the simulator explicitly, and preserve benchmark failures through tee. Keep UI regression failures blocking while disabling only UI coverage collection.
+
+Refs: T18
+
+1d13aec 2026-10-28T15:41:02+08:00 test(ocr): measure complete fields on the versioned image corpus
+Keep legacy text gates while reporting complete multi-value and absent fields, missing and extra values, and real Vision output for every image. Persist pre-correction evidence and document known ambiguity without hiding it in a zero-hallucination claim. Use reproducible font families and preserve business ground truth.
+
+Refs: T07, T08, T09, T10
+
+030c929 2026-10-28T15:40:12+08:00 fix(detector): convert card ratios to Vision bounds
+Use short-side over long-side bounds and regress wide cards against square distractors.
+
+Refs: T06
+
+41e8548 2026-10-28T15:40:12+08:00 fix(parser): require evidence for websites and phone labels
+Classify numbers by their nearest label and protect email, URL, and identifier tokens from phone extraction. Match complete hosts and retain ambiguous unlabelled domains for human review instead of inventing websites.
+
+Refs: T08, T09, T10
+
+117a4ec 2026-10-28T15:39:32+08:00 fix(cards): preserve confirmed data across failures and relaunches
+Commit library snapshots before publishing state, roll back new images on save failure, and delete images only after record deletion succeeds. Keep review/tag edits staged, recognition cancellable, original evidence readable, and exports based on the latest saved card.
+
+Refs: T11, T12, T13, T14, T16, T17, T18, T19, T20
+
+7c938f5 2026-10-28T11:28:03+08:00 docs(report): correct the end-to-end test count
+The report still said 15 scenarios after the preview test was added; the suite
+runs 16 (plus the screenshot helper).
+
+Refs: docs/reports/final-report.md
+
+209073f 2026-10-28T11:27:32+08:00 docs(handoff): record the CI result and drop the pinned commit hash
+CI is green end to end now (lint, docs audit, unit tests, UI tests), and pinning a
+commit id in prose only guarantees it will be wrong later.
+
+Refs: AGENTS.md
+
+1b41b11 2026-10-28T11:09:37+08:00 docs: add the handoff brief and a documentation audit
+A reviewer needs to know which claims were actually executed and which are only
+written down. HANDOFF.md states that split explicitly, and
+Scripts/audit_docs.py (wired into `make audit` and CI) fails when a doc points at
+a file, make target, test or number that the repository does not have.
+
+Running it found and fixed: two bare filenames that live under TestData, two
+ambiguous relative paths, one stale scenario count, and a placeholder path that
+looked real.
+
+Refs: AGENTS.md
+
+a453ced 2026-10-28T10:57:35+08:00 ci: gate on swiftlint, report swiftformat
+SwiftFormat's rule set grows between releases; the Homebrew build on the runner
+flags `conditionalAssignment` on code the pinned local version formats cleanly,
+so a formatting gate would fail for reasons unrelated to the change. swiftlint
+stays blocking, formatting is advisory, and the offending expression is written
+so both versions agree.
+
+Refs: AGENTS.md
+
+4206fe5 2026-10-28T10:52:54+08:00 test(vision): split an expression the older type checker cannot solve
+CI runs Xcode 16, whose type checker gave up on the ten-element print expression
+("unable to type-check this expression in reasonable time") while the newer local
+compiler was fine. Broken into named values; behaviour is identical.
+
+Refs: T07
+
+6f28c89 2026-10-28T10:46:11+08:00 ci: make the workflow match what `make lint` actually does
+Two reasons every run was red: the workflow linted with `--strict` (local does
+not, so warnings became failures), and the simulator was chosen by grepping
+`simctl list devices` output, which produced a name xcodebuild could not resolve.
+The device is now selected by UDID from the JSON listing.
+
+Refs: AGENTS.md
+
+01b952f 2026-10-27T22:34:38+08:00 docs: mark the photo preview as implemented
+Spec 7.2 gains the preview clause, the conformance audit flips that row to
+implemented (only three low-priority gaps remain), the demo script gains the
+step, and both screenshot sets are regenerated for the six screens.
+
+Refs: docs/spec/conformance-audit.md
