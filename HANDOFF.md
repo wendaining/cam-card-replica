@@ -6,7 +6,7 @@
 
 - [最终报告](docs/reports/final-report.md)已补充实现、规格追溯、测试、完整字段统计、错误案例、AI 协作、界面截图和验收状态。
 - [OCR 原始证据](docs/reports/evidence/ocr-2026-11-07/README.md)包含 76 条实际记录、识别输入 PNG、原始文字、初始解析、检测四角、运行元数据与文件哈希。
-- [AI 协作记录](docs/ai-collaboration/README.md)说明实际使用 Codex 与 TRAE。使用者确认大量使用 TRAE，具体任务和附件保留填写表格。
+- [AI 协作记录](docs/ai-collaboration/README.md)说明实际使用 Codex 与 TRAE。TRAE 的使用记录归档在 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。
 - [正版同图比较](docs/reports/reference-comparison-2026-11-08.md)覆盖 Android Basic 的全部 76 张原图，原始截图、XML 和字段归档在 reference-2026-11-08。
 - [最终填写模板](docs/submission/final-signoff.md)保留作者、真实拍摄限制、正版参考数据、演示与提交说明；参考行为表、参考 OCR 表和人工修改表均已准备。
 - 报告以 Markdown 保存，带哈希清单的提交压缩包位于 output/submission。
@@ -31,7 +31,7 @@
 
 ## 需要使用者填写
 
-模拟器原生系统权限四项检查已经通过，证据见 [权限记录](docs/reports/evidence/permissions-2026-11-07/README.md)。使用者没有 iPhone，真实拍摄质量、iOS 正版及会员导出文件未验证。Android 正版同图与网页管理操作已归档；本人修改案例、TRAE 历史附件和最终提交信息保留填写位置。具体操作与证据名称见 [本人清单](docs/submission/user-actions.md)。
+模拟器原生系统权限四项检查已经通过，证据见 [权限记录](docs/reports/evidence/permissions-2026-11-07/README.md)。使用者没有 iPhone，真实拍摄质量、iOS 正版及会员导出文件未验证。Android 正版同图与网页管理操作已归档；本人修改案例和最终提交信息保留填写位置，TRAE 使用记录见 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。具体操作与证据名称见 [本人清单](docs/submission/user-actions.md)。
 
 T18 已有模拟器真实终止并重新启动的证据。T19 已有 VCF 完整字段反序列化测试。课程接受这两条证据路径，真机通讯录结果按实际选择补充。
 

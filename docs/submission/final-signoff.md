@@ -9,10 +9,10 @@
 | CamCard 版本、设备、登录状态 | Android 8.25.0.20260129；Android 15 模拟器；使用者已登录 |
 | 正版 OCR 实际范围 | 固定 76 张同图，Basic 模式，英语与简体中文；字段与截图全部归档 |
 | 正版管理流程 | 官网录入、详情、编辑、搜索、分组、备注和重新加载；Android 导入、保存、取消及测试记录删除 |
-| TRAE 使用日期、任务与附件 | 使用已确认，详细材料待填写 |
+| TRAE 使用记录 | 2026-10-26 至 2026-10-30，7 轮开发对话，见 [TRAE 使用记录](../ai-collaboration/trae-record.md) |
 | 本人人工修改案例 | 待填写实际字段、动作数量和附件 |
 | 最终演示结果 | 待填写 |
 | 未验证范围 | 物理设备拍摄质量、iOS 正版行为、CamCard 会员导出文件 |
 | 本人核对意见与日期 | 待填写 |
 
-[同图比较](../reports/reference-comparison-2026-11-08.md)和 [验证记录](../reports/verification-2026-11-08.md)包含已经完成的测量。作者补充材料使用 [人工修改表](manual-corrections.csv)及 [TRAE 记录模板](../ai-collaboration/trae-record-template.md)。
+[同图比较](../reports/reference-comparison-2026-11-08.md)和 [验证记录](../reports/verification-2026-11-08.md)包含已经完成的测量。作者补充材料使用 [人工修改表](manual-corrections.csv)及 [TRAE 使用记录](../ai-collaboration/trae-record.md)。

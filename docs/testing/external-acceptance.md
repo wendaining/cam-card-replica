@@ -12,6 +12,6 @@
 | 真实拍摄质量及设备设置返回 | 使用者没有 iPhone，未验证 | [最终确认表](../submission/final-signoff.md) |
 | iOS 正版行为 | Mac App Store 获取未完成，未验证 | [安装记录](../reports/reference-validation-2026-11-08.md) |
 | 正版 vCard 导出 | 进入 Upgrade to VIP，未购买，未取得文件 | 安装记录的 Android 功能观察 |
-| TRAE 实际任务附件 | 使用已确认，附件待填写 | [TRAE 模板](../ai-collaboration/trae-record-template.md) |
+| TRAE 使用记录 | 2026-10-26 至 2026-10-30，7 轮开发对话 | [TRAE 使用记录](../ai-collaboration/trae-record.md) |
 
-本项目 T18 已有真实进程终止、重新启动和文件回读；T19 已有 VCF 全字段映射与反序列化；T05 已有系统 PhotosPicker 选取和取消的历史截图。作者仅需完成 [个人清单](../submission/user-actions.md)中的资料填写。
+本项目 T18 已有真实进程终止、重新启动和文件回读；T19 已有 VCF 全字段映射与反序列化；T05 已有系统 PhotosPicker 选取和取消的历史截图。作者仅需完成 [个人清单](../submission/user-actions.md)中的提交信息填写。

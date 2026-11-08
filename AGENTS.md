@@ -139,4 +139,4 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 演示稿 `docs/reports/demo-script.md`（约 110 秒主线 + 答辩问答）
 - [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（本地修复和外部未验项分开记录）
 - [x] 最终报告、逐图 OCR 原始证据与提交目录已整理；本人最终填写保留模板
-- [x] AI 协作说明记录 Codex 与 TRAE，TRAE 具体历史附件由使用者填写
+- [x] AI 协作说明记录 Codex 与 TRAE，TRAE 使用记录归档在 `docs/ai-collaboration/trae-record.md`
