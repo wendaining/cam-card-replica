@@ -128,7 +128,7 @@ def render_report(records, groups, run, output, evidence_dir):
                          f"{counts['present_correct']}/{counts['present']} | {counts['hallucinated']}/{counts['absent']} | "
                          f"{counts['missing']} | {counts['extra']} |")
     lines += ['', f'[逐图字段比较]({json_path.name})；[全部维度统计]({relative}/metrics.csv)。', '',
-              '图片来自确定性生成的合成语料。真机拍照质量、正版相同输入识别结果及人工修改次数仍待填写。']
+              '图片来自确定性生成的合成语料。正版 Android 的 76 张同图结果见 reference-comparison-2026-11-08.md；真实拍摄质量未验证，本人修改案例保留填写表。']
     output.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
@@ -180,7 +180,7 @@ def main():
              '[运行元数据](run.json)；[完整识别记录](recognition-records.json)；[字段统计](metrics.csv)。', '',
              '图片坐标采用归一化值，原点位于左上角；四角顺序为左上、右上、右下、左下。', '',
              '逐行文字保留 Vision 第一候选结果；rawText 由 VisionTextRecognizer 按纵向位置排序后拼接。', '',
-             '人工修改记录和正版观察结果由使用者填写在提交模板中。', '',
+             '正版 Android 同图字段已填写，详见 reference-comparison-2026-11-08.md；本人修改案例由使用者填写。', '',
              '| 原始图片 | OCR 原文 | 初始解析 | 实际识别输入 |', '|---|---|---|---|']
     for record in records:
         name = record['file']

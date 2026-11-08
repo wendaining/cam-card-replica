@@ -1,0 +1,12 @@
+python3 Scripts/audit_docs.py
+repo facts:
+  cards        50
+  images       76
+  unit_tests   109
+  ui_tests     27
+  scenarios    20
+  fixtures     9
+  adrs         6
+  documents    54
+
+problems: 0

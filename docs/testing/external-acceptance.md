@@ -1,18 +1,17 @@
-# 真机与参考 App 验收
+# 设备与参考应用验收
 
-更新日期：2026-11-07。FauxCam 正常快门、预览、重拍、识别与保存专项已通过；实际记录见相机验证报告。模拟器系统权限四项已通过，见 [原始证据](../reports/evidence/permissions-2026-11-07/README.md)。使用者没有 iPhone，真实拍摄质量、指定版本 CamCard 的行为和同图识别保留待验证状态。
+更新日期：2026-11-08。
 
-[本人操作清单](../submission/user-actions.md)提供完整操作、核对内容、证据名称与结果表格。[最终填写模板](../submission/final-signoff.md)记录实际日期、设备、结果和附件。
-
-| 项目 | 当前状态 | 填写位置 |
+| 项目 | 实际状态 | 证据 |
 |---|---|---|
-| 模拟器系统授权与拒绝 | 四项通过，保留系统弹窗 | 权限原始证据 |
-| 实际设备上的设置返回 | 没有设备，未验证 | 最终确认表 |
-| 正常快门、重拍、识别与保存 | FauxCam 通过；真实拍摄质量未验证 | FauxCam 报告 |
-| 阴影、模糊、反光和旋转实拍 | 没有设备，未验证 | 最终确认表 |
-| CamCard 版本、设备与功能范围 | 待观察 | [参考环境表](../submission/reference-environment.md) |
-| 正版 T01–T20 与主要页面 | 待观察 | [参考行为表](../submission/reference-observations.csv) |
-| 正版相同输入 OCR | 待观察 | [参考 OCR 表](../submission/reference-ocr.csv) |
+| 模拟器系统相机权限 | 已有授权、已有拒绝、首次弹窗允许和拒绝四项通过 | [权限附件](../reports/evidence/permissions-2026-11-07/README.md) |
+| 正常快门与重拍 | FauxCam 快门、预览、重拍、识别、保存通过 | [FauxCam 记录](../reports/fauxcam-validation-2026-11-07.md) |
+| 正版版本与环境 | 官方 Android 8.25.0.20260129，Android 15 模拟器 | [环境记录](../submission/reference-environment.md) |
+| 正版相同输入 OCR | 76 张固定图片，Basic 模式，初始字段与全部确认页面归档 | [同图比较](../reports/reference-comparison-2026-11-08.md) |
+| 正版管理与页面 | 官网与 Android 已观察的范围分别填写；部分异常路径未验证 | [行为记录](../submission/reference-observations.csv) |
+| 真实拍摄质量及设备设置返回 | 使用者没有 iPhone，未验证 | [最终确认表](../submission/final-signoff.md) |
+| iOS 正版行为 | Mac App Store 获取未完成，未验证 | [安装记录](../reports/reference-validation-2026-11-08.md) |
+| 正版 vCard 导出 | 进入 Upgrade to VIP，未购买，未取得文件 | 安装记录的 Android 功能观察 |
 | TRAE 实际任务附件 | 使用已确认，附件待填写 | [TRAE 模板](../ai-collaboration/trae-record-template.md) |
 
-T18 已有模拟器真实进程终止、重新启动与文件回读证据。T19 已有 VCF 全字段映射与反序列化证据，真机通讯录写入可按选择补充。T05 于 2026-10-28 完成系统 PhotosPicker 选取与取消，截图保存在 reports/screenshots/photos-picker。
+本项目 T18 已有真实进程终止、重新启动和文件回读；T19 已有 VCF 全字段映射与反序列化；T05 已有系统 PhotosPicker 选取和取消的历史截图。作者仅需完成 [个人清单](../submission/user-actions.md)中的资料填写。

@@ -102,3 +102,11 @@ Xcode 27.2 / iPhone 18 Pro / iOS 27.0：重新生成工程后，make verify 通�
 ## 2026-11-07 系统权限专项补充
 
 规格 7.2.1 对应 SystemCameraPermissionUITests.testT03_systemCameraPermission。make test-camera-permissions 分别设置已有授权、已有拒绝与未决定状态，并操作真实 SpringBoard 弹窗允许/拒绝。四项通过，未加载 FauxCam；截图、API 探测和摘要见 [系统权限证据](../reports/evidence/permissions-2026-11-07/README.md)。
+
+## 2026-11-08 正版同图与证据检查
+
+T05、T08、T09、T10 对应官方 Android CamCard 8.25.0.20260129 Basic 的 76 张固定输入及完整字段集合比较。单图相册、输入哈希、完整表单、重复控件一致性与取消保存均有实际记录。22 项 Python 检查验证界面读取、字段统计和打包拒绝条件；make verify 再次通过 109 个方法。
+
+[同图结果](../reports/reference-comparison-2026-11-08.md)、[原始证据](../reports/evidence/reference-2026-11-08/README.md)与 [T01–T20 参考行为表](../submission/reference-observations.csv)注明 Android 和官网各自范围。正版 iOS、真实拍摄质量与会员导出文件未验证。
+
+正版读取工具的 Nickname 地址归类由 Scripts/test_reference_camcard_ui.py 中的 test_nickname_does_not_become_an_address_component 回归保护；新增测试先失败，修正后通过，原始 XML 重算记录保留。

@@ -5,11 +5,14 @@
 | 姓名、学号、课程与班级 | 待填写 |
 | 实际提交日期 | 待填写 |
 | 真实拍摄设备与验证范围 | 没有 iPhone；真实拍摄质量未验证 |
-| 相机权限、拍摄重拍结果与附件 | 模拟器系统授权四项通过；FauxCam 正常快门与重拍通过，见报告附件 |
-| CamCard 版本、设备、登录状态 | 待填写 |
-| 正版行为与 OCR 实际完成范围及附件 | 待观察 |
+| 相机权限与拍摄流程 | 模拟器系统授权四项通过；FauxCam 正常快门与重拍通过 |
+| CamCard 版本、设备、登录状态 | Android 8.25.0.20260129；Android 15 模拟器；使用者已登录 |
+| 正版 OCR 实际范围 | 固定 76 张同图，Basic 模式，英语与简体中文；字段与截图全部归档 |
+| 正版管理流程 | 官网录入、详情、编辑、搜索、分组、备注和重新加载；Android 导入、保存、取消及测试记录删除 |
 | TRAE 使用日期、任务与附件 | 使用已确认，详细材料待填写 |
+| 本人人工修改案例 | 待填写实际字段、动作数量和附件 |
 | 最终演示结果 | 待填写 |
-| 仍未完成或未验证的项目及原因 | 待填写 |
+| 未验证范围 | 物理设备拍摄质量、iOS 正版行为、CamCard 会员导出文件 |
+| 本人核对意见与日期 | 待填写 |
 
-本地测试和 OCR 证据见 [验证记录](../reports/verification-2026-11-07.md)。正文所需的逐项结果可在 [参考行为表](reference-observations.csv)、[参考 OCR 表](reference-ocr.csv)和 [人工修改表](manual-corrections.csv)填写。
+[同图比较](../reports/reference-comparison-2026-11-08.md)和 [验证记录](../reports/verification-2026-11-08.md)包含已经完成的测量。作者补充材料使用 [人工修改表](manual-corrections.csv)及 [TRAE 记录模板](../ai-collaboration/trae-record-template.md)。

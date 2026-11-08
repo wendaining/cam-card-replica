@@ -53,4 +53,4 @@
 
 [逐图字段比较](image-accuracy-latest.json)；[全部维度统计](evidence/ocr-2026-11-07/metrics.csv)。
 
-图片来自确定性生成的合成语料。真机拍照质量、正版相同输入识别结果及人工修改次数仍待填写。
+图片来自确定性生成的合成语料。正版 Android 的 76 张同图结果见 reference-comparison-2026-11-08.md；真实拍摄质量未验证，本人修改案例保留填写表。

@@ -34,7 +34,7 @@ open CamCardReplica.xcodeproj  # 选 iPhone 18 Pro，Cmd+R
 ```
 
 **第一次亲手用**（不写代码，跟着点）：[docs/guides/first-run.md](docs/guides/first-run.md) —
-15 分钟走完本地闭环；真机与正版行为另行签收。
+本地运行与验证命令见下文；正版 Android 76 张同图和官网管理结果已归档，真实拍摄质量未验证。
 
 第一次跑会遇到的两件事：
 
@@ -128,6 +128,8 @@ docs/            spec / api / architecture(6 篇 ADR) / testing / guides / repor
 
 | 先看哪篇 | 内容 |
 |---|---|
+| [正版同图比较（2026-11-08）](docs/reports/reference-comparison-2026-11-08.md) | 76 张同图、完整字段与原始截图 |
+| [最新验证（2026-11-08）](docs/reports/verification-2026-11-08.md) | 109 个回归方法和证据工具检查 |
 | [提交前核实（2026-11-07）](docs/reports/submission-audit-2026-11-07.md) | 当前交付材料、最后回归、剩余证据与提交建议 |
 | [HANDOFF.md](HANDOFF.md) | **换人/换 agent 先读**：验证过什么、没验证什么、已知缺口、审查建议 |
 | [AGENTS.md](AGENTS.md) | 工程契约：约束、命令、提交规范、当前状态 |

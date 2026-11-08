@@ -1,0 +1,17 @@
+make verify; 2026-11-08; Xcode 27.2 / iPhone 18 Pro / iOS 27.0
+** BUILD SUCCEEDED **
+Test Suite 'All tests' started at 2026-11-08 13:14:40.299.
+	 Executed 109 tests, with 0 failures (0 unexpected) in 61.819 (61.852) seconds
+Test Suite 'All tests' passed at 2026-11-08 13:15:42.152.
+	 Executed 109 tests, with 0 failures (0 unexpected) in 61.819 (61.853) seconds
+	build/Logs/Test/Test-CamCardReplica-2026.11.08_13-14-30-+0800.xcresult
+** TEST SUCCEEDED **
+
+读取工具修正后再次 make verify；2026-11-08 13:48 完成
+** BUILD SUCCEEDED **
+Test Suite 'All tests' started at 2026-11-08 13:46:59.548.
+	 Executed 109 tests, with 0 failures (0 unexpected) in 58.377 (58.407) seconds
+Test Suite 'All tests' passed at 2026-11-08 13:47:57.956.
+	 Executed 109 tests, with 0 failures (0 unexpected) in 58.377 (58.408) seconds
+	build/Logs/Test/Test-CamCardReplica-2026.11.08_13-46-53-+0800.xcresult
+** TEST SUCCEEDED **

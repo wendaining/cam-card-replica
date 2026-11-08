@@ -1,0 +1,5 @@
+Local Markdown links: 521 checked, 0 broken
+Final report: 20 numbered chapters, 28939 characters, one reference statistics section
+git diff --check: passed
+Reference raw replay and hash validation: 76 inputs passed
+App Sources, Swift tests, fixed TestData and 2026-11-07 OCR evidence unchanged from e469aec360e5d59358b0192ceb688025ccef334c
