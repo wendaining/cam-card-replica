@@ -44,6 +44,11 @@ def main():
     for relative, expected in run['sourceFilesSHA256'].items():
         if digest((ROOT / relative).read_bytes()) != expected:
             raise SystemExit('Measured source file has changed: ' + relative)
+    reference_evidence = ROOT / 'docs/reports/evidence/reference-2026-11-08'
+    reference_count = 0
+    if reference_evidence.exists():
+        from compare_reference_camcard import validate_submission_reference
+        reference_count = validate_submission_reference(reference_evidence, truth, {record['file']: record for record in records})
     listing = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=ROOT)
     files = {}
     for name in listing.decode().split('\0'):
@@ -57,13 +62,14 @@ def main():
                              '[提交目录](docs/submission/README.md)\n\n'
                              '[本人操作清单](docs/submission/user-actions.md)\n\n'
                              '[最终填写模板](docs/submission/final-signoff.md)\n\n'
-                             '人工验收、正版观察及 TRAE 详细附件保留待填写状态。\n').encode()
+                             '[正版同图统计](docs/reports/reference-comparison-2026-11-08.md)\n\n'
+                             '作者信息、本人验收与 TRAE 详细附件保留填写位置。\n').encode()
     metadata = dict(createdAt=datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
                     gitRevision=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                     workingTreeHasChanges=bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT)),
-                    ocrRecordCount=len(records), fileCountBeforeManifest=len(files),
-                    pendingAuthorRecords=['physical-device camera and permissions', 'CamCard reference observations',
-                                          'TRAE task attachments', 'author signoff and demonstration'])
+                    ocrRecordCount=len(records), referenceRecordCount=reference_count, fileCountBeforeManifest=len(files),
+                    pendingAuthorRecords=['TRAE task attachments', 'author identity, signoff and demonstration'],
+                    unverifiedScopes=['physical-device shooting quality', 'iOS reference application', 'CamCard VIP export artifacts'])
     files['SUBMISSION.json'] = (json.dumps(metadata, ensure_ascii=False, indent=2) + '\n').encode()
     files['MANIFEST.sha256'] = ''.join(f'{digest(data)}  {name}\n' for name, data in sorted(files.items())).encode()
     args.output_dir.mkdir(parents=True, exist_ok=True)

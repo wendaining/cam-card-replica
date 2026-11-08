@@ -1,13 +1,7 @@
 name: CI
 
-# This is a personal coursework repo. The real acceptance evidence is the local
-# `make verify` / `make test-ui` run on Xcode 27 / iPhone 18 Pro (see HANDOFF.md
-# and docs/spec/acceptance.md). GitHub's macOS runners bill at 10x, queue under
-# capacity pressure, and only re-run what the local suite already proves — with
-# the added cost of XCUITest flaking on their older Xcode 16 / iOS 17 simulator.
-# So CI keeps just the cheap Linux check that a machine *other* than the author's
-# can still verify: the docs stay consistent with the code. Build + unit + UI
-# tests are a local gate, intentionally not duplicated here.
+# Xcode acceptance runs locally with dated evidence artifacts.
+# Linux verifies documentation and evidence tools using Python's standard library.
 
 on:
   push:
@@ -27,3 +21,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Docs match the code
         run: python3 Scripts/audit_docs.py
+      - name: Evidence parser and comparison checks
+        run: make test-evidence test-reference-evidence
