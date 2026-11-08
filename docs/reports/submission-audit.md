@@ -8,7 +8,7 @@
 |---|---|
 | 最终报告 | [报告](final-report.md)已扩充为 20 个章节、约 2.6 万字符，包含实现、规格、验证、测量和错误案例 |
 | 最终填写 | [模板](../submission/final-signoff.md)保留作者、真实结果、参考数据和提交说明 |
-| OCR 原始输出 | [76 条记录](evidence/ocr-2026-11-07/README.md)已导出实际原文、逐行位置和置信度、初始解析与依据 |
+| OCR 原始输出 | [76 条记录](evidence/ocr-measurement/README.md)已导出实际原文、逐行位置和置信度、初始解析与依据 |
 | 识别输入 | 76 张实际识别输入 PNG 已从同一结果包导出，逐项校验哈希 |
 | 测量日期与环境 | 导出命令要求显式填写日期和环境，并保存结果包、源码与 GT 哈希 |
 | AI 协作 | [说明](../ai-collaboration/README.md)记录 Codex 与 TRAE；本次 Codex 过程已归档，TRAE 使用记录见 [TRAE 使用记录](../ai-collaboration/trae-record.md) |
@@ -21,7 +21,7 @@
 
 初次核实运行 make verify，108 个方法通过，iPhone UI 的 24 个功能方法通过，1 个截图方法默认跳过。首次环境检查发现 CoreSimulator 组件与 Xcode 版本不匹配，系统组件更新后恢复。
 
-随后补充识别证据测试并完成归档。当前 make verify 运行 109 个方法，make bench 运行 7 个评测方法，均无非预期失败；Python 证据检查 5 项通过，原有工具检查 3 项通过。详细命令、时间及永久摘要见 [验证记录](verification-2026-11-07.md)。
+随后补充识别证据测试并完成归档。当前 make verify 运行 109 个方法，make bench 运行 7 个评测方法，均无非预期失败；Python 证据检查 5 项通过，原有工具检查 3 项通过。详细命令、时间及永久摘要见 [验证记录](verification-local.md)。
 
 App 的 Sources 目录仅更新权限测试边界注释，运行逻辑保持原有实现；完整 UI 结果使用同日运行的实际记录。图像字段比较结果与已归档数据一致。原始输出和处理图片为本次新增附件。
 

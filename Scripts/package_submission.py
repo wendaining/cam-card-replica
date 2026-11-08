@@ -31,14 +31,14 @@ def main():
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'output/submission')
     args = parser.parse_args()
     for required in ('docs/reports/final-report.md',
-                     'docs/reports/evidence/ocr-2026-11-07/recognition-records.json',
-                     'docs/reports/verification-2026-11-07.md'):
+                     'docs/reports/evidence/ocr-measurement/recognition-records.json',
+                     'docs/reports/verification-local.md'):
         if not (ROOT / required).is_file():
             raise SystemExit('Required submission material is missing: ' + required)
     if not any((ROOT / name).is_file() for name in ('docs/submission/final-signoff.md',
                                                     'docs/submission/final-signoff.local.md')):
         raise SystemExit('Required submission material is missing: docs/submission/final-signoff.md')
-    evidence = ROOT / 'docs/reports/evidence/ocr-2026-11-07'
+    evidence = ROOT / 'docs/reports/evidence/ocr-measurement'
     hashes = json.loads((evidence / 'SHA256SUMS.json').read_text())
     for relative, expected in hashes.items():
         if digest((evidence / relative).read_bytes()) != expected:
@@ -53,7 +53,7 @@ def main():
     for relative, expected in run['sourceFilesSHA256'].items():
         if digest((ROOT / relative).read_bytes()) != expected:
             raise SystemExit('Measured source file has changed: ' + relative)
-    reference_evidence = ROOT / 'docs/reports/evidence/reference-2026-11-08'
+    reference_evidence = ROOT / 'docs/reports/evidence/reference-android'
     reference_count = 0
     if reference_evidence.exists():
         from compare_reference_camcard import validate_submission_reference
@@ -77,7 +77,7 @@ def main():
                              '[提交目录](docs/submission/README.md)\n\n'
                              '[本人操作清单](docs/submission/user-actions.md)\n\n'
                              '[最终填写模板](docs/submission/final-signoff.md)\n\n'
-                             '[正版同图统计](docs/reports/reference-comparison-2026-11-08.md)\n\n'
+                             '[正版同图统计](docs/reports/reference-comparison.md)\n\n'
                              '作者信息、本人验收与 TRAE 详细附件保留填写位置。\n').encode()
     metadata = dict(createdAt=datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
                     gitRevision=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),

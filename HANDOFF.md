@@ -5,9 +5,9 @@
 ## 本地交付材料
 
 - [最终报告](docs/reports/final-report.md)已补充实现、规格追溯、测试、完整字段统计、错误案例、AI 协作、界面截图和验收状态。
-- [OCR 原始证据](docs/reports/evidence/ocr-2026-11-07/README.md)包含 76 条实际记录、识别输入 PNG、原始文字、初始解析、检测四角、运行元数据与文件哈希。
+- [OCR 原始证据](docs/reports/evidence/ocr-measurement/README.md)包含 76 条实际记录、识别输入 PNG、原始文字、初始解析、检测四角、运行元数据与文件哈希。
 - [AI 协作记录](docs/ai-collaboration/README.md)说明实际使用 Codex 与 TRAE。TRAE 的使用记录归档在 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。
-- [正版同图比较](docs/reports/reference-comparison-2026-11-08.md)覆盖 Android Basic 的全部 76 张原图，原始截图、XML 和字段归档在 reference-2026-11-08。
+- [正版同图比较](docs/reports/reference-comparison.md)覆盖 Android Basic 的全部 76 张原图，原始截图、XML 和字段归档在 reference-android。
 - [最终填写模板](docs/submission/final-signoff.md)保留作者、真实拍摄限制、正版参考数据、演示与提交说明；参考行为表、参考 OCR 表和人工修改表均已准备。
 - 报告以 Markdown 保存，带哈希清单的提交压缩包位于 output/submission。
 
@@ -25,13 +25,13 @@
 | Python 工具检查 | 3 项通过 |
 | 证据导出检查 | 原有 5 项通过；新增正版界面、比较、打包检查 22 项通过 |
 | 正版测量 | 官方 Android 8.25.0.20260129 Basic，76 张完整原图 |
-| 文档审计与文件完整性 | 见 [最新验证](docs/reports/verification-2026-11-08.md) |
+| 文档审计与文件完整性 | 见 [最新验证](docs/reports/verification-reference.md) |
 
 2026-11-08 修改范围为正版采集、比较、证据检查、打包、CI 和文档。App 的 Sources、Swift 测试与语料保持原有内容。iPhone UI、FauxCam 与系统权限使用 2026-11-07 的证据；iPad UI 沿用 2026-10-28 的历史结果，最新 T18 调整未在 iPad 复验。
 
 ## 需要使用者填写
 
-模拟器原生系统权限四项检查已经通过，证据见 [权限记录](docs/reports/evidence/permissions-2026-11-07/README.md)。使用者没有 iPhone，真实拍摄质量、iOS 正版及会员导出文件未验证。Android 正版同图与网页管理操作已归档；本人修改案例和最终提交信息保留填写位置，TRAE 使用记录见 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。具体操作与证据名称见 [本人清单](docs/submission/user-actions.md)。
+模拟器原生系统权限四项检查已经通过，证据见 [权限记录](docs/reports/evidence/permissions/README.md)。使用者没有 iPhone，真实拍摄质量、iOS 正版及会员导出文件未验证。Android 正版同图与网页管理操作已归档；本人修改案例和最终提交信息保留填写位置，TRAE 使用记录见 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。具体操作与证据名称见 [本人清单](docs/submission/user-actions.md)。
 
 T18 已有模拟器真实终止并重新启动的证据。T19 已有 VCF 完整字段反序列化测试。课程接受这两条证据路径，真机通讯录结果按实际选择补充。
 
@@ -56,4 +56,4 @@ make audit
 make package
 ```
 
-OCR 导出需要实际日期、环境、结果包与证据目录参数，命令见 [验证记录](docs/reports/verification-2026-11-07.md)。作者填写结果后更新 Markdown 报告，并重新生成压缩包。
+OCR 导出需要实际日期、环境、结果包与证据目录参数，命令见 [验证记录](docs/reports/verification-local.md)。作者填写结果后更新 Markdown 报告，并重新生成压缩包。

@@ -112,7 +112,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--adb',default=str(Path.home()/'Library/Caches/cam-card-replica/android-sdk/platform-tools/adb'))
     parser.add_argument('--serial',default='emulator-5580')
-    parser.add_argument('--evidence-dir',type=Path,default=ROOT/'docs/reports/evidence/reference-2026-11-08')
+    parser.add_argument('--evidence-dir',type=Path,default=ROOT/'docs/reports/evidence/reference-android')
     parser.add_argument('--files',nargs='*')
     args=parser.parse_args();corpus=json.loads((ROOT/'TestData/ground-truth/ground_truth.json').read_text())['cards'];allowed={r['file'] for r in corpus}
     files=args.files or [r['file'] for r in corpus]

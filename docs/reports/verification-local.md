@@ -21,7 +21,7 @@ macOS 27.0.1；Xcode 27.2（27B52）；iOS SDK 27.2；iPhone 18 Pro 模拟器、
 | OCR 导出 | 76 条识别记录与 76 张实际输入 PNG 校验通过 | OCR 证据目录及运行元数据 |
 | 文档与文件检查 | make audit、git diff --check 通过 | 本地终端输出与提交清单 |
 
-[永久测试摘要](evidence/validation-2026-11-07/verification.txt)、[Python 证据检查](evidence/validation-2026-11-07/python-evidence.txt)、[Python 工具检查](evidence/validation-2026-11-07/python-tooling.txt)随提交材料保存。
+[永久测试摘要](evidence/validation-local/verification.txt)、[Python 证据检查](evidence/validation-local/python-evidence.txt)、[Python 工具检查](evidence/validation-local/python-tooling.txt)随提交材料保存。
 
 完整 Xcode 日志保留在本地 TestResults，结果包保留在 build/Logs/Test。提交材料保存必要摘要、可复现代码、运行元数据和识别附件。iPad 沿用 2026-10-28 的历史 UI 结果；正常快门与照片回调已通过 FauxCam 专项；原生系统权限已在模拟器完成四项专项；实拍质量、正版行为与同图识别保留未验证状态。
 
@@ -36,7 +36,7 @@ python3 Scripts/report_benchmark.py \
   --date 2026-11-07 \
   --environment 'Xcode 27.2 / iPhone 18 Pro / iOS 27.0' \
   --xcresult 'build/Logs/Test/Test-CamCardReplica-2026.11.07_23-54-46-+0800.xcresult' \
-  --evidence-dir docs/reports/evidence/ocr-2026-11-07
+  --evidence-dir docs/reports/evidence/ocr-measurement
 make test-evidence
 ```
 
@@ -66,10 +66,10 @@ make package
 
 Vision 在部分输入输出 CVPixelBufferCreate -6680 诊断日志，本次所有图片仍产生 OCR 结果，相关文字及字段纳入统计。已知无标签号码类型歧义保留期望失败与错误计数。确定性验收状态以逐项证据和作者实际观察记录。
 
-FauxCam 使用 make test-fauxcam 显式运行，安装位置、配置和结果见 [相机专项](fauxcam-validation-2026-11-07.md)。
+FauxCam 使用 make test-fauxcam 显式运行，安装位置、配置和结果见 [相机专项](fauxcam-validation.md)。
 
 提交前再次执行 make verify，2026-11-07 23:04 完成，109 个方法通过，0 个非预期失败；结果包为 2026.11.07_23-03-14。FauxCam 专项在 23:01 的独立结果包通过，新增系统权限专项后 UI 定义总数为 27。
 
-系统相机权限专项在 23:50–23:51 完成四项独立运行：已有授权 9.411 秒、已有拒绝 8.403 秒、系统弹窗允许 10.232 秒、系统弹窗拒绝 10.193 秒，全部通过。使用真实 SystemCameraPermission，未注入 FauxCam，见 [原始证据](evidence/permissions-2026-11-07/README.md)。
+系统相机权限专项在 23:50–23:51 完成四项独立运行：已有授权 9.411 秒、已有拒绝 8.403 秒、系统弹窗允许 10.232 秒、系统弹窗拒绝 10.193 秒，全部通过。使用真实 SystemCameraPermission，未注入 FauxCam，见 [原始证据](evidence/permissions/README.md)。
 
 权限测试和注释更新后再次执行 make verify，23:55 完成，109 个方法通过，0 个非预期失败，结果包为 2026.11.07_23-54-46。从该次实际结果重新导出 OCR 原始证据，76 条逐字段比较与此前归档完全一致，测量元数据保存当前源码哈希。

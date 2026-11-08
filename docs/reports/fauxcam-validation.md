@@ -34,14 +34,14 @@
 
 | 操作 | 附件 |
 |---|---|
-| 扫描与正常快门 | [01-camera.png](evidence/fauxcam-2026-11-07/01-camera.png) |
-| 照片预览 | [02-preview.png](evidence/fauxcam-2026-11-07/02-preview.png) |
-| 四角裁剪 | [03-crop.png](evidence/fauxcam-2026-11-07/03-crop.png) |
-| 实际识别表单 | [04-review.png](evidence/fauxcam-2026-11-07/04-review.png) |
-| OCR 原文 | [05-raw-text.png](evidence/fauxcam-2026-11-07/05-raw-text.png) |
-| 保存结果 | [06-saved.png](evidence/fauxcam-2026-11-07/06-saved.png) |
+| 扫描与正常快门 | [01-camera.png](evidence/fauxcam/01-camera.png) |
+| 照片预览 | [02-preview.png](evidence/fauxcam/02-preview.png) |
+| 四角裁剪 | [03-crop.png](evidence/fauxcam/03-crop.png) |
+| 实际识别表单 | [04-review.png](evidence/fauxcam/04-review.png) |
+| OCR 原文 | [05-raw-text.png](evidence/fauxcam/05-raw-text.png) |
+| 保存结果 | [06-saved.png](evidence/fauxcam/06-saved.png) |
 
-[运行元数据](evidence/fauxcam-2026-11-07/run.json)、[测试摘要](evidence/fauxcam-2026-11-07/verification.txt)和 [文件哈希](evidence/fauxcam-2026-11-07/SHA256SUMS.json)同时归档。
+[运行元数据](evidence/fauxcam/run.json)、[测试摘要](evidence/fauxcam/verification.txt)和 [文件哈希](evidence/fauxcam/SHA256SUMS.json)同时归档。
 
 ## 复现
 
@@ -49,4 +49,4 @@
 
 专项通过 XCTest 的 launchEnvironment 向目标进程传递动态库路径与帧服务 socket，使用现有正常快门入口。测试结束后终止测试 App，停止帧服务并清理启用配置。常规 UI 测试在没有专项配置时跳过此方法。
 
-FauxCam 对视频授权返回 authorized。系统弹窗允许和拒绝已在独立模拟器专项通过，见 [权限证据](evidence/permissions-2026-11-07/README.md)。实际设备上的设置返回未验证。光照、反光、模糊和对焦等拍摄质量保留待测量状态。
+FauxCam 对视频授权返回 authorized。系统弹窗允许和拒绝已在独立模拟器专项通过，见 [权限证据](evidence/permissions/README.md)。实际设备上的设置返回未验证。光照、反光、模糊和对焦等拍摄质量保留待测量状态。

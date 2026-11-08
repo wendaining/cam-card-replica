@@ -2,7 +2,7 @@
 
 测量日期：2026-11-07；Xcode 27.2 / iPhone 18 Pro / iOS 27.0；图片数量：76。
 
-[OCR 原始证据与识别输入](evidence/ocr-2026-11-07/README.md)包含逐图文字、位置、置信度、初始解析及图片哈希。
+[OCR 原始证据与识别输入](evidence/ocr-measurement/README.md)包含逐图文字、位置、置信度、初始解析及图片哈希。
 
 字段以完整值集合比较，忽略大小写及首尾空白，保留电话号码内部格式。字段错值同时计入漏值与多值。
 
@@ -51,6 +51,6 @@
 | photo | office | 10/12 | 2/4 | 0/8 | 2 | 2 |
 | photo | website | 9/12 | 7/10 | 0/2 | 3 | 3 |
 
-[逐图字段比较](image-accuracy-latest.json)；[全部维度统计](evidence/ocr-2026-11-07/metrics.csv)。
+[逐图字段比较](image-accuracy-latest.json)；[全部维度统计](evidence/ocr-measurement/metrics.csv)。
 
-图片来自确定性生成的合成语料。正版 Android 的 76 张同图结果见 reference-comparison-2026-11-08.md；真实拍摄质量未验证，本人修改案例保留填写表。
+图片来自确定性生成的合成语料。正版 Android 的 76 张同图结果见 reference-comparison.md；真实拍摄质量未验证，本人修改案例保留填写表。

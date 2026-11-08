@@ -2,7 +2,7 @@
 
 观察日期：2026-11-08。官方 Android 版本 8.25.0.20260129，Basic 模式，英语与简体中文。独立采集 76 张固定输入。
 
-[环境与流程](../../reference-validation-2026-11-08.md)；[同图统计](../../reference-comparison-2026-11-08.md)；[运行元数据](comparison-run.json)；[逐图比较](comparisons.json)。
+[环境与流程](../../reference-validation.md)；[同图统计](../../reference-comparison.md)；[运行元数据](comparison-run.json)；[逐图比较](comparisons.json)。
 
 每条记录包含原始控件值、完整字段集合、地址组件、输入与设备文件哈希、单图选择截图，以及确认页面各滚动位置的截图和 XML。正式识别完成后使用 Retake 取消保存，当前名片夹保持为空。
 

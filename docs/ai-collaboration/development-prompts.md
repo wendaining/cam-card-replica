@@ -10,7 +10,7 @@
 
 人工决定：对测试已经通过的流程继续进行实际操作检查，记录测试未覆盖的问题。
 
-产物：[2026-10-28 审查报告](../reports/review-2026-10-28.md)，包含保存失败、删除图片、原图入口、编辑后导出、字段解析和测试覆盖等发现。
+产物：[2026-10-28 审查报告](../reports/review.md)，包含保存失败、删除图片、原图入口、编辑后导出、字段解析和测试覆盖等发现。
 
 ## 2. 按问题优先级修复
 
@@ -20,7 +20,7 @@
 
 人工决定：优先处理可能影响已保存数据的问题，将未验证的外部行为单独记录。
 
-产物：[审查修复记录](../reports/review-fixes-2026-10-28.md)。R01 记录存储错误传播和图片清理顺序，R03 记录编辑后的 VCF 内容，R14–R15 记录完整字段测量及初始识别快照。
+产物：[审查修复记录](../reports/review-fixes.md)。R01 记录存储错误传播和图片清理顺序，R03 记录编辑后的 VCF 内容，R14–R15 记录完整字段测量及初始识别快照。
 
 ## 3. 检查合并条件和忽略规则
 
@@ -50,7 +50,7 @@
 
 人工决定：使用实际工具情况由作者确认，具体历史附件按实际材料补充。
 
-产物：[76 条原始证据](../reports/evidence/ocr-2026-11-07/README.md)、[最终报告](../reports/final-report.md)及 [填写模板](../submission/final-signoff.md)。
+产物：[76 条原始证据](../reports/evidence/ocr-measurement/README.md)、[最终报告](../reports/final-report.md)及 [填写模板](../submission/final-signoff.md)。
 
 ## 6. 外部图源与正常快门验证
 
@@ -60,7 +60,7 @@
 
 人工决定：报告保留实际验证范围，修改按照测试、证据、工具和文档分批提交。
 
-产物：[FauxCam 专项](../reports/fauxcam-validation-2026-11-07.md)，正常快门、预览、重拍、裁剪、识别、原文和保存通过；实际耗时 18.967 秒。
+产物：[FauxCam 专项](../reports/fauxcam-validation.md)，正常快门、预览、重拍、裁剪、识别、原文和保存通过；实际耗时 18.967 秒。
 
 ## 7. 无真实设备时验证系统授权
 
@@ -70,7 +70,7 @@
 
 人工决定：使用现有 Xcode 环境完成能够验证的内容，真实拍摄质量保持未验证状态。
 
-产物：[系统相机权限证据](../reports/evidence/permissions-2026-11-07/README.md)，已有授权、已有拒绝、首次弹窗允许和首次弹窗拒绝四项通过。
+产物：[系统相机权限证据](../reports/evidence/permissions/README.md)，已有授权、已有拒绝、首次弹窗允许和首次弹窗拒绝四项通过。
 
 ## 8. 正版同图比较与最终提交
 
@@ -80,4 +80,4 @@
 
 人工决定：使用者完成官方应用登录和协议确认，授权 ADB 操作；浏览器任务空间消失后优先完成 Android。TRAE 使用记录归档在 [TRAE 使用记录](trae-record.md)，本人仅需补充作者信息和本人验收数据。
 
-产物：[同图统计](../reports/reference-comparison-2026-11-08.md)、[正版原始证据](../reports/evidence/reference-2026-11-08/README.md)、[最新验证](../reports/verification-2026-11-08.md)与最终提交包。
+产物：[同图统计](../reports/reference-comparison.md)、[正版原始证据](../reports/evidence/reference-android/README.md)、[最新验证](../reports/verification-reference.md)与最终提交包。

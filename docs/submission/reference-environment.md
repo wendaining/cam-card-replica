@@ -18,9 +18,9 @@
 | 教师指定参考版本 | 未提供 |
 | 教师指定测试集 | 未提供；使用项目固定合成语料 v2 |
 | 统一输入 | 50 张名片、76 张图片；原始文件和设备文件 SHA-256 一致 |
-| 本项目识别运行 | docs/reports/evidence/ocr-2026-11-07/run.json |
-| 比较元数据 | docs/reports/evidence/reference-2026-11-08/comparison-run.json |
+| 本项目识别运行 | docs/reports/evidence/ocr-measurement/run.json |
+| 比较元数据 | docs/reports/evidence/reference-android/comparison-run.json |
 | 官网范围 | 登录后验证录入、详情、编辑、搜索、分组、备注及重新加载 |
 | iOS 正版 | Mac App Store 获取未完成，记录 Anisette -45061；未验证 |
 
-[安装与操作记录](../reports/reference-validation-2026-11-08.md)保存版本、安装包哈希和流程；[原始证据](../reports/evidence/reference-2026-11-08/README.md)保存逐图截图、XML 和字段。最终工程提交标识记录在压缩包 SUBMISSION.json 中。
+[安装与操作记录](../reports/reference-validation.md)保存版本、安装包哈希和流程；[原始证据](../reports/evidence/reference-android/README.md)保存逐图截图、XML 和字段。最终工程提交标识记录在压缩包 SUBMISSION.json 中。

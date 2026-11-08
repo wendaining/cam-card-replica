@@ -20,7 +20,7 @@
 | 实际摄像头 | 模拟器内置彩色图源；Mac 摄像头保持未连接 |
 | 输入语料 | 原有 50 张合成名片、76 张图片 |
 
-安装、设备、输入与签名证据见 [原始附件](evidence/reference-2026-11-08/)。系统 MediaStore 中的输入图片与仓库逐项核对 SHA-256，76 个原始文件的字节一致。
+安装、设备、输入与签名证据见 [原始附件](evidence/reference-android/)。系统 MediaStore 中的输入图片与仓库逐项核对 SHA-256，76 个原始文件的字节一致。
 
 Mac App Store 显示官方 iPad 应用支持 Apple 芯片 Mac；本机获取流程未完成，日志记录 Anisette 认证错误 -45061。实际同图测量采用表格列明的 Android 安装版本。
 
@@ -77,11 +77,11 @@ iOS 正版界面、真实摄像头拍摄质量和付费功能保留未验证状�
 
 ## 最终采集与复查
 
-全部 76 张首次记录和取消保存标记完整。进程在 58 张后退出，随后恢复；70 张后模拟器进程退出，ADB 在准备 bi-16.png 时失败。恢复同一 AVD 后，登录、720×1824 显示配置与空名片夹保留，再继续剩余 6 张。过程见 [采集日志](evidence/reference-2026-11-08/collection.log)。
+全部 76 张首次记录和取消保存标记完整。进程在 58 张后退出，随后恢复；70 张后模拟器进程退出，ADB 在准备 bi-16.png 时失败。恢复同一 AVD 后，登录、720×1824 显示配置与空名片夹保留，再继续剩余 6 张。过程见 [采集日志](evidence/reference-android/collection.log)。
 
-zh-03.png 与 zh-09-photo-occluded.jpg 的首次结果为空，独立复查仍为空，见 [复查摘要](evidence/reference-2026-11-08/empty-recheck-summary.json)。首次记录继续计入统计。最终名片夹为 0 条联系人，见 [截图](evidence/reference-2026-11-08/empty-reference-library-final.png)与 [检查记录](evidence/reference-2026-11-08/final-library-check.json)。
+zh-03.png 与 zh-09-photo-occluded.jpg 的首次结果为空，独立复查仍为空，见 [复查摘要](evidence/reference-android/empty-recheck-summary.json)。首次记录继续计入统计。最终名片夹为 0 条联系人，见 [截图](evidence/reference-android/empty-reference-library-final.png)与 [检查记录](evidence/reference-android/final-library-check.json)。
 
-核对表单发现读取工具曾将 Nickname 控件并入地址。真实 XML 回归测试先失败，修正区段与地址控件规则后通过；从原始 XML 重算 25 张记录，保留旧解释，见 [重算记录](evidence/reference-2026-11-08/interpretation-replay.json)。原始 XML、截图与输入图片保持原有内容。最终统计采用修正后的读取结果。
+核对表单发现读取工具曾将 Nickname 控件并入地址。真实 XML 回归测试先失败，修正区段与地址控件规则后通过；从原始 XML 重算 25 张记录，保留旧解释，见 [重算记录](evidence/reference-android/interpretation-replay.json)。原始 XML、截图与输入图片保持原有内容。最终统计采用修正后的读取结果。
 
 部分照片变体在正版确认页预览中呈蓝紫色，设备原图哈希仍一致；内部图像处理及颜色变化原因未验证。该次实际输出继续计分。安装、管理与完整表单附件已检查，联系方式来自合成输入或实际 OCR 错字，附件未包含账号登录资料。
 

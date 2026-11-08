@@ -18,7 +18,7 @@ swiftc -parse-as-library Sources/Models/*.swift Sources/Persistence/*.swift \
   Sources/App/AppServices.swift Sources/Support/DemoData.swift \
   Sources/Support/FixtureProvider.swift Sources/Support/UITestConfiguration.swift \
   Sources/Features/Scanner/ScanFlowModel.swift \
-  docs/reports/review-evidence-2026-10-28/Probe.swift -o /tmp/camcard-review-probe
+  docs/reports/review-evidence/Probe.swift -o /tmp/camcard-review-probe
 /tmp/camcard-review-probe
 ```
 

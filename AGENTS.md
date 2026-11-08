@@ -129,13 +129,13 @@ make testdata      # 重新生成 TestData（会改变语料，非必要不要�
 - [x] 全部界面骨架（列表/扫描/裁剪/确认/详情）
 - [x] `make build` 通过（Xcode 27.2 / iOS 27.0 模拟器 `iPhone 18 Pro`）
 - [x] 2026-10-28 的 UI 套件在 iPad Pro 11-inch (M5) 上全绿；本轮新增用例的验证范围见最新报告
-- [x] 109 个单元/集成测试方法、27 个 UI 方法（截图、FauxCam 与系统权限专项默认跳过）；最新验证见 docs/reports/verification-2026-11-08.md
+- [x] 109 个单元/集成测试方法、27 个 UI 方法（截图、FauxCam 与系统权限专项默认跳过）；最新验证见 docs/reports/verification-reference.md
 - [x] 语料准确率与 Vision 全链路结果已写入 `docs/reports/ocr-accuracy.md`
-- [x] FauxCam 1.1.0 正常快门、预览、重拍、识别与保存专项通过，见 docs/reports/fauxcam-validation-2026-11-07.md
+- [x] FauxCam 1.1.0 正常快门、预览、重拍、识别与保存专项通过，见 docs/reports/fauxcam-validation.md
 - [x] T05 真实系统 PhotosPicker 选取/取消手动验证并留图（2026-10-28）
 - [x] 模拟器原生系统相机权限四项验证通过；使用者没有 iPhone，实拍质量保留未验证
 - [x] 正版 Android CamCard 8.25.0.20260129 Basic 的 76 张同图比较及网页管理观察完成；物理拍摄、iOS 正版及会员导出未验证；T18 模拟器回归和 T19 VCF 回读已有证据
-- [x] 官网与官方 Android 实际观察、六个维度差异及逐图原始证据已归档；最新记录见 docs/reports/reference-validation-2026-11-08.md
+- [x] 官网与官方 Android 实际观察、六个维度差异及逐图原始证据已归档；最新记录见 docs/reports/reference-validation.md
 - [x] 演示稿 `docs/reports/demo-script.md`（约 110 秒主线 + 答辩问答）
 - [x] 作业条款逐条核对 `docs/spec/conformance-audit.md`（本地修复和外部未验项分开记录）
 - [x] 最终报告、逐图 OCR 原始证据与提交目录已整理；本人最终填写保留模板

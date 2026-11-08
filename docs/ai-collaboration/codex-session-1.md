@@ -8,7 +8,7 @@
 
 使用者确认没有其他教师要求，使用课程 PDF 作为依据。Codex 重新生成工程并运行检查。Xcode 已升级到 27.2，首次构建遇到 CoreSimulator 组件版本不匹配；组件更新后重新执行成功。本轮初次完整检查包含 108 个方法，完整 UI 包含 24 个功能方法及 1 个默认跳过的截图方法。
 
-产物：[提交核实记录](../reports/submission-audit-2026-11-07.md)。
+产物：[提交核实记录](../reports/submission-audit.md)。
 
 ## 提交材料与 OCR 证据
 
@@ -18,7 +18,7 @@
 
 Codex 在 ImageCorpusTests 增加证据往返编码测试。旧实现运行 1 个测试方法并出现 6 项断言失败：OCR 原文、逐行记录、解析依据、置信度、原图哈希和识别输入文件名均未保留。随后为每个图片记录增加 OCRResult、ParsedCard、检测四角、图片哈希和实际识别输入 PNG 附件。新增测试通过。
 
-Python 导出检查覆盖失败运行、缺失 OCR、图片哈希变化、字段比较与初始解析不一致以及重复源文件。新增检查在实现前出现 5 项错误；补充导出逻辑后全部通过。完整验证、评测和附件哈希检查记录在 [验证报告](../reports/verification-2026-11-07.md)。
+Python 导出检查覆盖失败运行、缺失 OCR、图片哈希变化、字段比较与初始解析不一致以及重复源文件。新增检查在实现前出现 5 项错误；补充导出逻辑后全部通过。完整验证、评测和附件哈希检查记录在 [验证报告](../reports/verification-local.md)。
 
 ## 人工判断与证据范围
 
@@ -30,8 +30,8 @@ Python 导出检查覆盖失败运行、缺失 OCR、图片哈希变化、字段
 
 | 过程 | 证据 |
 |---|---|
-| OCR 证据修改前失败与修改后通过 | [测试摘要](../reports/evidence/validation-2026-11-07/verification.txt) |
-| 实际原始输出与图片 | [OCR 索引](../reports/evidence/ocr-2026-11-07/README.md) |
+| OCR 证据修改前失败与修改后通过 | [测试摘要](../reports/evidence/validation-local/verification.txt) |
+| 实际原始输出与图片 | [OCR 索引](../reports/evidence/ocr-measurement/README.md) |
 | 当前规格与测试对应 | [验收矩阵](../spec/acceptance.md) |
 | 本人操作与最终结果填写 | [操作清单](../submission/user-actions.md)、[填写模板](../submission/final-signoff.md) |
 

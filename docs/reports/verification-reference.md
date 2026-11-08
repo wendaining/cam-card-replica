@@ -17,11 +17,11 @@ macOS 27.0.1、Xcode 27.2、iOS SDK 27.2、iPhone 18 Pro 模拟器 / iOS 27.0；
 
 make test-tooling 首次使用系统 Python，因缺少 Pillow 退出，未执行测试；随后按既有复现命令运行 3 项检查并通过。make verify 的 Vision 运行仍有 CVPixelBufferCreate -6680 诊断输出，测试成功且全部图片产生输出，相关识别错误照常计入既有统计。
 
-永久摘要保存于 [本轮附件](evidence/validation-2026-11-08/README.md)。完整 Xcode 日志与结果包保留在本地 TestResults 和 build/Logs/Test。
+永久摘要保存于 [本轮附件](evidence/validation-reference/README.md)。完整 Xcode 日志与结果包保留在本地 TestResults 和 build/Logs/Test。
 
 ## 采集完整性与比较
 
-正式同图条件、版本、逐图选择、完整表单与实际字段见 [正版验证](reference-validation-2026-11-08.md)和 [原始证据](evidence/reference-2026-11-08/README.md)。比较工具核对 76 张固定原图、输入哈希、语言与模式、取消保存标记、截图尺寸及 XML 重算字段；打包工具再次核对原始证据、运行元数据、字段统计和工具源码哈希。
+正式同图条件、版本、逐图选择、完整表单与实际字段见 [正版验证](reference-validation.md)和 [原始证据](evidence/reference-android/README.md)。比较工具核对 76 张固定原图、输入哈希、语言与模式、取消保存标记、截图尺寸及 XML 重算字段；打包工具再次核对原始证据、运行元数据、字段统计和工具源码哈希。
 
 后台进程在完成 58 张后退出，日志没有报错。旧进程结束后取消未完成的 bi-08-occluded.png 表单，再从缺失条目继续，保留已有完整记录。全部首次结果计入统计；空结果复查单独归档。
 
@@ -31,7 +31,7 @@ Nickname 地址归类回归先出现一项断言失败，修正读取规则后�
 
 ## 验证范围
 
-本次 make verify 执行单元和集成测试；UI、系统相机授权、FauxCam 与 iPad 使用带日期的历史证据，详见 [2026-11-07 记录](verification-2026-11-07.md)。本轮没有再次执行完整 UI 或真实设备拍摄。
+本次 make verify 执行单元和集成测试；UI、系统相机授权、FauxCam 与 iPad 使用带日期的历史证据，详见 [2026-11-07 记录](verification-local.md)。本轮没有再次执行完整 UI 或真实设备拍摄。
 
 正版 Android 的导入、保存、取消和测试记录软删除，以及官网录入、详情、编辑、搜索、分组、备注与重新加载分别注明平台。iOS 正版、真实拍摄质量、正版网络与存储异常的完整注入、CamCard 会员导出文件未验证。T18 使用本项目模拟器终止与重新启动证据，T19 使用本项目 VCF 全字段反序列化证据。
 

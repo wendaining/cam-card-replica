@@ -42,7 +42,7 @@
 
 修改记录里比较有代表性的有三处。R18 处理邮箱和网址中的组织词：`contact01@example.com` 里的 `example` 带着机构词的样子，早期规则会把域名片段当成公司名，后来在识别组织字段时屏蔽已经提取出的邮箱和网址区间，同时保留公司名后面直接跟法律后缀的写法。R23 处理相册加载顺序，提交 b232f04 把图片加载也纳入操作标识检查，状态规则和识别任务保持一致。R24 处理读取失败，提交 b9b243b 区分「文件不存在」和「文件存在但读不出来」，读取失败时首页显示原因和重试入口，恢复之前不允许扫描。这三处都是先看到具体反例，再补回归测试，最后改规则；只堵住反例而把合法输入一起屏蔽的改法在评审里被否掉了。
 
-识别证据的结构也是从一次失败里补出来的。最初的快照只保存最终字段，旧记录经过一次编解码就丢掉了 OCR 原文、逐行结果、解析依据、置信度和图片标识，六个断言同时失败。补上 `RecognitionSnapshot` 和对应的图片附件之后，同一个测试通过，完整评测的结果也保持一致。详细摘要见 `docs/reports/verification-2026-11-07.md`。
+识别证据的结构也是从一次失败里补出来的。最初的快照只保存最终字段，旧记录经过一次编解码就丢掉了 OCR 原文、逐行结果、解析依据、置信度和图片标识，六个断言同时失败。补上 `RecognitionSnapshot` 和对应的图片附件之后，同一个测试通过，完整评测的结果也保持一致。详细摘要见 `docs/reports/verification-local.md`。
 
 ## 5 模块职责与协议设计
 
@@ -138,7 +138,7 @@ T18 使用独立的 UUID 文件库运行：保存一张带修改、标签、备�
 
 FauxCam 1.1.0 从官方发布页下载，应用和对应命令行工具都核对了发布文件的 SHA-256。应用安装在用户的 Applications 目录，命令行工具放在用户目录的 `.local/bin`，工具本体和动态库留在本机，仓库只保存测试代码、复现命令、截图和日志。测试用 `TestData/cards/en-01.png` 作为输入，经本地帧服务进入模拟器，设置独立内存库，检查快门、照片预览、重拍、再次拍摄、裁剪、Vision 识别、姓名字段、OCR 原文和保存结果。整条专项在 18.967 秒内跑完。
 
-专项运行和截图在 `docs/reports/fauxcam-validation-2026-11-07.md`，证据目录是 `docs/reports/evidence/fauxcam-2026-11-07`。这个工具自己提供视频授权状态，系统权限由另一组模拟器专项验证。真实拍照的光照、反光和焦距条件保留未验证状态。
+专项运行和截图在 `docs/reports/fauxcam-validation.md`，证据目录是 `docs/reports/evidence/fauxcam`。这个工具自己提供视频授权状态，系统权限由另一组模拟器专项验证。真实拍照的光照、反光和焦距条件保留未验证状态。
 
 ## 9 名片边界、坐标与透视处理
 
@@ -180,7 +180,7 @@ Vision 的逐行置信度随候选文字保存。`ParsedValue` 的置信度来�
 
 批量测试对每张图片记录源文件哈希、处理后的图片文件名、处理图哈希、检测四角、处理方式、OCR 结果、初始解析结果和字段比较。实际识别输入编码成 PNG，作为 XCTest 的永久附件保存，这样换了机器或者换了 Vision 版本之后仍然能复查当时到底看到了什么。
 
-导出工具从同一个 xcresult 里读取图片附件，按 SHA-256 匹配记录，校验源图与 GT，再导出原文、初始字段、图片和统计。`docs/reports/evidence/ocr-2026-11-07/run.json` 保存日期、设备、结果包、识别配置、GT 哈希和测量时 Swift 源文件的哈希。具体文件说明在 `docs/reports/evidence/ocr-2026-11-07/README.md`。
+导出工具从同一个 xcresult 里读取图片附件，按 SHA-256 匹配记录，校验源图与 GT，再导出原文、初始字段、图片和统计。`docs/reports/evidence/ocr-measurement/run.json` 保存日期、设备、结果包、识别配置、GT 哈希和测量时 Swift 源文件的哈希。具体文件说明在 `docs/reports/evidence/ocr-measurement/README.md`。
 
 ## 11 字段解析规则与证据评分
 
@@ -419,7 +419,7 @@ FauxCam 方法通过配置显式启用，默认测试不加载外部工具；截
 | en | 20/21 | 20/21 | 20/21 | 16/21 | 21/21 | 13/21 |
 | bilingual | 28/29 | 26/29 | 24/29 | 18/29 | 28/29 | 15/29 |
 
-全部字体、版式、电话标签、语言和图片种类的统计在 `docs/reports/evidence/ocr-2026-11-07/metrics.csv`。合成图像的分布是固定的，正版 Android 对相同输入的结果在下一节，真实拍摄质量没有验证。
+全部字体、版式、电话标签、语言和图片种类的统计在 `docs/reports/evidence/ocr-measurement/metrics.csv`。合成图像的分布是固定的，正版 Android 对相同输入的结果在下一节，真实拍摄质量没有验证。
 
 ### 17.5 正版 Android 的 76 张同图结果
 
@@ -434,11 +434,11 @@ FauxCam 方法通过配置显式启用，默认测试不加载外部工具；截
 
 严格统计忽略大小写和首尾空白；内容统计额外统一电话格式、网站协议与根路径末尾斜线，并按地址组件语义排列之后去掉空白和逗号。原始电话、邮箱、全部组织字段和地址组件保持保留。错误字符、重复值和空结果都参与计分。两种统计同时展示，格式表示对数字的影响可以直接看出来。
 
-完整同图报告在 `docs/reports/reference-comparison-2026-11-08.md`，里面有十类字段、语言、图片种类、整张正确与空结果的统计；逐图证据在 `docs/reports/evidence/reference-2026-11-08`，保存每张选择图片、完整表单截图、XML 和实际字段。比较工具重新读取原始 XML，并核对记录、输入、哈希和统计。正版可能把双语姓名拆到 Name 和 Nickname 两个控件，姓名按 Name 计分，Nickname 单独保留；组织信息也可能拆成多组。这些字段表示差异会影响完全匹配。这份准确率限定在合成集合、Basic 模式和实际版本上，`collectionSeconds` 包含导入、等待、滚动和截图，不能直接当作 OCR 算法耗时。
+完整同图报告在 `docs/reports/reference-comparison.md`，里面有十类字段、语言、图片种类、整张正确与空结果的统计；逐图证据在 `docs/reports/evidence/reference-android`，保存每张选择图片、完整表单截图、XML 和实际字段。比较工具重新读取原始 XML，并核对记录、输入、哈希和统计。正版可能把双语姓名拆到 Name 和 Nickname 两个控件，姓名按 Name 计分，Nickname 单独保留；组织信息也可能拆成多组。这些字段表示差异会影响完全匹配。这份准确率限定在合成集合、Basic 模式和实际版本上，`collectionSeconds` 包含导入、等待、滚动和截图，不能直接当作 OCR 算法耗时。
 
 ## 18 错误案例与定位依据
 
-这些案例都来自同一次测量，使用的是同一份 GT、同一张实际识别输入、同一份 OCR 原文和初始字段。如果原文里已经出现字符差异，问题可以定位到识别结果；如果原文里有期望文字、字段结果仍然为空或者分类错误，就继续检查提取规则和 evidence。逐图原始记录在 `docs/reports/evidence/ocr-2026-11-07`，每个案例只列最直接的证据。
+这些案例都来自同一次测量，使用的是同一份 GT、同一张实际识别输入、同一份 OCR 原文和初始字段。如果原文里已经出现字符差异，问题可以定位到识别结果；如果原文里有期望文字、字段结果仍然为空或者分类错误，就继续检查提取规则和 evidence。逐图原始记录在 `docs/reports/evidence/ocr-measurement`，每个案例只列最直接的证据。
 
 ### 18.1 邮箱里的数字与近形字符：zh-01.png
 
@@ -459,7 +459,7 @@ Web: www.example0l.com
 Add：上海市杨浦区四平路1239号 200092
 ```
 
-原文里的邮箱写成 `contactol`，GT 是 `contact01`，差的是 `o`/`0`、`l`/`1` 一类的近形字符；同一张图上的网站也把 `01` 写成了 `0l`。邮箱正则接受这个字符串，规则没有别的手段知道它应该是数字。用户核对时需要把 `contactol` 改回 `contact01`，网站也要跟着改。这条案例对应的识别输入是 `docs/reports/evidence/ocr-2026-11-07/images/processed-zh-01.png`，初始解析依据是 `docs/reports/evidence/ocr-2026-11-07/parsed/zh-01.png.json`。
+原文里的邮箱写成 `contactol`，GT 是 `contact01`，差的是 `o`/`0`、`l`/`1` 一类的近形字符；同一张图上的网站也把 `01` 写成了 `0l`。邮箱正则接受这个字符串，规则没有别的手段知道它应该是数字。用户核对时需要把 `contactol` 改回 `contact01`，网站也要跟着改。这条案例对应的识别输入是 `docs/reports/evidence/ocr-measurement/images/processed-zh-01.png`，初始解析依据是 `docs/reports/evidence/ocr-measurement/parsed/zh-01.png.json`。
 
 ### 18.2 公司名称中的字符变化：en-01.png
 
@@ -478,7 +478,7 @@ Web:www.abc.example
 Add: 500 Market Street, Suite 900, San Francisco, CA 94105
 ```
 
-原文里的公司名是 `Technologles`，GT 是 `Technologies`，差一个近形字母，公司规则仍然把这一行识别成公司，但值不对。手机、邮箱和地址在这个案例里是对的，错误只落在公司字段。逐图证据在 `docs/reports/evidence/ocr-2026-11-07/parsed/en-01.png.json`。
+原文里的公司名是 `Technologles`，GT 是 `Technologies`，差一个近形字母，公司规则仍然把这一行识别成公司，但值不对。手机、邮箱和地址在这个案例里是对的，错误只落在公司字段。逐图证据在 `docs/reports/evidence/ocr-measurement/parsed/en-01.png.json`。
 
 ### 18.3 照片变体中的姓名字符：en-03-photo.jpg
 
@@ -500,7 +500,7 @@ Add：
 EN
 ```
 
-这张是照片变体，带有透视、桌面背景和阴影。姓名原文是 `Michae1 o'Brian`，GT 是 `Michael O'Brian`，差的是 `1`/`l` 一类的近形字符；原文里还有 `G1obal`、`Te1`、`Emai1` 等同类差异。姓名候选选对了行，值仍然是错的。邮箱值在原文里完整，只是标签被读错，所以字段结果正确。证据在 `docs/reports/evidence/ocr-2026-11-07/images/processed-en-03-photo.png` 和 `docs/reports/evidence/ocr-2026-11-07/parsed/en-03-photo.jpg.json`。
+这张是照片变体，带有透视、桌面背景和阴影。姓名原文是 `Michae1 o'Brian`，GT 是 `Michael O'Brian`，差的是 `1`/`l` 一类的近形字符；原文里还有 `G1obal`、`Te1`、`Emai1` 等同类差异。姓名候选选对了行，值仍然是错的。邮箱值在原文里完整，只是标签被读错，所以字段结果正确。证据在 `docs/reports/evidence/ocr-measurement/images/processed-en-03-photo.png` 和 `docs/reports/evidence/ocr-measurement/parsed/en-03-photo.jpg.json`。
 
 ### 18.4 无标签传真分类：zh-06.png
 
@@ -598,7 +598,7 @@ BILINGUAL
 
 ### 18.9 正版照片预览与读取工具修正
 
-`TestData/cards/en-08-photo.jpg` 的本地原图是深色名片配浅色桌面，正版确认页的预览呈蓝紫色。设备原图与仓库文件的 SHA-256 一致，预览颜色变化的内部原因没有验证，这次输出继续计入统计。正版确认页在 `docs/reports/evidence/reference-2026-11-08/android-ocr/en-08-photo.jpg/page-1.png`。
+`TestData/cards/en-08-photo.jpg` 的本地原图是深色名片配浅色桌面，正版确认页的预览呈蓝紫色。设备原图与仓库文件的 SHA-256 一致，预览颜色变化的内部原因没有验证，这次输出继续计入统计。正版确认页在 `docs/reports/evidence/reference-android/android-ocr/en-08-photo.jpg/page-1.png`。
 
 核对完整表单时发现读取工具把 Nickname 控件并进了地址。补上真实 XML 回归测试之后，先出现一项断言失败；修正区段与地址控件的读取规则后，8 项界面测试通过，并从原始 XML 重算 25 张记录。原始截图和 XML 保持原内容，旧解释和修正记录分别保留。最终统计采用修正后的字段读取，两个空结果复查之后仍然为空，采集结束时名片夹里是 0 条联系人。
 
@@ -632,7 +632,7 @@ TRAE 前后开了大约七轮对话，每轮只做一个模块，提示词里写
 
 TRAE 的输出经过构建、测试和人工改写之后才进入提交。每轮结束之后，我在模拟器里跑一遍构建和测试，检查边界条件，再决定接受、改写还是退回。测试断言和失败路径大多是我后来补的，UI 测试里的等待、取消和重启也经过手工调整。完整的轮次、任务和提示词记录在 `docs/ai-collaboration/trae-record.md`。
 
-Codex 在 10 月下旬接手审查和证据工作：对照课程 PDF 核实提交缺口，修改并补测识别快照，整理 76 条 OCR 原始证据，处理 FauxCam 和模拟器系统权限，完成官方 Android 的同图比较，最后整理文档和提交包。这些工作的过程记录在 `docs/ai-collaboration/codex-2026-11-07.md` 和 `docs/ai-collaboration/codex-2026-11-08.md`，按任务整理的提示词在 `docs/ai-collaboration/development-prompts.md`。工具归属按实际对话和提交记录填写，代码变化、测试结果和证据通过任务编号关联。
+Codex 在 10 月下旬接手审查和证据工作：对照课程 PDF 核实提交缺口，修改并补测识别快照，整理 76 条 OCR 原始证据，处理 FauxCam 和模拟器系统权限，完成官方 Android 的同图比较，最后整理文档和提交包。这些工作的过程记录在 `docs/ai-collaboration/codex-session-1.md` 和 `docs/ai-collaboration/codex-session-2.md`，按任务整理的提示词在 `docs/ai-collaboration/development-prompts.md`。工具归属按实际对话和提交记录填写，代码变化、测试结果和证据通过任务编号关联。
 
 任务约束一直是同几条：保持现有架构和服务接口，不引入第三方依赖，固定语料和 GT，新增证据必须来自真实运行，修改之后跑完整回归。Python 检查对缺失原文、失败运行、图片变化、重复输入和比较不一致设置了拒绝条件，证据文件不全时导出直接失败。
 
@@ -650,7 +650,7 @@ OCR 原文可能出现近形字符、标签重复、漏字和空白变化。规�
 
 最终报告就是这份文件。产品规格和数据模型在 `docs/spec`，架构说明与 ADR 在 `docs/architecture`，接口说明在 `docs/api`。源码在 `Sources`，单元和集成测试在 `Tests`，UI 测试在 `UITests`，工程定义是 `project.yml`。固定语料在 `TestData`，生成脚本在 `Scripts`。
 
-原始证据按任务分目录：OCR 原文、初始字段、识别输入和哈希在 `docs/reports/evidence/ocr-2026-11-07`；正版同图的 76 张确认页、实际字段、逐图比较和哈希在 `docs/reports/evidence/reference-2026-11-08`；系统权限的四项结果、系统弹窗、API 探测和哈希在 `docs/reports/evidence/permissions-2026-11-07`；FauxCam 的截图、条件和测试摘要在 `docs/reports/evidence/fauxcam-2026-11-07`。AI 协作记录在 `docs/ai-collaboration`，作者填写材料在 `docs/submission`。
+原始证据按任务分目录：OCR 原文、初始字段、识别输入和哈希在 `docs/reports/evidence/ocr-measurement`；正版同图的 76 张确认页、实际字段、逐图比较和哈希在 `docs/reports/evidence/reference-android`；系统权限的四项结果、系统弹窗、API 探测和哈希在 `docs/reports/evidence/permissions`；FauxCam 的截图、条件和测试摘要在 `docs/reports/evidence/fauxcam`。AI 协作记录在 `docs/ai-collaboration`，作者填写材料在 `docs/submission`。
 
 ### 20.2 构建与测试
 
@@ -662,7 +662,7 @@ make test-evidence test-reference-evidence
 make audit
 ```
 
-系统权限专项用 `make test-camera-permissions`，常规 UI 用 `make test-ui`，FauxCam 专项的配置、工具路径和命令在 `docs/reports/fauxcam-validation-2026-11-07.md`。导出报告需要明确填写实际日期、设备和结果包，完整示例在 `docs/reports/verification-2026-11-07.md`。
+系统权限专项用 `make test-camera-permissions`，常规 UI 用 `make test-ui`，FauxCam 专项的配置、工具路径和命令在 `docs/reports/fauxcam-validation.md`。导出报告需要明确填写实际日期、设备和结果包，完整示例在 `docs/reports/verification-local.md`。
 
 提交包通过 `make package` 生成，包含 Markdown、图片、原始证据、可执行检查脚本、MANIFEST.sha256 和 SUBMISSION.json。打包检查源文件哈希、证据哈希、ZIP CRC 和归档内容，作者填写真实数据之后需要更新正文和压缩包。
 
@@ -676,11 +676,11 @@ make audit
 
 正版 Android 的确认页：
 
-![正版 Android 的确认页面](evidence/reference-2026-11-08/android-ocr/en-01.png/page-1.png)
+![正版 Android 的确认页面](evidence/reference-android/android-ocr/en-01.png/page-1.png)
 
 模拟器原生相机授权弹窗：
 
-![模拟器原生相机授权弹窗](evidence/permissions-2026-11-07/prompt-prompt-allow.png)
+![模拟器原生相机授权弹窗](evidence/permissions/prompt-prompt-allow.png)
 
 名片夹：
 
@@ -688,11 +688,11 @@ make audit
 
 FauxCam 拍摄之后的照片预览：
 
-![FauxCam 拍摄后的照片预览](evidence/fauxcam-2026-11-07/02-preview.png)
+![FauxCam 拍摄后的照片预览](evidence/fauxcam/02-preview.png)
 
 FauxCam 实际识别结果：
 
-![FauxCam 实际识别结果](evidence/fauxcam-2026-11-07/04-review.png)
+![FauxCam 实际识别结果](evidence/fauxcam/04-review.png)
 
 名片详情：
 
@@ -700,4 +700,4 @@ FauxCam 实际识别结果：
 
 ### 20.5 资料定位
 
-课程用例来源在 `docs/testing/reference-test-suite.md`；官方资料日期与链接在 `docs/reports/difference-analysis.md`；逐图字段比较在 `docs/reports/image-accuracy-latest.md` 和同名 JSON；识别输出在 `docs/reports/evidence/ocr-2026-11-07`；具体命令和运行摘要在 `docs/reports/verification-2026-11-07.md` 与 `docs/reports/verification-2026-11-08.md`；正版同图统计在 `docs/reports/reference-comparison-2026-11-08.md`。原文和原始字段在证据目录里，报告中的表格都可以回到这些文件核对。
+课程用例来源在 `docs/testing/reference-test-suite.md`；官方资料日期与链接在 `docs/reports/difference-analysis.md`；逐图字段比较在 `docs/reports/image-accuracy-latest.md` 和同名 JSON；识别输出在 `docs/reports/evidence/ocr-measurement`；具体命令和运行摘要在 `docs/reports/verification-local.md` 与 `docs/reports/verification-reference.md`；正版同图统计在 `docs/reports/reference-comparison.md`。原文和原始字段在证据目录里，报告中的表格都可以回到这些文件核对。

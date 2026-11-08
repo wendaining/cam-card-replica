@@ -94,7 +94,7 @@ def write_reference_csv(rows):
     for row in existing:
         data=lookup[row['file']]['reference']
         for field in FIELDS:row['reference_'+field]=json.dumps(data['fields'][field],ensure_ascii=False)
-        row.update(reference_status='已测量：Android Basic 初始字段',observed_at=data['observedAt'],evidence_path='docs/reports/evidence/reference-2026-11-08/android-ocr/'+row['file']+'/record.json',notes='英语与简体中文；完整字段集合；地址原始组件另行保留；确认后取消保存。')
+        row.update(reference_status='已测量：Android Basic 初始字段',observed_at=data['observedAt'],evidence_path='docs/reports/evidence/reference-android/android-ocr/'+row['file']+'/record.json',notes='英语与简体中文；完整字段集合；地址原始组件另行保留；确认后取消保存。')
     with path.open('w',encoding='utf-8-sig',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=headers,lineterminator='\n');writer.writeheader();writer.writerows(existing)
 
@@ -115,7 +115,7 @@ def validate_submission_reference(evidence,cards,vision):
     rows=json.loads((evidence/'comparisons.json').read_text());lookup={r['file']:r for r in rows};require_complete(lookup,truth)
     if len(rows)!=len(truth) or metadata.get('inputCount')!=len(truth):raise ValueError('Reference measured count mismatch')
     if metadata.get('groundTruthSHA256')!=digest(ROOT/'TestData/ground-truth/ground_truth.json'):raise ValueError('Reference Ground Truth changed')
-    if metadata.get('visionRunSHA256')!=digest(ROOT/'docs/reports/evidence/ocr-2026-11-07/run.json'):raise ValueError('Vision run metadata changed')
+    if metadata.get('visionRunSHA256')!=digest(ROOT/'docs/reports/evidence/ocr-measurement/run.json'):raise ValueError('Vision run metadata changed')
     for relative,expected in metadata['replaySourceFilesSHA256'].items():
         if digest(ROOT/relative)!=expected:raise ValueError('Reference replay source changed: '+relative)
     for file,card in truth.items():
@@ -135,7 +135,7 @@ def validate_submission_reference(evidence,cards,vision):
 def render(rows,output,metadata,evidence):
     lines=['# 正版 CamCard 与本项目同图测量','',f"测量日期：2026-11-08。统一输入为 {len(rows)} 张图片，来源于 50 张合成名片及其照片、遮挡变体。",'',
            '参考应用为官方 Android CamCard 8.25.0.20260129，Basic 模式，英语与简体中文同时启用。本项目结果来自 2026-11-07 的实际 Vision 全链路记录。', '',
-           '[环境与操作记录](reference-validation-2026-11-08.md)；[正版原始证据](evidence/reference-2026-11-08/README.md)；[本项目原始证据](evidence/ocr-2026-11-07/README.md)。','',
+           '[环境与操作记录](reference-validation.md)；[正版原始证据](evidence/reference-android/README.md)；[本项目原始证据](evidence/ocr-measurement/README.md)。','',
            '## 统计口径','',
            '每个字段比较完整值集合并保留重复次数。错值同时计入漏值与多值。已印字段统计排除 GT 中原本缺失的字段，缺失误填统计保留缺失字段的实际输出。','',
            '严格统计忽略大小写及首尾空白。地址字符串由正版确认页面的原始组件按界面顺序连接。','',
@@ -167,26 +167,26 @@ def render(rows,output,metadata,evidence):
         example=next((r for r in rows if not r['comparison']['content']['replica'][field]['correct'] or not r['comparison']['content']['reference'][field]['correct']),None)
         if example:
             def cell(value):return json.dumps(value,ensure_ascii=False).replace('|','\\|').replace('\n',' ')
-            file=example['file'];link='evidence/reference-2026-11-08/android-ocr/'+file+'/record.json'
+            file=example['file'];link='evidence/reference-android/android-ocr/'+file+'/record.json'
             lines.append(f"| [{file}]({link}) | {LABELS[field]} | {cell(example['expected'][field])} | {cell(example['replica']['fields'][field])} | {cell(example['reference']['fields'][field])} |")
-    lines += ['','## 附件与范围','','[逐图比较](evidence/reference-2026-11-08/comparisons.json)保存严格与内容统计的全部漏值、多值和一致状态；[参考 OCR 表](../submission/reference-ocr.csv)填写全部实际字段。','',
+    lines += ['','## 附件与范围','','[逐图比较](evidence/reference-android/comparisons.json)保存严格与内容统计的全部漏值、多值和一致状态；[参考 OCR 表](../submission/reference-ocr.csv)填写全部实际字段。','',
               '当前统计采用保存前的初始字段，采集过程中保持原始文字。collectionSeconds 包含导入、界面等待、滚动与截图。本人实际修改次数继续使用作者填写表。','',
               'Android Basic、iOS Vision 与规则解析各自按照其当前流程处理相同原图。iOS 正版、真实拍摄质量及 CamCard 会员导出文件未验证。']
     if (evidence/'interpretation-replay.json').is_file():
-        lines += ['','[字段读取重算](evidence/reference-2026-11-08/interpretation-replay.json)记录 Nickname 与地址分离的工具修正；原始 XML 与截图保留，最终统计使用修正后的解释。']
+        lines += ['','[字段读取重算](evidence/reference-android/interpretation-replay.json)记录 Nickname 与地址分离的工具修正；原始 XML 与截图保留，最终统计使用修正后的解释。']
     if (evidence/'empty-recheck-summary.json').is_file():
-        lines += ['','[空结果复查](evidence/reference-2026-11-08/empty-recheck-summary.json)单独保存重复输入的结果，首次结果继续计入统计；[最终名片夹](evidence/reference-2026-11-08/final-library-check.json)记录联系人数量。']
+        lines += ['','[空结果复查](evidence/reference-android/empty-recheck-summary.json)单独保存重复输入的结果，首次结果继续计入统计；[最终名片夹](evidence/reference-android/final-library-check.json)记录联系人数量。']
     output.write_text('\n'.join(lines)+'\n')
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--evidence-dir',type=Path,default=ROOT/'docs/reports/evidence/reference-2026-11-08')
-    parser.add_argument('--output',type=Path,default=ROOT/'docs/reports/reference-comparison-2026-11-08.md')
+    parser.add_argument('--evidence-dir',type=Path,default=ROOT/'docs/reports/evidence/reference-android')
+    parser.add_argument('--output',type=Path,default=ROOT/'docs/reports/reference-comparison.md')
     args=parser.parse_args();evidence=args.evidence_dir
     cards=json.loads((ROOT/'TestData/ground-truth/ground_truth.json').read_text())['cards'];truth={r['file']:r for r in cards}
     actual={p.parent.name:p for p in (evidence/'android-ocr').glob('*/record.json')}
     require_complete(actual,truth)
-    vision_dir=ROOT/'docs/reports/evidence/ocr-2026-11-07'
+    vision_dir=ROOT/'docs/reports/evidence/ocr-measurement'
     vision={r['file']:r for r in json.loads((vision_dir/'recognition-records.json').read_text())}
     if set(vision)!=set(truth):raise ValueError('Vision corpus mismatch')
     rows=[]
@@ -205,7 +205,7 @@ def main():
     write_reference_csv(rows)
     render(rows,args.output,metadata,evidence)
     lines=['# 正版 CamCard 原始证据','',f"观察日期：2026-11-08。官方 Android 版本 8.25.0.20260129，Basic 模式，英语与简体中文。独立采集 {len(rows)} 张固定输入。",'',
-           '[环境与流程](../../reference-validation-2026-11-08.md)；[同图统计](../../reference-comparison-2026-11-08.md)；[运行元数据](comparison-run.json)；[逐图比较](comparisons.json)。','',
+           '[环境与流程](../../reference-validation.md)；[同图统计](../../reference-comparison.md)；[运行元数据](comparison-run.json)；[逐图比较](comparisons.json)。','',
            '每条记录包含原始控件值、完整字段集合、地址组件、输入与设备文件哈希、单图选择截图，以及确认页面各滚动位置的截图和 XML。正式识别完成后使用 Retake 取消保存，当前名片夹保持为空。','',
            '| 原始输入 | 实际字段与依据 | 单图选择 | 确认页面首屏 |','|---|---|---|---|']
     for row in rows:

@@ -4,7 +4,7 @@
 
 ## zh-01.png
 
-[原始图片](../../TestData/cards/zh-01.png) · [实际识别输入](evidence/ocr-2026-11-07/images/processed-zh-01.png) · [初始解析](evidence/ocr-2026-11-07/parsed/zh-01.png.json)
+[原始图片](../../TestData/cards/zh-01.png) · [实际识别输入](evidence/ocr-measurement/images/processed-zh-01.png) · [初始解析](evidence/ocr-measurement/parsed/zh-01.png.json)
 
 原文中的邮箱已出现 contactol，初始解析保留了识别文字。字符差异可以定位到 OCR 阶段。
 
@@ -34,7 +34,7 @@ Add：上海市杨浦区四平路1239号 200092
 
 ## en-01.png
 
-[原始图片](../../TestData/cards/en-01.png) · [实际识别输入](evidence/ocr-2026-11-07/images/processed-en-01.png) · [初始解析](evidence/ocr-2026-11-07/parsed/en-01.png.json)
+[原始图片](../../TestData/cards/en-01.png) · [实际识别输入](evidence/ocr-measurement/images/processed-en-01.png) · [初始解析](evidence/ocr-measurement/parsed/en-01.png.json)
 
 原文中的公司名称已出现 Technologles，机构解析保留该字符串。
 
@@ -64,7 +64,7 @@ Add: 500 Market Street, Suite 900, San Francisco, CA 94105
 
 ## en-03-photo.jpg
 
-[原始图片](../../TestData/cards/en-03-photo.jpg) · [实际识别输入](evidence/ocr-2026-11-07/images/processed-en-03-photo.png) · [初始解析](evidence/ocr-2026-11-07/parsed/en-03-photo.jpg.json)
+[原始图片](../../TestData/cards/en-03-photo.jpg) · [实际识别输入](evidence/ocr-measurement/images/processed-en-03-photo.png) · [初始解析](evidence/ocr-measurement/parsed/en-03-photo.jpg.json)
 
 原文中的姓名包含数字 1，照片变体存在旋转与透视。实际文字仍需由用户核对。
 
@@ -99,7 +99,7 @@ EN
 
 ## zh-06.png
 
-[原始图片](../../TestData/cards/zh-06.png) · [实际识别输入](evidence/ocr-2026-11-07/images/processed-zh-06.png) · [初始解析](evidence/ocr-2026-11-07/parsed/zh-06.png.json)
+[原始图片](../../TestData/cards/zh-06.png) · [实际识别输入](evidence/ocr-measurement/images/processed-zh-06.png) · [初始解析](evidence/ocr-measurement/parsed/zh-06.png.json)
 
 OCR 原文没有电话类型标签，初始解析依据号码格式将该号码标为座机，GT 将其标为传真。
 
@@ -126,4 +126,4 @@ www.example06.com
 
 实际人工修改值、修改数量、操作者、日期及附件：待填写。
 
-[全部 OCR 证据](evidence/ocr-2026-11-07/README.md)与 [人工修改表](../submission/manual-corrections.csv)。
+[全部 OCR 证据](evidence/ocr-measurement/README.md)与 [人工修改表](../submission/manual-corrections.csv)。

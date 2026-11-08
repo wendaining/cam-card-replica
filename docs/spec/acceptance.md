@@ -85,28 +85,28 @@ T05 系统 PhotosPicker 已在模拟器手动完成选取/取消并留存截图�
 
 Xcode 27.2 / iPhone 18 Pro / iOS 27.0：重新生成工程后，make verify 通过（108 个单元/集成方法，0 个非预期失败）；完整 iPhone UI 的 24 个功能方法通过，另 1 个截图方法默认跳过。T18 再次验证真实进程重启后的修改、标签、备注和两张图片。76 张图片的逐图字段测量与已归档 JSON 完全一致。
 
-本次是现有实现回归和规格说明校正，不代表真机相机、系统权限、正版行为或同图识别对比已验收。最终交付缺口、文档核对和命令结果见 [提交前核实](../reports/submission-audit-2026-11-07.md)。
+本次是现有实现回归和规格说明校正，不代表真机相机、系统权限、正版行为或同图识别对比已验收。最终交付缺口、文档核对和命令结果见 [提交前核实](../reports/submission-audit.md)。
 
 ## 2026-11-07 OCR 原始证据归档
 
 规格 7.4.5–7.4.6 对应 ImageCorpusTests.testEvidenceRoundTripKeepsRawOCRAndInitialFields、完整图片评测和 Python 证据导出检查。当前 make verify 执行 109 个方法，0 个非预期失败；make bench 的 7 个评测方法通过。76 条记录保留原文、逐行坐标与置信度、初始解析、四角、原图哈希及实际识别输入 PNG。
 
-[原始证据](../reports/evidence/ocr-2026-11-07/README.md)、[完整验证](../reports/verification-2026-11-07.md)和 [本人填写模板](../submission/final-signoff.md)已关联。真机、正版观察和最终人工确认保留实际状态。
+[原始证据](../reports/evidence/ocr-measurement/README.md)、[完整验证](../reports/verification-local.md)和 [本人填写模板](../submission/final-signoff.md)已关联。真机、正版观察和最终人工确认保留实际状态。
 
 ## FauxCam 正常相机接口专项（2026-11-07）
 
 规格 7.2.7 对应 FauxCameraUITests.testT04_fauxCameraShutterRetakeRecognizeAndSave。FauxCam 1.1.0 提供 en-01.png 输入，关闭 fixture-camera，正常快门、预览、重拍、裁剪、Vision、原文与保存通过，18.967 秒。当前 UI 定义包含 27 个方法，专项与截图均有显式启用条件。原生系统授权另有四项模拟器专项通过；实拍质量未验证。
 
-[专项记录](../reports/fauxcam-validation-2026-11-07.md)保存工具版本、签名检查、输入条件、截图和测试摘要。
+[专项记录](../reports/fauxcam-validation.md)保存工具版本、签名检查、输入条件、截图和测试摘要。
 
 ## 2026-11-07 系统权限专项补充
 
-规格 7.2.1 对应 SystemCameraPermissionUITests.testT03_systemCameraPermission。make test-camera-permissions 分别设置已有授权、已有拒绝与未决定状态，并操作真实 SpringBoard 弹窗允许/拒绝。四项通过，未加载 FauxCam；截图、API 探测和摘要见 [系统权限证据](../reports/evidence/permissions-2026-11-07/README.md)。
+规格 7.2.1 对应 SystemCameraPermissionUITests.testT03_systemCameraPermission。make test-camera-permissions 分别设置已有授权、已有拒绝与未决定状态，并操作真实 SpringBoard 弹窗允许/拒绝。四项通过，未加载 FauxCam；截图、API 探测和摘要见 [系统权限证据](../reports/evidence/permissions/README.md)。
 
 ## 2026-11-08 正版同图与证据检查
 
 T05、T08、T09、T10 对应官方 Android CamCard 8.25.0.20260129 Basic 的 76 张固定输入及完整字段集合比较。单图相册、输入哈希、完整表单、重复控件一致性与取消保存均有实际记录。22 项 Python 检查验证界面读取、字段统计和打包拒绝条件；make verify 再次通过 109 个方法。
 
-[同图结果](../reports/reference-comparison-2026-11-08.md)、[原始证据](../reports/evidence/reference-2026-11-08/README.md)与 [T01–T20 参考行为表](../submission/reference-observations.csv)注明 Android 和官网各自范围。正版 iOS、真实拍摄质量与会员导出文件未验证。
+[同图结果](../reports/reference-comparison.md)、[原始证据](../reports/evidence/reference-android/README.md)与 [T01–T20 参考行为表](../submission/reference-observations.csv)注明 Android 和官网各自范围。正版 iOS、真实拍摄质量与会员导出文件未验证。
 
 正版读取工具的 Nickname 地址归类由 Scripts/test_reference_camcard_ui.py 中的 test_nickname_does_not_become_an_address_component 回归保护；新增测试先失败，修正后通过，原始 XML 重算记录保留。

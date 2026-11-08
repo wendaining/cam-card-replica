@@ -19,6 +19,6 @@
 | CardFlowUITests.testT03_cameraDeniedShowsExplanation | 1 个方法通过；0 失败 | 注入 denied，断言权限说明和禁用快门 |
 | make audit | 通过 | 路径、测试引用、数量与命令一致性 |
 
-本地结果包位于 build/Logs/Test/，本次 verify 时间戳为 2026.10.30_22-25-30，权限 UI 为 2026.10.30_22-29-06。该目录是可清理构建产物，不作为永久提交附件；摘要摘录见 [验证输出](evidence/official-2026-10-30/verification.txt)。
+本地结果包位于 build/Logs/Test/，本次 verify 时间戳为 2026.10.30_22-25-30，权限 UI 为 2026.10.30_22-29-06。该目录是可清理构建产物，不作为永久提交附件；摘要摘录见 [验证输出](evidence/official-materials/verification.txt)。
 
 设备检查使用 xcrun xctrace list devices，仅发现主机和模拟器，没有可供本轮运行的 iPhone/iPad 真机。未改变用户设备权限、未执行实际联系人写入。真实系统相机允许/拒绝、拍摄及其他人工验收按要求暂缓，不计为已通过。

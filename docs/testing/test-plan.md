@@ -33,4 +33,4 @@
 4. 导出：保存到通讯录后在「通讯录」中核对姓名/公司/电话/邮箱/地址。
 5. UI 对比：本 App 与参考 App 的名片夹/详情/确认页并排截图。
 
-系统相册截图及完整本地结果见 [修复验证记录](../reports/review-fixes-2026-10-28.md)，真机与参考 App 的待签收项见 [外部验收清单](external-acceptance.md)。
+系统相册截图及完整本地结果见 [修复验证记录](../reports/review-fixes.md)，真机与参考 App 的待签收项见 [外部验收清单](external-acceptance.md)。

@@ -4,7 +4,7 @@
 
 参考应用为官方 Android CamCard 8.25.0.20260129，Basic 模式，英语与简体中文同时启用。本项目结果来自 2026-11-07 的实际 Vision 全链路记录。
 
-[环境与操作记录](reference-validation-2026-11-08.md)；[正版原始证据](evidence/reference-2026-11-08/README.md)；[本项目原始证据](evidence/ocr-2026-11-07/README.md)。
+[环境与操作记录](reference-validation.md)；[正版原始证据](evidence/reference-android/README.md)；[本项目原始证据](evidence/ocr-measurement/README.md)。
 
 ## 统计口径
 
@@ -91,25 +91,25 @@
 
 | 输入 | 字段 | GT | 本项目 | CamCard |
 |---|---|---|---|---|
-| [zh-03.png](evidence/reference-2026-11-08/android-ocr/zh-03.png/record.json) | 姓名 | ["王建国"] | ["王建国"] | [] |
-| [zh-03.png](evidence/reference-2026-11-08/android-ocr/zh-03.png/record.json) | 公司 | ["东方物流集团"] | ["东方物流集团"] | [] |
-| [zh-03.png](evidence/reference-2026-11-08/android-ocr/zh-03.png/record.json) | 职位 | ["副总经理"] | ["副总经理"] | [] |
-| [zh-03.png](evidence/reference-2026-11-08/android-ocr/zh-03.png/record.json) | 部门 | ["运营管理部"] | [] | [] |
-| [zh-01.png](evidence/reference-2026-11-08/android-ocr/zh-01.png/record.json) | 邮箱 | ["contact01@example.com"] | ["contactol@example.com"] | ["contact01@example.com"] |
-| [zh-01.png](evidence/reference-2026-11-08/android-ocr/zh-01.png/record.json) | 网站 | ["www.example01.com"] | ["www.example0l.com"] | ["www.example01.com"] |
-| [zh-02.png](evidence/reference-2026-11-08/android-ocr/zh-02.png/record.json) | 地址 | ["北京市海淀区中关村大街1号 100080"] | ["北京市海淀区中关村大街1号100080"] | [] |
-| [zh-02.png](evidence/reference-2026-11-08/android-ocr/zh-02.png/record.json) | 手机 | ["+86 139 0000 5678"] | ["+86 139 0000 5678"] | [] |
-| [zh-04.png](evidence/reference-2026-11-08/android-ocr/zh-04.png/record.json) | 座机 | ["0571-3000 3456"] | ["0571-3000 3456"] | [] |
-| [zh-06.png](evidence/reference-2026-11-08/android-ocr/zh-06.png/record.json) | 传真 | ["0755-2000 9013"] | [] | [] |
+| [zh-03.png](evidence/reference-android/android-ocr/zh-03.png/record.json) | 姓名 | ["王建国"] | ["王建国"] | [] |
+| [zh-03.png](evidence/reference-android/android-ocr/zh-03.png/record.json) | 公司 | ["东方物流集团"] | ["东方物流集团"] | [] |
+| [zh-03.png](evidence/reference-android/android-ocr/zh-03.png/record.json) | 职位 | ["副总经理"] | ["副总经理"] | [] |
+| [zh-03.png](evidence/reference-android/android-ocr/zh-03.png/record.json) | 部门 | ["运营管理部"] | [] | [] |
+| [zh-01.png](evidence/reference-android/android-ocr/zh-01.png/record.json) | 邮箱 | ["contact01@example.com"] | ["contactol@example.com"] | ["contact01@example.com"] |
+| [zh-01.png](evidence/reference-android/android-ocr/zh-01.png/record.json) | 网站 | ["www.example01.com"] | ["www.example0l.com"] | ["www.example01.com"] |
+| [zh-02.png](evidence/reference-android/android-ocr/zh-02.png/record.json) | 地址 | ["北京市海淀区中关村大街1号 100080"] | ["北京市海淀区中关村大街1号100080"] | [] |
+| [zh-02.png](evidence/reference-android/android-ocr/zh-02.png/record.json) | 手机 | ["+86 139 0000 5678"] | ["+86 139 0000 5678"] | [] |
+| [zh-04.png](evidence/reference-android/android-ocr/zh-04.png/record.json) | 座机 | ["0571-3000 3456"] | ["0571-3000 3456"] | [] |
+| [zh-06.png](evidence/reference-android/android-ocr/zh-06.png/record.json) | 传真 | ["0755-2000 9013"] | [] | [] |
 
 ## 附件与范围
 
-[逐图比较](evidence/reference-2026-11-08/comparisons.json)保存严格与内容统计的全部漏值、多值和一致状态；[参考 OCR 表](../submission/reference-ocr.csv)填写全部实际字段。
+[逐图比较](evidence/reference-android/comparisons.json)保存严格与内容统计的全部漏值、多值和一致状态；[参考 OCR 表](../submission/reference-ocr.csv)填写全部实际字段。
 
 当前统计采用保存前的初始字段，采集过程中保持原始文字。collectionSeconds 包含导入、界面等待、滚动与截图。本人实际修改次数继续使用作者填写表。
 
 Android Basic、iOS Vision 与规则解析各自按照其当前流程处理相同原图。iOS 正版、真实拍摄质量及 CamCard 会员导出文件未验证。
 
-[字段读取重算](evidence/reference-2026-11-08/interpretation-replay.json)记录 Nickname 与地址分离的工具修正；原始 XML 与截图保留，最终统计使用修正后的解释。
+[字段读取重算](evidence/reference-android/interpretation-replay.json)记录 Nickname 与地址分离的工具修正；原始 XML 与截图保留，最终统计使用修正后的解释。
 
-[空结果复查](evidence/reference-2026-11-08/empty-recheck-summary.json)单独保存重复输入的结果，首次结果继续计入统计；[最终名片夹](evidence/reference-2026-11-08/final-library-check.json)记录联系人数量。
+[空结果复查](evidence/reference-android/empty-recheck-summary.json)单独保存重复输入的结果，首次结果继续计入统计；[最终名片夹](evidence/reference-android/final-library-check.json)记录联系人数量。

@@ -2,9 +2,9 @@
 
 ## 官方资料与实际环境
 
-2026-10-30 归档的 [CamCard 中文官网](https://www.camcard.com/zh-cn)与 [官方 iPhone 帮助页](https://www.camcard.com/site/qa?language=zh-cn)介绍扫描识别、校对、编辑、分组及联系人保存，摘录见 [当时附件](evidence/official-2026-10-30/faq.txt)。
+2026-10-30 归档的 [CamCard 中文官网](https://www.camcard.com/zh-cn)与 [官方 iPhone 帮助页](https://www.camcard.com/site/qa?language=zh-cn)介绍扫描识别、校对、编辑、分组及联系人保存，摘录见 [当时附件](evidence/official-materials/faq.txt)。
 
-2026-11-08 实际安装官方 Android CamCard 8.25.0.20260129，在 Android 15 模拟器中进行 Basic 同图识别；官网另行验证联系人管理流程。[环境记录](../submission/reference-environment.md)保存系统、语言、登录、免费功能和版本。[操作记录](reference-validation-2026-11-08.md)保存实际步骤。
+2026-11-08 实际安装官方 Android CamCard 8.25.0.20260129，在 Android 15 模拟器中进行 Basic 同图识别；官网另行验证联系人管理流程。[环境记录](../submission/reference-environment.md)保存系统、语言、登录、免费功能和版本。[操作记录](reference-validation.md)保存实际步骤。
 
 ## 六个观察维度
 
@@ -21,8 +21,8 @@
 
 ## 同图 OCR 结果
 
-[同图测量报告](reference-comparison-2026-11-08.md)覆盖全部 76 张固定原图，提供严格统计、格式归一后的内容统计、已印字段准确率、缺失误填、漏值、多值、精确率、召回率与 F1。[逐图表格](../submission/reference-ocr.csv)已经填写 GT、本项目与正版全部初始字段。
+[同图测量报告](reference-comparison.md)覆盖全部 76 张固定原图，提供严格统计、格式归一后的内容统计、已印字段准确率、缺失误填、漏值、多值、精确率、召回率与 F1。[逐图表格](../submission/reference-ocr.csv)已经填写 GT、本项目与正版全部初始字段。
 
-[正版原始证据](evidence/reference-2026-11-08/README.md)保存单图选择、完整确认页面截图、XML、字段、地址组件和哈希；[本项目证据](evidence/ocr-2026-11-07/README.md)保留 Vision 原文、逐行结果、初始解析与识别输入。两者使用同一份原始文件，内部图像处理各按当前流程执行。
+[正版原始证据](evidence/reference-android/README.md)保存单图选择、完整确认页面截图、XML、字段、地址组件和哈希；[本项目证据](evidence/ocr-measurement/README.md)保留 Vision 原文、逐行结果、初始解析与识别输入。两者使用同一份原始文件，内部图像处理各按当前流程执行。
 
 正式采集期间名片夹为空，逐图读取后取消保存。Basic 模式与识别语言保持固定。全部空结果继续计入分母，原始错误字符继续保留。当前统计限定于固定合成集合及上述产品版本，作者本人修改动作数量使用填写模板。

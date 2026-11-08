@@ -32,7 +32,7 @@ showImageViewer 从未设为 true；cardImage 只显示 Image，没有 Button �
 
 vCard 只由 `.task(id: cardID)` 生成。编辑保持同一 UUID，saveEdits 更新记录但没有重建导出文件。姓名、公司、号码等改完后，在同一详情页导出仍分享旧值；退出重新进入才会刷新。
 
-电脑操作复现：用 zh-01 扫描并保存到内存测试库，进入详情，将公司改为 Review Company 并保存。可访问性树显示新公司，容器内待分享 VCF 却与编辑前逐字节相同，ORG 仍为同济大学。[手动验证证据](review-evidence-2026-10-28/stale-export.txt)。
+电脑操作复现：用 zh-01 扫描并保存到内存测试库，进入详情，将公司改为 Review Company 并保存。可访问性树显示新公司，容器内待分享 VCF 却与编辑前逐字节相同，ORG 仍为同济大学。[手动验证证据](review-evidence/stale-export.txt)。
 
 建议：在分享时从最新记录生成，或绑定记录修订刷新；文件名用 UUID 避免同名联系人覆盖。验证“进入详情→编辑→导出”，读取实际 VCF 内容，而不只测 exporter 的纯映射。
 
@@ -172,7 +172,7 @@ XCODEBUILD 未指定 derivedDataPath，产物在 Xcode 默认 DerivedData；APP_
 | occluded | 10 | 10/10 | 10/10 | 8/10 | 8/10 | 10/10 | 8/10 | 3/10 | 9/10 | 9/10 |
 | occluded-photo | 4 | 4/4 | 4/4 | 4/4 | 4/4 | 4/4 | 4/4 | 2/4 | 3/4 | 3/4 |
 
-该数字记录审查时的额外观测，适用范围为当时输入；真机拍照质量需要另行测量。失败明细与复现源码在 [审查证据](review-evidence-2026-10-28/README.md)。例如 zh-01 的 contact01 被认成 contactol，bi-14 的“副总经理”被认成“到总经理”，说明不能只检查“姓名非空”。
+该数字记录审查时的额外观测，适用范围为当时输入；真机拍照质量需要另行测量。失败明细与复现源码在 [审查证据](review-evidence/README.md)。例如 zh-01 的 contact01 被认成 contactol，bi-14 的“副总经理”被认成“到总经理”，说明不能只检查“姓名非空”。
 
 同样源码曾在 macOS Vision 跑过探索测量，输出与 iOS 有差异；本表只使用 iOS 模拟器结果。首次批量探针未释放每张图的临时对象，进程意外退出；随后为探针加逐张 autoreleasepool，完整运行成功，不将该探针自身问题算作 App 单张扫描缺陷。
 

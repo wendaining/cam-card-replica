@@ -16,7 +16,7 @@
 | 字段准确率 | [理想文本与真实图像分开报告](docs/reports/ocr-accuracy.md)，完整集合与缺失误填均计数 |
 | 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
 
-最新全仓审查修复与验证范围：[2026-10-30 修复记录](docs/reports/review-fixes-2026-10-30.md)。
+最新全仓审查修复与验证范围：[2026-10-30 修复记录](docs/reports/review-fixes-followup.md)。
 
 ![名片夹](docs/reports/screenshots/02-list.png)
 
@@ -128,9 +128,9 @@ docs/            spec / api / architecture(6 篇 ADR) / testing / guides / repor
 
 | 先看哪篇 | 内容 |
 |---|---|
-| [正版同图比较（2026-11-08）](docs/reports/reference-comparison-2026-11-08.md) | 76 张同图、完整字段与原始截图 |
-| [最新验证（2026-11-08）](docs/reports/verification-2026-11-08.md) | 109 个回归方法和证据工具检查 |
-| [提交前核实（2026-11-07）](docs/reports/submission-audit-2026-11-07.md) | 当前交付材料、最后回归、剩余证据与提交建议 |
+| [正版同图比较（2026-11-08）](docs/reports/reference-comparison.md) | 76 张同图、完整字段与原始截图 |
+| [最新验证（2026-11-08）](docs/reports/verification-reference.md) | 109 个回归方法和证据工具检查 |
+| [提交前核实（2026-11-07）](docs/reports/submission-audit.md) | 当前交付材料、最后回归、剩余证据与提交建议 |
 | [HANDOFF.md](HANDOFF.md) | **换人/换 agent 先读**：验证过什么、没验证什么、已知缺口、审查建议 |
 | [AGENTS.md](AGENTS.md) | 工程契约：约束、命令、提交规范、当前状态 |
 | [docs/spec/product-spec.md](docs/spec/product-spec.md) | 产品规格（编号条款，按作业章节组织） |

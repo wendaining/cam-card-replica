@@ -31,7 +31,7 @@ SKIP_DIRS = {"build", ".git", "TestResults", "DerivedData"}
 # The research plan was written before the code existed and lives on as a record
 # of the planning, not as a specification; its illustrative paths are allowed to
 # point at things that were later renamed or dropped.
-HISTORICAL_DOCS = {"00-作业调研与执行方案.md", "review-2026-10-28.md"}
+HISTORICAL_DOCS = {"00-作业调研与执行方案.md", "review.md"}
 
 # Names that look like paths but are runtime artifacts or external files.
 ALLOWED_PATHS = {"library.json", "spec.md"}

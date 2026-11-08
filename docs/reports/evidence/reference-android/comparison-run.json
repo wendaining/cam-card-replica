@@ -14,7 +14,7 @@
   "gitRevision": "3fb3ef37ccfdc200f15a35274f19e22d65e478dc",
   "replaySourceFilesSHA256": {
     "Scripts/reference_camcard_ui.py": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
-    "Scripts/compare_reference_camcard.py": "7362327366bb9e96785d3312a9aee7891885efbe07150a857d93f0f9bff3f0c3"
+    "Scripts/compare_reference_camcard.py": "923e72aaf7060d15831d14aecef710ded6fe3068743ca3cf679c89ec1d76624e"
   },
   "statistics": {
     "strict": {

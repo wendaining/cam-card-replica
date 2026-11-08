@@ -15,4 +15,4 @@
 | 未验证范围 | 物理设备拍摄质量、iOS 正版行为、CamCard 会员导出文件 |
 | 本人核对意见与日期 | 待填写 |
 
-[同图比较](../reports/reference-comparison-2026-11-08.md)和 [验证记录](../reports/verification-2026-11-08.md)包含已经完成的测量。作者补充材料使用 [人工修改表](manual-corrections.csv)及 [TRAE 使用记录](../ai-collaboration/trae-record.md)。
+[同图比较](../reports/reference-comparison.md)和 [验证记录](../reports/verification-reference.md)包含已经完成的测量。作者补充材料使用 [人工修改表](manual-corrections.csv)及 [TRAE 使用记录](../ai-collaboration/trae-record.md)。
