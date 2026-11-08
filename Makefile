@@ -9,7 +9,7 @@ PYTHON ?= python3
 SIMULATOR ?= iPhone 18 Pro
 XCODEBUILD := xcodebuild -project $(PROJECT) -scheme $(SCHEME) -destination '$(DESTINATION)' -derivedDataPath $(DERIVED_DATA_PATH)
 
-.PHONY: help bootstrap build test test-ui test-ipad bench audit lint format verify run relaunch reset photos testdata test-tooling test-evidence test-fauxcam test-camera-permissions package clean hooks
+.PHONY: help bootstrap build test test-ui test-ipad bench audit lint format verify run relaunch reset photos testdata test-tooling test-evidence test-reference-evidence test-fauxcam test-camera-permissions package clean hooks
 
 help: ## 显示可用命令
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
@@ -79,6 +79,11 @@ test-tooling: ## 验证构建路径与语料字体
 
 test-evidence: ## 校验 OCR 证据导出的拒绝条件与完整性
 	$(PYTHON) Scripts/test_report_evidence.py
+
+test-reference-evidence: ## 校验正版界面字段、同图统计和提交证据完整性
+	$(PYTHON) Scripts/test_reference_camcard_ui.py
+	$(PYTHON) Scripts/test_reference_comparison.py
+	$(PYTHON) Scripts/test_reference_package.py
 
 test-fauxcam: ## 使用已安装的 FauxCam 验证正常快门和照片回调
 	bash Scripts/test_fauxcam.sh
