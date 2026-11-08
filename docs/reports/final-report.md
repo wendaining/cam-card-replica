@@ -666,7 +666,7 @@ make audit
 
 系统权限专项用 `make test-camera-permissions`，常规 UI 用 `make test-ui`，FauxCam 专项的配置、工具路径和命令在 `docs/reports/fauxcam-validation.md`。导出报告需要明确填写实际日期、设备和结果包，完整示例在 `docs/reports/verification-local.md`。
 
-提交包通过 `make package` 生成，按仓库目录结构只放源码、测试、语料、规格文档、报告和证据，不包含 `.git`、`.gitignore`、`.github`、`.githooks`、`AGENTS.md`、`HANDOFF.md`、作业 PDF 和调研方案。打包时检查源文件哈希、证据哈希、ZIP CRC 和归档内容。
+提交包通过 `make package` 生成。打包使用 `git archive` 导出 HEAD 的源码树，再补上最终确认表本地副本和报告 PDF；只放源码、测试、语料、规格文档、报告和证据，不包含 `.git`、`.gitignore`、`.github`、`.githooks`、`AGENTS.md`、`HANDOFF.md`、作业 PDF 和调研方案。打包时检查源文件哈希、证据哈希、ZIP CRC 和归档内容。
 
 ### 20.3 界面与实测附件
 

@@ -48,3 +48,6 @@ docs/ai-collaboration/attachments/*
 
 # Generated report export
 final-report.pdf
+
+# Submission PDFs kept local
+项目报告.pdf

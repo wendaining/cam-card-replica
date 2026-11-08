@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""Create a clean coursework archive from the repository tree."""
+"""Create a clean coursework archive from a git archive of the repository."""
 import argparse
 import hashlib
+import io
 import json
 from pathlib import Path
 import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-ALLOWED_ROOTS = {'Sources', 'Tests', 'UITests', 'Resources', 'TestData', 'docs', 'Scripts'}
-ALLOWED_FILES = {'README.md', 'Makefile', 'project.yml', '.swiftlint.yml', '.swiftformat'}
+ARCHIVE_PATHS = [
+    'Sources', 'Tests', 'UITests', 'Resources', 'TestData', 'docs', 'Scripts',
+    'README.md', 'Makefile', 'project.yml', '.swiftlint.yml', '.swiftformat',
+]
+REPORT_PDFS = ('项目报告.pdf', 'final-report.pdf')
 
 # Filled personal documents stay untracked; if present, they replace the blanks in the archive.
 PERSONAL_FILES = {
@@ -49,38 +53,45 @@ def main():
     for relative, expected in run['sourceFilesSHA256'].items():
         if digest((ROOT / relative).read_bytes()) != expected:
             raise SystemExit('Measured source file has changed: ' + relative)
-    reference_evidence = ROOT / 'docs/reports/evidence/reference-android'
     reference_count = 0
+    reference_evidence = ROOT / 'docs/reports/evidence/reference-android'
     if reference_evidence.exists():
         from compare_reference_camcard import validate_submission_reference
         reference_count = validate_submission_reference(reference_evidence, truth, {record['file']: record for record in records})
-    listing = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=ROOT)
-    files = {}
-    for name in listing.decode().split('\0'):
-        path = Path(name)
-        if name and (path.parts[0] in ALLOWED_ROOTS or name in ALLOWED_FILES) and (ROOT / path).is_file():
-            if '__pycache__' in path.parts or path.suffix == '.pyc':
+
+    archive_bytes = subprocess.check_output(
+        ['git', 'archive', '--format=zip', '--prefix=CamCardReplica/', 'HEAD', '--', *ARCHIVE_PATHS],
+        cwd=ROOT,
+    )
+    entries = {}
+    with zipfile.ZipFile(io.BytesIO(archive_bytes)) as source:
+        for info in source.infolist():
+            if info.is_dir():
                 continue
-            files[path.as_posix()] = (ROOT / path).read_bytes()
+            entries[info.filename] = source.read(info)
     for archive_name, local_name in PERSONAL_FILES.items():
         local_path = ROOT / local_name
         if local_path.is_file():
-            files[archive_name] = local_path.read_bytes()
+            entries['CamCardReplica/' + archive_name] = local_path.read_bytes()
+    report_pdf = next((ROOT / name for name in REPORT_PDFS if (ROOT / name).is_file()), None)
+    if report_pdf is None:
+        raise SystemExit('Report PDF is missing: expected one of ' + ', '.join(REPORT_PDFS))
+    entries['CamCardReplica/' + report_pdf.name] = report_pdf.read_bytes()
+
     args.output_dir.mkdir(parents=True, exist_ok=True)
     archive = args.output_dir / 'CamCardReplica-Submission.zip'
-    root = 'CamCardReplica'
     with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as output:
-        for relative, data in sorted(files.items()):
-            output.writestr(root + '/' + relative, data)
+        for name, data in sorted(entries.items()):
+            output.writestr(name, data)
     with zipfile.ZipFile(archive) as check:
         if check.testzip() is not None:
             raise SystemExit('Archive CRC validation failed')
-        for relative, data in files.items():
-            if digest(check.read(root + '/' + relative)) != digest(data):
-                raise SystemExit('Archive content validation failed: ' + relative)
+        for name, data in entries.items():
+            if digest(check.read(name)) != digest(data):
+                raise SystemExit('Archive content validation failed: ' + name)
     checksum = args.output_dir / (archive.name + '.sha256')
     checksum.write_text(digest(archive.read_bytes()) + '  ' + archive.name + '\n')
-    print(f'{archive}\n{checksum}\nVerified {len(files)} archive entries, {len(records)} OCR records and {reference_count} reference records')
+    print(f'{archive}\n{checksum}\nVerified {len(entries)} archive entries, {len(records)} OCR records and {reference_count} reference records')
 
 
 if __name__ == '__main__':

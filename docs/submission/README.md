@@ -24,7 +24,7 @@
 
 涉及个人信息的文件使用本地副本：把 `final-signoff.md` 复制为 final-signoff.local.md，把 `manual-corrections.csv` 复制为 manual-corrections.local.csv 后填写。两个 .local 文件已被 `.gitignore` 排除；`make package` 会优先使用本地副本，按原名放进压缩包。
 
-提交压缩包按仓库目录结构包含源码、工程生成配置、规格与测试文档、语料、OCR 证据、报告和填写模板。不包含 .git、.gitignore、.github、.githooks、AGENTS.md、HANDOFF.md、作业 PDF、调研方案、build、DerivedData 和 TestResults。
+提交压缩包用 `git archive` 导出 HEAD 的源码树，补上最终确认表本地副本和报告 PDF。包含源码、工程生成配置、规格与测试文档、语料、OCR 证据和报告；不包含 .git、.gitignore、.github、.githooks、AGENTS.md、HANDOFF.md、作业 PDF、调研方案、build、DerivedData 和 TestResults。
 
 ## 更新提交压缩包
 
