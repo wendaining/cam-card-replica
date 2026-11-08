@@ -50,7 +50,7 @@
 
 ## 参考 App 与真机
 
-2026-11-08 完成官方 Android CamCard 8.25.0.20260129 Basic 的全部 76 张同图初始字段采集，见 [同图结果](reference-comparison.md)。报告同时展示严格统计与格式归一后的内容统计，保留错误、漏值、重复值和空结果。官网管理操作与 Android 观察分别归档，见 [差异记录](difference-analysis.md)。系统相机权限和 FauxCam 正常快门已有模拟器证据；真实拍摄质量、iOS 正版与会员导出文件未验证，本人修改案例保留填写位置。
+2026-11-08 完成官方 Android CamCard 8.25.0.20260129 Basic 的全部 76 张同图初始字段采集，见 [同图结果](reference-comparison.md)。报告同时展示严格统计与格式归一后的内容统计，保留错误、漏值、重复值和空结果。官网管理操作与 Android 观察分别归档，见 [差异记录](difference-analysis.md)。系统相机权限和 FauxCam 正常快门已有模拟器证据；真实拍摄质量、iOS 正版与会员导出文件未验证，人工修改记录见 [manual-corrections.csv](../submission/manual-corrections.csv)。
 
 ## 2026-10-30 全仓审查增量回归
 

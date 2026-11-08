@@ -45,3 +45,6 @@ docs/submission/personal/
 
 # AI collaboration attachments may contain account or personal information
 docs/ai-collaboration/attachments/*
+
+# Generated report export
+final-report.pdf

@@ -4,7 +4,6 @@
 |---|---|
 | [最终报告](../reports/final-report.md) | 实现、规格追溯、测试、OCR 测量、错误分析、能力限制与当前验收状态 |
 | [最终填写模板](final-signoff.md) | 作者信息、实际提交日期、参考 App 数据与未验证内容 |
-| [本人操作清单](user-actions.md) | 提交信息与本人修改记录 |
 | [参考环境表](reference-environment.md) | CamCard 版本、设备、系统、语言、登录状态和功能范围 |
 | [参考行为记录](reference-observations.csv) | T01–T20 已观察的平台、结果与限制 |
 | [参考 OCR 记录](reference-ocr.csv) | 76 个图片条目，包含 GT、本项目与正版 Android 初始字段 |
@@ -25,7 +24,7 @@
 
 涉及个人信息的文件使用本地副本：把 `final-signoff.md` 复制为 final-signoff.local.md，把 `manual-corrections.csv` 复制为 manual-corrections.local.csv 后填写。两个 .local 文件已被 `.gitignore` 排除；`make package` 会优先使用本地副本，按原名放进压缩包。
 
-提交压缩包包括源码、工程生成配置、规格与测试文档、语料、OCR 证据、报告和填写模板。压缩包附带逐文件 SHA-256 清单及版本信息。build、DerivedData、TestResults、Git 内部文件和本机环境文件不在压缩包中。
+提交压缩包按仓库目录结构包含源码、工程生成配置、规格与测试文档、语料、OCR 证据、报告和填写模板。不包含 .git、.gitignore、.github、.githooks、AGENTS.md、HANDOFF.md、作业 PDF、调研方案、build、DerivedData 和 TestResults。
 
 ## 更新提交压缩包
 
@@ -33,4 +32,4 @@
 
 ## 提供资料的方式
 
-正版 Android Basic 同图比较已经覆盖全部 76 张图片。TRAE 使用记录已经归档在 [TRAE 使用记录](../ai-collaboration/trae-record.md)；作者可以直接补充本人修改案例及最终提交信息，本人操作要求见简明清单。物理拍摄质量、iOS 正版和会员导出文件明确保留未验证状态。
+正版 Android Basic 同图比较已经覆盖全部 76 张图片。TRAE 使用记录已经归档在 [TRAE 使用记录](../ai-collaboration/trae-record.md)；作者可以直接补充本人修改案例及最终提交信息。物理拍摄质量、iOS 正版和会员导出文件明确保留未验证状态。

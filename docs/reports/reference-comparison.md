@@ -106,7 +106,7 @@
 
 [逐图比较](evidence/reference-android/comparisons.json)保存严格与内容统计的全部漏值、多值和一致状态；[参考 OCR 表](../submission/reference-ocr.csv)填写全部实际字段。
 
-当前统计采用保存前的初始字段，采集过程中保持原始文字。collectionSeconds 包含导入、界面等待、滚动与截图。本人实际修改次数继续使用作者填写表。
+当前统计采用保存前的初始字段，采集过程中保持原始文字。collectionSeconds 包含导入、界面等待、滚动与截图。人工修改记录见 [manual-corrections.csv](../submission/manual-corrections.csv)，已填写 4 条。
 
 Android Basic、iOS Vision 与规则解析各自按照其当前流程处理相同原图。iOS 正版、真实拍摄质量及 CamCard 会员导出文件未验证。
 

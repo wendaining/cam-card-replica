@@ -33,7 +33,7 @@ Python 导出检查覆盖失败运行、缺失 OCR、图片哈希变化、字段
 | OCR 证据修改前失败与修改后通过 | [测试摘要](../reports/evidence/validation-local/verification.txt) |
 | 实际原始输出与图片 | [OCR 索引](../reports/evidence/ocr-measurement/README.md) |
 | 当前规格与测试对应 | [验收矩阵](../spec/acceptance.md) |
-| 本人操作与最终结果填写 | [操作清单](../submission/user-actions.md)、[填写模板](../submission/final-signoff.md) |
+| 最终结果填写 | [填写模板](../submission/final-signoff.md) |
 
 ## FauxCam 验证与 Markdown 报告扩充
 

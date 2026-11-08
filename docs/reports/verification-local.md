@@ -58,7 +58,7 @@ make package
 
 最终报告保存在 docs/reports/final-report.md，提交压缩包直接包含 Markdown 正文、相对路径图片与附件。
 
-压缩包包含 MANIFEST.sha256、SUBMISSION.json 和 START-HERE.md；打包工具检查 ZIP CRC、逐文件 SHA-256、OCR 证据哈希及测量时源码哈希。作者填写模板后更新 Markdown 报告并执行 make package。
+压缩包按仓库目录结构只放源码、测试、语料、规格文档、报告和证据；打包工具检查 ZIP CRC、逐文件 SHA-256、OCR 证据哈希及测量时源码哈希。修改报告后执行 make package。
 
 ## 诊断记录
 

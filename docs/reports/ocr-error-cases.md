@@ -30,7 +30,7 @@ Add：上海市杨浦区四平路1239号 200092
 | 邮箱集合 | ["contact01@example.com"] | ["contactol@example.com"] |
 | 网站 | ["www.example01.com"] | ["www.example0l.com"] |
 
-实际人工修改值、修改数量、操作者、日期及附件：待填写。
+人工修改：温玳宁，2026-11-08，修改邮箱与网站共 2 个字段；证据见 [初始解析](evidence/ocr-measurement/parsed/zh-01.png.json)。
 
 ## en-01.png
 
@@ -60,7 +60,7 @@ Add: 500 Market Street, Suite 900, San Francisco, CA 94105
 | 公司 | ["ABC Technologies"] | ["ABC Technologles"] |
 | 座机集合 | ["+1 415 000 8000"] | ["+1415 000 8000"] |
 
-实际人工修改值、修改数量、操作者、日期及附件：待填写。
+人工修改：温玳宁，2026-11-08，修改公司名 1 个字段；证据见 [初始解析](evidence/ocr-measurement/parsed/en-01.png.json)。
 
 ## en-03-photo.jpg
 
@@ -95,7 +95,7 @@ EN
 | 姓名 | ["Michael O'Brian"] | ["Michae1 o'Brian"] |
 | 座机集合 | ["+49 30 0000 6000"] | ["+49 30 00006000"] |
 
-实际人工修改值、修改数量、操作者、日期及附件：待填写。
+人工修改：温玳宁，2026-11-08，修改姓名 1 个字段；证据见 [初始解析](evidence/ocr-measurement/parsed/en-03-photo.jpg.json)。
 
 ## zh-06.png
 
@@ -124,6 +124,6 @@ www.example06.com
 | 传真集合 | ["0755-2000 9013"] | [] |
 | 座机集合 | [] | ["0755-2000 9013"] |
 
-实际人工修改值、修改数量、操作者、日期及附件：待填写。
+人工修改：温玳宁，2026-11-08，修改传真与座机类型共 2 个字段；证据见 [初始解析](evidence/ocr-measurement/parsed/zh-06.png.json)。
 
 [全部 OCR 证据](evidence/ocr-measurement/README.md)与 [人工修改表](../submission/manual-corrections.csv)。

@@ -26,4 +26,4 @@ Codex 使用官方 Android CamCard 8.25.0.20260129，在 Android 15 模拟器中
 
 最终报告保留原有实现、规格追溯、测试和错误分析，并加入同图统计及原始证据索引。提交材料分别记录 Android、官网、iOS 正版和真实拍摄范围。TRAE 使用记录已经归档在 [TRAE 使用记录](trae-record.md)；本人只需补充作者信息、验收与演示数据。
 
-产物与最终检查见 [正版验证](../reports/reference-validation.md)、[同图比较](../reports/reference-comparison.md)、[验证记录](../reports/verification-reference.md)。本轮提交标识由 Git 历史和提交包 SUBMISSION.json 记录。
+产物与最终检查见 [正版验证](../reports/reference-validation.md)、[同图比较](../reports/reference-comparison.md)、[验证记录](../reports/verification-reference.md)。本轮提交标识由 Git 历史记录。

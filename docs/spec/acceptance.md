@@ -25,7 +25,7 @@
 | T19 | 导出 vCard/通讯录 | 13.1–2 | `ContactsExporterTests` + `VCardDocumentTests`（编辑后完整 VCF 重读）；通讯录落库待真机 | `ContactsExporter` / `VCardDocument` |
 | T20 | 异常路径 | 4 节 | `testT20_*`、`testT03_*`、`testT06_*` | 各状态机 |
 
-课程原始用例来源及边界见 [参考测试套件](../testing/reference-test-suite.md)。T19 采用导出自动测试证据，T18 采用模拟器回归；本人操作清单记录其他待验证项目。
+课程原始用例来源及边界见 [参考测试套件](../testing/reference-test-suite.md)。T19 采用导出自动测试证据，T18 采用模拟器回归；其他待验证项目见最终确认表。
 
 ## 概率性功能（不算"通过率"，算准确率）
 

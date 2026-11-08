@@ -36,4 +36,4 @@
 - T19 至少完成通讯录或 VCF 一种。当前交付使用 ContactsExporterTests 和 VCardDocumentTests 的自动化证据，不追加人工通讯录核对任务。
 - 官网调研只能支撑其明确描述的行为，不能自动把未执行的用例记为通过。
 
-本地步骤见 [测试计划](test-plan.md)，代码与测试映射见 [验收追溯矩阵](../spec/acceptance.md)，官网依据见 [调研与对比](../reports/difference-analysis.md)。本人操作和结果填写见 docs/submission/user-actions.md。
+本地步骤见 [测试计划](test-plan.md)，代码与测试映射见 [验收追溯矩阵](../spec/acceptance.md)，官网依据见 [调研与对比](../reports/difference-analysis.md)。作者信息与结果填写见 docs/submission/README.md。

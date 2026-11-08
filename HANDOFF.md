@@ -1,6 +1,6 @@
 # HANDOFF — 提交材料与验证记录
 
-更新日期：2026-11-08。读取 AGENTS.md 后，可直接查看 [提交目录](docs/submission/README.md)、[最终报告](docs/reports/final-report.md)和 [本人操作清单](docs/submission/user-actions.md)。
+更新日期：2026-11-08。读取 AGENTS.md 后，可直接查看 [提交目录](docs/submission/README.md)和 [最终报告](docs/reports/final-report.md)。
 
 ## 本地交付材料
 
@@ -9,7 +9,7 @@
 - [AI 协作记录](docs/ai-collaboration/README.md)说明实际使用 Codex 与 TRAE。TRAE 的使用记录归档在 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。
 - [正版同图比较](docs/reports/reference-comparison.md)覆盖 Android Basic 的全部 76 张原图，原始截图、XML 和字段归档在 reference-android。
 - [最终填写模板](docs/submission/final-signoff.md)保留作者、真实拍摄限制、正版参考数据、演示与提交说明；参考行为表、参考 OCR 表和人工修改表均已准备。
-- 报告以 Markdown 保存，带哈希清单的提交压缩包位于 output/submission。
+- 报告以 Markdown 保存，提交压缩包位于 output/submission。
 
 ## 当前验证
 
@@ -31,7 +31,7 @@
 
 ## 需要使用者填写
 
-模拟器原生系统权限四项检查已经通过，证据见 [权限记录](docs/reports/evidence/permissions/README.md)。使用者没有 iPhone，真实拍摄质量、iOS 正版及会员导出文件未验证。Android 正版同图与网页管理操作已归档；本人修改案例和最终提交信息保留填写位置，TRAE 使用记录见 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。具体操作与证据名称见 [本人清单](docs/submission/user-actions.md)。
+模拟器原生系统权限四项检查已经通过，证据见 [权限记录](docs/reports/evidence/permissions/README.md)。使用者没有 iPhone，真实拍摄质量、iOS 正版及会员导出文件未验证。Android 正版同图与网页管理操作已归档；本人修改案例和最终提交信息见最终确认表，TRAE 使用记录见 [TRAE 使用记录](docs/ai-collaboration/trae-record.md)。具体操作与证据名称见 [提交目录](docs/submission/README.md)。
 
 T18 已有模拟器真实终止并重新启动的证据。T19 已有 VCF 完整字段反序列化测试。课程接受这两条证据路径，真机通讯录结果按实际选择补充。
 
@@ -56,4 +56,4 @@ make audit
 make package
 ```
 
-OCR 导出需要实际日期、环境、结果包与证据目录参数，命令见 [验证记录](docs/reports/verification-local.md)。作者填写结果后更新 Markdown 报告，并重新生成压缩包。
+OCR 导出需要实际日期、环境、结果包与证据目录参数，命令见 [验证记录](docs/reports/verification-local.md)。修改报告后重新生成压缩包。

@@ -4,7 +4,9 @@
 
 2026 年 11 月
 
-作者姓名、学号、课程与班级见随附的确认表。
+作者：温玳宁　学号：2453816
+
+项目地址：https://github.com/wendaining/cam-card-replica
 
 ## 1 项目与运行环境
 
@@ -285,7 +287,7 @@ OCR 原文弹层显示初始解析结果和依据，并保留逐行置信度。�
 
 `VCardDocument` 是已经保存名片的 `Transferable` 值，分享时生成文件。文件位置用 UUID 命名，编辑之后导出使用新的值，同名联系人的文件互相独立。`VCardDocumentTests` 修改公司、职位、电话、邮箱、地址和网站之后再导出，重新解析生成的 VCF 并逐字段断言；另一个测试保留编辑前的文件，检查旧文件内容和新记录之间的关系，还检查同名名片的导出路径和内容。`ContactsExporterTests` 检查电话号码标签、中文姓名、拉丁姓名和全部字段映射。
 
-课程允许使用系统通讯录或者 VCF。这次提交有 VCF 的自动化证据，系统通讯录的实际授权、拒绝和写入联系人列表的人工结果保留未验证状态。作者可以按实际导出方式在最终确认表里填写。
+课程允许使用系统通讯录或者 VCF。这次提交有 VCF 的自动化证据，系统通讯录的实际授权、拒绝和写入联系人列表的人工结果保留未验证状态。本次提交采用 VCF 导出。
 
 ## 15 测试分层与验收记录
 
@@ -310,7 +312,7 @@ FauxCam 方法通过配置显式启用，默认测试不加载外部工具；截
 
 首次启动和扫描入口对应 T01 和 T02：名片夹为空时显示空状态和扫描按钮，已有记录时显示列表。相机权限对应 T03，状态映射和拒绝注入有单元测试，模拟器上还实际操作过系统弹窗的允许和拒绝。拍摄对应 T04，固定图源回归和 FauxCam 正常快门分别覆盖流程和真实回调。相册导入对应 T05，系统相册的选取和取消在模拟器上手工走过并留了截图；导入之后进入裁剪有单元测试，识别到确认沿用拍摄路径的自动化检查。
 
-边界检测对应 T06，倾斜、遮挡和坐标钳制都有测试，裁剪页的重拍有 UI 测试；四角拖拽只有手工检查。OCR 对应 T07，76 个输入全部保存了原始输出。字段分类对应 T08，完整集合测量、字段反例和官方 Android 的同图比较一起检查。缺失网站对应 T09，专项测试和缺失输入误填统计都在。多号码对应 T10，明确标签和同号不同类型的正例通过，无标签号码的类型错误继续计分。人工修改和保存对应 T11、T12，修改后保存的 UI 流程通过，作者本人的实际修改案例还保留填写位置。
+边界检测对应 T06，倾斜、遮挡和坐标钳制都有测试，裁剪页的重拍有 UI 测试；四角拖拽只有手工检查。OCR 对应 T07，76 个输入全部保存了原始输出。字段分类对应 T08，完整集合测量、字段反例和官方 Android 的同图比较一起检查。缺失网站对应 T09，专项测试和缺失输入误填统计都在。多号码对应 T10，明确标签和同号不同类型的正例通过，无标签号码的类型错误继续计分。人工修改和保存对应 T11、T12，修改后保存的 UI 流程通过，人工修改记录见 `docs/submission/manual-corrections.csv`。
 
 详情、编辑、搜索、标签和删除对应 T13 到 T17：详情字段和原图切换、编辑后更新、查询匹配、标签筛选、删除确认与取消都有 UI 测试，搜索和标签规则另有领域模型单元测试。重启保持对应 T18，模拟器上执行了真实的终止和启动，文件库另有完整回读。导出对应 T19，VCF 的完整字段反序列化和编辑后最新值都有测试；系统通讯录的真实写入没有在设备上验证。异常路径对应 T20，取消、空识别结果、识别失败、读取失败和保存失败都有注入测试。
 
@@ -644,13 +646,13 @@ OCR 原文可能出现近形字符、标签重复、漏字和空白变化。规�
 
 竖排文字、艺术字、强反光、多名片同框和真实拍照质量仍然有验证限制。FauxCam 证明的是指定虚拟输入下的快门和回调接口流程，系统权限另有四项模拟器实际记录；物理拍摄条件没有验证。
 
-## 20 提交材料、复现与作者填写
+## 20 提交材料与复现
 
 ### 20.1 提交目录
 
 最终报告就是这份文件。产品规格和数据模型在 `docs/spec`，架构说明与 ADR 在 `docs/architecture`，接口说明在 `docs/api`。源码在 `Sources`，单元和集成测试在 `Tests`，UI 测试在 `UITests`，工程定义是 `project.yml`。固定语料在 `TestData`，生成脚本在 `Scripts`。
 
-原始证据按任务分目录：OCR 原文、初始字段、识别输入和哈希在 `docs/reports/evidence/ocr-measurement`；正版同图的 76 张确认页、实际字段、逐图比较和哈希在 `docs/reports/evidence/reference-android`；系统权限的四项结果、系统弹窗、API 探测和哈希在 `docs/reports/evidence/permissions`；FauxCam 的截图、条件和测试摘要在 `docs/reports/evidence/fauxcam`。AI 协作记录在 `docs/ai-collaboration`，作者填写材料在 `docs/submission`。
+原始证据按任务分目录：OCR 原文、初始字段、识别输入和哈希在 `docs/reports/evidence/ocr-measurement`；正版同图的 76 张确认页、实际字段、逐图比较和哈希在 `docs/reports/evidence/reference-android`；系统权限的四项结果、系统弹窗、API 探测和哈希在 `docs/reports/evidence/permissions`；FauxCam 的截图、条件和测试摘要在 `docs/reports/evidence/fauxcam`。AI 协作记录在 `docs/ai-collaboration`，提交目录在 `docs/submission`。
 
 ### 20.2 构建与测试
 
@@ -664,15 +666,9 @@ make audit
 
 系统权限专项用 `make test-camera-permissions`，常规 UI 用 `make test-ui`，FauxCam 专项的配置、工具路径和命令在 `docs/reports/fauxcam-validation.md`。导出报告需要明确填写实际日期、设备和结果包，完整示例在 `docs/reports/verification-local.md`。
 
-提交包通过 `make package` 生成，包含 Markdown、图片、原始证据、可执行检查脚本、MANIFEST.sha256 和 SUBMISSION.json。打包检查源文件哈希、证据哈希、ZIP CRC 和归档内容，作者填写真实数据之后需要更新正文和压缩包。
+提交包通过 `make package` 生成，按仓库目录结构只放源码、测试、语料、规格文档、报告和证据，不包含 `.git`、`.gitignore`、`.github`、`.githooks`、`AGENTS.md`、`HANDOFF.md`、作业 PDF 和调研方案。打包时检查源文件哈希、证据哈希、ZIP CRC 和归档内容。
 
-### 20.3 作者填写与未验证范围
-
-`docs/submission/user-actions.md` 保留提交信息一项，`docs/submission/final-signoff.md` 集中填写姓名、学号、设备、日期、实际完成范围以及仍未验证的项目。人工修改案例填写在 `docs/submission/manual-corrections.csv`，包括实际改动字段、修改数量和附件位置。
-
-相机权限已经在模拟器上做过系统验证，不需要准备 iPhone。正版 Android 的版本、76 张同图统计和网页操作已经归档；真实拍照质量、iOS 正版行为和会员导出文件保留未验证。作者本人的修改案例和演示结果在最终确认表里补充。
-
-### 20.4 界面与实测附件
+### 20.3 界面与实测附件
 
 正版 Android 的确认页：
 
@@ -698,6 +694,6 @@ FauxCam 实际识别结果：
 
 ![名片详情历史截图](screenshots/06-detail.png)
 
-### 20.5 资料定位
+### 20.4 资料定位
 
 课程用例来源在 `docs/testing/reference-test-suite.md`；官方资料日期与链接在 `docs/reports/difference-analysis.md`；逐图字段比较在 `docs/reports/image-accuracy-latest.md` 和同名 JSON；识别输出在 `docs/reports/evidence/ocr-measurement`；具体命令和运行摘要在 `docs/reports/verification-local.md` 与 `docs/reports/verification-reference.md`；正版同图统计在 `docs/reports/reference-comparison.md`。原文和原始字段在证据目录里，报告中的表格都可以回到这些文件核对。

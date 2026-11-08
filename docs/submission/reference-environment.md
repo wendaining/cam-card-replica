@@ -23,4 +23,4 @@
 | 官网范围 | 登录后验证录入、详情、编辑、搜索、分组、备注及重新加载 |
 | iOS 正版 | Mac App Store 获取未完成，记录 Anisette -45061；未验证 |
 
-[安装与操作记录](../reports/reference-validation.md)保存版本、安装包哈希和流程；[原始证据](../reports/evidence/reference-android/README.md)保存逐图截图、XML 和字段。最终工程提交标识记录在压缩包 SUBMISSION.json 中。
+[安装与操作记录](../reports/reference-validation.md)保存版本、安装包哈希和流程；[原始证据](../reports/evidence/reference-android/README.md)保存逐图截图、XML 和字段。最终工程提交标识以 Git 历史为准。

@@ -35,7 +35,7 @@ Nickname 地址归类回归先出现一项断言失败，修正读取规则后�
 
 正版 Android 的导入、保存、取消和测试记录软删除，以及官网录入、详情、编辑、搜索、分组、备注与重新加载分别注明平台。iOS 正版、真实拍摄质量、正版网络与存储异常的完整注入、CamCard 会员导出文件未验证。T18 使用本项目模拟器终止与重新启动证据，T19 使用本项目 VCF 全字段反序列化证据。
 
-TRAE 使用记录归档在 [TRAE 使用记录](../ai-collaboration/trae-record.md)；本人仍需填写作者信息、本人修改案例、验收与演示结果，见 [简明清单](../submission/user-actions.md)。
+TRAE 使用记录归档在 [TRAE 使用记录](../ai-collaboration/trae-record.md)；作者信息与演示结果见最终确认表。
 
 ## 复现命令
 
@@ -52,4 +52,4 @@ make package
 
 重新采集需先完成官方应用安装、登录和协议确认，并独占指定模拟器；不要在已运行的采集进程之外同时操作。正常采集命令为 python3 Scripts/collect_reference_android.py，完整前置条件见正版验证记录。
 
-提交包包含 Markdown、相对路径图片与原始证据，以及 START-HERE.md、SUBMISSION.json 和 MANIFEST.sha256。版本与工作区状态以最终打包时的实际 Git 状态记录；工具验证 ZIP CRC 和逐文件 SHA-256。
+提交包按仓库目录结构包含 Markdown、相对路径图片、原始证据和源文件；工具验证 ZIP CRC 和逐文件 SHA-256。

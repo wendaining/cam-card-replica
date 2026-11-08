@@ -1,22 +1,22 @@
 # CamCard Replica
 
-用 **SwiftUI + Apple Vision** 复刻「名片全能王 CamCard」的「名片数字化 + 联系人管理」功能切片。
-课程作业要求的是**用规格和测试证明行为等价**，所以这个仓库里代码只是一半，另一半是
-`docs/` 下的规格、验收追溯表和实测准确率报告。
+最终报告：[docs/reports/final-report.md](docs/reports/final-report.md)
+
+仓库：https://github.com/wendaining/cam-card-replica
+
+用 **SwiftUI + Apple Vision** 复刻「名片全能王 CamCard」的「名片数字化 + 联系人管理」功能切片。实现、规格、验收追溯、测试和测量报告都在这个仓库里。
 
 ```
 拍/导入 → 名片检测 → 透视校正 → OCR → 八字段解析 → 人工确认 → 保存
         → 名片夹 → 搜索/标签/备注 → 详情/编辑/删除 → 杀进程仍在 → 导出 vCard/通讯录
 ```
 
-| | |
-|---|---|
-| 单元 / 集成测试 | **109 个方法**，含理想文本和全部图片评测 |
-| 端到端测试 | **27 个方法（含截图、FauxCam 与系统权限专项）**，真机与参考 App 待验项单列 |
-| 字段准确率 | [理想文本与真实图像分开报告](docs/reports/ocr-accuracy.md)，完整集合与缺失误填均计数 |
-| 第三方依赖 | **无**（Vision / Core Image / Contacts / SwiftUI 全是系统框架） |
+- 单元 / 集成测试：109 个方法，含理想文本和全部图片评测。
+- 端到端测试：27 个方法，含截图、FauxCam 与系统权限专项；真机和参考 App 的未验项单独记录。
+- 字段准确率：见 [ocr-accuracy.md](docs/reports/ocr-accuracy.md)，完整集合与缺失误填都计分。
+- 第三方依赖：无，Vision、Core Image、Contacts、SwiftUI 都是系统框架。
 
-最新全仓审查修复与验证范围：[2026-10-30 修复记录](docs/reports/review-fixes-followup.md)。
+审查修复记录见 [review-fixes-followup.md](docs/reports/review-fixes-followup.md)。
 
 ![名片夹](docs/reports/screenshots/02-list.png)
 
@@ -26,7 +26,7 @@
 
 ```bash
 brew install xcodegen swiftlint swiftformat
-git clone <this repo> && cd cam-card-replica
+git clone https://github.com/wendaining/cam-card-replica.git && cd cam-card-replica
 make bootstrap                 # 由 project.yml 生成 CamCardReplica.xcodeproj
 make build                     # 期望结尾：** BUILD SUCCEEDED **
 make test                      # 期望结尾：Executed 109 tests, with 0 failures
@@ -36,7 +36,7 @@ open CamCardReplica.xcodeproj  # 选 iPhone 18 Pro，Cmd+R
 **第一次亲手用**（不写代码，跟着点）：[docs/guides/first-run.md](docs/guides/first-run.md) —
 本地运行与验证命令见下文；正版 Android 76 张同图和官网管理结果已归档，真实拍摄质量未验证。
 
-第一次跑会遇到的两件事：
+第一次运行的两个注意事项：
 
 1. **模拟器没有摄像头**，可用左下角从相册导入。按首次运行指南显式启用 fixture-camera 后，
    右下角的「测试名片」按钮（试管图标）可走完整条识别链路。
@@ -80,7 +80,7 @@ ls /tmp/camcard-shots
                               └───────────────────┘
 ```
 
-三条设计原则，也解释了为什么测试能跑得这么细：
+三个设计选择：
 
 1. **不确定的东西都藏在协议后面**：相机、权限、OCR、检测、导出各有协议，
    测试注入替身，生产路径零 `if debug`（[ADR-0004](docs/architecture/adr/ADR-0004-protocol-seams-and-fixtures.md)）。
@@ -128,11 +128,10 @@ docs/            spec / api / architecture(6 篇 ADR) / testing / guides / repor
 
 | 先看哪篇 | 内容 |
 |---|---|
-| [正版同图比较（2026-11-08）](docs/reports/reference-comparison.md) | 76 张同图、完整字段与原始截图 |
-| [最新验证（2026-11-08）](docs/reports/verification-reference.md) | 109 个回归方法和证据工具检查 |
-| [提交前核实（2026-11-07）](docs/reports/submission-audit.md) | 当前交付材料、最后回归、剩余证据与提交建议 |
-| [HANDOFF.md](HANDOFF.md) | **换人/换 agent 先读**：验证过什么、没验证什么、已知缺口、审查建议 |
-| [AGENTS.md](AGENTS.md) | 工程契约：约束、命令、提交规范、当前状态 |
+| [最终报告](docs/reports/final-report.md) | 实现、规格追溯、测试、OCR 测量、错误分析与能力边界 |
+| [正版同图比较](docs/reports/reference-comparison.md) | 76 张同图、完整字段与原始截图 |
+| [最新验证](docs/reports/verification-reference.md) | 109 个回归方法和证据工具检查 |
+| [提交前核实](docs/reports/submission-audit.md) | 交付材料、最后回归、剩余证据与提交建议 |
 | [docs/spec/product-spec.md](docs/spec/product-spec.md) | 产品规格（编号条款，按作业章节组织） |
 | [docs/spec/data-model.md](docs/spec/data-model.md) | `BusinessCard` 模型与每个字段的判定规则 |
 | [docs/spec/acceptance.md](docs/spec/acceptance.md) | T01–T20 追溯矩阵 |
@@ -146,6 +145,4 @@ docs/            spec / api / architecture(6 篇 ADR) / testing / guides / repor
 
 ## 合规
 
-课程作业用途。所有测试名片、人名、公司、电话、邮箱均为**虚构合成数据**
-（`.example` 域名、`0000` 号码段），不含任何真实个人信息；
-未使用 CamCard 的任何代码、模型或素材。
+所有测试名片、人名、公司、电话、邮箱均为虚构合成数据（`.example` 域名、`0000` 号码段）；未使用 CamCard 的任何代码、模型或素材。

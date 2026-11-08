@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
-"""Create a coursework archive with a content manifest and actual evidence."""
+"""Create a clean coursework archive from the repository tree."""
 import argparse
-from datetime import datetime
 import hashlib
 import json
 from pathlib import Path
 import subprocess
 import zipfile
-from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
-ALLOWED_ROOTS = {'Sources', 'Tests', 'UITests', 'Resources', 'TestData', 'docs', 'Scripts', '.github', '.githooks'}
-ALLOWED_FILES = {'README.md', 'AGENTS.md', 'HANDOFF.md', 'Makefile', 'project.yml', '.gitignore',
-                 '.swiftlint.yml', '.swiftformat', '移动应用开发课程作业-v2.pdf', '00-作业调研与执行方案.md'}
+ALLOWED_ROOTS = {'Sources', 'Tests', 'UITests', 'Resources', 'TestData', 'docs', 'Scripts'}
+ALLOWED_FILES = {'README.md', 'Makefile', 'project.yml', '.swiftlint.yml', '.swiftformat'}
 
 # Filled personal documents stay untracked; if present, they replace the blanks in the archive.
 PERSONAL_FILES = {
@@ -27,7 +24,6 @@ def digest(data):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--date', default=datetime.now(ZoneInfo('Asia/Shanghai')).date().isoformat())
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'output/submission')
     args = parser.parse_args()
     for required in ('docs/reports/final-report.md',
@@ -66,43 +62,25 @@ def main():
             if '__pycache__' in path.parts or path.suffix == '.pyc':
                 continue
             files[path.as_posix()] = (ROOT / path).read_bytes()
-    used_personal_copies = []
     for archive_name, local_name in PERSONAL_FILES.items():
         local_path = ROOT / local_name
         if local_path.is_file():
             files[archive_name] = local_path.read_bytes()
-            used_personal_copies.append(local_name)
-    files['START-HERE.md'] = ('# 提交材料\n\n'
-                             '[最终报告 Markdown](docs/reports/final-report.md)\n\n'
-                             '[提交目录](docs/submission/README.md)\n\n'
-                             '[本人操作清单](docs/submission/user-actions.md)\n\n'
-                             '[最终填写模板](docs/submission/final-signoff.md)\n\n'
-                             '[正版同图统计](docs/reports/reference-comparison.md)\n\n'
-                             '作者信息、本人验收与 TRAE 详细附件保留填写位置。\n').encode()
-    metadata = dict(createdAt=datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
-                    gitRevision=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-                    workingTreeHasChanges=bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT)),
-                    ocrRecordCount=len(records), referenceRecordCount=reference_count, fileCountBeforeManifest=len(files),
-                    usedPersonalCopies=used_personal_copies,
-                    pendingAuthorRecords=['author identity, signoff and demonstration'],
-                    unverifiedScopes=['physical-device shooting quality', 'iOS reference application', 'CamCard VIP export artifacts'])
-    files['SUBMISSION.json'] = (json.dumps(metadata, ensure_ascii=False, indent=2) + '\n').encode()
-    files['MANIFEST.sha256'] = ''.join(f'{digest(data)}  {name}\n' for name, data in sorted(files.items())).encode()
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    name = 'CamCardReplica-Submission-' + args.date
-    archive = args.output_dir / (name + '.zip')
+    archive = args.output_dir / 'CamCardReplica-Submission.zip'
+    root = 'CamCardReplica'
     with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as output:
         for relative, data in sorted(files.items()):
-            output.writestr(name + '/' + relative, data)
+            output.writestr(root + '/' + relative, data)
     with zipfile.ZipFile(archive) as check:
         if check.testzip() is not None:
             raise SystemExit('Archive CRC validation failed')
         for relative, data in files.items():
-            if digest(check.read(name + '/' + relative)) != digest(data):
+            if digest(check.read(root + '/' + relative)) != digest(data):
                 raise SystemExit('Archive content validation failed: ' + relative)
     checksum = args.output_dir / (archive.name + '.sha256')
     checksum.write_text(digest(archive.read_bytes()) + '  ' + archive.name + '\n')
-    print(f'{archive}\n{checksum}\nVerified {len(files)} archive entries and {len(records)} OCR records')
+    print(f'{archive}\n{checksum}\nVerified {len(files)} archive entries, {len(records)} OCR records and {reference_count} reference records')
 
 
 if __name__ == '__main__':
