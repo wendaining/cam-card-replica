@@ -1,0 +1,152 @@
+{
+  "fields": {
+    "name": [
+      "Grace Lin"
+    ],
+    "company": [],
+    "jobTitle": [
+      "Irjvestment Analyst"
+    ],
+    "department": [
+      "Growth Equity",
+      "Atlas Capital Group"
+    ],
+    "emails": [
+      "grace.lin@example.org"
+    ],
+    "website": [],
+    "address": [],
+    "mobile": [
+      "+12120005678"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "Grace Lin",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+12120005678",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "grace.lin@example.org",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Growth Equity",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Irjvestment Analyst",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Atlas Capital Group",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "JobTitle",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "en-08.png",
+  "observedAt": "2026-11-08T13:14:03.463689+08:00",
+  "inputSHA256": "e6398df165bed5d746d292fd4f8710ef9664e4de153f06b46f51f8b47efde77a",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/en-08.png",
+    "mediaURI": "content://media/external/images/media/1000000138",
+    "deviceSHA256": "e6398df165bed5d746d292fd4f8710ef9664e4de153f06b46f51f8b47efde77a"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 32.822
+}

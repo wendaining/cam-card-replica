@@ -1,0 +1,32 @@
+[p1 "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司" | space "CamCard 正版电脑验证"(1): 2 managed, 0 untracked — p1* "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司", p2 "‎名片全能王-名片扫描分享和企业查询 App - App Store"]
+root
+  anchor [ref=81, url=https://www.camcard.com/]
+  container
+    container
+      text "登录"
+      text "手机验证码登录"
+    text "电子邮箱 / 手机号"
+    textbox [ref=82]
+    text "密码"
+    textbox [ref=83]
+    text "下次自动登录"
+    anchor [ref=84, loc=href:/user/findpwd, url=https://www.camcard.com/user/findpwd]
+      text "忘记密码？"
+    anchor [ref=85]
+      text "登录"
+    container
+      text "没有账号？"
+      anchor [ref=86, url=https://www.camcard.com/user/register]
+        text "去注册"
+  container
+    container
+      anchor [ref=87, loc=href:http://www.intsig.com/, url=http://www.intsig.com/]
+        text "官方网站"
+      anchor [ref=88, loc=href:https://static-cdn-p.camcard.com/policy/camcard/service_zh-cn.html, url=https://static-cdn-p.camcard.com/policy/camcard/service_zh-cn.html]
+        text "服务条款"
+      anchor [ref=89, loc=href:https://static-cdn-p.camcard.com/policy/camcard_web/privacy_zh-cn.html, url=https://static-cdn-p.camcard.com/policy/camcard_web/privacy_zh-cn.html]
+        text "隐私政策"
+      anchor [ref=90, loc=href:/site/download, url=https://www.camcard.com/site/download]
+        text "下载移动客户端"
+      text "简体中文"
+    text "Copyright © 2025 上海合合信息科技股份有限公司 保留所有权利"

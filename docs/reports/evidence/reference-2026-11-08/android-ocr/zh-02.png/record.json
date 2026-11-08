@@ -1,0 +1,93 @@
+{
+  "fields": {
+    "name": [
+      "李静"
+    ],
+    "company": [
+      "华远科技股份有限公司"
+    ],
+    "jobTitle": [
+      "技术总监"
+    ],
+    "department": [
+      "研发中心"
+    ],
+    "emails": [],
+    "website": [],
+    "address": [],
+    "mobile": [],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "李静",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "华远科技股份有限公司",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "研发中心",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "技术总监",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-02.png",
+  "observedAt": "2026-11-08T12:57:20.553745+08:00",
+  "inputSHA256": "c860827e95dfc240f0f0b76b65418effed153cb717531b3860778b634f6a46ad",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-02.png",
+    "mediaURI": "content://media/external/images/media/1000000106",
+    "deviceSHA256": "c860827e95dfc240f0f0b76b65418effed153cb717531b3860778b634f6a46ad"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml"
+  ],
+  "collectionSeconds": 28.309
+}

@@ -1,0 +1,60 @@
+[p1 "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司" | space "CamCard 正版电脑验证"(1): 2 managed, 0 untracked — p1* "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司", p2 "智能名片扫描仪 - 名片全能王"]
+root
+  container
+    anchor [ref=152, url=https://www.camcard.com/card]
+    anchor [ref=153, url=https://www.camcard.com/card]
+      text "名片夹"
+    container
+      anchor [ref=154, url=https://www.camcard.com/tool/import]
+        text "工具箱"
+      text "-->"
+      text "帮助"
+      image
+  svg_root
+  container
+    unordered_list
+      list_item
+        anchor [ref=155, url=https://www.camcard.com/tool/import]
+          text "导入到名片全能王"
+      list_item
+        anchor [ref=156, loc=href:/tool/excel, url=https://www.camcard.com/tool/excel]
+          text "导出联系人"
+      list_item
+        anchor [ref=157, loc=href:/tool/modifypwd, url=https://www.camcard.com/tool/modifypwd]
+          text "修改密码"
+      list_item
+        anchor [ref=158, loc=href:/tool/tag, url=https://www.camcard.com/tool/tag]
+          text "分组管理"
+      list_item
+        anchor [ref=159, loc=href:/tool/recycle, url=https://www.camcard.com/tool/recycle]
+          text "名片回收站"
+    container
+      text "导入到名片全能王"
+      container
+        paragraph
+          text "您可以将其他系统中的联系人导入到名片全能王，便于您集中管理与备份"
+        container
+          text "导入 Outlook 联系人"
+          svg_root
+        container
+          text "导入 Linkedin 联系人"
+          svg_root
+        container
+          text "从 Excel 导入联系人"
+          svg_root
+        container
+          text "FAQ:"
+          paragraph
+            text "如何导入SanSan的名片及联系人信息"
+          paragraph
+            text "如何导入Wantedly People的名片及联系人信息"
+          paragraph
+            text "如何用excel导入联系人信息"
+          paragraph
+            text "在导入过程中出现的问题及说明"
+          paragraph
+            text "为什么导入数据会失败？"
+          paragraph
+            text "web端上传完毕后，手机端如何同步？"
+          paragraph
+            text "为什么登录Google账户或者Outlook邮箱后，无法导出联系人信息？"

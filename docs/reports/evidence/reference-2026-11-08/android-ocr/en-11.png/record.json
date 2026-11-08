@@ -1,0 +1,186 @@
+{
+  "fields": {
+    "name": [
+      "Kevin Wu"
+    ],
+    "company": [
+      "Pacific Freight Co."
+    ],
+    "jobTitle": [
+      "Operations Manager"
+    ],
+    "department": [
+      "O \" \" Fmght"
+    ],
+    "emails": [
+      "kevin.wu@example.org"
+    ],
+    "website": [],
+    "address": [
+      "Friedrichshasse 88, Berlin, 10117"
+    ],
+    "mobile": [
+      "+81300007890"
+    ],
+    "office": [
+      "+493000006000"
+    ],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "Friedrichshasse 88"
+      },
+      {
+        "component": "box_city",
+        "value": "Berlin"
+      },
+      {
+        "component": "box_postcode",
+        "value": "10117"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "Kevin Wu",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+81300007890",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+493000006000",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "kevin.wu@example.org",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        16
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Pacific Freight Co.",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "O \" \" Fmght",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Operations Manager",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "Friedrichshasse 88",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "Berlin",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "10117",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "en-11.png",
+  "observedAt": "2026-11-08T13:16:36.974462+08:00",
+  "inputSHA256": "8243085cda1fc93c0c72193044fc3d0621abdcf6a1688c9f56bc90aa3384d35e",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/en-11.png",
+    "mediaURI": "content://media/external/images/media/1000000142",
+    "deviceSHA256": "8243085cda1fc93c0c72193044fc3d0621abdcf6a1688c9f56bc90aa3384d35e"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 34.609
+}

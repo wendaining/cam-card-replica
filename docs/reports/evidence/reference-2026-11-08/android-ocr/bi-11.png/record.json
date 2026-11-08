@@ -1,0 +1,226 @@
+{
+  "fields": {
+    "name": [
+      "朱宏明"
+    ],
+    "company": [],
+    "jobTitle": [
+      "教授 Professor"
+    ],
+    "department": [
+      "同济大学 Tongji Universiw",
+      "计算机学院 School of CS",
+      "Zhu Hongming"
+    ],
+    "emails": [
+      "biz11@example.com",
+      "sales11@example.net"
+    ],
+    "website": [
+      "www.examplell.com"
+    ],
+    "address": [],
+    "mobile": [
+      "+8613700009012"
+    ],
+    "office": [
+      "02160001234"
+    ],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "朱宏明",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613700009012",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02160001234",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz11@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "sales11@example.net",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "同济大学 Tongji Universiw",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        21
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "教授 Professor",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        24
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        25
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "计算机学院 School of CS",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        26
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "JobTitle",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        29
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        30
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Zhu Hongming",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        31
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "JobTitle",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        33,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.examplell.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-11.png",
+  "observedAt": "2026-11-08T13:31:35.550841+08:00",
+  "inputSHA256": "7aaa7dfd9406b012926e21aba3aaa73a8451bd0e32c89a0b1efb9b42bfd5afdb",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-11.png",
+    "mediaURI": "content://media/external/images/media/1000000165",
+    "deviceSHA256": "7aaa7dfd9406b012926e21aba3aaa73a8451bd0e32c89a0b1efb9b42bfd5afdb"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 40.851
+}

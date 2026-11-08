@@ -1,0 +1,118 @@
+{
+  "fields": {
+    "name": [
+      "郑丽华"
+    ],
+    "company": [
+      "星河银行"
+    ],
+    "jobTitle": [
+      "客户经理"
+    ],
+    "department": [
+      "对公业务部"
+    ],
+    "emails": [],
+    "website": [],
+    "address": [],
+    "mobile": [
+      "+8613700009012",
+      "01080005679"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "郑丽华",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613700009012",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "01080005679",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "星河银行",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "对公业务部",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "客户经理",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-11.png",
+  "observedAt": "2026-11-08T13:05:12.921474+08:00",
+  "inputSHA256": "113080452ae861df980ae9761eda6e0a031da15e4ec568a7776ea333571cbe48",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-11.png",
+    "mediaURI": "content://media/external/images/media/1000000121",
+    "deviceSHA256": "113080452ae861df980ae9761eda6e0a031da15e4ec568a7776ea333571cbe48"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml"
+  ],
+  "collectionSeconds": 25.968
+}

@@ -1,0 +1,109 @@
+{
+  "fields": {
+    "name": [
+      "赵敏"
+    ],
+    "company": [],
+    "jobTitle": [
+      "rk, ng\\t.. 夕-市场经理"
+    ],
+    "department": [
+      "Co., ina Medi,°l UE 宁 Ea7"
+    ],
+    "emails": [],
+    "website": [],
+    "address": [],
+    "mobile": [],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "赵敏",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Co., ina Medi,°l UE 宁 Ea7",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "rk, ng\\t.. 夕-市场经理",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Zhao Min",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [
+    {
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "value": "Zhao Min",
+      "section": "org"
+    }
+  ],
+  "inputFile": "bi-18-photo.jpg",
+  "observedAt": "2026-11-08T13:41:43.677539+08:00",
+  "inputSHA256": "a59253f5e57dfad04d7ead42e42d3b0159729526c6206a7ef865f1036ffb4322",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-18-photo.jpg",
+    "mediaURI": "content://media/external/images/media/1000000177",
+    "deviceSHA256": "a59253f5e57dfad04d7ead42e42d3b0159729526c6206a7ef865f1036ffb4322"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml"
+  ],
+  "collectionSeconds": 29.814
+}

@@ -1,0 +1,220 @@
+{
+  "fields": {
+    "name": [
+      "陈雨欣"
+    ],
+    "company": [],
+    "jobTitle": [
+      "Senior Consultant 高级顾问",
+      "Mingde Consulting 明德咨询"
+    ],
+    "department": [],
+    "emails": [
+      "biz16@example.com"
+    ],
+    "website": [],
+    "address": [
+      "杨浦区四平路1 239号, 上海市, 200092, Chen Yuxin"
+    ],
+    "mobile": [
+      "+8615900006677"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "杨浦区四平路1 239号"
+      },
+      {
+        "component": "box_city",
+        "value": "上海市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "200092"
+      },
+      {
+        "component": "box_nickname",
+        "value": "Chen Yuxin"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "陈雨欣",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8615900006677",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz16@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Senior Consultant 高级顾问",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Mingde Consulting 明德咨询",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "杨浦区四平路1 239号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "上海市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "200092",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Chen Yuxin",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-16.png",
+  "observedAt": "2026-11-08T13:39:47.597117+08:00",
+  "inputSHA256": "4dcf345c6f44661e58636617086e0ed8a87b607ef9403791a3a33edf0f9f8bca",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-16.png",
+    "mediaURI": "content://media/external/images/media/1000000174",
+    "deviceSHA256": "4dcf345c6f44661e58636617086e0ed8a87b607ef9403791a3a33edf0f9f8bca"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 38.049
+}

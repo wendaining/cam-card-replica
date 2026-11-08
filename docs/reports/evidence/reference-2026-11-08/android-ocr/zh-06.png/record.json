@@ -1,0 +1,147 @@
+{
+  "fields": {
+    "name": [
+      "刘晓峰"
+    ],
+    "company": [
+      "海通律师事务所"
+    ],
+    "jobTitle": [
+      "合伙人"
+    ],
+    "department": [
+      "知识产权"
+    ],
+    "emails": [
+      "contoct06@cxumplc.com"
+    ],
+    "website": [
+      "www.cxnmplc06.com"
+    ],
+    "address": [],
+    "mobile": [
+      "+8618800002211"
+    ],
+    "office": [
+      "075520009013"
+    ],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "刘晓峰",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8618800002211",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "075520009013",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "contoct06@cxumplc.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        16
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "海通律师事务所",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "知识产权",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "合伙人",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.cxnmplc06.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-06.png",
+  "observedAt": "2026-11-08T13:01:27.112297+08:00",
+  "inputSHA256": "4d7e5d7cae014a63745c6fe97d0a8de78dd7ed7790ce24f24bdccd48d50ed064",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-06.png",
+    "mediaURI": "content://media/external/images/media/1000000113",
+    "deviceSHA256": "4d7e5d7cae014a63745c6fe97d0a8de78dd7ed7790ce24f24bdccd48d50ed064"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 32.277
+}

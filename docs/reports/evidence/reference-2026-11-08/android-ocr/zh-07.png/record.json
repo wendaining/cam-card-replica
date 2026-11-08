@@ -1,0 +1,200 @@
+{
+  "fields": {
+    "name": [
+      "赵敏"
+    ],
+    "company": [
+      "康宁医疗器械有限公司"
+    ],
+    "jobTitle": [
+      "市场经理"
+    ],
+    "department": [
+      "市场部"
+    ],
+    "emails": [
+      "contact07@example.com"
+    ],
+    "website": [
+      "www.example07.com"
+    ],
+    "address": [
+      "海淀区中关村大街 1 号, 北京市, 100080"
+    ],
+    "mobile": [
+      "+8613300004455"
+    ],
+    "office": [
+      "02160001234"
+    ],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "海淀区中关村大街 1 号"
+      },
+      {
+        "component": "box_city",
+        "value": "北京市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "100080"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "赵敏",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613300004455",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02160001234",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "contact07@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        16
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "康宁医疗器械有限公司",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "市场部",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "市场经理",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.example07.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "海淀区中关村大街 1 号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "北京市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "100080",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-07.png",
+  "observedAt": "2026-11-08T13:02:04.817680+08:00",
+  "inputSHA256": "4b2c5b3fea7a9a9c61194791915c7f7b7bce1881eea71ffd778718b74c2e6124",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-07.png",
+    "mediaURI": "content://media/external/images/media/1000000114",
+    "deviceSHA256": "4b2c5b3fea7a9a9c61194791915c7f7b7bce1881eea71ffd778718b74c2e6124"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 34.012
+}

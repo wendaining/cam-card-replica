@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-08T13:52:22.764273+08:00",
+  "inputCount": 76,
+  "uniqueCards": 50,
+  "referenceVersion": "8.25.0.20260129",
+  "referenceMode": "Basic",
+  "referenceLanguages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "visionRunSHA256": "437db236a41a6678029c0c2ab292efd7b0ff3aea25ab2d79981fe2070bc91d53",
+  "groundTruthSHA256": "e4956ae3c93851835f5fb19a5d2dabcc13ee6eb79dc65cbbd9c271bff77442be",
+  "gitRevision": "3fb3ef37ccfdc200f15a35274f19e22d65e478dc",
+  "replaySourceFilesSHA256": {
+    "Scripts/reference_camcard_ui.py": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+    "Scripts/compare_reference_camcard.py": "7362327366bb9e96785d3312a9aee7891885efbe07150a857d93f0f9bff3f0c3"
+  },
+  "statistics": {
+    "strict": {
+      "replica": {
+        "total": 760,
+        "correct": 646,
+        "present": 591,
+        "presentCorrect": 478,
+        "absent": 169,
+        "hallucinated": 1,
+        "missing": 109,
+        "extra": 94,
+        "expectedValues": 599,
+        "truePositive": 490,
+        "precision": 0.839041095890411,
+        "recall": 0.8180300500834724,
+        "f1": 0.8284023668639053
+      },
+      "reference": {
+        "total": 760,
+        "correct": 350,
+        "present": 591,
+        "presentCorrect": 202,
+        "absent": 169,
+        "hallucinated": 21,
+        "missing": 374,
+        "extra": 289,
+        "expectedValues": 599,
+        "truePositive": 225,
+        "precision": 0.4377431906614786,
+        "recall": 0.3756260434056761,
+        "f1": 0.4043126684636118
+      }
+    },
+    "content": {
+      "replica": {
+        "total": 760,
+        "correct": 672,
+        "present": 591,
+        "presentCorrect": 504,
+        "absent": 169,
+        "hallucinated": 1,
+        "missing": 83,
+        "extra": 68,
+        "expectedValues": 599,
+        "truePositive": 516,
+        "precision": 0.8835616438356164,
+        "recall": 0.8614357262103506,
+        "f1": 0.8723584108199494
+      },
+      "reference": {
+        "total": 760,
+        "correct": 462,
+        "present": 591,
+        "presentCorrect": 314,
+        "absent": 169,
+        "hallucinated": 21,
+        "missing": 260,
+        "extra": 175,
+        "expectedValues": 599,
+        "truePositive": 339,
+        "precision": 0.6595330739299611,
+        "recall": 0.5659432387312187,
+        "f1": 0.6091644204851752
+      }
+    }
+  }
+}

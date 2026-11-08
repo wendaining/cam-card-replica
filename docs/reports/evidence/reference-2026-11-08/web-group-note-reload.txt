@@ -1,0 +1,125 @@
+[p1 "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司" | space "CamCard 正版电脑验证"(1): 2 managed, 0 untracked — p1* "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司", p2 "智能名片扫描仪 - 名片全能王"]
+root
+  container
+    anchor [ref=308, url=https://www.camcard.com/card]
+    anchor [ref=309, url=https://www.camcard.com/card]
+      text "名片夹"
+    container
+      anchor [ref=310, url=https://www.camcard.com/tool/import]
+        text "工具箱"
+      text "-->"
+      text "帮助"
+      image
+  container
+    container
+      container
+        text "日期排序"
+        text ""
+      container
+        text "分组"
+        text ""
+    container
+      text "所有名片"
+      container
+        container
+          textbox [ref=311]
+          anchor [ref=312]
+            text "搜索"
+        container
+          table
+            table_row
+              table_cell
+                table
+                  table_row
+                    table_cell
+                      text "名片图像"
+          table
+            table_row
+              table_cell
+                image
+              table_cell
+                text "David Chen 课程验收"
+                text "Technical Director"
+                text "ABC Technologies 测试"
+            table_row
+              table_cell
+        container
+          anchor [ref=313]
+          anchor [ref=314]
+          text "第"
+          textbox [ref=315]
+            text "1"
+          container
+            text "/  1"
+            text "页"
+          anchor [ref=316]
+          anchor [ref=317]
+    container
+      container
+        image
+        container
+          text "David Chen 课程验收"
+          text "Technical Director  ABC Technologies 测试"
+          container
+            text "行业"
+            text "所在地"
+        text "编辑"
+      container
+        text "分组和备注"
+        container
+          container
+            text ""
+            anchor [ref=318]
+              text "课程验收 2026-11-08"
+          container
+            container
+              text ""
+              anchor [ref=319]
+                text "新增备注"
+              text ""
+            container
+              container
+                container
+                  text "2026-11-08 00:14"
+                  text "编辑"
+                text "课程验收：手工输入字段，仅验证网页管理流程，未计入 OCR 统计。"
+              image
+            container
+              text ""
+              text "展开"
+      container
+        text "联系信息"
+        container
+          container
+            text ""
+            text "+1 415 000 1234"
+            container
+              text "+1 415 000 1234"
+              text "手机"
+            container
+              text "+1 415 000 8000"
+              text "电话"
+          container
+            text ""
+            anchor [ref=320, url=mailto:david.chen@example.org]
+              text "david.chen@example.org"
+            container
+              anchor [ref=321, url=mailto:david.chen@example.org]
+                text "david.chen@example.org"
+              text "邮箱"
+          container
+            text ""
+            anchor [ref=322, url=http://api.map.baidu.com/geocoder?address=%2C%2C500%20Market%20Street%2C%20Suite%20900%2CSan%20Francisco%2CCalifornia%2C94105%2CUSA&output=html&src=IntSig|CamCard]
+              text "500 Market Street, Suite 900 San Francisco California USA 94105"
+            container
+              anchor [ref=323, url=http://api.map.baidu.com/geocoder?address=%2C%2C500%20Market%20Street%2C%20Suite%20900%2CSan%20Francisco%2CCalifornia%2C94105%2CUSA&output=html&src=IntSig|CamCard]
+                text "500 Market Street, Suite 900 San Francisco California USA 94105"
+              text "地址"
+          container
+            text ""
+            text "展开"
+      container
+        text "公司信息"
+        container
+          text "ABC Technologies 测试"
+          text "Platform Engineering  Technical Director"

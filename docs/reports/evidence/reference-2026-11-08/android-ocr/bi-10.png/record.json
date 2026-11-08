@@ -1,0 +1,195 @@
+{
+  "fields": {
+    "name": [
+      "孙立"
+    ],
+    "company": [],
+    "jobTitle": [
+      "主任工程师 Chief Engineer"
+    ],
+    "department": [
+      "北方电力 North Power Design"
+    ],
+    "emails": [
+      "biz10@example.com"
+    ],
+    "website": [],
+    "address": [
+      "高新区天府大道中段 1 号, 成都市, 610041"
+    ],
+    "mobile": [
+      "+8613900005678"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "高新区天府大道中段 1 号"
+      },
+      {
+        "component": "box_city",
+        "value": "成都市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "610041"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "孙立",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613900005678",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz10@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "北方电力 North Power Design",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "主任工程师 Chief Engineer",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "高新区天府大道中段 1 号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "成都市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "610041",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Sun Li",
+      "section": "nickname",
+      "typeLabel": null,
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [
+    {
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "value": "Sun Li",
+      "section": "nickname"
+    }
+  ],
+  "inputFile": "bi-10.png",
+  "observedAt": "2026-11-08T13:30:14.442520+08:00",
+  "inputSHA256": "f22305989e6f8cfc38f53b55969fae6ae7f23d3ac88a75f28ace976590ba19d2",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-10.png",
+    "mediaURI": "content://media/external/images/media/1000000163",
+    "deviceSHA256": "f22305989e6f8cfc38f53b55969fae6ae7f23d3ac88a75f28ace976590ba19d2"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 34.133,
+  "interpretationReplay": {
+    "reason": "Keep Nickname separate from address components",
+    "captureParserSHA256": "7140dcf12a4dea57169b613ead36ede3ca5ff1986c288d7ae92e9471f9bbc836",
+    "replayParserSHA256": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+    "replayedAt": "2026-11-08T13:46:13.853248+08:00"
+  }
+}

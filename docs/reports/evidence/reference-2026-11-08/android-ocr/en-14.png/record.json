@@ -1,0 +1,183 @@
+{
+  "fields": {
+    "name": [
+      "Olivia Brown"
+    ],
+    "company": [
+      "Cedar & Finch"
+    ],
+    "jobTitle": [
+      "Founder"
+    ],
+    "department": [],
+    "emails": [
+      "olivia.brown@exaijjple.org"
+    ],
+    "website": [],
+    "address": [
+      "12 King William Sh ' eet, London, EC4N 7BJ"
+    ],
+    "mobile": [],
+    "office": [
+      "+12120005678",
+      "+442000007001"
+    ],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "12 King William Sh ' eet"
+      },
+      {
+        "component": "box_city",
+        "value": "London"
+      },
+      {
+        "component": "box_postcode",
+        "value": "EC4N 7BJ"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "Olivia Brown",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+12120005678",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+442000007001",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "olivia.brown@exaijjple.org",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        16
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Cedar & Finch",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Founder",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "12 King William Sh ' eet",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "London",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "EC4N 7BJ",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "en-14.png",
+  "observedAt": "2026-11-08T13:19:59.659553+08:00",
+  "inputSHA256": "829057bd789ad6e5fba3e5eadd54b885c4fe31f2fabd9413ca0e684238b14845",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/en-14.png",
+    "mediaURI": "content://media/external/images/media/1000000147",
+    "deviceSHA256": "829057bd789ad6e5fba3e5eadd54b885c4fe31f2fabd9413ca0e684238b14845"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 22.093
+}

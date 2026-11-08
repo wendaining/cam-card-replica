@@ -1,0 +1,150 @@
+{
+  "fields": {
+    "name": [
+      "孙立"
+    ],
+    "company": [
+      "北方电力设计院"
+    ],
+    "jobTitle": [
+      "主任工程师"
+    ],
+    "department": [],
+    "emails": [],
+    "website": [],
+    "address": [
+      "输电线路室"
+    ],
+    "mobile": [
+      "+8615900006677"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "输电线路室"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "孙立",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8615900006677",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        10
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "北方电力设计院",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "主任工程师",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        14,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "输电线路室",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        14,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "City",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "Postcode",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": true
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-08.png",
+  "observedAt": "2026-11-08T13:02:39.602345+08:00",
+  "inputSHA256": "1aebeb19bc21bfae2ab032e2206d0df1f42614cc3f60d1f0ffa37b740a9b0100",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-08.png",
+    "mediaURI": "content://media/external/images/media/1000000115",
+    "deviceSHA256": "1aebeb19bc21bfae2ab032e2206d0df1f42614cc3f60d1f0ffa37b740a9b0100"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 31.78
+}

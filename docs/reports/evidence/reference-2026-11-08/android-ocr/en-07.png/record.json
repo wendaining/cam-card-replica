@@ -1,0 +1,91 @@
+{
+  "fields": {
+    "name": [
+      "Thomas Weber"
+    ],
+    "company": [
+      "Rhine Valley Chemicals Supply Chain"
+    ],
+    "jobTitle": [
+      "Head Of Procurement"
+    ],
+    "department": [],
+    "emails": [],
+    "website": [],
+    "address": [],
+    "mobile": [],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "Thomas Weber",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Rhine Valley Chemicals Supply Chain",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Head Of Procurement",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "en-07.png",
+  "observedAt": "2026-11-08T13:13:27.447065+08:00",
+  "inputSHA256": "e61d827cf97184785cdc95f64a9a38f31650bb1ad5881ca85538c4cd66dac5a2",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/en-07.png",
+    "mediaURI": "content://media/external/images/media/1000000137",
+    "deviceSHA256": "e61d827cf97184785cdc95f64a9a38f31650bb1ad5881ca85538c4cd66dac5a2"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml"
+  ],
+  "collectionSeconds": 29.765
+}

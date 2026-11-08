@@ -1,0 +1,185 @@
+{
+  "fields": {
+    "name": [
+      "林芳"
+    ],
+    "company": [
+      "华夏中医药研究院"
+    ],
+    "jobTitle": [
+      "研究员"
+    ],
+    "department": [],
+    "emails": [
+      "contactl4@example.com"
+    ],
+    "website": [
+      "www.example14.com"
+    ],
+    "address": [
+      "西湖区文三路90号 3, 杭州市, 310012"
+    ],
+    "mobile": [
+      "+8618800002211"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "西湖区文三路90号 3"
+      },
+      {
+        "component": "box_city",
+        "value": "杭州市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "310012"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "林芳",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8618800002211",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "contactl4@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "华夏中医药研究院",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "研究员",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.example14.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "西湖区文三路90号 3",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "杭州市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "310012",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-14.png",
+  "observedAt": "2026-11-08T13:07:36.605253+08:00",
+  "inputSHA256": "c9f4885b26fd63208292ed6bc1ab01813de39946d26f2d06fc1cc5e6fc826a92",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-14.png",
+    "mediaURI": "content://media/external/images/media/1000000126",
+    "deviceSHA256": "c9f4885b26fd63208292ed6bc1ab01813de39946d26f2d06fc1cc5e6fc826a92"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 26.559
+}

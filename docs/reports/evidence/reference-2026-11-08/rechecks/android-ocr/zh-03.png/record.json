@@ -1,0 +1,51 @@
+{
+  "fields": {
+    "name": [],
+    "company": [],
+    "jobTitle": [],
+    "department": [],
+    "emails": [],
+    "website": [],
+    "address": [],
+    "mobile": [],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "Name",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": true
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-03.png",
+  "observedAt": "2026-11-08T13:43:34.350863+08:00",
+  "inputSHA256": "5b678dc2e0417da7fd1832aa732c07de4e347ef43d7501411bb7218f8dc802ff",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-03.png",
+    "mediaURI": "content://media/external/images/media/1000000180",
+    "deviceSHA256": "5b678dc2e0417da7fd1832aa732c07de4e347ef43d7501411bb7218f8dc802ff"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml"
+  ],
+  "collectionSeconds": 26.048
+}

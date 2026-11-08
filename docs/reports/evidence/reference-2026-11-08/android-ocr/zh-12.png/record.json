@@ -1,0 +1,119 @@
+{
+  "fields": {
+    "name": [
+      "何俊"
+    ],
+    "company": [
+      "云图数据科技有限公司"
+    ],
+    "jobTitle": [
+      "算法工程师"
+    ],
+    "department": [
+      "数据平台"
+    ],
+    "emails": [
+      "contnct12@example.com"
+    ],
+    "website": [],
+    "address": [],
+    "mobile": [
+      "+8615000003344"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "何俊",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8615000003344",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "contnct12@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "云图数据科技有限公司",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "数据平台",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "算法工程师",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-12.png",
+  "observedAt": "2026-11-08T13:05:38.391936+08:00",
+  "inputSHA256": "6a111cdd5199847bf33d7fde25d7b008bb30d1f4cbdb0a68519771edb3a8e58d",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-12.png",
+    "mediaURI": "content://media/external/images/media/1000000122",
+    "deviceSHA256": "6a111cdd5199847bf33d7fde25d7b008bb30d1f4cbdb0a68519771edb3a8e58d"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml"
+  ],
+  "collectionSeconds": 22.648
+}

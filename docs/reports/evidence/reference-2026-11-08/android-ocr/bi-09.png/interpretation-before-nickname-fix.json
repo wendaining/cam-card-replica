@@ -1,0 +1,215 @@
+{
+  "fields": {
+    "name": [
+      "林格蕾"
+    ],
+    "company": [],
+    "jobTitle": [
+      "Analyst 分析师"
+    ],
+    "department": [
+      "AtlasCapital阿特拉斯资本"
+    ],
+    "emails": [
+      "bizo9@cxuuptc.com"
+    ],
+    "website": [
+      "\",.,,.Cjmmplco9.COIU"
+    ],
+    "address": [
+      "西湖区文三路90号, 杭州市, 310012, Grace Lin"
+    ],
+    "mobile": [
+      "+8613800001234"
+    ],
+    "office": [
+      "02840007890"
+    ],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "西湖区文三路90号"
+      },
+      {
+        "component": "box_city",
+        "value": "杭州市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "310012"
+      },
+      {
+        "component": "box_nickname",
+        "value": "Grace Lin"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "林格蕾",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613800001234",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02840007890",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "bizo9@cxuuptc.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        16
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        17
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "AtlasCapital阿特拉斯资本",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Analyst 分析师",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "\",.,,.Cjmmplco9.COIU",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "西湖区文三路90号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "杭州市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "310012",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Grace Lin",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-09.png",
+  "observedAt": "2026-11-08T13:29:37.085613+08:00",
+  "inputSHA256": "d99b48a7bce4832c9977d2655b104597f049c313592297c214391a293140295a",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-09.png",
+    "mediaURI": "content://media/external/images/media/1000000162",
+    "deviceSHA256": "d99b48a7bce4832c9977d2655b104597f049c313592297c214391a293140295a"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 40.09
+}

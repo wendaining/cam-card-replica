@@ -1,0 +1,187 @@
+{
+  "fields": {
+    "name": [
+      "孙立"
+    ],
+    "company": [],
+    "jobTitle": [
+      "主任工程师 Chief Engineer"
+    ],
+    "department": [
+      "北方电力 North Power Design"
+    ],
+    "emails": [
+      "biz10@example.com"
+    ],
+    "website": [],
+    "address": [
+      "高新区天府大道中段 1 号, 成都市, 610041, Sun Li"
+    ],
+    "mobile": [
+      "+8613900005678"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "高新区天府大道中段 1 号"
+      },
+      {
+        "component": "box_city",
+        "value": "成都市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "610041"
+      },
+      {
+        "component": "box_nickname",
+        "value": "Sun Li"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "孙立",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613900005678",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz10@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "北方电力 North Power Design",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "主任工程师 Chief Engineer",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "高新区天府大道中段 1 号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "成都市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "610041",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Sun Li",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-10-photo.jpg",
+  "observedAt": "2026-11-08T13:30:51.464020+08:00",
+  "inputSHA256": "0712efd6736f09fff93060dc9bdf7f6bcc9243ee649cfbf9d5a1a17e29fe307f",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-10-photo.jpg",
+    "mediaURI": "content://media/external/images/media/1000000164",
+    "deviceSHA256": "0712efd6736f09fff93060dc9bdf7f6bcc9243ee649cfbf9d5a1a17e29fe307f"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 33.98
+}

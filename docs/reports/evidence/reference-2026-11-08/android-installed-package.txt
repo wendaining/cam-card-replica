@@ -1,0 +1,6 @@
+primaryCpuAbi=arm64-v8a
+versionCode=82500 minSdk=28 targetSdk=35
+versionName=8.25.0.20260129
+apkSigningVersion=2
+lastUpdateTime=2026-11-08 00:16:46
+firstInstallTime=2026-11-08 00:16:46

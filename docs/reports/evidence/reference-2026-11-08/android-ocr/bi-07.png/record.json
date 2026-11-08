@@ -1,0 +1,144 @@
+{
+  "fields": {
+    "name": [
+      "托马斯"
+    ],
+    "company": [
+      "RhineValley莱茵化工"
+    ],
+    "jobTitle": [
+      "Head of Procure 阳 ent 采购总监"
+    ],
+    "department": [],
+    "emails": [
+      "biz07@example.com"
+    ],
+    "website": [],
+    "address": [],
+    "mobile": [
+      "+8613300004455"
+    ],
+    "office": [
+      "075520009012"
+    ],
+    "fax": [
+      "02160001235"
+    ]
+  },
+  "addressComponents": [],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "托马斯",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613300004455",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "075520009012",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02160001235",
+      "section": "phone",
+      "typeLabel": "Work Fax",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz07@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "RhineValley莱茵化工",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        21
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Head of Procure 阳 ent 采购总监",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-07.png",
+  "observedAt": "2026-11-08T13:25:48.024077+08:00",
+  "inputSHA256": "4af81115320e4d0dfdaec69392d5fdd3fdcba2e13d41ca5b792fab8b6ec202d3",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-07.png",
+    "mediaURI": "content://media/external/images/media/1000000158",
+    "deviceSHA256": "4af81115320e4d0dfdaec69392d5fdd3fdcba2e13d41ca5b792fab8b6ec202d3"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 33.271
+}

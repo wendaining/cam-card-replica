@@ -1,0 +1,161 @@
+{
+  "fields": {
+    "name": [
+      "陈大卫"
+    ],
+    "company": [
+      "ABCTechnologies艾博西科技"
+    ],
+    "jobTitle": [
+      "Director 总监"
+    ],
+    "department": [],
+    "emails": [],
+    "website": [],
+    "address": [
+      "P 室 tform 平台部"
+    ],
+    "mobile": [],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "P 室 tform 平台部"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "陈大卫",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "ABCTechnologies艾博西科技",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Director 总监",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "P 室 tform 平台部",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11,
+        3
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "City",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        11,
+        4
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "Postcode",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        11,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "David Chen",
+      "section": "nickname",
+      "typeLabel": null,
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [
+    {
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "value": "David Chen",
+      "section": "nickname"
+    }
+  ],
+  "inputFile": "bi-03.png",
+  "observedAt": "2026-11-08T13:22:26.545921+08:00",
+  "inputSHA256": "12e63eb4a014cc53b630a53e2e2bf15464c236e7c1ffb5a1f186bf96ff406e9b",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-03.png",
+    "mediaURI": "content://media/external/images/media/1000000152",
+    "deviceSHA256": "12e63eb4a014cc53b630a53e2e2bf15464c236e7c1ffb5a1f186bf96ff406e9b"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 32.227,
+  "interpretationReplay": {
+    "reason": "Keep Nickname separate from address components",
+    "captureParserSHA256": "7140dcf12a4dea57169b613ead36ede3ca5ff1986c288d7ae92e9471f9bbc836",
+    "replayParserSHA256": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+    "replayedAt": "2026-11-08T13:46:13.873960+08:00"
+  }
+}

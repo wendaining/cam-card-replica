@@ -1,0 +1,158 @@
+[p1 "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司" | space "CamCard 正版电脑验证"(1): 2 managed, 0 untracked — p1* "名片全能王-名片设计制作_电子名片_名片识别管理工具-上海合合信息科技股份有限公司", p2 "智能名片扫描仪 - 名片全能王"]
+root
+  container
+    anchor [ref=91, url=https://www.camcard.com/card]
+    anchor [ref=92, url=https://www.camcard.com/card]
+      text "名片夹"
+    container
+      anchor [ref=93, url=https://www.camcard.com/tool/import]
+        text "工具箱"
+      text "-->"
+      text "帮助"
+      image
+  container
+    container
+      container
+        text "日期排序"
+        text ""
+      container
+        container
+          text "分组"
+          text ""
+        container
+          text "新建分组"
+          anchor [ref=94, loc=href:/tool/tag, url=https://www.camcard.com/tool/tag]
+            text "分组管理"
+          container
+            text "所有名片"
+            text "(0)"
+          container
+            text "未分组"
+            text "(0)"
+    container
+      text "所有名片"
+      container
+        container
+          textbox [ref=103]
+          anchor [ref=104]
+            text "搜索"
+        container
+          table
+            table_row
+              table_cell
+                table
+                  table_row
+                    table_cell
+                      text "名片图像"
+          container
+            anchor [ref=102]
+            text "未找到相关名片"
+    container
+      container
+        text "编辑名片"
+        container
+          anchor [ref=105]
+            text "取消"
+          anchor [ref=106]
+            text "保存"
+      container
+        container
+          text "名片图像"
+          image
+          container
+            paragraph
+              text "添加背面"
+            container
+              text "请选择要添加的图片"
+              textbox [ref=109]
+                button [ref=110]
+                  text "选择文件"
+                text "未选择任何文件"
+        container [ref=111]
+          container
+            text "基本信息"
+            container
+              text "头像"
+              text ""
+            container
+              text "姓名"
+              textbox [ref=112]
+              anchor [ref=113]
+            text "联系方式"
+            container
+              text "手机"
+              textbox [ref=114]
+              container
+                anchor [ref=115]
+                anchor [ref=116]
+            container
+              text "电话"
+              textbox [ref=117]
+              container
+                anchor [ref=118]
+                anchor [ref=119]
+            container
+              text "传真"
+              textbox [ref=120]
+              container
+                anchor [ref=121]
+                anchor [ref=122]
+            container
+              text "邮箱"
+              textbox [ref=123]
+              container
+                anchor [ref=124]
+                anchor [ref=125]
+          container
+            text "公司信息"
+            container
+              container
+                text "公司"
+                textbox [ref=126]
+                container
+                  anchor [ref=127]
+                  anchor [ref=128]
+              container
+                text "部门"
+                textbox [ref=129]
+              container
+                text "职位"
+                textbox [ref=130]
+              container
+                text "公司拼音"
+                textbox [ref=131]
+            container
+              text "网址"
+              textbox [ref=132]
+              container
+                anchor [ref=133]
+                anchor [ref=134]
+            container
+              container
+                text "地址"
+                anchor [ref=135]
+              textbox [ref=136]
+              container
+                anchor [ref=137]
+                anchor [ref=138]
+            text "其他信息"
+            text "昵称"
+            textbox [ref=139]
+            text "即时消息"
+            text "QQ"
+            textbox [ref=140]
+            anchor [ref=141]
+            anchor [ref=142]
+            text "社交网络"
+            text "微信"
+            textbox [ref=143]
+            anchor [ref=144]
+            anchor [ref=145]
+            text "纪念日"
+            text "生日"
+            textbox [ref=146]
+            anchor [ref=147]
+            anchor [ref=148]
+            text "交换日期"
+            textbox [ref=149, loc=css:input[placeholder="请选择"]]
+              text "请选择"

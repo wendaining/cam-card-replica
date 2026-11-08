@@ -1,0 +1,242 @@
+{
+  "fields": {
+    "name": [
+      "陈雨欣"
+    ],
+    "company": [],
+    "jobTitle": [
+      "Senior Consult 旺 nt 高级顾问",
+      "Mingde Consulting 明德咨询"
+    ],
+    "department": [],
+    "emails": [
+      "biz06@example.com"
+    ],
+    "website": [
+      "www.exnmple06.com"
+    ],
+    "address": [
+      "杨浦区四平路1239号, 上海市, 200092"
+    ],
+    "mobile": [
+      "+8618800002211"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "杨浦区四平路1239号"
+      },
+      {
+        "component": "box_city",
+        "value": "上海市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "200092"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "陈雨欣",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8618800002211",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz06@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Senior Consult 旺 nt 高级顾问",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Mingde Consulting 明德咨询",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.exnmple06.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "杨浦区四平路1239号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "上海市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "200092",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Chen Yuxin",
+      "section": "nickname",
+      "typeLabel": null,
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [
+    {
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "value": "Chen Yuxin",
+      "section": "nickname"
+    }
+  ],
+  "inputFile": "bi-06.png",
+  "observedAt": "2026-11-08T13:24:37.920752+08:00",
+  "inputSHA256": "e321f1a9a8e676cf65c19d454f580153307585039634c8d2143bc6d396f4cefb",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-06.png",
+    "mediaURI": "content://media/external/images/media/1000000156",
+    "deviceSHA256": "e321f1a9a8e676cf65c19d454f580153307585039634c8d2143bc6d396f4cefb"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 27.489,
+  "interpretationReplay": {
+    "reason": "Keep Nickname separate from address components",
+    "captureParserSHA256": "7140dcf12a4dea57169b613ead36ede3ca5ff1986c288d7ae92e9471f9bbc836",
+    "replayParserSHA256": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+    "replayedAt": "2026-11-08T13:46:13.847780+08:00"
+  }
+}

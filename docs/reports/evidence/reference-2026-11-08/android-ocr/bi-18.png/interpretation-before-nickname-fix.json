@@ -1,0 +1,214 @@
+{
+  "fields": {
+    "name": [
+      "赵敏"
+    ],
+    "company": [
+      "ConningMedical康宁医疗"
+    ],
+    "jobTitle": [
+      "° ·. · ting M° ·°.° 市场经理"
+    ],
+    "department": [],
+    "emails": [
+      "biz18@example.com",
+      "snles18@example.net"
+    ],
+    "website": [
+      "www.exmnple18.com"
+    ],
+    "address": [
+      "南山区科技园南路18号, 深圳市, 518057, Zhao Min"
+    ],
+    "mobile": [
+      "+8613900005678"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "南山区科技园南路18号"
+      },
+      {
+        "component": "box_city",
+        "value": "深圳市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "518057"
+      },
+      {
+        "component": "box_nickname",
+        "value": "Zhao Min"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "赵敏",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613900005678",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz18@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "snles18@example.net",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        16
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "ConningMedical康宁医疗",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Department",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "° ·. · ting M° ·°.° 市场经理",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.exmnple18.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "南山区科技园南路18号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "深圳市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "518057",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Zhao Min",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-18.png",
+  "observedAt": "2026-11-08T13:41:10.660478+08:00",
+  "inputSHA256": "55f729c5d2d339b12a9be4a81575a4fc7ef78acb428594a01635c0010924602e",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-18.png",
+    "mediaURI": "content://media/external/images/media/1000000176",
+    "deviceSHA256": "55f729c5d2d339b12a9be4a81575a4fc7ef78acb428594a01635c0010924602e"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 39.266
+}

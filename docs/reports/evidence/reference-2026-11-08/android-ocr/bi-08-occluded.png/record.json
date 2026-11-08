@@ -1,0 +1,205 @@
+{
+  "fields": {
+    "name": [
+      "赵敏"
+    ],
+    "company": [],
+    "jobTitle": [
+      "Marketing Manager 市场经理"
+    ],
+    "department": [
+      "ConningMedical康宁医疗"
+    ],
+    "emails": [
+      "biz08@example.com"
+    ],
+    "website": [
+      "www.example08.com"
+    ],
+    "address": [
+      "南山区科技园南路 18号 51805, 深圳市"
+    ],
+    "mobile": [
+      "+8615900006677"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "南山区科技园南路 18号 51805"
+      },
+      {
+        "component": "box_city",
+        "value": "深圳市"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "赵敏",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8615900006677",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz08@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "ConningMedical康宁医疗",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Marketing Manager 市场经理",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.example08.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "南山区科技园南路 18号 51805",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "深圳市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        17,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "Postcode",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        17,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Zhao Min",
+      "section": "nickname",
+      "typeLabel": null,
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [
+    {
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "value": "Zhao Min",
+      "section": "nickname"
+    }
+  ],
+  "inputFile": "bi-08-occluded.png",
+  "observedAt": "2026-11-08T13:28:54.014303+08:00",
+  "inputSHA256": "6b46658901335d07355964fde37e99d9350f441e14be263895dccd46c7ccb6e4",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-08-occluded.png",
+    "mediaURI": "content://media/external/images/media/1000000161",
+    "deviceSHA256": "6b46658901335d07355964fde37e99d9350f441e14be263895dccd46c7ccb6e4"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml"
+  ],
+  "collectionSeconds": 32.042,
+  "interpretationReplay": {
+    "reason": "Keep Nickname separate from address components",
+    "captureParserSHA256": "7140dcf12a4dea57169b613ead36ede3ca5ff1986c288d7ae92e9471f9bbc836",
+    "replayParserSHA256": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+    "replayedAt": "2026-11-08T13:46:13.917751+08:00"
+  }
+}

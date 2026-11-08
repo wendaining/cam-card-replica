@@ -1,0 +1,212 @@
+{
+  "fields": {
+    "name": [
+      "阳托马斯"
+    ],
+    "company": [],
+    "jobTitle": [
+      "Head of Procurement 采购总监"
+    ],
+    "department": [
+      "RhineValley莱茵化工"
+    ],
+    "emails": [
+      "biz17@example.com"
+    ],
+    "website": [
+      "www.example17.com"
+    ],
+    "address": [
+      "海淀区中关村大街 1 号, 北京市, 100080"
+    ],
+    "mobile": [
+      "+8613800001234"
+    ],
+    "office": [
+      "02160001234"
+    ],
+    "fax": [
+      "01080005679"
+    ]
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "海淀区中关村大街 1 号"
+      },
+      {
+        "component": "box_city",
+        "value": "北京市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "100080"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "阳托马斯",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613800001234",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02160001234",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "01080005679",
+      "section": "phone",
+      "typeLabel": "Work Fax",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz17@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "RhineValley莱茵化工",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        21
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "Head of Procurement 采购总监",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.example17.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "海淀区中关村大街 1 号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "北京市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "100080",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "bi-17.png",
+  "observedAt": "2026-11-08T13:40:28.404339+08:00",
+  "inputSHA256": "1513932bc9dd489f76240da6fe0d5584f148204c01b8650ae06c8e5ccb0ffbc4",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-17.png",
+    "mediaURI": "content://media/external/images/media/1000000175",
+    "deviceSHA256": "1513932bc9dd489f76240da6fe0d5584f148204c01b8650ae06c8e5ccb0ffbc4"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 37.874
+}

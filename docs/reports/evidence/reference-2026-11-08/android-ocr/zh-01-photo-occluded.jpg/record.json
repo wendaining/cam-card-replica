@@ -1,0 +1,214 @@
+{
+  "fields": {
+    "name": [
+      "朱宏明"
+    ],
+    "company": [
+      "同济大学"
+    ],
+    "jobTitle": [
+      "教授"
+    ],
+    "department": [
+      "计算机科学与技术学院"
+    ],
+    "emails": [
+      "contact01@example.com"
+    ],
+    "website": [
+      "www.example01.com"
+    ],
+    "address": [
+      "杨浦区四平路1 239号, 上海市, 200092"
+    ],
+    "mobile": [
+      "+8613800001234"
+    ],
+    "office": [
+      "02160001234"
+    ],
+    "fax": [
+      "02160001235"
+    ]
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "杨浦区四平路1 239号"
+      },
+      {
+        "component": "box_city",
+        "value": "上海市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "200092"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "朱宏明",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8613800001234",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02160001234",
+      "section": "phone",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        11
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "02160001235",
+      "section": "phone",
+      "typeLabel": "Work Fax",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "contact01@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "同济大学",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "计算机科学与技术学院",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        21
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "教授",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.example01.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "杨浦区四平路1 239号",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "上海市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        23,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "200092",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [],
+  "inputFile": "zh-01-photo-occluded.jpg",
+  "observedAt": "2026-11-08T12:56:48.847848+08:00",
+  "inputSHA256": "e66e0a20218ddecfd911432f42231f1541ecae6371d95415a11adeee015c95fc",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/zh-01-photo-occluded.jpg",
+    "mediaURI": "content://media/external/images/media/1000000105",
+    "deviceSHA256": "e66e0a20218ddecfd911432f42231f1541ecae6371d95415a11adeee015c95fc"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 39.939
+}

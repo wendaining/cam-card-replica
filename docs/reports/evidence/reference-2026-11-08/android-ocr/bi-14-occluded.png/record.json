@@ -1,0 +1,244 @@
+{
+  "fields": {
+    "name": [
+      "王建国"
+    ],
+    "company": [],
+    "jobTitle": [
+      "副总经理 VP"
+    ],
+    "department": [
+      "东方物流 Orient Logistics",
+      "Operations 运营"
+    ],
+    "emails": [
+      "biz14@example.com"
+    ],
+    "website": [
+      "www.example14.com"
+    ],
+    "address": [
+      "西湖区文三路90号 3, 杭州市, 310012"
+    ],
+    "mobile": [
+      "+8618800002211"
+    ],
+    "office": [],
+    "fax": []
+  },
+  "addressComponents": [
+    [
+      {
+        "component": "box_street",
+        "value": "西湖区文三路90号 3"
+      },
+      {
+        "component": "box_city",
+        "value": "杭州市"
+      },
+      {
+        "component": "box_postcode",
+        "value": "310012"
+      }
+    ]
+  ],
+  "rawEditableFields": [
+    {
+      "path": [
+        5,
+        1
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/et_display_name",
+      "text": "王建国",
+      "section": null,
+      "typeLabel": null,
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        5
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "+8618800002211",
+      "section": "phone",
+      "typeLabel": "Mobile",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        9
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "biz14@example.com",
+      "section": "emails",
+      "typeLabel": "Work Email",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        13
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        14
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "东方物流 Orient Logistics",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        15
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "副总经理 VP",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        18
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_company",
+      "text": "Company",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        19
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_department",
+      "text": "Operations 运营",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        20
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_jobtitle",
+      "text": "JobTitle",
+      "section": "org",
+      "typeLabel": "Work",
+      "placeholder": true
+    },
+    {
+      "path": [
+        5,
+        22,
+        2
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/data",
+      "text": "www.example14.com",
+      "section": "website",
+      "typeLabel": "Company Homepage",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        6
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_street",
+      "text": "西湖区文三路90号 3",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        7
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_city",
+      "text": "杭州市",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        8
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_postcode",
+      "text": "310012",
+      "section": "address",
+      "typeLabel": "Address",
+      "placeholder": false
+    },
+    {
+      "path": [
+        5,
+        22,
+        12
+      ],
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "text": "Wang Jianguo",
+      "section": "nickname",
+      "typeLabel": null,
+      "placeholder": false
+    }
+  ],
+  "unmappedFields": [
+    {
+      "resourceID": "com.intsig.BizCardReader:id/box_nickname",
+      "value": "Wang Jianguo",
+      "section": "nickname"
+    }
+  ],
+  "inputFile": "bi-14-occluded.png",
+  "observedAt": "2026-11-08T13:34:20.750748+08:00",
+  "inputSHA256": "bafa4e7c39ff827dd4a7ea92b12eea78ccc2a6907a281ce55c2c979acc9aab91",
+  "inputMedia": {
+    "devicePath": "/storage/emulated/0/Pictures/CamCardReferenceCurrent/bi-14-occluded.png",
+    "mediaURI": "content://media/external/images/media/1000000169",
+    "deviceSHA256": "bafa4e7c39ff827dd4a7ea92b12eea78ccc2a6907a281ce55c2c979acc9aab91"
+  },
+  "mode": "Basic",
+  "languages": [
+    "English",
+    "Simplified Chinese"
+  ],
+  "version": "8.25.0.20260129",
+  "viewport": "720x1824",
+  "noFieldEdits": true,
+  "libraryPolicy": "active library empty; retake after capture; no recognition results saved",
+  "collectionComplete": true,
+  "pages": [
+    "page-1.xml",
+    "page-2.xml",
+    "page-3.xml",
+    "page-4.xml"
+  ],
+  "collectionSeconds": 39.294,
+  "interpretationReplay": {
+    "reason": "Keep Nickname separate from address components",
+    "captureParserSHA256": "7140dcf12a4dea57169b613ead36ede3ca5ff1986c288d7ae92e9471f9bbc836",
+    "replayParserSHA256": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+    "replayedAt": "2026-11-08T13:46:13.867861+08:00"
+  }
+}

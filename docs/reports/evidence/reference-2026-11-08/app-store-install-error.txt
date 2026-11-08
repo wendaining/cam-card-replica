@@ -1,0 +1,2 @@
+2026-11-08 00:04:56.528 E  appstoreagent[48270:ed776b] [com.apple.AppleMediaServices:accounts] AMSAnisette: [request] Failed to generate Anisette (type: 1) headers. error = -45061
+2026-11-08 00:05:54.273 E  appstoreagent[48270:ed84d6] [com.apple.AppleMediaServices:accounts] AMSAnisette: [request] Failed to generate Anisette (type: 1) headers. error = -45061

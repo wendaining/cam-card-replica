@@ -1,0 +1,33 @@
+{
+  "changedInputs": [
+    "bi-02-photo.jpg",
+    "bi-02.png",
+    "bi-03-occluded.png",
+    "bi-03.png",
+    "bi-04.png",
+    "bi-05.png",
+    "bi-06-photo.jpg",
+    "bi-06.png",
+    "bi-08-occluded.png",
+    "bi-08.png",
+    "bi-09.png",
+    "bi-10-photo.jpg",
+    "bi-10.png",
+    "bi-12.png",
+    "bi-13.png",
+    "bi-14-occluded.png",
+    "bi-14-photo-occluded.jpg",
+    "bi-14-photo.jpg",
+    "bi-14.png",
+    "bi-15.png",
+    "bi-16.png",
+    "bi-18-photo.jpg",
+    "bi-18.png",
+    "bi-19.png",
+    "bi-20.png"
+  ],
+  "rawXMLAndScreenshotsUnchanged": true,
+  "captureParserSHA256": "7140dcf12a4dea57169b613ead36ede3ca5ff1986c288d7ae92e9471f9bbc836",
+  "replayParserSHA256": "fab54d93b930480a0bb15a4f83ad56013772837223db39a80fc29d68ef35aff0",
+  "reason": "Nickname section terminates address; only named address components are included."
+}

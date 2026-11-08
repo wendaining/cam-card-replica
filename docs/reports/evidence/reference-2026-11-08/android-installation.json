@@ -1,0 +1,27 @@
+{
+  "observedDate": "2026-11-08",
+  "sourcePage": "https://www.camcard.com/site/download",
+  "downloadURL": "https://s.intsig.net/software/MingPian_CC.apk",
+  "resolvedDownloadURL": "https://cc-dl.camcard.com/download/MingPian_CC.apk",
+  "apkBytes": 147947432,
+  "apkSHA256": "5d1c69289913ed0a0224c481f0f5896adf3fd0dec3b6ade114e1a2bc29cf8caa",
+  "package": "com.intsig.BizCardReader",
+  "versionName": "8.25.0.20260129",
+  "versionCode": 82500,
+  "installationResult": "Success",
+  "emulatorVersion": "37.2.13.0",
+  "systemImage": "Android 15 / API 35 / AOSP / arm64-v8a",
+  "device": "emulator-5580",
+  "ramMB": 3072,
+  "resolution": "720x1824",
+  "dataScope": "76 unchanged synthetic corpus images; no host contacts imported",
+  "loginStatus": "user completed account login",
+  "firstLaunchAgreement": {
+    "accepted": true,
+    "authorization": "使用者于 2026-11-08 明确同意点击 Agree"
+  },
+  "uiAutomation": "Android official ADB, explicitly authorized by user",
+  "cameraSource": "emulated rear camera; no Mac webcam attached",
+  "graphics": "host",
+  "measurementLibraryPolicy": "Five generated test cards moved to the 30-day recycle bin before measurement; each measured draft is discarded through Retake."
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "file": "zh-03.png",
+    "firstEmpty": true,
+    "recheckEmpty": true,
+    "sameFields": true,
+    "inputSHA256": "5b678dc2e0417da7fd1832aa732c07de4e347ef43d7501411bb7218f8dc802ff",
+    "recheckObservedAt": "2026-11-08T13:43:34.350863+08:00"
+  },
+  {
+    "file": "zh-09-photo-occluded.jpg",
+    "firstEmpty": true,
+    "recheckEmpty": true,
+    "sameFields": true,
+    "inputSHA256": "db38babd29f932d3cc8d525e21809b188bd2d567f6783a6a8561376339ab27bb",
+    "recheckObservedAt": "2026-11-08T13:44:04.281397+08:00"
+  }
+]

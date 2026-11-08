@@ -1,0 +1,9 @@
+Source: https://apps.apple.com/cn/app/id349447615
+Observed: 2026-11-08
+Product: 名片全能王-名片扫描分享和企业查询
+Developer: INTSIG Information Co., Ltd
+Store listing version: 8.65.0
+Designed for iPad; not verified for macOS.
+Compatibility lists macOS 13.0 or later and Apple M1 or later.
+Native Mac App Store: free acquisition opened twice; no installation completed.
+Do not treat the store listing as an installed or tested iOS version.
