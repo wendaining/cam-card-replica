@@ -23,6 +23,8 @@
 
 最终报告使用 Markdown，可直接编辑。作者信息、实际修改案例与演示结果按实际填写；每次修改验收结果时填写日期和证据路径。
 
+涉及个人信息的文件使用本地副本：把 `final-signoff.md` 复制为 final-signoff.local.md，把 `manual-corrections.csv` 复制为 manual-corrections.local.csv 后填写。两个 .local 文件已被 `.gitignore` 排除；`make package` 会优先使用本地副本，按原名放进压缩包。
+
 提交压缩包包括源码、工程生成配置、规格与测试文档、语料、OCR 证据、报告和填写模板。压缩包附带逐文件 SHA-256 清单及版本信息。build、DerivedData、TestResults、Git 内部文件和本机环境文件不在压缩包中。
 
 ## 更新提交压缩包

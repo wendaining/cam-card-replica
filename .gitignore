@@ -37,3 +37,11 @@ Config/Info.plist
 
 # Generated submission archives
 output/
+
+# Personal submission data: templates stay tracked, filled copies stay local
+docs/submission/*.local.md
+docs/submission/*.local.csv
+docs/submission/personal/
+
+# AI collaboration attachments may contain account or personal information
+docs/ai-collaboration/attachments/*

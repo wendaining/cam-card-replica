@@ -14,6 +14,12 @@ ALLOWED_ROOTS = {'Sources', 'Tests', 'UITests', 'Resources', 'TestData', 'docs',
 ALLOWED_FILES = {'README.md', 'AGENTS.md', 'HANDOFF.md', 'Makefile', 'project.yml', '.gitignore',
                  '.swiftlint.yml', '.swiftformat', '移动应用开发课程作业-v2.pdf', '00-作业调研与执行方案.md'}
 
+# Filled personal documents stay untracked; if present, they replace the blanks in the archive.
+PERSONAL_FILES = {
+    'docs/submission/final-signoff.md': 'docs/submission/final-signoff.local.md',
+    'docs/submission/manual-corrections.csv': 'docs/submission/manual-corrections.local.csv',
+}
+
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
@@ -24,11 +30,14 @@ def main():
     parser.add_argument('--date', default=datetime.now(ZoneInfo('Asia/Shanghai')).date().isoformat())
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'output/submission')
     args = parser.parse_args()
-    for required in ('docs/reports/final-report.md', 'docs/submission/final-signoff.md',
+    for required in ('docs/reports/final-report.md',
                      'docs/reports/evidence/ocr-2026-11-07/recognition-records.json',
                      'docs/reports/verification-2026-11-07.md'):
         if not (ROOT / required).is_file():
             raise SystemExit('Required submission material is missing: ' + required)
+    if not any((ROOT / name).is_file() for name in ('docs/submission/final-signoff.md',
+                                                    'docs/submission/final-signoff.local.md')):
+        raise SystemExit('Required submission material is missing: docs/submission/final-signoff.md')
     evidence = ROOT / 'docs/reports/evidence/ocr-2026-11-07'
     hashes = json.loads((evidence / 'SHA256SUMS.json').read_text())
     for relative, expected in hashes.items():
@@ -57,6 +66,12 @@ def main():
             if '__pycache__' in path.parts or path.suffix == '.pyc':
                 continue
             files[path.as_posix()] = (ROOT / path).read_bytes()
+    used_personal_copies = []
+    for archive_name, local_name in PERSONAL_FILES.items():
+        local_path = ROOT / local_name
+        if local_path.is_file():
+            files[archive_name] = local_path.read_bytes()
+            used_personal_copies.append(local_name)
     files['START-HERE.md'] = ('# 提交材料\n\n'
                              '[最终报告 Markdown](docs/reports/final-report.md)\n\n'
                              '[提交目录](docs/submission/README.md)\n\n'
@@ -68,7 +83,8 @@ def main():
                     gitRevision=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                     workingTreeHasChanges=bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT)),
                     ocrRecordCount=len(records), referenceRecordCount=reference_count, fileCountBeforeManifest=len(files),
-                    pendingAuthorRecords=['TRAE task attachments', 'author identity, signoff and demonstration'],
+                    usedPersonalCopies=used_personal_copies,
+                    pendingAuthorRecords=['author identity, signoff and demonstration'],
                     unverifiedScopes=['physical-device shooting quality', 'iOS reference application', 'CamCard VIP export artifacts'])
     files['SUBMISSION.json'] = (json.dumps(metadata, ensure_ascii=False, indent=2) + '\n').encode()
     files['MANIFEST.sha256'] = ''.join(f'{digest(data)}  {name}\n' for name, data in sorted(files.items())).encode()
